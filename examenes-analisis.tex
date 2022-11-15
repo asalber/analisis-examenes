@@ -1,0 +1,521 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{scrreport}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{venndiagram}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\DeclareMathOperator{\operatorname{Int}}{Int}
+\DeclareMathOperator{\operatorname{Ext}}{Ext}
+\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Adh}{Adh}
+\DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Indice de contenidos}
+\else
+  \newcommand\contentsname{Indice de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listatdos}}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{exercise}{Ejercicio}[chapter]
+\theoremstyle{remark}
+\renewcommand*{\proofname}{Prueba}
+\newtheorem*{remark}{Observación}
+\newtheorem*{solution}{Solución}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Exámenes de Análisis Matemático},
+  pdfauthor={Alfredo Sánchez Alberca},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Exámenes de Análisis Matemático}
+\author{Alfredo Sánchez Alberca}
+\date{1/11/2022}
+
+\begin{document}
+\begin{titlepage}
+
+%\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.8]{img/background2}}} % Imagen de fondo, requiere el paquete eso-pic.
+\begin{center}
+\vspace*{5cm}
+
+\Huge
+{\textbf{\textsf{Exámenes de Análisis Matemático}}}
+
+\vspace{0.5cm}
+\LARGE
+{\textbf{\textsf{}}}
+
+\vspace{1.5cm}
+
+\includegraphics[width=0.4\textwidth]{img/logos/infinito.png}
+\end{center}
+
+\vfill
+
+\begin{flushleft}
+\begin{tabular}{ll}
+\includegraphics[width=0.1\textwidth]{img/logos/aprendeconalf.png} & \parbox[b]{5cm}{\Large\textsf{Alfredo
+Sánchez
+Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
+\end{tabular}
+\end{flushleft}
+\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, breakable, enhanced, frame hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Indice de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{prefacio}{%
+\chapter*{Prefacio}\label{prefacio}}
+\addcontentsline{toc}{chapter}{Prefacio}
+
+Colección de exámenes de Análisis Matemático Real del grado en
+Ingeniería Matemática.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{examen-del-14-11-2022}{%
+\chapter{Examen del 14-11-2022}\label{examen-del-14-11-2022}}
+
+\leavevmode\vadjust pre{\hypertarget{exr-1}{}}%
+\begin{exercise}[]\label{exr-1}
+
+Calcular los puntos de acumulación del conjunto
+\(A=[0,1]\cup \left\{\frac{n}{n-1}: n\in\mathbb{N}, n\geq 2\right\}\).
+¿Es un conjunto cerrado? ¿Y abierto?
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, colback=white, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, coltitle=black, opacityback=0, arc=.35mm, rightrule=.15mm, bottomrule=.15mm]
+Veamos primero que todos los puntos del intervalo \([0,1]\) son puntos
+de acumulación. Sea \(x\in[0,1]\). Entonces para cualquier
+\(\varepsilon>0\), por la densidad de los números reales, el entorno
+reducido \((x-\varepsilon,x+\varepsilon)\setminus\{x\}\) contiene puntos
+de \([0,1]\), y por tanto \(x\) es un punto de acumulación de \([0,1]\).
+
+Veamos ahora que el conjunto
+\(B=\left\{\frac{n}{n-1}: n\in\mathbb{N}, n\geq 2\right\} = \left\{1+\frac{1}{n-1}: n\in\mathbb{N}, n\geq 2\right\}\)
+solo tiene \(1\) como punto de acumulación. En primer lugar, \(1\) es
+punto de acumulación, ya que para cualquier \(\varepsilon>0\),
+\((1-\varepsilon, 1+\varepsilon)\setminus \{1\}\) contiene puntos de
+\(A\). Para verlo, basta aplicar la propiedad arquimediana, por la que
+existe \(n\in\mathbb{N}\) tal que \(\frac{1}{n}<\varepsilon\), de manera
+que \(1+\frac{1}{n}<1+\varepsilon\), y por tanto
+\((1-\varepsilon, 1+\varepsilon)\setminus \{1\}\cap B\neq \emptyset\).
+
+Si \(x<1\), tomando \(\varepsilon=|x-1|\) el entorno reducido
+\((x-\varepsilon, x+\varepsilon)\setminus\{x\}\) no contiene puntos de
+\(B\). Del mismo modo, si \(x>2\), tomando \(\varepsilon=|x-2|\) el
+entorno reducido \((x-\varepsilon, x+\varepsilon)\setminus\{x\}\)
+tampoco contiene puntos de \(B\). Finalmente, si \(1<x\leq 2\), por la
+propiedad arquimediana, existe \(n\in\mathbb{N}\) tal que
+\(\frac{1}{n}\leq x<\frac{1}{n-1}\). Tomando
+\(\varepsilon=\min(\{|x-\frac{1}{n}|,|x-\frac{1}{n-1}|\})\) también se
+tiene que el entorno reducido
+\((x-\varepsilon, x+\varepsilon)\setminus\{x\}\) no contiene puntos de
+\(B\). Por tanto, \(1\) es el único punto de acumulación de \(B\).
+
+Así pues, \(\operatorname{Ac}(A)=[0,1]\), y como
+\(\operatorname{Ac}(A)\subseteq A\), \(A\) es cerrado ya que contienen a
+todos sus puntos de acumulación (ver
+\href{https://aprendeconalf.es/analisis-manual/topologia-reales.html\#thm-conjunto-cerrado-puntos-acumulacion}{teorema}),
+y por tanto, no puede ser abierto ya que los únicos conjuntos cerrados y
+abiertos a la vez son \(\mathbb{R}\) y \(\emptyset\).
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exr-2}{}}%
+\begin{exercise}[]\label{exr-2}
+
+Dada la sucesión \(\left(\frac{1}{2^n}\right)_{n=1}^\infty\),
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Calcular, si existen, el supremo, ínfimo, máximo y mínimo del conjunto
+  de sus términos.
+\item
+  Demostrar que la sucesión converge a \(0\).
+\end{enumerate}
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, colback=white, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, coltitle=black, opacityback=0, arc=.35mm, rightrule=.15mm, bottomrule=.15mm]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  La sucesión es monótona decreciente, ya que \(\forall n\in\mathbb{N}\)
+  \(2^n<2^{n+1}\), y por tanto,
+  \(x_n=\frac{1}{2^n}<\frac{1}{2^{n+1}}=x_{n+1}\). Así pues, el primer
+  término de la sucesión \(x_1=1/2\) es su máximo, y por tanto el
+  supremo.
+
+  Veamos ahora que \(0\) es ínfimo por reducción al absurdo. En primer
+  lugar, \(0\) es una cota inferior de la sucesión, pues todos sus
+  términos son positivos. Supongamos ahora que existe otra cota inferior
+  \(c\in\mathbb{R}\) tal que \(c>0\). Por la propiedad arquimediana,
+  existe \(n\in\mathbb{N}\) tal que \(\frac{1}{n}< c\). Ahora bien, como
+  \(n<2^n\) \(\forall n\in\mathbb{N}\), se tiene que
+  \(\frac{1}{2^n}<\frac{1}{n}< c\), por lo que el termino \(n\) de la
+  sucesión es menor que \(c\), lo que contradice que sea cota inferior.
+  Así pues, \(0\) es el ínfimo. Sin embargo, la sucesión no tiene
+  mínimo, pues \(x_n\neq 0\) \(\forall n\in\mathbb{N}\).
+\item
+  Como la sucesión es monótona decreciente y está acotada inferiormente,
+  por el
+  \href{https://aprendeconalf.es/analisis-manual/sucesiones.html\#thm-convergencia-monotona}{teorema
+  de la convergencia de una sucesión monónota} la sucesión converge y
+  \(\lim_{n\to\infty}x_n = \inf(\{x_n:n\in\mathbb{N}\})=0\).
+\end{enumerate}
+
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exr-3}{}}%
+\begin{exercise}[]\label{exr-3}
+
+La rentabilidad de un bono cada año, en porcentaje, viene dada por la
+sucesión recurrente \(x_1=3\) y \(x_{n+1}=\sqrt{\frac{x_n}{2}+3}\).
+¿Hacia dónde converge la rentabilidad del bono a medida que pasa el
+tiempo?
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, colback=white, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, coltitle=black, opacityback=0, arc=.35mm, rightrule=.15mm, bottomrule=.15mm]
+Veamos que primero que la sucesión es monótona decreciente.
+\(x_1=3>x_n= \sqrt{\frac{3}{2}+3} = 2.12\). Supongamos ahora que
+\(x_{n-1}>x_n\). Entonces
+
+\begin{align*}
+x_{n-1}>x_n &\Rightarrow \frac{x_{n-1}} {2}>\frac{x_n}{2} \Rightarrow \frac{x_{n-1}}{2}+3>\frac{x_n}{2}+3\\  & \Rightarrow \sqrt{\frac{x_{n-1}}{2}+3}>\sqrt{\frac{x_n}{2}+3} \Rightarrow x_n>x_{n+1}.
+\end{align*} \[
+\]
+
+Por otro lado, es fácil ver que la sucesión está acotada inferiormente
+por \(0\) pues todos los términos son positivos. Así pues, por el
+\href{https://aprendeconalf.es/analisis-manual/sucesiones.html\#thm-convergencia-monotona}{teorema
+de la convergencia de una sucesión monónota}, la sucesión converge a un
+número \(x\in\mathbb{R}\). Para calcular el límite, aprovechando la
+recurrencia de la sucesión se tiene
+
+\[
+x=\lim_{n\to\infty} x_n = \lim_{n\to\infty} x_{n+1} = \lim_{n\to\infty} \sqrt{\frac{x_n}{2}+3} = \sqrt{\lim_{n\to\infty}\frac{x_n}{2}+3} = \sqrt{\frac{x}{2}+3}
+\]
+
+Así pues, se cumple que \(x=\sqrt{\frac{x}{2}+3}\), y de ello se deduce
+
+\[
+x=\sqrt{\frac{x}{2}+3} \Rightarrow x^2=\frac{x}{2}+3 \Rightarrow x^2-3 = \frac{x}{2} \Rightarrow 2x^2-x-6 =0,\]
+
+y resolviendo la ecuación se tiene \(x=-3/2\) y \(x=2\). Como todos los
+términos de la sucesión son positivos, es imposible que converja a
+\(-3/2\), y por tanto la rentabilidad del bono converge al \(2\)\%.
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exr-4}{}}%
+\begin{exercise}[]\label{exr-4}
+
+Demostrar, usando la definición de límite, que
+\(\lim_{x\to 1}\frac{3x+1}{2}=2\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, colback=white, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, coltitle=black, opacityback=0, arc=.35mm, rightrule=.15mm, bottomrule=.15mm]
+Para cualquier \(\varepsilon>0\) existe
+\(\delta=\frac{2}{3}\varepsilon\), tal que si
+\(|x-1|<\delta=\frac{2}{3}\varepsilon\) se tiene
+
+\[
+\left|\frac{3x+1}{2}-2\right|= \left|\frac{3x+1-4}{2}\right| = \left|\frac{3x-3}{2}\right| = \left|\frac{3(x-1)}{2}\right| = \frac{3}{2}|x-1|< \frac{3}{2}\frac{2}{3}\varepsilon = \varepsilon.
+\]
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exr-5}{}}%
+\begin{exercise}[]\label{exr-5}
+
+Sabiendo que \(\lim_{x\to 0}(1+x)^{1/x}=e\), demostrar que las
+siguientes funciones son infinitésimos equivalentes en \(x=0\):
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  \(\ln(1+x)\) y \(x\).
+\item
+  \(e^x-1\) y \(x\).
+\end{enumerate}
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, colback=white, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, coltitle=black, opacityback=0, arc=.35mm, rightrule=.15mm, bottomrule=.15mm]
+Para que dos funciones \(f\) y \(g\) sean infinitésimos equivalentes en
+\(x=0\) se tiene que cumplir que \(\lim_{x\to 0}\frac{f(x)}{g(x)}=1\).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \begin{align*}
+  \lim_{x\to 0}\frac{\ln(1+x)}{x} &= \lim_{x\to 0}\frac{1}{x}\ln(1+x) = \lim_{x\to 0}\ln\left((1+x)^{1/x}\right)\\  
+  &= \ln\left(\lim_{x\to 0} (1+x)^{1/x}\right) = \ln(e) = 1.
+  \end{align*}
+\item
+  Haciendo uso del resultado anterior se tiene
+\end{enumerate}
+
+\[\lim_{x\to 0}\frac{e^x-1}{x} = \lim_{x\to 0}\frac{e^{\ln(x+1)}-1}{x} = \lim_{x\to 0}\frac{x+1-1}{x} = \lim_{x\to 0} \frac{x}{x} = \lim_{x\to 0} 1 = 1.\]
+\end{tcolorbox}
+
+\leavevmode\vadjust pre{\hypertarget{exr-6}{}}%
+\begin{exercise}[]\label{exr-6}
+
+Determinar las asíntotas de la función
+\(f(x)=\ln\left(\frac{1}{x}+1\right)x^2\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, breakable, toprule=.15mm, leftrule=.75mm, opacitybacktitle=0.6, left=2mm, colframe=quarto-callout-tip-color-frame, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, colback=white, toptitle=1mm, bottomtitle=1mm, titlerule=0mm, coltitle=black, opacityback=0, arc=.35mm, rightrule=.15mm, bottomrule=.15mm]
+El dominio de la función es
+\(\operatorname{Dom}(f) = \mathbb{R}-[-1,0]\) de modo que solo puede
+haber asíntotas verticales a la izquierda de \(-1\) o a la derecha de
+\(0\). Veamos primero, qué pasa con el límite por la izquierda en
+\(-1\).
+
+\[
+\lim_{x\to -1^-}f(x) = \lim_{x\to -1^-}\ln\left(\frac{1}{x}+1\right)x^2 = \ln\left(\frac{1}{-1}+1\right)(-1)^2 = \ln(0) = -\infty.
+\]
+
+Por tanto, \(f\) tiene una asíntota vertical por la izquierda en
+\(x=-1\).
+
+Veamos ahora, qué pasa con el límite por la derecha en \(0\).
+
+\begin{align*}
+\lim_{x\to 0^+}f(x) &= \lim_{x\to 0^+}\ln\left(\frac{1}{x}+1\right)x^2 = \lim_{x\to 0^+}\ln\left(\frac{x+1}{x}\right)x^2 \\ 
+&= \lim_{x\to 0^+} (\ln(x+1)-\ln(x))x^2 \\ 
+&= \lim_{x\to 0^+}\ln(x+1)x^2 - \lim_{x\to 0^+}\ln(x)x^2\\ 
+&= \ln(0+1)0^2 - \lim_{x\to 0^+}\frac{\ln(x)}{1/x^2} \\
+&= 0 - \lim_{x\to 0^+}\frac{(\ln(x))'}{(1/x^2)'} = -\lim_{x\to 0^+} \frac{1/x}{-2/x^3} = \tag{L'Hôpital}\\
+&= -\lim_{x\to 0^+} \frac{x^3}{-2x} = \lim_{x\to 0^+}\frac{x^2}{2} = 0.
+\end{align*}
+
+Por lo tanto, \(f\) no tiene asíntota vertical en \(x=0\).
+
+Para ver si hay asíntotas horizontales estudiamos los límites en el
+infinito.
+
+\begin{align*}
+\lim_{x\to \infty} f(x) &= \lim_{x\to \infty}\ln\left(\frac{1}{x}+1\right)x^2 = \lim_{x\to\infty} \frac{\ln(x^{-1}+1)}{x^{-2}}\\ 
+&= \lim_{x\to\infty} \frac{(\ln(x^{-1}+1))'}{(x^{-2})'} \tag{L'Hôpital} = \lim_{x\to\infty} \frac{\frac{1}{x^{-1}+1}(-1)x^{-2}}{-2x^{-3}}\\  
+&= \lim_{x\to \infty} \frac{x}{2(x^{-1}+1)} = \infty.
+\end{align*}
+
+Por tanto, \(f\) no tiene asíntota horizontal en \(\infty\). Veamos
+ahora qué ocurre en \(-\infty\).
+
+\begin{align*}
+\lim_{x\to -\infty} f(x) &= \lim_{x\to -\infty}\ln\left(\frac{1}{x}+1\right)x^2 = \lim_{x\to -\infty} \frac{\ln(x^{-1}+1)}{x^{-2}}\\ 
+&= \lim_{x\to -\infty} \frac{(\ln(x^{-1}+1))'}{(x^{-2})'} \tag{L'Hôpital} = \lim_{x\to -\infty} \frac{\frac{1}{x^{-1}+1}(-1)x^{-2}}{-2x^{-3}}\\ 
+&= \lim_{x\to -\infty} \frac{x}{2(x^{-1}+1)} = -\infty.
+\end{align*}
+
+Luego, \(f\) tampoco tiene asíntota vertical en \(-\infty\).
+
+Finalmente, veamos si \(f\) tiene asíntotas oblicuas.
+
+\begin{align*}
+\lim_{x\to \infty} \frac{f(x)}{x} &= \lim_{x\to \infty}\frac{\ln\left(\frac{1}{x}+1\right)x^2}{x} = \lim_{x\to \infty}\ln\left(\frac{1}{x}+1\right)x \\
+&= \lim_{x\to \infty} \ln\left(\left(\frac{1}{x}+1\right)^x\right) = \ln\left(\lim_{x\to \infty} \left(\frac{1}{x}+1\right)^x\right)\\ 
+&= \ln(e)=1
+\end{align*}
+
+Por tanto, \(f\) tiene asíntota vertical en \(\infty\) con pendiente
+\(b=1\). Para obtener el término independiente de la asíntota,
+calculamos el siguiente límite.
+
+\begin{align*}
+\lim_{x\to \infty} f(x)-x &= \lim_{x\to \infty}\ln\left(\frac{1}{x}+1\right)x^2-x\\  
+&= \lim_{x\to \infty}(\ln(x^{-1}+1)x-1)x \\
+&= \lim_{x\to \infty}\frac{\ln(x^{-1}+1)x-1}{x^{-1}}\\  
+&=  \lim_{x\to \infty}\frac{(\ln(x^{-1}+1)x-1)'}{(x^{-1})'} \tag{L'Hôpital} \\
+&= \lim_{x\to \infty}\frac{\frac{-1}{(x^{-1}+1)x^2}x+\ln(x^{-1}+1)}{(-1)x^{-2}}\\ 
+&= \lim_{x\to \infty}\frac{\frac{-1}{(x+1)}+\ln(x^{-1}+1)}{-x^{-2}} \\
+&= \lim_{x\to \infty}\frac{\left(\frac{-1}{(1+x)}+\ln(x^{-1}+1)\right)'}{(-x^{-2})'}\\ 
+&= \lim_{x\to \infty}\frac{\frac{1}{(x+1)^2}-\frac{1}{(x^{-1}+1)x^2}}{2x^{-3}}\tag{L'Hôpital}\\ 
+&= \lim_{x\to \infty}\frac{\frac{1}{(x+1)^2}-\frac{1}{(x+1)x}}{2x^{-3}} = \lim_{x\to \infty}\frac{\frac{-1}{(x+1)^2x}}{2x^{-3}} \\
+&= \lim_{x\to \infty}\frac{-x^3}{2(x^3+2x^2+x)} = \frac{-1}{2}
+\end{align*}
+
+Así pues, \(f\) tiene una asíntota oblicua \(y=x-\frac{1}{2}\) en
+\(\infty\).
+
+Del mismo modo se prueba que esta misma recta también es asíntota
+oblicua de \(f\) en \(-\infty\).
+\end{tcolorbox}
+
+
+
+\end{document}
