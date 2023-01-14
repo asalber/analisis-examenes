@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Exámenes de Análisis Matemático - 2&nbsp; Examen de Análisis I (Dic 2022)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./examen-2022-11-14.html" rel="prev">
+<link href="./img/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta property="og:title" content="Exámenes de Análisis Matemático - 2&nbsp; Examen de Análisis I (Dic 2022)">
+<meta property="og:site-name" content="Exámenes de Análisis Matemático">
+<meta name="twitter:title" content="Exámenes de Análisis Matemático - 2&nbsp; Examen de Análisis I (Dic 2022)">
+<meta name="twitter:site" content="@aprendeconalf">
+<meta name="twitter:card" content="summary">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Examen de Análisis I (Dic 2022)</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Exámenes de Análisis Matemático</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://aprendeconalf.es" title="" class="sidebar-tool px-1"><i class="bi bi-house-fill"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+            <i class="bi bi-bi-twitter pe-1"></i>
+          Twitter
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+            <i class="bi bi-bi-linkedin pe-1"></i>
+          LinkedIn
+          </a>
+        </li>
+    </ul>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-11-14.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Examen de Análisis I (Nov 2022)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-12-21.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Examen de Análisis I (Dic 2022)</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#primera-parte" id="toc-primera-parte" class="nav-link active" data-scroll-target="#primera-parte"><span class="toc-section-number">2.1</span>  Primera parte</a></li>
+  <li><a href="#segunda-parte" id="toc-segunda-parte" class="nav-link" data-scroll-target="#segunda-parte"><span class="toc-section-number">2.2</span>  Segunda parte</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Examen de Análisis I (Dic 2022)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">14 de noviembre de 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="primera-parte" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="primera-parte"><span class="header-section-number">2.1</span> Primera parte</h2>
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.1 </strong></span>La población de parásitos que infecta un árbol, en miles, evoluciona diariamente siguiendo la sucesión recursiva <span class="math inline">\(x_1=2\)</span> y <span class="math inline">\(x_{n+1}=1-(2+x_n)^{-1}\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>. Demostrar que la sucesión converge y calcular su límite.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El término recurrente de la sucesión puede escribirse de la siguiente manera</p>
+<p><span class="math display">\[
+x_{n+1}=1-(2+x_n)^{-1} = \frac{1+x_n}{2+x_n}\ \forall n\in\mathbb{N}.
+\]</span></p>
+<p>Veamos primero que la sucesión está acotada inferiormente por <span class="math inline">\(0\)</span> por inducción. <span class="math inline">\(x_1=2&gt;0\)</span>, y suponiendo <span class="math inline">\(x_n&gt;0\)</span> se tiene que <span class="math inline">\(x_{n+1} = \frac{1+x_n}{2+x_n} &gt;0\)</span> <span class="math inline">\(\forall n\in\mathbb{N}\)</span>.</p>
+<p>Veamos ahora que la sucesión es decreciente también por inducción. <span class="math inline">\(x_1 = 2 &lt; x_2 = 1-(2+2)^{-1} = 3/4\)</span>. Supongamos ahora que <span class="math inline">\(x_{n-1}&gt;x_n\)</span>, entonces</p>
+<p><span class="math display">\[
+\begin{gathered}
+x_{n-1}&gt;x_n \Leftrightarrow 2+x_{n-1} &gt; 2+x_n \Leftrightarrow (2+x_{n-1})^{-1} &lt; (2+x_n)^{-1} \\
+\Leftrightarrow 1-(2+x_{n-1})^{-1} &gt; 1-(2+x_n)^{-1} \Leftrightarrow x_{n}&gt;x_{n+1}\ \forall n\in\mathbb{N}.
+\end{gathered}
+\]</span></p>
+<p>Así pues, como la sucesión es monótona decreciente y está acotada inferiormente, según el <a href="https://aprendeconalf.es/analisis-manual/sucesiones.html#thm-convergencia-monotona">teorema de la convergencia monótona</a>, la sucesión converge.</p>
+<p>Para calcular el límite aprovechamos la recurrencia,</p>
+<p><span class="math display">\[
+x = \lim_{n\to\infty}x_n = \lim_{n\to\infty} \frac{1+x_{n-1}}{2+x_{n-1}} =\frac{1+\lim_{n\to\infty}x_{n-1}}{2+\lim_{n\to\infty}x_{n-1}} = \frac{1+x}{2+x},
+\]</span></p>
+<p>y resolviendo la ecuación se tiene</p>
+<p><span class="math display">\[
+x = \frac{1+x}{2+x} \Leftrightarrow x(2+x) = 1+x \Leftrightarrow x^2+x-1=0 \Leftrightarrow x = \frac{-1\pm \sqrt{5}}{2}.
+\]</span></p>
+<p>Como hemos visto que la sucesión está acotada inferiormente por <span class="math inline">\(0\)</span>, podemos descartar la solución negativa, de manera que, <span class="math inline">\(\lim_{n\to\infty}x_n = \frac{-1+ \sqrt{5}}{2}\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.2 </strong></span>En el siglo III A.C usó el método por agotamiento para calcular el área encerrada por una circunferencia. La idea consiste en inscribir la circunferencia en polígonos regulares con un número de lados cada vez mayor.</p>
+<p>El área de estos polígonos puede calcularse fácilmente descomponiendo los polígonos regulares en triángulos como en el siguiente ejemplo.</p>
+<div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/examen-2022-12-21/area-poligono-regular-inscrito.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Descomposición de un hexágono en triángulos</figcaption><p></p>
+</figure>
+</div>
+</div>
+<ol type="a">
+<li><p>Dar el término general de la sucesión <span class="math inline">\((a_n)_{n=3}^\infty\)</span> que expresa el área del polígono en función del número de lados <span class="math inline">\(n\)</span>.</p></li>
+<li><p>Calcular el límite de la sucesión.</p></li>
+</ol>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>Consideremos cada uno de los triángulos en los que se puede descomponer un polígono regular de <span class="math inline">\(n\)</span> lados.</li>
+</ol>
+<div>
+<p><img src="./img/examen-2022-12-21/area-triangulo.png" class="img-fluid"></p>
+</div>
+<p>Puesto que para un polígono de <span class="math inline">\(n\)</span> lados se obtienen <span class="math inline">\(n\)</span> triángulos iguales, se tiene que el ángulo <span class="math inline">\(\alpha=\frac{2\pi}{n}\)</span> de manera que <span class="math inline">\(\frac{\alpha}{2} = \frac{\pi}{n}\)</span>.</p>
+<p>Aplicando las razones trigonométricas de un triángulo rectángulo, se puede deducir que</p>
+<p><span class="math display">\[\begin{align*}
+\cos(\alpha/2) &amp;= \cos(\pi/n) = \frac{a}{r} \Rightarrow a = r\cos(\pi/n)\\
+\operatorname{sen}(\alpha/2) &amp;= \operatorname{sen}(\pi/n) = \frac{b}{r} \Rightarrow b = r\operatorname{sen}(\pi/n)
+\end{align*}\]</span></p>
+<p>Por tanto, el área del triángulo es</p>
+<p><span class="math display">\[
+\frac{a2b}{2} = ab= r^2\cos(\pi/n)\operatorname{sen}(\pi/n),
+\]</span></p>
+<p>y como hay <span class="math inline">\(n\)</span> triángulos idénticos en el polígono regular de <span class="math inline">\(n\)</span> lados, se tiene que el área del polígono es</p>
+<p><span class="math display">\[
+a_n  = n r^2\cos(\pi/n)\operatorname{sen}(\pi/n)
+\]</span></p>
+<ol start="2" type="a">
+<li><p>Calculamos ahora el límite de la sucesión</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{n\to\infty} a_n &amp;= \lim_{n\to\infty} n r^2\cos(\pi/n)\operatorname{sen}(\pi/n)\\
+&amp;= r^2 \lim_{n\to\infty}\cos(\pi/n)\lim_{n\to\infty}n\operatorname{sen}(\pi/n) \\
+&amp;= r^2 \cos(0)\lim_{n\to\infty}\pi\frac{n}{\pi}\operatorname{sen}(\pi/n) \\
+&amp;= \pi r^2 \lim_{n\to\infty}\frac{\operatorname{sen}(\pi/n)}{\pi/n} \\
+&amp;= \pi r^2 \lim_{\pi/n\to 0} \frac{\operatorname{sen}(\pi/n)}{\pi/n} = \pi r^2, \tag{$\operatorname{sen}(\pi/n)\approx \pi/n$}
+\end{align*}\]</span></p>
+<p>que efectivamente es el área del círculo de radio <span class="math inline">\(r\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.3 </strong></span>Sabiendo que <span class="math inline">\(\operatorname{sen}(x)\)</span> y <span class="math inline">\(x\)</span> son infinitésimos equivalentes en <span class="math inline">\(x=0\)</span>, demostrar que también lo son <span class="math inline">\(\operatorname{tg}(x)\)</span> y <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como <span class="math inline">\(\operatorname{sen}(x)\)</span> y <span class="math inline">\(x\)</span> son infinitésimos equivalentes en <span class="math inline">\(x=0\)</span>, se tiene que <span class="math inline">\(\lim_{x\to 0}\frac{\operatorname{sen}(x)}{x} = 1\)</span>.</p>
+<p>Para demostrar que <span class="math inline">\(\operatorname{tg}(x)\)</span> y <span class="math inline">\(x\)</span> también son infinitésimos equivalentes en <span class="math inline">\(x=0\)</span> calculamos el límite</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to 0}\frac{\operatorname{tg}(x)}{x} &amp;= \lim_{x\to 0}\frac{\frac{\operatorname{sen}(x)}{\cos(x)}}{x} = \lim_{x\to 0}\frac{1}{\cos(x)}\frac{\operatorname{sen}(x)}{x} \\
+&amp;= \lim_{x\to 0}\frac{1}{\cos(x)}\lim_{x\to 0}\frac{\operatorname{sen}(x)}{x} = \lim_{x\to 0}\frac{1}{\cos(x)} 1 = \frac{1}{\cos(0)} = 1.
+\end{align*}\]</span></p>
+<p>Por tanto, <span class="math inline">\(\operatorname{tg}(x)\)</span> y <span class="math inline">\(x\)</span> son infinitésimos equivalentes en <span class="math inline">\(x=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.4 </strong></span>Determinar el dominio y el tipo de asíntotas de la función</p>
+<p><span class="math display">\[f(x)=\sqrt{\frac{x^3}{4x-1}}.\]</span></p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Para que exista la raíz, el radicando debe ser positivo, es decir, <span class="math inline">\(\frac{x^3}{4x-1}\geq 0\)</span>. Es fácil ver que <span class="math inline">\(x^3\geq 0\Leftrightarrow x\geq 0\)</span> y <span class="math inline">\(4x-1\geq 0\Leftrightarrow x\geq 1/4\)</span> de manera que <span class="math inline">\(\frac{x^3}{4x-1}\geq 0\Leftrightarrow x\leq 0 \mbox{ o } x\geq 1/4\)</span>.</p>
+<p>Por otro lado, para que exista <span class="math inline">\(\frac{x^3}{4x-1}\)</span> el denominador no puede anularse, es decir <span class="math inline">\(4x-1\neq 0 \Leftrightarrow x\neq 1/4\)</span>. Por tanto, concluimos que el dominio de la función es <span class="math inline">\(\operatorname{Dom}(f)=(-\infty, 0]\cup (\frac{1}{4},\infty)\)</span>.</p>
+<p>Estudiamos ahora los tipos de asíntotas que tiene la función.</p>
+<p><strong>Asíntotas verticales</strong></p>
+<p>Los únicos puntos donde pueden existir asíntotas verticales son <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x=1/4\)</span>, así que calculamos los límites laterales en estos puntos.</p>
+<p><span class="math display">\[
+\lim_{x\to 0^-}f(x) = \lim_{x\to 0^-} \sqrt{\frac{x^3}{4x-1}} = \sqrt{\frac{0^3}{4\cdot 0-1}} = 0,
+\]</span></p>
+<p>y por tanto, <span class="math inline">\(f\)</span> no tiene asíntota vertical en <span class="math inline">\(x=0\)</span>.</p>
+<p><span class="math display">\[
+\lim_{x\to 1/4^+}f(x) = \lim_{x\to 1/4^+} \sqrt{\frac{x^3}{4x-1}} = \sqrt{\frac{(1/4)^3}{4(1/4)-1}} = \infty,
+\]</span></p>
+<p>y por tanto, <span class="math inline">\(f\)</span> tiene una asíntota vertical en <span class="math inline">\(x=1/4\)</span>.</p>
+<p><strong>Asíntotas horizontales</strong></p>
+<p>Para ver si hay asíntotas horizontales estudiamos los límites en <span class="math inline">\(\pm \infty\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to-\infty}f(x) &amp;=  \lim_{x\to-\infty} \sqrt{\frac{x^3}{4x-1}} = \lim_{x\to-\infty} \sqrt{\frac{\frac{x^3}{x}}{\frac{4x-1}{x}}} = \lim_{x\to-\infty} \sqrt{\frac{x^2}{4-\frac{1}{x}}} = \infty.\\
+\lim_{x\to\infty}f(x) &amp;=  \lim_{x\to\infty} \sqrt{\frac{x^3}{4x-1}} = \lim_{x\to\infty} \sqrt{\frac{\frac{x^3}{x}}{\frac{4x-1}{x}}} = \lim_{x\to\infty} \sqrt{\frac{x^2}{4-\frac{1}{x}}} = \infty.
+\end{align*}\]</span></p>
+<p>Por tanto, <span class="math inline">\(f\)</span> no tiene asíntotas horizontales.</p>
+<p><strong>Asíntotas oblicuas</strong></p>
+<p>Para ver si hay asíntotas oblicuas estudiamos los límites de <span class="math inline">\(f(x)/x\)</span> en <span class="math inline">\(\pm\infty\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to-\infty}\frac{f(x)}{x} &amp;=  \lim_{x\to-\infty} \frac{\sqrt{\frac{x^3}{4x-1}}}{x} = \lim_{x\to-\infty} \sqrt{\frac{x^3}{4x^3-x^2}} = \sqrt{\frac{1}{4}} = \frac{-1}{2}\\
+\lim_{x\to\infty}\frac{f(x)}{x} &amp;=  \lim_{x\to\infty} \frac{\sqrt{\frac{x^3}{4x-1}}}{x} = \lim_{x\to\infty} \sqrt{\frac{x^3}{4x^3-x^2}} = \sqrt{\frac{1}{4}} = \frac{1}{2}
+\end{align*}\]</span></p>
+<p>Por tanto, <span class="math inline">\(f\)</span> tiene asíntotas oblicuas tanto en <span class="math inline">\(-\infty\)</span> como en <span class="math inline">\(\infty\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.5 </strong></span>Dado el conjunto <span class="math inline">\(A=\{x\in\mathbb{R} : \frac{x^2-1}{x-2}\leq 0\}\)</span>, calcular, si existe, el supremo, ínfimo, máximo y mínimo. ¿Es un conjunto cerrado o abierto?</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A\)</span> puede expresarse con la unión de intervalos, ya que <span class="math inline">\(x^2-1\geq 0 \Leftrightarrow x^2\geq 1 \Leftrightarrow x\leq -1 \mbox{ o } x\geq 1\)</span>, y por otro lado, <span class="math inline">\(x-2\geq 0 \Leftrightarrow x\geq 2\)</span>, de manera que <span class="math inline">\(\frac{x^2-1}{x-2}\leq 0 \Leftrightarrow x\leq -1\)</span> o <span class="math inline">\(1\leq x&lt;2\)</span>, es decir, <span class="math inline">\(A=(-\infty,-1]\cup [1,2)\)</span>.</p>
+<p>Es fácil ver que <span class="math inline">\(A\)</span> está acotado superiormente y la menor de las cotas superiores es <span class="math inline">\(2\)</span>, por lo que el supremo es <span class="math inline">\(2\)</span>, pero como <span class="math inline">\(2\not\in A\)</span>, <span class="math inline">\(A\)</span> no tiene máximo.</p>
+<p>En cuanto al ínfimo, <span class="math inline">\(A\)</span> no está acotado inferiormente, de manera que no tiene ínfimo, y por tanto, tampoco mínimo.</p>
+<p><span class="math inline">\(A\)</span> no es abierto, ya que <span class="math inline">\(-1\in A\)</span>, pero <span class="math inline">\(-1\)</span> no es un punto interior de A, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el intervalo <span class="math inline">\((-1-\varepsilon,-1+\varepsilon)\)</span> contiene puntos de <span class="math inline">\(\overline{A}\)</span>.</p>
+<p>Por otro lado, <span class="math inline">\(A\)</span> tampoco es cerrado ya que <span class="math inline">\(\overline{A}=(-1,1)\cup [2,\infty)\)</span> no es abierto, pues <span class="math inline">\(2\in\overline{A}\)</span> pero no es un punto interior suyo, ya que para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> el intervalo <span class="math inline">\((2-\varepsilon,2+\varepsilon)\)</span> contiene puntos de <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="segunda-parte" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="segunda-parte"><span class="header-section-number">2.2</span> Segunda parte</h2>
+<div id="exr-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.6 </strong></span>Dar una aproximación de <span class="math inline">\(\ln(\sqrt{1/2})\)</span> usando un polinomio de Taylor de cuarto grado.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Para realizar la aproximación que se pide calcularemos el polinomio de Taylor de cuarto grado de la función <span class="math inline">\(f(x)=\ln(\sqrt{x})\)</span> en el punto <span class="math inline">\(1\)</span>, ya que el valor de la función y sus sucesivas derivadas en este punto son sencillas. La fórmula del polinomio de Taylor es</p>
+<p><span class="math display">\[
+P_{f,1}^4(x) = f(1)+f'(1)(x-1)+\frac{f''(1)}{2!}(x-1)^2+\frac{f'''(1)}{3!}(x-1)^3+\frac{f''''(1)}{4!}(x-1)^4.
+\]</span></p>
+<p>Así pues, calculamos hasta la cuarta derivada en <span class="math inline">\(1\)</span>:</p>
+<p><span class="math display">\[\renewcommand{\arraystretch}{1.5}
+\begin{array}{lll}
+f(x)=\ln(\sqrt{x})=\frac{1}{2}\ln(x) &amp; \quad &amp; f(1) = \frac{1}{2}\ln(1) = 0\\
+f'(x) = \frac{1}{2}x^{-1} &amp; &amp; f'(1) = \frac{1}{2}\\
+f''(x) = \frac{-1}{2}x^{2} &amp; &amp; f''(1) = \frac{-1}{2}\\
+f'''(x) = x^{-3} &amp; &amp; f'''(1) = 1\\
+f''''(x) = -3x^{-4} &amp; &amp; f''''(1) = -3
+\end{array}
+\]</span></p>
+<p>Y sustituyendo en la fórmula del polinomio de Taylor se tiene</p>
+<p><span class="math display">\[
+\begin{aligned}
+P_{f,1}^4(x) &amp;= 0+\frac{1}{2}(x-1)+\frac{-1/2}{2}(x-1)^2+\frac{1}{6}(x-1)^3+\frac{-3}{24}(x-1)^4\\
+&amp;= \frac{1}{2}(x-1)-\frac{1}{4}(x-1)^2+\frac{1}{6}(x-1)^3-\frac{1}{8}(x-1)^4. \end{aligned}
+\]</span></p>
+<p>Para aproximar <span class="math inline">\(\ln(\sqrt{1/2})\)</span> calculamos el polinomio en <span class="math inline">\(x=1/2\)</span>.</p>
+<p><span class="math display">\[
+P_{f,1}^4(1/2) = \frac{1}{2}\left(\frac{1}{2}-1\right)-\frac{1}{4}\left(\frac{1}{2}-1\right)^2+\frac{1}{6}\left(\frac{1}{2}-1\right)^3-\frac{1}{8}\left(\frac{1}{2}-1\right)^4 = -0.34114583.
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="exr-7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.7 </strong></span>La función <span class="math inline">\(h(x)=\dfrac{x^2-2x+a}{x^3+bx^2-6x}\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=2\)</span>. Calcular el valor de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, y clasificar el resto de discontinuidades.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Para que la función <span class="math inline">\(h(x)=\dfrac{x^2-2x+a}{x^3+bx^2-6x}\)</span> tenga una discontinuidad evitable en <span class="math inline">\(x=2\)</span>, debe cumplirse que <span class="math inline">\(\lim_{x\to 2}h(x)\neq h(2)\)</span>. Una manera de que esto se cumpla es que la función no esté definida en <span class="math inline">\(x=2\)</span> pero sí exista el límite en ese punto. Para que la función no esté definida en <span class="math inline">\(x=2\)</span> el denominador debe anularse, es decir,</p>
+<p><span class="math display">\[
+2^3+b2^2-6\cdot 2=0\Rightarrow 8+4b-12 =0 \Rightarrow b=1.
+\]</span></p>
+<p>Por otro lado, el límite en <span class="math inline">\(x=2\)</span> es</p>
+<p><span class="math display">\[
+\lim_{x\to 2}\frac{x^2-2x+a}{x^3+x^2-6x} = \frac{a}{0},
+\]</span></p>
+<p>de manera que, para que el límite exista, debe ser <span class="math inline">\(a=0\)</span>, y en tal caso,</p>
+<p><span class="math display">\[
+\lim_{x\to 2}\frac{x^2-2x}{x^3+x^2-6x} = \lim_{x\to 2}\frac{x(x-2)}{x(x-2)(x+3)} = \lim_{x\to 2}\frac{1}{x+3} = \frac{1}{5},
+\]</span></p>
+<p>y, por tanto, <span class="math inline">\(h(x)\)</span> tiene una discontinuidad evitable en <span class="math inline">\(x=2\)</span> como se pide.</p>
+<p>Como se trata de una función racional, será discontinua en los puntos que anulen el denominador, es decir <span class="math inline">\(x=-3\)</span>, <span class="math inline">\(x=0\)</span> y <span class="math inline">\(x=2\)</span>. Ya hemos visto que en <span class="math inline">\(x=2\)</span> hay una discontinuidad evitable y faltaría clasificar las otras dos discontinuidades.</p>
+<p>En <span class="math inline">\(x=-3\)</span> se tiene</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{x\to -3^-}\frac{x(x-2)}{x(x-2)(x+3)} &amp;= \lim_{x\to -3^-}\frac{1}{x+3} = -\infty,\\
+\lim_{x\to -3^+}\frac{x(x-2)}{x(x-2)(x+3)} &amp;= \lim_{x\to -3^+}\frac{1}{x+3} = \infty,
+\end{aligned}
+\]</span></p>
+<p>y, por tanto, <span class="math inline">\(h\)</span> tiene una discontinuidad de salto infinito en <span class="math inline">\(x=-3\)</span>.</p>
+<p>Finalmente en <span class="math inline">\(x=0\)</span> se tiene</p>
+<p><span class="math display">\[\lim_{x\to 0} \frac{x(x-2)}{x(x-2)(x+3)} = \lim_{x\to 0}\frac{1}{x+3} = \frac{1}{3},\]</span></p>
+<p>por lo que <span class="math inline">\(h\)</span> tiene otra discontinuidad evitable en <span class="math inline">\(x=0\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-8" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.8 </strong></span>El envoltorio de unas píldoras está formado por un cilindro con dos semiesferas en sus extremos, tal y como se aprecia en la imagen.</p>
+<p><img src="img/examen-2022-12-21/pildora.png" style="width:8cm;height:3cm"></p>
+<p>Si el contenido de las píldoras debe ser de <span class="math inline">\(0.15\)</span> ml, hallar las dimensiones de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> para que el material empleado en el envoltorio sea mínimo.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El volumen de una esfera de radio <span class="math inline">\(r\)</span> es <span class="math inline">\(v_e(r)=\frac{4}{3}\pi r^3\)</span> y el de un cilindro de radio <span class="math inline">\(r\)</span> y altura <span class="math inline">\(h\)</span> es <span class="math inline">\(v_c(r,h)=\pi r^2 h\)</span>, de modo que que el volumen de la píldora es <span class="math inline">\(v(r,h)=v_e(r)+v_c(r,h) = \frac{4}{3}\pi r^3 + \pi r^2 h\)</span>. Como el volumen de la píldora debe ser <span class="math inline">\(0.15\)</span> ml <span class="math inline">\(=0.15\)</span> cm<span class="math inline">\(^3\)</span>, imponiendo esta restricción, se tiene</p>
+<p><span id="eq-cont-01-gen-eq1"><span class="math display">\[
+v(r,h)=\frac{4}{3}\pi r^3 + \pi r^2 h = 0.15 \Leftrightarrow h = \frac{0.15-\frac{4}{3}\pi r^3}{\pi r^2}.
+\tag{2.1}\]</span></span></p>
+<p>Por otro lado, la superficie de una esfera de radio <span class="math inline">\(r\)</span> es <span class="math inline">\(s_e(r)=4\pi r^2\)</span> y la superficie del envolvente de un cilindro de radio <span class="math inline">\(r\)</span> y altura <span class="math inline">\(h\)</span> es, en realidad, la superficie de un rectángulo de lados <span class="math inline">\(2\pi r\)</span> y <span class="math inline">\(h\)</span>, es decir, <span class="math inline">\(s_c(r,h) = 2\pi r h\)</span>, de manera que la superficie de la píldora es <span class="math inline">\(s(r,h) = 4\pi r^2+2\pi r h\)</span>, pero sustituyendo el valor de <span class="math inline">\(h\)</span> que hemos obtenido de imponer la restricción del volumen se tiene,</p>
+<p><span class="math display">\[\begin{align*}
+s(r) &amp;= 4\pi r^2 + 2\pi r \left(\frac{0.15-\frac{4}{3}\pi r^3}{\pi r^2}\right) = 4\pi r^2 + \left(\frac{0.3-\frac{8}{3}\pi r^3}{r}\right)\\
+&amp;= 4\pi r^2 + \frac{0.3}{r} - \frac{8}{3}\pi r^2 = \frac{4}{3}\pi r^2+ \frac{0.3}{r},
+\end{align*}\]</span></p>
+<p>que es la función a optimizar.</p>
+<p>Para calcular el mínimo de la función, calculamos primero los puntos críticos.</p>
+<p><span class="math display">\[
+s'(r) = \frac{4}{3}\pi 2r -\frac{0.3}{r^2} =0 \Leftrightarrow \frac{8}{3}\pi r = \frac{0.3}{r^2} \Leftrightarrow r^3 = \frac{0.9}{8\pi} \Leftrightarrow r = \sqrt[3]{\frac{0.9}{8\pi}} \approx 0.3296 \mbox{cm}.
+\]</span></p>
+<p>Para ver si en este punto hay un mínimo aplicamos el <a href="https://aprendeconalf.es/analisis-manual/derivadas.html#thm-concavidad">criterio de la segunda derivada</a>.</p>
+<p><span class="math display">\[
+s''(r) = \frac{8}{3}\pi -\frac{0.3(-2)}{r^3} =\frac{8}{3}\pi+\frac{0.6}{r^3} &gt;0\ \forall r&gt;0.
+\]</span></p>
+<p>Por tanto, <span class="math inline">\(s\)</span> tiene un mínimo local en <span class="math inline">\(r=0.3296\)</span>, y la altura del la píldora con la mínima superficie será, utilizando la <a href="#eq-cont-01-gen-eq1">Ecuación&nbsp;<span>2.1</span></a>,</p>
+<p><span class="math display">\[h =\frac{0.15-\frac{4}{3}\pi 0.3296^3}{\pi 0.3296^2}\approx 0.\]</span></p>
+<p>Así pues, las dimensiones óptimas serían <span class="math inline">\(x=h=0\)</span> cm e <span class="math inline">\(y=2r=0.6592\)</span> cm, que en realidad es una esfera de diámetro <span class="math inline">\(0.6592\)</span> cm.</p>
+</div>
+</div>
+</div>
+<div id="exr-9" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.9 </strong></span>Demostrar que la función <span class="math inline">\(f(x)=\ln\left(k\left(x^2-2x+\frac{3}{2}\right)\right)\)</span> no puede tener más de una raíz en el intervalo <span class="math inline">\((0,1)\)</span> para cualquier valor de <span class="math inline">\(k\)</span>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(x^2-2x+\frac{3}{2}&gt;0\)</span> <span class="math inline">\(\forall x\in\mathbb{R}\)</span>, de manera que, para que exista la función <span class="math inline">\(f\)</span>, debe ser también <span class="math inline">\(k&gt;0\)</span> y, por tanto, aplicando propiedades de logaritmos se tiene, <span class="math inline">\(f(x)=\ln\left(k\left(x^2-2x+\frac{3}{2}\right)\right)= \ln(k)+\ln\left(x^2-2x+\frac{3}{2}\right)\)</span>.</p>
+<p>Por otro lado, como <span class="math inline">\(x^2-2x+\frac{3}{2}\)</span> es un polinomio, es continuo en todo <span class="math inline">\(\mathbb{R}\)</span>, y por tanto, <span class="math inline">\(f(x)\)</span> también es continua en todo <span class="math inline">\(\mathbb{R}\)</span>, siempre que <span class="math inline">\(k&gt;0\)</span>.</p>
+<p>Demostraremos que <span class="math inline">\(f\)</span> no puede tener más de una raíz en el intervalo <span class="math inline">\((0,1)\)</span> por reducción al absurdo. Supongamos que existen <span class="math inline">\(0 &lt; a &lt; b &lt; 1\)</span> tales que <span class="math inline">\(f(a)=f(b)=0\)</span>. Entonces, aplicando el <a href="https://aprendeconalf.es/analisis-manual/derivadas.html#thm-rolle">teorema de Rolle</a>, debe existir algún valor <span class="math inline">\(c\in(a,b)\)</span> tal que <span class="math inline">\(f'(c)=0\)</span>. Si calculamos los puntos críticos de <span class="math inline">\(f\)</span> se tiene</p>
+<p><span class="math display">\[
+f'(x) = \frac{2x-2}{x^2-2x+3/2} = 0 \Leftrightarrow 2x-2=0 \Leftrightarrow x=1,
+\]</span></p>
+<p>pero como <span class="math inline">\(1\not \in (a,b)\)</span>, llegamos a una contradicción ya que no existe ningún valor <span class="math inline">\(c\in(a,b)\)</span> con <span class="math inline">\(f'(c)=0\)</span>. Así pues, <span class="math inline">\(f\)</span> no puede tener más de una raíz en el intervalo <span class="math inline">\((0,1)\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-10" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2.10 </strong></span>Calcular las ecuaciones de las rectas tangente y normal a la gráfica de la curva implícita <span class="math inline">\(e^{x^2y}-\ln(\sqrt{x-y})= 0\)</span> en el punto <span class="math inline">\(x=0\)</span>.</p>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En primer lugar obtenemos los valores de <span class="math inline">\(y\)</span> que cumplen la ecuación de la curva implícita para <span class="math inline">\(x=0\)</span>. Sustituyendo en la ecuación se tiene</p>
+<p><span class="math display">\[\begin{gathered} e^{0^2y}-\ln(\sqrt{0-y})= 0 \Leftrightarrow 1-\ln(\sqrt{-y}) = 0 \Leftrightarrow \\
+\ln(\sqrt{-y}) = 1 \Leftrightarrow  \sqrt{-y} = e \Leftrightarrow y=-e^2. \end{gathered}\]</span></p>
+<p>Así pues, hay que calcular la ecuación de las rectas tangente y normal en el punto <span class="math inline">\((0,-e^2)\)</span>.</p>
+<p>Como la pendiente de la recta tangente es la tasa de variación instantánea, calculamos <span class="math inline">\(y'=\frac{dy}{dx}\)</span> implícitamente</p>
+<p><span class="math display">\[\begin{gathered} \left(e^{x^2y}-\ln(\sqrt{x-y})\right)'= 0' \Leftrightarrow \left(e^{x^2y}-\frac{1}{2}\ln(x-y)\right)'= 0 \Leftrightarrow \\
+e^{x^2y}(2xy+x^2y')-\frac{1}{2}\frac{1-y'}{x-y} = 0. \end{gathered}\]</span></p>
+<p>Sustituyendo en <span class="math inline">\(x=0\)</span> y <span class="math inline">\(y=-e^2\)</span>, se tiene</p>
+<p><span class="math display">\[\begin{gathered} e^{0^2(-e^2)}(2\cdot0(-e^2)+0^2y')-\frac{1}{2}\frac{1-y'}{0-(-e^2)} = 0 \\
+\Leftrightarrow \frac{-(1-y')}{2e^2} =0 \Leftrightarrow 1-y' = 0 \Leftrightarrow y'=1. \end{gathered}\]</span></p>
+<p>Por tanto, la ecuación de la recta tangente a la curva en <span class="math inline">\((0,-e^2)\)</span> es</p>
+<p><span class="math display">\[y = y_0 + \frac{dy}{dx}(x_0,y_0) (x-x_0) = (-e^2)+1(x-0) = x-e^2.\]</span></p>
+<p>Y la ecuación de la recta normal a la curva en <span class="math inline">\((0,-e^2)\)</span> es</p>
+<p><span class="math display">\[y = y_0 - \frac{1}{\frac{dy}{dx}(x_0,y_0)} (x-x_0) = (-e^2)-1(x-0) = -x-e^2.\]</span></p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./examen-2022-11-14.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Examen de Análisis I (Nov 2022)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
