@@ -1,0 +1,170 @@
+---
+title: Examen de Análisis II (Marzo 2023)
+lang: es
+date: 2023-03-11
+---
+
+:::{#exr-1}
+Estudiar la convergencia de las siguientes series
+
+a. $\displaystyle \sum \frac{3n^2+2n}{\sqrt{n^5+n}}$
+
+a. $\displaystyle \sum \cos(n\pi)n^2e^{-n}$
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a. Se trata de una serie de términos positivos en la que el término dominante en el numerador es $3n^2$ y el término dominante en el denominador es $n^{5/2}$, por lo que podemos utilizar el [criterio del cociente](https://aprendeconalf.es/analisis-manual/08-series.html#thm-criterio-cociente) para compararla con las serie $\sum \frac{3n^2}{n^{5/2}}$. 
+
+    \begin{align*}
+    \lim_{n\to\infty} \frac{\frac{3n^2+2n}{\sqrt{n^5+n}}}{\frac{3n^2}{n^{5/2}}} 
+    &= \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \frac{\sqrt{n^5+n}}{\sqrt{n^5}} 
+    = \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \lim_{n\to\infty}\frac{\sqrt{n^5+n}}{\sqrt{n^5}} = 1
+    \end{align*}
+
+    Por tanto, la serie $\sum \frac{3n^2+2n}{\sqrt{n^5+n}}$ tiene el mismo comportamiento que la serie $\sum \frac{3n^2}{n^{5/2}}$, y como $\sum \frac{3n^2}{n^{5/2}} = 3\sum \frac{1}{n^{1/2}}$ es una serie $p$ con $p<1$, diverge, por lo que la serie $\sum \frac{3n^2+2n}{\sqrt{n^5+n}}$ también diverge.
+
+b. Se trata de una serie alternada ya que $\sum \cos(n\pi)n^2e^{-n} = \sum (-1)nn^2e^{-n}$ por lo que aplicando el [criterio de la serie alternada](https://aprendeconalf.es/analisis-manual/08-series.html#thm-criterio-serie-alternada), como $n^2 e^{-n}$ es monótona decreciente para $n\geq 2$ y 
+
+    $$
+    \lim_{n\to\infty} n^2 e^{-x} 
+    = \lim_{n\to\infty} \frac{n^2}{e^x} 
+    = \lim_{n\to\infty} \frac{2n}{e^x} 
+    = \lim_{n\to\infty} \frac{2}{e^x}
+    = 0, \tag{L'Hôpital}
+    $$
+
+    se concluye que la serie $\sum \cos(n\pi)n^2e^{-n}$ converge. 
+:::
+
+:::{#exr-2}
+Un pozo de petróleo produce 200 mil litros de petróleo el primer año de su explotación, pero cada año que pasa la producción decae un 12\%. Calcular la cantidad de petróleo extraída tras $n$ años de actividad. ¿Qué cantidad total de petróleo se extraerá del pozo hasta agotarlo?
+:::
+
+
+:::{.callout-tip collapse="true"}
+## Solución
+La producción anual evoluciona según la sucesión
+
+\begin{align*}
+a_1 &= 200\\
+a_2 &= a_1(1-0.12) = 200\cdot 0.88\\
+a_3 &= a_20.88 = 200\cdot 0.88^2\\
+\vdots\\
+a_n &= 200\cdot 0.88^{n-1}
+\end{align*}
+
+por lo que la producción acumulada viene dada por la serie $\sum 200\cdot 0.88^{n-1}$ que es una serie geométrica de razón $0.88$. Así pues, la cantidad de petróleo extraída tras $n$ años es 
+
+$$
+A_n = \sum_{i=0}^{n-1} 200\cdot 0.88^i = 200 \frac{1-0.88^n}{1-0.88},
+$$
+
+y la cantidad total de petróleo que se extraerá del pozo hasta agotarlo viene dada por la suma 
+
+$$
+\sum_{n=0}^\infty 200\cdot 0.88^n = \frac{200}{1-0.88} \approx 1666.6667 \mbox{ mil litros}.
+$$
+:::
+
+:::{#exr-3}
+Determinar el dominio de convergencia puntual de la serie de potencias 
+
+$$
+\sum \frac{n(x-3)^n}{(n+1)4^n}
+$$
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Para determinar el radio de convergencia de la serie de potencias podemos usar el [criterio de la raíz](https://aprendeconalf.es/analisis-manual/08-series.html#thm-radio-convergencia-raiz), que establece que 
+
+$$
+R = \frac{1}{\lim_{n\to\infty} \sqrt[n]{|c_n|}}
+$$
+
+Como
+
+
+\begin{align*}
+\lim_{n\to\infty} \sqrt[n]{|c_n|} = \lim_{n\to\infty} \sqrt[n]{\frac{n}{(n+1)4^n}} = \lim_{n\to\infty} \frac{1}{4} \sqrt[n]{\frac{n}{(n+1)}} = \frac{1}{4},
+\end{align*}
+
+se concluye que $R = \frac{1}{1/4} = 4$, de manera que la serie converge para $|x-3|<4$, es decir, en el intervalo $(-1,7)$.
+
+Veamos ahora si la serie converge en los extremos del intervalo.
+
+En $x=7$ se tiene la serie $\sum \frac{n4^n}{(n+1)4^n} = \sum \frac{n}{n+1}$, que diverge al ser $\lim_{n\to\infty} \frac{n}{n+1} = 1 \neq 0$.
+
+Y en $x=-1$ se tiene la serie $\sum \frac{n(-4)^n}{(n+1)4^n} = \sum (-1)^n\frac{n}{n+1}$, que es una serie alternada, pero también diverge al ser $\left(\frac{n}{n+1}\right)_{n=1}^\infty$ una sucesión monótona creciente.
+
+Por tanto, el dominio de convergencia puntual de la serie de potencias es $\mathcal{C}=(-1,7)$.
+:::
+
+:::{#exr-4}
+Calcular la serie de Taylor de la función $f(x)=\frac{1}{x}$ en $a=1$. ¿Cuál es su dominio de convergencia puntual?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Calculamos las primeras derivadas para obtener la expresión de la derivada de orden $n$. 
+
+\begin{align*}
+f(x) &= \frac{1}{x} = x^{-1} & f(1) &= 1^{-1} = 1,\\
+f'(x) &= (-1)x^{-2} & f'(1) &= (-1)1^{-2} = -1,\\
+f''(x) &= 2x^{-3} & f''(1) &= 2\cdot 1^{-3} = 2,\\
+f'''(x) &= (-1)3!x^{-4} & f'''(1) &= (-1)3! 1^{-4} = -3!,\\
+\vdots
+f^{(n)}(x) &= (-1)^{n+1}n!x^{-(n+1)} & f^{(n)}(1) &= (-1)^{n+1}n!
+\end{align*}
+
+Así pues, sustituyendo en la [fórmula de la serie de Taylor](https://aprendeconalf.es/analisis-manual/08-series.html#def-serie-taylor) se obtiene la serie 
+
+$$
+\sum \frac{f^{n}(1)}{n!}(x-1)^n = \sum \frac{(-1)^{n+1}n!}{n!}(x-1)^n = \sum (-1)^{n+1}(x-1)^n.
+$$
+
+Su radio de convergencia puntual se obtiene fácilmente mediante el criterio de la razón 
+
+$$
+R = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right| = \lim_{n\to\infty} \left|\frac{(-1)^{n+1}}{(-1)^{n+2}}\right| = 1,
+$$
+
+por lo que la serie converge en $|x-1|<1$, es decir, en el intervalo $(0,2)$. 
+Veamos ahora si converge en los extremos. 
+
+En $x=0$ se tiene la serie $\sum (-1)^{n+1}(-1)^n = \sum (-1)^{2n+1} = \sum -1$ que diverge, mientras que en $x=2$ se tiene la serie $\sum (-1)^{n+1}1^n = \sum (-1)^{n+1}$ que también diverge ya que no existe el límite $\lim_{n\to\infty} (-1)^{n+1}$.
+
+Así pues, se concluye que el dominio de convergencia puntual de la serie de Taylor es  $\mathcal{C}=(0,2)$.
+:::
+
+:::{#exr-5}
+Calcular la integral superior de Riemann de la función $f(x)=2x^3+3x$ en el intervalo $[0,2]$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Si dividimos el intervalo $[0,2]$ en $n$ subintervalos de igual amplitud, obtenemos la partición $P_n=\{x_0=0,x_1,\ldots,x_n=2\}$ con $x_i=\frac{2i}{n}$ para $i=1,\ldots,n$.
+
+Como la función $f(x)=2x^3+3x$ es creciente en el intervalo $[0,2]$ el máximo de $f$ en cada subintervalo $(x_{i-1},x_i)$ se alcanzará en el extremo superior, de manera que la suma superior de Riemann de $f$ respecto de $P_n$ es
+
+\begin{align*}
+S(f,P_n) 
+&= \sum_{i=1}^n f(x_i)(x_i-x_{i-1}) 
+=  \sum_{i=1}^n \left(2\left(\frac{2i}{n}\right)^3 + 3\frac{2i}{n}\right) \frac{2}{n} \\
+&= \sum_{i=1}^n \left(\frac{16i^3}{n^3} + \frac{6i}{n}\right) \frac{2}{n} 
+= \frac{32}{n^4}\sum_{i=1}^n i^3 + \frac{12}{n^2} \sum_{i=1}^n i \\
+&= \frac{32}{n^4}\left(\frac{n(n+1)}{2}\right)^2 + \frac{12}{n^2} \frac{n(n+1)}{2} =  \frac{32}{n^4}\frac{n^4+2n^3+n^2}{4} + 6 \frac{n+1}{n} \\
+&= 8\frac{n^4+2n^3+n^2}{n^4} + 6 \frac{n+1}{n}.
+\end{align*}
+
+Así pues, la integral superior de Riemann es
+
+\begin{align*}
+\overline{\int_0^2}f 
+&= \lim_{n\to\infty} S(f,P_n) 
+= \lim_{n\to\infty} 8\frac{n^4+2n^3+n^2}{n^4} + 6 \frac{n+1}{n} \\
+&= 8 \lim_{n\to\infty} \frac{n^4+2n^3+n^2}{n^4} + 6 \lim_{n\to\infty}\frac{n+1}{n} 
+= 8 + 6 = 14.
+\end{align*}
+:::

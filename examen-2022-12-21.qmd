@@ -3,7 +3,7 @@ lang: es
 date: 2022-11-14
 ---
 
-# Examen de Análisis I (Dic 2022)
+# Examen de Análisis I (Diciembre 2022)
 
 ## Primera parte
 

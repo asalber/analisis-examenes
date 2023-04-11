@@ -1,9 +1,8 @@
 ---
+title: Examen de Análisis I (Noviembre 2022)
 lang: es
 date: 2022-11-14
 ---
-
-# Examen de Análisis I (Nov 2022)
 
 :::{#exr-1}
 Calcular los puntos de acumulación del conjunto $A=[0,1]\cup \left\{\frac{n}{n-1}: n\in\mathbb{N}, n\geq 2\right\}$. ¿Es un conjunto cerrado? ¿Y abierto?
