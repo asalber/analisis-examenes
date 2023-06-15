@@ -1,0 +1,282 @@
+---
+title: 2023-06-01 <br>Examen de Análisis II
+lang: es
+date: 2023-06-01
+---
+
+## Primera parte
+
+:::{#exr-1}
+Calcular las siguientes sumas si existen
+
+a.  $\displaystyle \sum_{n=2}^\infty \frac{2}{n^2-1}$.
+
+a.  $\displaystyle\sum_{n=1}^\infty (-1)^n \frac{\sqrt{n}}{\ln(n)}$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  $\displaystyle \sum_{n=2}^\infty \frac{2}{n^2-1}$ es una serie $p$ con $p>1$ por lo que la serie converge, pero para calcular su suma vamos a reescribir el término general como suma de fracciones simples. 
+
+    $$
+    \sum_{n=2}^\infty \frac{2}{n^2-1} 
+    = \sum_{n=2}^\infty \frac{2}{(n+1)(n-1)} 
+    = \sum_{n=2}^\infty \frac{1}{n-1}-\frac{1}{n+1},
+    $$
+
+    que es una serie telescópica, de manera que 
+
+    $$
+    \sum_{n=2}^\infty \frac{2}{n^2-1} = 1 +\frac{1}{2}+ \lim_{n\to\infty}\frac{2}{n^2-1} = \frac{3}{2}.
+    $$
+
+a. $\displaystyle\sum_{n=1}^\infty (-1)^n \frac{\sqrt{n}}{\ln(n)}$ es una serie alternada, pero 
+
+    \begin{align*}
+    \lim_{n\to\infty} \frac{\sqrt{n}}{\ln(n)} 
+    &= \lim_{n\to\infty} \frac{\frac{1}{2\sqrt{n}}}{\frac{1}{n}} \tag{L'Hôpital}\\
+    &= \lim_{n\to\infty} \frac{n}{2\sqrt{n}} 
+    = \infty,
+    \end{align*}
+
+    por lo que la serie diverge.
+:::
+
+:::{#exr-2}
+Considérese el conjunto de Cantor que resulta de ir eliminando del intervalo $[0,10]$, de manera recursiva, el $80\%$ central de los intervalos restantes. El procedimiento sería el siguiente:
+
+- Etapa 1: Se elimina el intervalo $(1,9)$.
+- Etapa 2: Se eliminan los intervalos $(0.1,0.9)$ y $(9.1,9.9)$.
+- Etapa 3: Se eliminan los intervalos $(0.01,0.09)$, $(0.91,0.99)$, $(9.01,9.09)$ y $(9.91,9.99)$.
+- ... 
+
+¿Cuál es la longitud total de los intervalos eliminados? 
+:::
+
+
+:::{.callout-tip collapse="true"}
+## Solución
+En la primera etapa se elimina el intervalo $(1,9)$, que tiene longitud $8$.
+En la segunda etapa se eliminan $2$ intervalos, $(0.1,0.9)$ y $(9.1,9.9)$, ambos con amplitud $0.8$, y por tanto, la longitud de los intervalos eliminados es $2\cdot 0.8$. 
+En la tercera etapa se eliminan $4$ intervalos, $(0.01,0.09)$, $(0.91,0.99)$, $(9.01,9.09)$ y $(9.91,9.99)$, ambos con amplitud $0.08$, y por tanto, la longitud de los intervalos eliminados es $4\cdot 0.08$.
+En general, en la etapa $n$ se eliminan $2^{n-1}$ intervalos, todos con amplitud $\frac{8}{10^{n-1}}$, y por tanto, la longitud de los intervalos eliminados es $2^{n-1}\frac{8}{10^{n-1}}$. Así pues, la suma de las longitudes de los intervalos eliminados viene dada por la serie 
+
+$$
+\sum_{n=1}^\infty 2^{n-1}\frac{8}{10^{n-1}} 
+= \sum_{n=0}^\infty 2^n\frac{8}{10^n} 
+= 8\sum_{n=0}^\infty \left(\frac{2}{10}\right)^n,
+$$
+
+que es una serie geométrica de razón $\frac{2}{10}<1$, por lo que que converge y su suma vale
+
+$$
+8\sum_{n=0}^\infty \left(\frac{2}{10}\right)^n 
+= 8 \frac{1}{1-\frac{2}{10}} 
+= 8 \frac{10}{8} 
+= 10.
+$$
+:::
+
+:::{#exr-3}
+La distribución de Borel de parámetro $\mu\geq 0$ es una distribución de probabilidad discreta con recorrido $\mathbb{N}$ y función de probabilidad 
+ñ
+$$
+f(n) = \frac{(\mu n)^{n-1}}{e^{\mu n}n!}\ \forall n\in\mathbb{N}, 
+$$
+
+¿Para qué valores de $\mu$ la serie $\sum f(n)$ es absolutamente convergente?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Para estudiar la convergencia absoluta de la serie $\sum_{n=1}^\infty \frac{(\mu n)^{n-1}}{e^{\mu n}n!}$, aplicamos el criterio de la razón.
+
+\begin{align*}
+\lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right| 
+&= \lim_{n\to\infty} \frac{\frac{(\mu(n+1))^n}{e^{\mu(n+1)}(n+1)!}}{\frac{(\mu n)^{n-1}}{e^{\mu n}n!}}
+= \lim_{n\to\infty} \frac{\mu^n (n+1)^n e^{\mu n}n!}{\mu^{n-1}n^{n-1}e^{\mu(n+1)}(n+1)!} \\
+&= \lim_{n\to\infty} \frac{\mu (n+1)(n+1)^{n-1} e^{\mu n}n!}{n^{n-1}e^{\mu}e^{\mu n}(n+1)n!} 
+= \lim_{n\to\infty} \frac{\mu}{e^\mu}\left(\frac{n+1}{n}\right)^{n-1}\\
+&= \frac{\mu}{e^\mu}\lim_{n\to\infty} \left(1+\frac{1}{n}\right)^{n-1} 
+= \frac{\mu}{e^\mu} e 
+= \frac{\mu}{e^{\mu-1}}. 
+\end{align*}
+
+Como $\frac{mu}{e^{\mu-1}} < 1 \Leftrightarrow \mu < e^{\mu-1}$, es cierto para cualquier $\mu\geq 0$ excepto para $\mu=1$, la serie converge absolutamente $\forall \mu\geq 0$, $\mu\neq 1$. Para $\mu=1$ el criterio de la razón no es concluyente.
+:::
+
+:::{#exr-4}
+Calcular la integral inferior de Riemann de la parábola $f(x)=3x^2+2x$ en el intervalo $[0,10]$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Si dividimos el intervalo $[0,1]$ en $n$ subintervalos de igual amplitud obtenemos la partición $P_n=\{x_0=0, x_1,\ldots, x_n=10\}$ con $x_i=\frac{10i}{n}$ $\forall i=1,\ldots, n$.
+Como la función $f(x)=3x^2+2x$ es creciente en el intervalo $[0,10]$, el mínimo de $f$ en cada subintervalo $[x_{i-1},x_i]$ se alcanzará en el extremo inferior, de manera que la suma inferior de Riemann de $f$ con respecto a $P_n$ es 
+
+\begin{align*}
+s(f,P_n) 
+&= \sum_{i=1}^n f(x_{i-1})(x_i-x_{i-1}) \\
+&= \sum_{i=1}^n \left(3\left(\frac{10(i-1)}{n}\right)^2 + 2\left(\frac{10(i-1)}{n}\right)\right)\frac{10}{n} \\
+&= \frac{10}{n}\left(\sum_{i=1}^n \frac{300}{n^2}(i-1)^2 + \sum_{i=1}^n \frac{20}{n} (i-1)\right) \\
+&= \frac{3000}{n^3} \sum_{i=1}^n (i-1)^2 + \frac{200}{n^2} \sum_{i=1}^n (i-1) \\
+&= \frac{3000}{n^3} \sum_{i=1}^n i^2+2i+1 + \frac{200}{n^2} \sum_{i=1}^n (i-1) \\
+&= \frac{3000}{n^3} \left(\sum_{i=1}^n i^2 - 2\sum_{i=1}^n i + \sum_{i=1}^n 1\right) + \frac{200}{n^2} \left(\sum_{i=1}^n i - \sum_{i=1}^n 1\right) \\
+&= \frac{3000}{n^3} \left(\frac{n(n+1)(2n+1)}{6} -2 \frac{n(n+1)}{2} + n\right) + \frac{200}{n^2} \left(\frac{n(n+1)}{2} -n\right) \\
+&= \frac{3000}{n^3} \left(\frac{n^3}{3}+\frac{n^2}{2}+\frac{n}{6}-n^2-n+n\right) + \frac{200}{n^2} \left(\frac{n^2}{2}+\frac{n}{2}-n\right) \\
+&= 500 \left(\frac{2n^3-3n^2+n}{n^3}\right) + 100 \left(\frac{n^2-n}{n^2}\right).
+\end{align*}
+
+Y la integral inferior de Riemann es
+
+\begin{align*}
+\underline{\int_0^{10}} f 
+&= \lim_{n\to\infty} s(f,P_n) 
+= \lim_{n\to\infty} 500 \left(\frac{2n^3-3n^2+n}{n^3}\right) + 100 \left(\frac{n^2-n}{n^2}\right) \\
+&= 500  \lim_{n\to\infty} \left(\frac{2n^3-3n^2+n}{n^3}\right) + 100 \lim_{n\to\infty} \left(\frac{n^2-n}{n^2}\right) \\
+&= 500\cdot 2 + 100 = 1100.
+\end{align*}
+:::
+
+## Segunda parte
+
+:::{#exr-5}
+La función $f(t)=50\sqrt{t/2}+100$ da los ingresos de una empresa en miles de euros $t$ años después de su creación, mientras que la función $g(t)=\ln(t^2+1)+100$ da los gastos. Calcular el beneficio acumulado de la empresa entre el quinto y el décimo año. 
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Para obtener el beneficio acumulado de la empresa ente el quinto y décimo año tenemos que calcular la integral definida de la función de los ingresos menos la de los gastos en el intervalo $[5,10]$, es decir,
+
+\begin{align*}
+\int_5^{10} f(t)-g(t) \,dt 
+&= \int_5^{10} 50 \sqrt{t/2} + 100 - \ln(t^2+1)-100\,dt \\
+&= \frac{50}{\sqrt{2}}\int_5^{10} t^{1/2} \,dt - \int_5^{10}  \ln(t^2+1)\, dt.
+\end{align*}
+
+Vamos a calcular estas dos integrales por separado.
+
+\begin{align*}
+\int_5^{10} t^{1/2}\,dt =  \left[\frac{t^{3/2}}{3/2}\right]_0^{10} = \frac{2}{3}(10^{3/2}-5^{3/2}) \approx 13.6283.
+\end{align*}
+
+y
+
+\begin{align*}
+\int_5^{10}  \ln(t^2+1)\,dt 
+&= [t \ln(t^2+1)]_5^{10} - \int_5^{10} t \frac{2t}{t^2+1}\,dt \tag{Partes}\\
+&= [t \ln(t^2+1)]_5^{10} - 2\int_5^{10} 1 - \frac{1}{t^2+1}\,dt\\
+&=  [t \ln(t^2+1)]_5^{10} - [2t]_5^{10} + [2\operatorname{arctg}(t)]_5^{10} \\
+&= 10\ln(10^2+1)-5\ln(5^2+1) -2\cdot 10+2\cdot 5 + 2\operatorname{arctg}(10)- 2\operatorname{arctg}(5) \\
+&\approx 20.0562.
+\end{align*}
+
+Así pues el beneficio acumulado es 
+
+$$
+\int_5^{10} f(t)-g(t) \,dt \approx \frac{50}{\sqrt{2}} \cdot 13.6283 - 20.0562  = 461.7768  \mbox{ miles de €}.
+$$
+:::
+
+:::{#exr-6}
+Calcular el área de región encerrada por la curva polar $r=2\cos(\theta)\operatorname{sen}(\theta)$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+La función $r=2\cos(\theta)\operatorname{sen}(\theta)$ tiene periodo $\pi$, pero para describir la curva completa es necesario que $\theta$ recorra la circunferencia entera, por lo que el intervalo de integración es $[0,2\pi]$ y, por tanto, para calcular el [área encerrada por esta curva polar](https://aprendeconalf.es/analisis-manual/09-integrales.html#c%C3%A1lculo-del-area-encerrada-por-una-curva-en-coordenadas-polares) tenemos que calcula la siguiente integral.
+
+\begin{align*}
+\int_0^{2\pi} \frac{r^2}{2}\,d\theta 
+&= \frac{1}{2}\int_0^{2\pi} 2\cos(\theta)\operatorname{sen}(\theta)\,d\theta \\
+&= \frac{1}{2}\int_0^{2\pi} \operatorname{sen}(2\theta)^2\,d\theta 
+= \frac{1}{4} \int_0^{4\pi} \operatorname{sen}(x)^2\,dx \tag{Cambio $x=2\theta$}\\
+&= \frac{1}{4} \int_0^{4\pi} \frac{1-\cos(2x)}{2}\,dx 
+= \frac{1}{8} \int_0^{4\pi}\,dx -\int_0^{4\pi} \cos(2x)\,dx \\
+&= \frac{1}{8}\left([x]_0^{4\pi}-\left[\frac{1}{2}\operatorname{sen}(2x)\right]_0^{4\pi}\right) \\
+&=\frac{1}{8}4\pi = \frac{\pi}{2}.
+\end{align*}
+:::
+
+:::{#exr-7}
+Calcular el volumen del depósito generado al rotar alrededor del eje $y$ la gráfica de la función $f(x)=(x-1)^2$ con $0\leq x\leq 3$. Plantear la integral para obtener la cantidad de chapa necesaria para su construcción, sin llegar a calcularla.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Para calcular el volumen del sólido de revolución generado al rotar alrededor del eje $y$ la gráfica de la función $f(x)=(x-1)^2$ en el intervalo $[0,3]$ utilizaremos [envoltorios cilíndricos](https://aprendeconalf.es/analisis-manual/09-integrales.html#c%C3%A1lculo-de-vol%C3%BAmenes-de-s%C3%B3lidos-de-revoluci%C3%B3n-con-envoltorios-cil%C3%ADndricos), de manera que el volumen viene dado por la integral
+
+\begin{align*}
+\int_0^3 2\pi xf(x)\,dx
+&= 2\pi \int_0^3 x(x-1)^2\,dx 
+= 2\pi \int_0^3 x(x^2-2x+1)\,dx \\
+&= 2\pi \int_0^3 x^3-2x^2+x\,dx
+= 2\pi\left[\frac{x^4}{4}-2\frac{x^3}{3}+\frac{x^2}{2}\right]_0^3 \\
+&= 2\pi \left(\frac{3^4}{4}-2\frac{3^3}{3}+\frac{3^2}{2}\right)
+= \frac{27\pi}{2} \mbox{unidades$^3$}.
+\end{align*}
+
+Por otro lado, la chapa necesaria para su construcción viene dada por la superficie del sólido de revolución y para calcular el [área de la superficie de un sólido de revolución](https://aprendeconalf.es/analisis-manual/09-integrales.html#c%C3%A1lculo-de-superficies-de-s%C3%B3lidos-de-revoluci%C3%B3n) cuando la gráfica de $f$ se rota alrededor del eje $x$ se utiliza la integral
+
+$$
+\int_0^3 2\pi f(x)\sqrt{1+f'(x)^2}\,dx
+$$
+
+Sin embargo, como la gráfica de $f$ se rota alrededor del eje $y$, el radio del los troncos de conos que resultan al tomar particiones del intervalo y aproximaciones de Riemman, en lugar de ser $y=f(x)$, es $x$, por lo que la integral que hay que calcular es 
+
+$$
+\int_0^3 2\pi x\sqrt{1+f'(x)^2}\,dx = 2\pi\int_0^3 x\sqrt{1+(2(x-1))^2}\,dx.
+$$
+:::
+
+:::{#exr-8}
+La gran pirámide de Gizeh tiene una altura de $138$ m y una base cuadrada de lado $230$ m. Calcular de manera aproximada el trabajo realizado en su construcción. Supóngase que la densidad de las piedras usadas en su construcción es de $2500$ kg/m$^3$ y que la aceleración de la gravedad es $9.81$ m/s$^2$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Supongamos que base de la pirámide está centrada en el origen de coordenadas del plano $XZ$. Entonces, la ecuación de la recta en la que queda inscrito el apotema de la pirámide es $y=138-\frac{138}{115}x$ de manera que $x=\frac{115}{138}(138-y)=115-\frac{5}{6}y$.
+
+Para calcular el trabajo realizado en la construcción de la pirámide, calcularemos el trabajo realizado para las secciones transversales de la pirámide con respecto al eje $y$, que serán cuadrados de lado $2x$, y por tanto tendrán área 
+$$
+A_i
+= \left(2\left(115-\frac{5}{6}y\right)\right)^2 
+= \left(230-\frac{5}{3}y\right)^2
+= 52900 -\frac{2300}{3}y +\frac{25}{9}y^2 \mbox{ m$^2$}.
+$$
+
+Si la altura de cada una de estas secciones transversales es $\Delta y$, su volumen es
+
+$$
+V_i = A_i\Delta y = \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ m$^3$}.
+$$
+
+A partir del volumen de casa sección transversal podemos calcular su masa multiplicando por la densidad de la piedra.
+
+$$
+M_i = V_i\delta = 2500 \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ kg}.
+$$
+
+Así pues, la fuerza necesaria para mover la masa de cada una de estas secciones transversales es
+
+$$
+F_i = M_i g = 9.81\cdot 2500 \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ N},
+$$
+
+Finalmente, como cada sección transversal debe elevarse una altura $y$, el trabajo realizado al mover la masa correspondiente a la sección transversal es
+
+$$
+W_i = F_i y = 9.81\cdot 2500 y \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ J}.
+$$
+
+Así pues, el trabajo total será la suma de los trabajos realizados al desplazar las infinitas secciones transversales desde la base de la pirámide hasta su cima, es decir, en el intervalo $y\in [0,138]$, que viene dado por la integral
+
+\begin{align*}
+W 
+&= \int_0^{138} 9.81\cdot 2500 y \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\,dy \\
+&= 24525 \int_0^{138} 52900y -\frac{2300}{3}y^2 +\frac{25}{9}y^3\,dy \\
+&= 24525 \left[52900\frac{y^2}{2} -\frac{2300}{3}\frac{y^3}{3} +\frac{25}{9}\frac{y^4}{4}\right]_0^{138} \\
+&= 24525\left(26450 \cdot 138^2 - \frac{2300}{9} 138^3 + \frac{25}{36} 138^4\right) 
+\approx 2058930157500 \mbox{ J}.
+\end{align*}
+:::

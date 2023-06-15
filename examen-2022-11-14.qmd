@@ -1,5 +1,5 @@
 ---
-title: Examen de Análisis I (Noviembre 2022)
+title: 2022-11-14 <br>Examen de Análisis I
 lang: es
 date: 2022-11-14
 ---

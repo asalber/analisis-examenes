@@ -8,7 +8,6 @@
 ]{scrreport}
 
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -18,6 +17,10 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -98,7 +101,7 @@
 \DeclareMathOperator{\Ac}{Ac}
 \DeclareMathOperator{\sen}{sen}
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
 \definecolor{quarto-callout-color}{HTML}{909090}
 \definecolor{quarto-callout-note-color}{HTML}{0758E5}
@@ -157,7 +160,7 @@
 \theoremstyle{definition}
 \newtheorem{exercise}{Ejercicio}[chapter]
 \theoremstyle{remark}
-\renewcommand*{\proofname}{Prueba}
+\AtBeginDocument{\renewcommand*{\proofname}{Prueba}}
 \newtheorem*{remark}{Observación}
 \newtheorem*{solution}{Solución}
 \makeatother
@@ -166,10 +169,12 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \makeatother
 \makeatletter
 \@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
 \makeatother
 \makeatletter
 \makeatother
@@ -201,7 +206,7 @@
 
 \title{Exámenes de Análisis Matemático}
 \author{Alfredo Sánchez Alberca}
-\date{11/1/22}
+\date{2022-01-11}
 
 \begin{document}
 \begin{titlepage}
@@ -231,7 +236,7 @@ Sánchez
 Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
 \end{tabular}
 \end{flushleft}
-\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, boxrule=0pt, breakable, frame hidden, enhanced, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
+\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, enhanced, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden, breakable, frame hidden]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Tabla de contenidos}
 {
@@ -252,12 +257,11 @@ Ingeniería Matemática.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-i-noviembre-2022}{%
-\chapter{Examen de Análisis I (Noviembre
-2022)}\label{examen-de-anuxe1lisis-i-noviembre-2022}}
+\hypertarget{examen-de-anuxe1lisis-i}{%
+\chapter{\texorpdfstring{2022-11-14 Examen de Análisis
+I}{2022-11-14  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i}}
 
-\leavevmode\vadjust pre{\hypertarget{exr-1}{}}%
-\begin{exercise}[]\label{exr-1}
+\begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
 Calcular los puntos de acumulación del conjunto
 \(A=[0,1]\cup \left\{\frac{n}{n-1}: n\in\mathbb{N}, n\geq 2\right\}\).
@@ -265,7 +269,7 @@ Calcular los puntos de acumulación del conjunto
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Veamos primero que todos los puntos del intervalo \([0,1]\) son puntos
 de acumulación. Sea \(x\in[0,1]\). Entonces para cualquier
@@ -304,8 +308,7 @@ abiertos a la vez son \(\mathbb{R}\) y \(\emptyset\).
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-2}{}}%
-\begin{exercise}[]\label{exr-2}
+\begin{exercise}[]\protect\hypertarget{exr-2}{}\label{exr-2}
 
 Dada la sucesión \(\left(\frac{1}{2^n}\right)_{n=1}^\infty\),
 
@@ -321,7 +324,7 @@ Dada la sucesión \(\left(\frac{1}{2^n}\right)_{n=1}^\infty\),
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -352,8 +355,7 @@ Dada la sucesión \(\left(\frac{1}{2^n}\right)_{n=1}^\infty\),
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-3}{}}%
-\begin{exercise}[]\label{exr-3}
+\begin{exercise}[]\protect\hypertarget{exr-3}{}\label{exr-3}
 
 La rentabilidad de un bono cada año, en porcentaje, viene dada por la
 sucesión recurrente \(x_1=3\) y \(x_{n+1}=\sqrt{\frac{x_n}{2}+3}\).
@@ -362,7 +364,7 @@ tiempo?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Veamos que primero que la sucesión es monótona decreciente.
 \(x_1=3>x_n= \sqrt{\frac{3}{2}+3} = 2.12\). Supongamos ahora que
@@ -395,15 +397,14 @@ términos de la sucesión son positivos, es imposible que converja a
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-4}{}}%
-\begin{exercise}[]\label{exr-4}
+\begin{exercise}[]\protect\hypertarget{exr-4}{}\label{exr-4}
 
 Demostrar, usando la definición de límite, que
 \(\lim_{x\to 1}\frac{3x+1}{2}=2\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Para cualquier \(\varepsilon>0\) existe
 \(\delta=\frac{2}{3}\varepsilon\), tal que si
@@ -415,8 +416,7 @@ Para cualquier \(\varepsilon>0\) existe
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-5}{}}%
-\begin{exercise}[]\label{exr-5}
+\begin{exercise}[]\protect\hypertarget{exr-5}{}\label{exr-5}
 
 Sabiendo que \(\lim_{x\to 0}(1+x)^{1/x}=e\), demostrar que las
 siguientes funciones son infinitésimos equivalentes en \(x=0\):
@@ -432,7 +432,7 @@ siguientes funciones son infinitésimos equivalentes en \(x=0\):
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Para que dos funciones \(f\) y \(g\) sean infinitésimos equivalentes en
 \(x=0\) se tiene que cumplir que \(\lim_{x\to 0}\frac{f(x)}{g(x)}=1\).
@@ -452,15 +452,14 @@ Para que dos funciones \(f\) y \(g\) sean infinitésimos equivalentes en
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-6}{}}%
-\begin{exercise}[]\label{exr-6}
+\begin{exercise}[]\protect\hypertarget{exr-6}{}\label{exr-6}
 
 Determinar las asíntotas de la función
 \(f(x)=\ln\left(\frac{1}{x}+1\right)x^2\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 El dominio de la función es
 \(\operatorname{Dom}(f) = \mathbb{R}-[-1,0]\) de modo que solo puede
@@ -543,15 +542,14 @@ oblicua de \(f\) en \(-\infty\).
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-i-diciembre-2022}{%
-\chapter{Examen de Análisis I (Diciembre
-2022)}\label{examen-de-anuxe1lisis-i-diciembre-2022}}
+\hypertarget{examen-de-anuxe1lisis-i-1}{%
+\chapter{\texorpdfstring{2022-12-14 Examen de Análisis
+I}{2022-12-14  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i-1}}
 
 \hypertarget{primera-parte}{%
 \section{Primera parte}\label{primera-parte}}
 
-\leavevmode\vadjust pre{\hypertarget{exr-1}{}}%
-\begin{exercise}[]\label{exr-1}
+\begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
 La población de parásitos que infecta un árbol, en miles, evoluciona
 diariamente siguiendo la sucesión recursiva \(x_1=2\) y
@@ -560,7 +558,7 @@ sucesión converge y calcular su límite.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 El término recurrente de la sucesión puede escribirse de la siguiente
 manera
@@ -607,8 +605,7 @@ podemos descartar la solución negativa, de manera que,
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-2}{}}%
-\begin{exercise}[]\label{exr-2}
+\begin{exercise}[]\protect\hypertarget{exr-2}{}\label{exr-2}
 
 En el siglo III A.C usó el método por agotamiento para calcular el área
 encerrada por una circunferencia. La idea consiste en inscribir la
@@ -622,7 +619,7 @@ los polígonos regulares en triángulos como en el siguiente ejemplo.
 
 {\centering 
 
-\input{././img/examen-2022-12-21/area-poligono-regular-inscrito.tex}
+\input{./img/examen-2022-12-21/area-poligono-regular-inscrito.tex}
 
 }
 
@@ -641,7 +638,7 @@ los polígonos regulares en triángulos como en el siguiente ejemplo.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -655,7 +652,7 @@ los polígonos regulares en triángulos como en el siguiente ejemplo.
 
 {\centering 
 
-\input{././img/examen-2022-12-21/area-triangulo.tex}
+\input{./img/examen-2022-12-21/area-triangulo.tex}
 
 }
 
@@ -707,8 +704,7 @@ a_n  = n r^2\cos(\pi/n)\operatorname{sen}(\pi/n)
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-3}{}}%
-\begin{exercise}[]\label{exr-3}
+\begin{exercise}[]\protect\hypertarget{exr-3}{}\label{exr-3}
 
 Sabiendo que \(\operatorname{sen}(x)\) y \(x\) son infinitésimos
 equivalentes en \(x=0\), demostrar que también lo son
@@ -716,7 +712,7 @@ equivalentes en \(x=0\), demostrar que también lo son
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Como \(\operatorname{sen}(x)\) y \(x\) son infinitésimos equivalentes en
 \(x=0\), se tiene que
@@ -735,8 +731,7 @@ equivalentes en \(x=0\).
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-4}{}}%
-\begin{exercise}[]\label{exr-4}
+\begin{exercise}[]\protect\hypertarget{exr-4}{}\label{exr-4}
 
 Determinar el dominio y el tipo de asíntotas de la función
 
@@ -744,7 +739,7 @@ Determinar el dominio y el tipo de asíntotas de la función
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Para que exista la raíz, el radicando debe ser positivo, es decir,
 \(\frac{x^3}{4x-1}\geq 0\). Es fácil ver que
@@ -803,8 +798,7 @@ Por tanto, \(f\) tiene asíntotas oblicuas tanto en \(-\infty\) como en
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-5}{}}%
-\begin{exercise}[]\label{exr-5}
+\begin{exercise}[]\protect\hypertarget{exr-5}{}\label{exr-5}
 
 Dado el conjunto \(A=\{x\in\mathbb{R} : \frac{x^2-1}{x-2}\leq 0\}\),
 calcular, si existe, el supremo, ínfimo, máximo y mínimo. ¿Es un
@@ -812,7 +806,7 @@ conjunto cerrado o abierto?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 \(A\) puede expresarse con la unión de intervalos, ya que
 \(x^2-1\geq 0 \Leftrightarrow x^2\geq 1 \Leftrightarrow x\leq -1 \mbox{ o } x\geq 1\),
@@ -842,15 +836,14 @@ cualquier \(\varepsilon>0\) el intervalo
 \hypertarget{segunda-parte}{%
 \section{Segunda parte}\label{segunda-parte}}
 
-\leavevmode\vadjust pre{\hypertarget{exr-6}{}}%
-\begin{exercise}[]\label{exr-6}
+\begin{exercise}[]\protect\hypertarget{exr-6}{}\label{exr-6}
 
 Dar una aproximación de \(\ln(\sqrt{1/2})\) usando un polinomio de
 Taylor de cuarto grado.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Para realizar la aproximación que se pide calcularemos el polinomio de
 Taylor de cuarto grado de la función \(f(x)=\ln(\sqrt{x})\) en el punto
@@ -889,8 +882,7 @@ P_{f,1}^4(1/2) = \frac{1}{2}\left(\frac{1}{2}-1\right)-\frac{1}{4}\left(\frac{1}
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-7}{}}%
-\begin{exercise}[]\label{exr-7}
+\begin{exercise}[]\protect\hypertarget{exr-7}{}\label{exr-7}
 
 La función \(h(x)=\dfrac{x^2-2x+a}{x^3+bx^2-6x}\) tiene una
 discontinuidad evitable en \(x=2\). Calcular el valor de \(a\) y \(b\),
@@ -898,7 +890,7 @@ y clasificar el resto de discontinuidades.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Para que la función \(h(x)=\dfrac{x^2-2x+a}{x^3+bx^2-6x}\) tenga una
 discontinuidad evitable en \(x=2\), debe cumplirse que
@@ -952,13 +944,12 @@ por lo que \(h\) tiene otra discontinuidad evitable en \(x=0\).
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-8}{}}%
-\begin{exercise}[]\label{exr-8}
+\begin{exercise}[]\protect\hypertarget{exr-8}{}\label{exr-8}
 
 El envoltorio de unas píldoras está formado por un cilindro con dos
 semiesferas en sus extremos, tal y como se aprecia en la imagen.
 
-\includegraphics[width=8cm,height=3cm]{./img/examen-2022-12-21/pildora.png}
+\includegraphics[width=8cm,height=3cm]{img/examen-2022-12-21/pildora.png}
 
 Si el contenido de las píldoras debe ser de \(0.15\) ml, hallar las
 dimensiones de \(x\) e \(y\) para que el material empleado en el
@@ -966,7 +957,7 @@ envoltorio sea mínimo.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 El volumen de una esfera de radio \(r\) es \(v_e(r)=\frac{4}{3}\pi r^3\)
 y el de un cilindro de radio \(r\) y altura \(h\) es
@@ -1020,8 +1011,7 @@ cm, que en realidad es una esfera de diámetro \(0.6592\) cm.
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-9}{}}%
-\begin{exercise}[]\label{exr-9}
+\begin{exercise}[]\protect\hypertarget{exr-9}{}\label{exr-9}
 
 Demostrar que la función
 \(f(x)=\ln\left(k\left(x^2-2x+\frac{3}{2}\right)\right)\) no puede tener
@@ -1029,7 +1019,7 @@ más de una raíz en el intervalo \((0,1)\) para cualquier valor de \(k\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 \(x^2-2x+\frac{3}{2}>0\) \(\forall x\in\mathbb{R}\), de manera que, para
 que exista la función \(f\), debe ser también \(k>0\) y, por tanto,
@@ -1057,15 +1047,14 @@ puede tener más de una raíz en el intervalo \((0,1)\).
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-10}{}}%
-\begin{exercise}[]\label{exr-10}
+\begin{exercise}[]\protect\hypertarget{exr-10}{}\label{exr-10}
 
 Calcular las ecuaciones de las rectas tangente y normal a la gráfica de
 la curva implícita \(e^{x^2y}-\ln(\sqrt{x-y})= 0\) en el punto \(x=0\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 En primer lugar obtenemos los valores de \(y\) que cumplen la ecuación
 de la curva implícita para \(x=0\). Sustituyendo en la ecuación se tiene
@@ -1100,12 +1089,11 @@ Y la ecuación de la recta normal a la curva en \((0,-e^2)\) es
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-ii-marzo-2023}{%
-\chapter{Examen de Análisis II (Marzo
-2023)}\label{examen-de-anuxe1lisis-ii-marzo-2023}}
+\hypertarget{examen-de-anuxe1lisis-ii}{%
+\chapter{\texorpdfstring{2023-03-11 Examen de Análisis
+II}{2023-03-11  Examen de Análisis II}}\label{examen-de-anuxe1lisis-ii}}
 
-\leavevmode\vadjust pre{\hypertarget{exr-1}{}}%
-\begin{exercise}[]\label{exr-1}
+\begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
 Estudiar la convergencia de las siguientes series
 
@@ -1119,7 +1107,7 @@ Estudiar la convergencia de las siguientes series
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -1144,7 +1132,7 @@ Estudiar la convergencia de las siguientes series
   \(\sum \frac{3n^2+2n}{\sqrt{n^5+n}}\) también diverge.
 \item
   Se trata de una serie alternada ya que
-  \(\sum \cos(n\pi)n^2e^{-n} = \sum (-1)nn^2e^{-n}\) por lo que
+  \(\sum \cos(n\pi)n^2e^{-n} = \sum (-1)^nn^2e^{-n}\) por lo que
   aplicando el
   \href{https://aprendeconalf.es/analisis-manual/08-series.html\#thm-criterio-serie-alternada}{criterio
   de la serie alternada}, como \(n^2 e^{-n}\) es monótona decreciente
@@ -1163,8 +1151,7 @@ Estudiar la convergencia de las siguientes series
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-2}{}}%
-\begin{exercise}[]\label{exr-2}
+\begin{exercise}[]\protect\hypertarget{exr-2}{}\label{exr-2}
 
 Un pozo de petróleo produce 200 mil litros de petróleo el primer año de
 su explotación, pero cada año que pasa la producción decae un 12\%.
@@ -1173,7 +1160,7 @@ Calcular la cantidad de petróleo extraída tras \(n\) años de actividad.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 La producción anual evoluciona según la sucesión
 
@@ -1202,8 +1189,7 @@ viene dada por la suma
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-3}{}}%
-\begin{exercise}[]\label{exr-3}
+\begin{exercise}[]\protect\hypertarget{exr-3}{}\label{exr-3}
 
 Determinar el dominio de convergencia puntual de la serie de potencias
 
@@ -1213,7 +1199,7 @@ Determinar el dominio de convergencia puntual de la serie de potencias
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Para determinar el radio de convergencia de la serie de potencias
 podemos usar el
@@ -1250,15 +1236,14 @@ es \(\mathcal{C}=(-1,7)\).
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-4}{}}%
-\begin{exercise}[]\label{exr-4}
+\begin{exercise}[]\protect\hypertarget{exr-4}{}\label{exr-4}
 
 Calcular la serie de Taylor de la función \(f(x)=\frac{1}{x}\) en
 \(a=1\). ¿Cuál es su dominio de convergencia puntual?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Calculamos las primeras derivadas para obtener la expresión de la
 derivada de orden \(n\).
@@ -1301,15 +1286,14 @@ de Taylor es \(\mathcal{C}=(0,2)\).
 
 \end{tcolorbox}
 
-\leavevmode\vadjust pre{\hypertarget{exr-5}{}}%
-\begin{exercise}[]\label{exr-5}
+\begin{exercise}[]\protect\hypertarget{exr-5}{}\label{exr-5}
 
 Calcular la integral superior de Riemann de la función \(f(x)=2x^3+3x\)
 en el intervalo \([0,2]\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, titlerule=0mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, breakable, colback=white, opacitybacktitle=0.6, coltitle=black, left=2mm, toptitle=1mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm]
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
 
 Si dividimos el intervalo \([0,2]\) en \(n\) subintervalos de igual
 amplitud, obtenemos la partición \(P_n=\{x_0=0,x_1,\ldots,x_n=2\}\) con
@@ -1338,6 +1322,401 @@ Así pues, la integral superior de Riemann es
 = \lim_{n\to\infty} 8\frac{n^4+2n^3+n^2}{n^4} + 6 \frac{n+1}{n} \\
 &= 8 \lim_{n\to\infty} \frac{n^4+2n^3+n^2}{n^4} + 6 \lim_{n\to\infty}\frac{n+1}{n} 
 = 8 + 6 = 14.
+\end{align*}
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{examen-de-anuxe1lisis-ii-1}{%
+\chapter{\texorpdfstring{2023-06-01 Examen de Análisis
+II}{2023-06-01  Examen de Análisis II}}\label{examen-de-anuxe1lisis-ii-1}}
+
+\hypertarget{primera-parte-1}{%
+\section{Primera parte}\label{primera-parte-1}}
+
+\begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
+
+Calcular las siguientes sumas si existen
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(\displaystyle \sum_{n=2}^\infty \frac{2}{n^2-1}\).
+\item
+  \(\displaystyle\sum_{n=1}^\infty (-1)^n \frac{\sqrt{n}}{\ln(n)}\).
+\end{enumerate}
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  \(\displaystyle \sum_{n=2}^\infty \frac{2}{n^2-1}\) es una serie \(p\)
+  con \(p>1\) por lo que la serie converge, pero para calcular su suma
+  vamos a reescribir el término general como suma de fracciones simples.
+
+  \[
+  \sum_{n=2}^\infty \frac{2}{n^2-1} 
+  = \sum_{n=2}^\infty \frac{2}{(n+1)(n-1)} 
+  = \sum_{n=2}^\infty \frac{1}{n-1}-\frac{1}{n+1},
+  \]
+
+  que es una serie telescópica, de manera que
+
+  \[
+  \sum_{n=2}^\infty \frac{2}{n^2-1} = 1 +\frac{1}{2}+ \lim_{n\to\infty}\frac{2}{n^2-1} = \frac{3}{2}.
+  \]
+\item
+  \(\displaystyle\sum_{n=1}^\infty (-1)^n \frac{\sqrt{n}}{\ln(n)}\) es
+  una serie alternada, pero
+
+  \begin{align*}
+   \lim_{n\to\infty} \frac{\sqrt{n}}{\ln(n)} 
+   &= \lim_{n\to\infty} \frac{\frac{1}{2\sqrt{n}}}{\frac{1}{n}} \tag{L'Hôpital}\\
+   &= \lim_{n\to\infty} \frac{n}{2\sqrt{n}} 
+   = \infty,
+   \end{align*}
+
+  por lo que la serie diverge.
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-2}{}\label{exr-2}
+
+Considérese el conjunto de Cantor que resulta de ir eliminando del
+intervalo \([0,10]\), de manera recursiva, el \(80\%\) central de los
+intervalos restantes. El procedimiento sería el siguiente:
+
+\begin{itemize}
+\tightlist
+\item
+  Etapa 1: Se elimina el intervalo \((1,9)\).
+\item
+  Etapa 2: Se eliminan los intervalos \((0.1,0.9)\) y \((9.1,9.9)\).
+\item
+  Etapa 3: Se eliminan los intervalos \((0.01,0.09)\), \((0.91,0.99)\),
+  \((9.01,9.09)\) y \((9.91,9.99)\).
+\item
+  \ldots{}
+\end{itemize}
+
+¿Cuál es la longitud total de los intervalos eliminados?
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+En la primera etapa se elimina el intervalo \((1,9)\), que tiene
+longitud \(8\). En la segunda etapa se eliminan \(2\) intervalos,
+\((0.1,0.9)\) y \((9.1,9.9)\), ambos con amplitud \(0.8\), y por tanto,
+la longitud de los intervalos eliminados es \(2\cdot 0.8\). En la
+tercera etapa se eliminan \(4\) intervalos, \((0.01,0.09)\),
+\((0.91,0.99)\), \((9.01,9.09)\) y \((9.91,9.99)\), ambos con amplitud
+\(0.08\), y por tanto, la longitud de los intervalos eliminados es
+\(4\cdot 0.08\). En general, en la etapa \(n\) se eliminan \(2^{n-1}\)
+intervalos, todos con amplitud \(\frac{8}{10^{n-1}}\), y por tanto, la
+longitud de los intervalos eliminados es \(2^{n-1}\frac{8}{10^{n-1}}\).
+Así pues, la suma de las longitudes de los intervalos eliminados viene
+dada por la serie
+
+\[
+\sum_{n=1}^\infty 2^{n-1}\frac{8}{10^{n-1}} 
+= \sum_{n=0}^\infty 2^n\frac{8}{10^n} 
+= 8\sum_{n=0}^\infty \left(\frac{2}{10}\right)^n,
+\]
+
+que es una serie geométrica de razón \(\frac{2}{10}<1\), por lo que que
+converge y su suma vale
+
+\[
+8\sum_{n=0}^\infty \left(\frac{2}{10}\right)^n 
+= 8 \frac{1}{1-\frac{2}{10}} 
+= 8 \frac{10}{8} 
+= 10.
+\]
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-3}{}\label{exr-3}
+
+La distribución de Borel de parámetro \(\mu\geq 0\) es una distribución
+de probabilidad discreta con recorrido \(\mathbb{N}\) y función de
+probabilidad ñ \[
+f(n) = \frac{(\mu n)^{n-1}}{e^{\mu n}n!}\ \forall n\in\mathbb{N}, 
+\]
+
+¿Para qué valores de \(\mu\) la serie \(\sum f(n)\) es absolutamente
+convergente?
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+Para estudiar la convergencia absoluta de la serie
+\(\sum_{n=1}^\infty \frac{(\mu n)^{n-1}}{e^{\mu n}n!}\), aplicamos el
+criterio de la razón.
+
+\begin{align*}
+\lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right| 
+&= \lim_{n\to\infty} \frac{\frac{(\mu(n+1))^n}{e^{\mu(n+1)}(n+1)!}}{\frac{(\mu n)^{n-1}}{e^{\mu n}n!}}
+= \lim_{n\to\infty} \frac{\mu^n (n+1)^n e^{\mu n}n!}{\mu^{n-1}n^{n-1}e^{\mu(n+1)}(n+1)!} \\
+&= \lim_{n\to\infty} \frac{\mu (n+1)(n+1)^{n-1} e^{\mu n}n!}{n^{n-1}e^{\mu}e^{\mu n}(n+1)n!} 
+= \lim_{n\to\infty} \frac{\mu}{e^\mu}\left(\frac{n+1}{n}\right)^{n-1}\\
+&= \frac{\mu}{e^\mu}\lim_{n\to\infty} \left(1+\frac{1}{n}\right)^{n-1} 
+= \frac{\mu}{e^\mu} e 
+= \frac{\mu}{e^{\mu-1}}. 
+\end{align*}
+
+Como \(\frac{mu}{e^{\mu-1}} < 1 \Leftrightarrow \mu < e^{\mu-1}\), es
+cierto para cualquier \(\mu\geq 0\) excepto para \(\mu=1\), la serie
+converge absolutamente \(\forall \mu\geq 0\), \(\mu\neq 1\). Para
+\(\mu=1\) el criterio de la razón no es concluyente.
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-4}{}\label{exr-4}
+
+Calcular la integral inferior de Riemann de la parábola \(f(x)=3x^2+2x\)
+en el intervalo \([0,10]\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+Si dividimos el intervalo \([0,1]\) en \(n\) subintervalos de igual
+amplitud obtenemos la partición \(P_n=\{x_0=0, x_1,\ldots, x_n=10\}\)
+con \(x_i=\frac{10i}{n}\) \(\forall i=1,\ldots, n\). Como la función
+\(f(x)=3x^2+2x\) es creciente en el intervalo \([0,10]\), el mínimo de
+\(f\) en cada subintervalo \([x_{i-1},x_i]\) se alcanzará en el extremo
+inferior, de manera que la suma inferior de Riemann de \(f\) con
+respecto a \(P_n\) es
+
+\begin{align*}
+s(f,P_n) 
+&= \sum_{i=1}^n f(x_{i-1})(x_i-x_{i-1}) \\
+&= \sum_{i=1}^n \left(3\left(\frac{10(i-1)}{n}\right)^2 + 2\left(\frac{10(i-1)}{n}\right)\right)\frac{10}{n} \\
+&= \frac{10}{n}\left(\sum_{i=1}^n \frac{300}{n^2}(i-1)^2 + \sum_{i=1}^n \frac{20}{n} (i-1)\right) \\
+&= \frac{3000}{n^3} \sum_{i=1}^n (i-1)^2 + \frac{200}{n^2} \sum_{i=1}^n (i-1) \\
+&= \frac{3000}{n^3} \sum_{i=1}^n i^2+2i+1 + \frac{200}{n^2} \sum_{i=1}^n (i-1) \\
+&= \frac{3000}{n^3} \left(\sum_{i=1}^n i^2 - 2\sum_{i=1}^n i + \sum_{i=1}^n 1\right) + \frac{200}{n^2} \left(\sum_{i=1}^n i - \sum_{i=1}^n 1\right) \\
+&= \frac{3000}{n^3} \left(\frac{n(n+1)(2n+1)}{6} -2 \frac{n(n+1)}{2} + n\right) + \frac{200}{n^2} \left(\frac{n(n+1)}{2} -n\right) \\
+&= \frac{3000}{n^3} \left(\frac{n^3}{3}+\frac{n^2}{2}+\frac{n}{6}-n^2-n+n\right) + \frac{200}{n^2} \left(\frac{n^2}{2}+\frac{n}{2}-n\right) \\
+&= 500 \left(\frac{2n^3-3n^2+n}{n^3}\right) + 100 \left(\frac{n^2-n}{n^2}\right).
+\end{align*}
+
+Y la integral inferior de Riemann es
+
+\begin{align*}
+\underline{\int_0^{10}} f 
+&= \lim_{n\to\infty} s(f,P_n) 
+= \lim_{n\to\infty} 500 \left(\frac{2n^3-3n^2+n}{n^3}\right) + 100 \left(\frac{n^2-n}{n^2}\right) \\
+&= 500  \lim_{n\to\infty} \left(\frac{2n^3-3n^2+n}{n^3}\right) + 100 \lim_{n\to\infty} \left(\frac{n^2-n}{n^2}\right) \\
+&= 500\cdot 2 + 100 = 1100.
+\end{align*}
+
+\end{tcolorbox}
+
+\hypertarget{segunda-parte-1}{%
+\section{Segunda parte}\label{segunda-parte-1}}
+
+\begin{exercise}[]\protect\hypertarget{exr-5}{}\label{exr-5}
+
+La función \(f(t)=50\sqrt{t/2}+100\) da los ingresos de una empresa en
+miles de euros \(t\) años después de su creación, mientras que la
+función \(g(t)=\ln(t^2+1)+100\) da los gastos. Calcular el beneficio
+acumulado de la empresa entre el quinto y el décimo año.
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+Para obtener el beneficio acumulado de la empresa ente el quinto y
+décimo año tenemos que calcular la integral definida de la función de
+los ingresos menos la de los gastos en el intervalo \([5,10]\), es
+decir,
+
+\begin{align*}
+\int_5^{10} f(t)-g(t) \,dt 
+&= \int_5^{10} 50 \sqrt{t/2} + 100 - \ln(t^2+1)-100\,dt \\
+&= \frac{50}{\sqrt{2}}\int_5^{10} t^{1/2} \,dt - \int_5^{10}  \ln(t^2+1)\, dt.
+\end{align*}
+
+Vamos a calcular estas dos integrales por separado.
+
+\begin{align*}
+\int_5^{10} t^{1/2}\,dt =  \left[\frac{t^{3/2}}{3/2}\right]_0^{10} = \frac{2}{3}(10^{3/2}-5^{3/2}) \approx 13.6283.
+\end{align*}
+
+y
+
+\begin{align*}
+\int_5^{10}  \ln(t^2+1)\,dt 
+&= [t \ln(t^2+1)]_5^{10} - \int_5^{10} t \frac{2t}{t^2+1}\,dt \tag{Partes}\\
+&= [t \ln(t^2+1)]_5^{10} - 2\int_5^{10} 1 - \frac{1}{t^2+1}\,dt\\
+&=  [t \ln(t^2+1)]_5^{10} - [2t]_5^{10} + [2\operatorname{arctg}(t)]_5^{10} \\
+&= 10\ln(10^2+1)-5\ln(5^2+1) -2\cdot 10+2\cdot 5 + 2\operatorname{arctg}(10)- 2\operatorname{arctg}(5) \\
+&\approx 20.0562.
+\end{align*}
+
+Así pues el beneficio acumulado es
+
+\[
+\int_5^{10} f(t)-g(t) \,dt \approx \frac{50}{\sqrt{2}} \cdot 13.6283 - 20.0562  = 461.7768  \mbox{ miles de €}.
+\]
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-6}{}\label{exr-6}
+
+Calcular el área de región encerrada por la curva polar
+\(r=2\cos(\theta)\operatorname{sen}(\theta)\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+La función \(r=2\cos(\theta)\operatorname{sen}(\theta)\) tiene periodo
+\(\pi\), pero para describir la curva completa es necesario que
+\(\theta\) recorra la circunferencia entera, por lo que el intervalo de
+integración es \([0,2\pi]\) y, por tanto, para calcular el
+\href{https://aprendeconalf.es/analisis-manual/09-integrales.html\#c\%C3\%A1lculo-del-area-encerrada-por-una-curva-en-coordenadas-polares}{área
+encerrada por esta curva polar} tenemos que calcula la siguiente
+integral.
+
+\begin{align*}
+\int_0^{2\pi} \frac{r^2}{2}\,d\theta 
+&= \frac{1}{2}\int_0^{2\pi} 2\cos(\theta)\operatorname{sen}(\theta)\,d\theta \\
+&= \frac{1}{2}\int_0^{2\pi} \operatorname{sen}(2\theta)^2\,d\theta 
+= \frac{1}{4} \int_0^{4\pi} \operatorname{sen}(x)^2\,dx \tag{Cambio $x=2\theta$}\\
+&= \frac{1}{4} \int_0^{4\pi} \frac{1-\cos(2x)}{2}\,dx 
+= \frac{1}{8} \int_0^{4\pi}\,dx -\int_0^{4\pi} \cos(2x)\,dx \\
+&= \frac{1}{8}\left([x]_0^{4\pi}-\left[\frac{1}{2}\operatorname{sen}(2x)\right]_0^{4\pi}\right) \\
+&=\frac{1}{8}4\pi = \frac{\pi}{2}.
+\end{align*}
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-7}{}\label{exr-7}
+
+Calcular el volumen del depósito generado al rotar alrededor del eje
+\(y\) la gráfica de la función \(f(x)=(x-1)^2\) con \(0\leq x\leq 3\).
+Plantear la integral para obtener la cantidad de chapa necesaria para su
+construcción, sin llegar a calcularla.
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+Para calcular el volumen del sólido de revolución generado al rotar
+alrededor del eje \(y\) la gráfica de la función \(f(x)=(x-1)^2\) en el
+intervalo \([0,3]\) utilizaremos
+\href{https://aprendeconalf.es/analisis-manual/09-integrales.html\#c\%C3\%A1lculo-de-vol\%C3\%BAmenes-de-s\%C3\%B3lidos-de-revoluci\%C3\%B3n-con-envoltorios-cil\%C3\%ADndricos}{envoltorios
+cilíndricos}, de manera que el volumen viene dado por la integral
+
+\begin{align*}
+\int_0^3 2\pi xf(x)\,dx
+&= 2\pi \int_0^3 x(x-1)^2\,dx 
+= 2\pi \int_0^3 x(x^2-2x+1)\,dx \\
+&= 2\pi \int_0^3 x^3-2x^2+x\,dx
+= 2\pi\left[\frac{x^4}{4}-2\frac{x^3}{3}+\frac{x^2}{2}\right]_0^3 \\
+&= 2\pi \left(\frac{3^4}{4}-2\frac{3^3}{3}+\frac{3^2}{2}\right)
+= \frac{27\pi}{2} \mbox{unidades$^3$}.
+\end{align*}
+
+Por otro lado, la chapa necesaria para su construcción viene dada por la
+superficie del sólido de revolución y para calcular el
+\href{https://aprendeconalf.es/analisis-manual/09-integrales.html\#c\%C3\%A1lculo-de-superficies-de-s\%C3\%B3lidos-de-revoluci\%C3\%B3n}{área
+de la superficie de un sólido de revolución} cuando la gráfica de \(f\)
+se rota alrededor del eje \(x\) se utiliza la integral
+
+\[
+\int_0^3 2\pi f(x)\sqrt{1+f'(x)^2}\,dx
+\]
+
+Sin embargo, como la gráfica de \(f\) se rota alrededor del eje \(y\),
+el radio del los troncos de conos que resultan al tomar particiones del
+intervalo y aproximaciones de Riemman, en lugar de ser \(y=f(x)\), es
+\(x\), por lo que la integral que hay que calcular es
+
+\[
+\int_0^3 2\pi x\sqrt{1+f'(x)^2}\,dx = 2\pi\int_0^3 x\sqrt{1+(2(x-1))^2}\,dx.
+\]
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-8}{}\label{exr-8}
+
+La gran pirámide de Gizeh tiene una altura de \(138\) m y una base
+cuadrada de lado \(230\) m. Calcular de manera aproximada el trabajo
+realizado en su construcción. Supóngase que la densidad de las piedras
+usadas en su construcción es de \(2500\) kg/m\(^3\) y que la aceleración
+de la gravedad es \(9.81\) m/s\(^2\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, opacityback=0, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, toptitle=1mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, breakable, colback=white, left=2mm, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, arc=.35mm, coltitle=black, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, bottomrule=.15mm, toprule=.15mm]
+
+Supongamos que base de la pirámide está centrada en el origen de
+coordenadas del plano \(XZ\). Entonces, la ecuación de la recta en la
+que queda inscrito el apotema de la pirámide es
+\(y=138-\frac{138}{115}x\) de manera que
+\(x=\frac{115}{138}(138-y)=115-\frac{5}{6}y\).
+
+Para calcular el trabajo realizado en la construcción de la pirámide,
+calcularemos el trabajo realizado para las secciones transversales de la
+pirámide con respecto al eje \(y\), que serán cuadrados de lado \(2x\),
+y por tanto tendrán área \[
+A_i
+= \left(2\left(115-\frac{5}{6}y\right)\right)^2 
+= \left(230-\frac{5}{3}y\right)^2
+= 52900 -\frac{2300}{3}y +\frac{25}{9}y^2 \mbox{ m$^2$}.
+\]
+
+Si la altura de cada una de estas secciones transversales es
+\(\Delta y\), su volumen es
+
+\[
+V_i = A_i\Delta y = \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ m$^3$}.
+\]
+
+A partir del volumen de casa sección transversal podemos calcular su
+masa multiplicando por la densidad de la piedra.
+
+\[
+M_i = V_i\delta = 2500 \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ kg}.
+\]
+
+Así pues, la fuerza necesaria para mover la masa de cada una de estas
+secciones transversales es
+
+\[
+F_i = M_i g = 9.81\cdot 2500 \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ N},
+\]
+
+Finalmente, como cada sección transversal debe elevarse una altura
+\(y\), el trabajo realizado al mover la masa correspondiente a la
+sección transversal es
+
+\[
+W_i = F_i y = 9.81\cdot 2500 y \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ J}.
+\]
+
+Así pues, el trabajo total será la suma de los trabajos realizados al
+desplazar las infinitas secciones transversales desde la base de la
+pirámide hasta su cima, es decir, en el intervalo \(y\in [0,138]\), que
+viene dado por la integral
+
+\begin{align*}
+W 
+&= \int_0^{138} 9.81\cdot 2500 y \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\,dy \\
+&= 24525 \int_0^{138} 52900y -\frac{2300}{3}y^2 +\frac{25}{9}y^3\,dy \\
+&= 24525 \left[52900\frac{y^2}{2} -\frac{2300}{3}\frac{y^3}{3} +\frac{25}{9}\frac{y^4}{4}\right]_0^{138} \\
+&= 24525\left(26450 \cdot 138^2 - \frac{2300}{9} 138^3 + \frac{25}{36} 138^4\right) 
+\approx 2058930157500 \mbox{ J}.
 \end{align*}
 
 \end{tcolorbox}

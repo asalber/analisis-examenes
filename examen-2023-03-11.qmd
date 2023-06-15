@@ -1,5 +1,5 @@
 ---
-title: Examen de Análisis II (Marzo 2023)
+title: 2023-03-11 <br>Examen de Análisis II
 lang: es
 date: 2023-03-11
 ---
@@ -24,7 +24,7 @@ a. Se trata de una serie de términos positivos en la que el término dominante 
 
     Por tanto, la serie $\sum \frac{3n^2+2n}{\sqrt{n^5+n}}$ tiene el mismo comportamiento que la serie $\sum \frac{3n^2}{n^{5/2}}$, y como $\sum \frac{3n^2}{n^{5/2}} = 3\sum \frac{1}{n^{1/2}}$ es una serie $p$ con $p<1$, diverge, por lo que la serie $\sum \frac{3n^2+2n}{\sqrt{n^5+n}}$ también diverge.
 
-b. Se trata de una serie alternada ya que $\sum \cos(n\pi)n^2e^{-n} = \sum (-1)nn^2e^{-n}$ por lo que aplicando el [criterio de la serie alternada](https://aprendeconalf.es/analisis-manual/08-series.html#thm-criterio-serie-alternada), como $n^2 e^{-n}$ es monótona decreciente para $n\geq 2$ y 
+b. Se trata de una serie alternada ya que $\sum \cos(n\pi)n^2e^{-n} = \sum (-1)^nn^2e^{-n}$ por lo que aplicando el [criterio de la serie alternada](https://aprendeconalf.es/analisis-manual/08-series.html#thm-criterio-serie-alternada), como $n^2 e^{-n}$ es monótona decreciente para $n\geq 2$ y 
 
     $$
     \lim_{n\to\infty} n^2 e^{-x} 

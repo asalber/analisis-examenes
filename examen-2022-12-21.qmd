@@ -1,9 +1,8 @@
 ---
+title: 2022-12-14 <br>Examen de Análisis I
 lang: es
-date: 2022-11-14
+date: 2022-12-14
 ---
-
-# Examen de Análisis I (Diciembre 2022)
 
 ## Primera parte
 
@@ -200,7 +199,6 @@ Por otro lado, $A$ tampoco es cerrado ya que $\overline{A}=(-1,1)\cup [2,\infty)
 :::
 
 ## Segunda parte
-
 
 :::{#exr-6}
 Dar una aproximación de $\ln(\sqrt{1/2})$ usando un polinomio de Taylor de cuarto grado.
