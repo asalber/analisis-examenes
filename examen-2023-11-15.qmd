@@ -1,0 +1,206 @@
+---
+title: 2023-11-15 <br>Examen de Análisis I
+lang: es
+date: 2023-11-15
+---
+
+:::{#exr-1}
+Sea $(x_n)_{n=1}^\infty$ una sucesión tal que
+
+$$
+\lim_{n\to\infty} x_{2n}= \lim_{n\to\infty}x_{2n+1}=l.
+$$
+
+Demostrar que $\lim_{n\to\infty}x_n = l$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Por la definición de límite, como $\lim_{n\to\infty} x_{2n}= l$, $\forall \varepsilon>0$ $\exists k_1\in\mathbb{N}$ tal que si $2n\geq k_1$ entonces $|x_{2n}-l|<\varepsilon$. 
+
+Del mismo modo, como $\lim_{n\to\infty} x_{2n+1}= l$, $\forall \varepsilon>0$ $\exists k_2\in\mathbb{N}$ tal que si $2n+1\geq k_2$ entonces $|x_{2n+1}-l|<\varepsilon$. 
+
+Tomando ahora $k=\max\{k_1,k_2\}$, si $m\geq k$, entonces o $m$ es par, o $m$ es impar. Si $m$ es par entonces existe $n\in\mathbb{N}$ tal que $m=2n$ y como $m=2n\geq k\geq k_1$, se tiene que $|x_m-l|=|x_{2n}-l|<\varepsilon$. Y si $m$ es impar entonces existe $n\in\mathbb{N}$ tal que $m=2n+1$ y como $m=2n+1\geq k\geq k_2$, se tiene que $|x_m-l|=|x_{2n+1}-l|<\varepsilon$. Por tanto, $\lim_{n\to\infty}x_n = l$.
+:::
+
+:::{#exr-2}
+La cantidad de agua almacenada en un embalse en hectómetros cúbicos viene dada por la función 
+
+$$
+h(t) = \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)}
+$$
+
+Analizar si la cantidad de agua converge o no a largo plazo.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Como $-1\leq \operatorname{sen}(t)\leq 1$ y $-1\leq \cos(t)\leq 1$ $\forall t\in\mathbb{R}$, en particular, para $t>1$se tiene que 
+
+$$
+\begin{gathered}
+0 < 10t-1 \leq 10t+\cos(2t) \leq 10t+1 \\
+0 < 4t-2 \leq 4t+2\operatorname{sen}(t) \leq 4t+2
+\end{gathered}
+$$
+
+y por tanto
+
+$$
+\frac{10t-1}{4t+2} \leq \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(t)} \leq \frac{10t+1}{4t-2}.
+$$
+
+Como además, aplicando álgebra de límites,
+
+\begin{align*}
+\lim_{t\to\infty} \frac{10t-1}{4t+2} 
+&= \lim_{t\to\infty} \frac{\frac{10t-1}{t}}{\frac{4t+2}{t}}
+= \lim_{t\to\infty} \frac{10-\frac{1}{t}}{4+\frac{2}{t}}
+= \frac{10}{4}, \\
+\lim_{t\to\infty} \frac{10t+1}{4t-2} 
+&= \lim_{t\to\infty} \frac{\frac{10t+1}{t}}{\frac{4t-2}{t}}
+= \lim_{t\to\infty} \frac{10+\frac{1}{t}}{4-\frac{2}{t}}
+= \frac{10}{4},
+\end{align*}
+
+por el [teorema de comprensión de funciones](https://aprendeconalf.es/analisis-manual/06-limites.html#thm-compresi%C3%B3n-funciones), se tiene que 
+
+
+$$
+\lim_{t\to\infty} \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)} = \frac{10}{4}.
+$$
+
+Así pues, a largo plazo, la cantidad de agua en el embalse converge a $2.5$ Hm$^3$.
+:::
+
+:::{#exr-3}
+Dado el conjunto $A=\{\frac{\operatorname{sin}(n)}{n}, n\in\mathbb{N}\}$,
+
+a.  Calcular su ínfimo, mínimo, supremo y máximo si existen.
+a.  Calcular sus puntos de acumulación.
+a.  Estudiar si se trata de un conjunto abierto o cerrado.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Los elementos del conjunto están más cerca de 0 a medida que $n$ crece, aunque irán alternado el signo, ya que $-1\leq\operatorname{sin}(n)\leq 1$ $\forall n\in \mathbb{N}$, por tanto el conjunto estará acotado tanto inferior como superiormente.
+Si calculamos de manera aproximada los primeros elementos del conjunto para $n=1,\ldots,10$, tenemos
+
+    $$
+    \begin{array}{cc}
+    \hline
+    n &  \frac{\operatorname{sen}(n)}{n} \\
+    1 & 0.8415 \\
+    2 & 0.4546 \\
+    3 & 0.0470 \\
+    4 & -0.1892 \\
+    5 & -0.1917 \\
+    6 & -0.04656 \\
+    7 & 0.0938 \\
+    \vdots & \vdots \\
+    \hline
+    \end{array}
+    $$
+
+    A partir de aquí los valores se van acercando cada vez más a 0 ya que $\lim{n\to \infty}\frac{\operatorname{sen}(n)}{n} = 0$. Por tanto, el máximo valor del $A$ es el correspondiente a $n=1$, es decir, $\operatorname{sen}(1)\approx 0.8415$, y el mínimo corresponde a $n=5$, es decir $\operatorname{sen}(5)/5  \approx -0.1917$. Y como el mínimo y el máximo existen, coinciden con el ínfimo y el supremo, respectivamente.
+
+a.  Como los valores del conjunto están cada vez más cerca de $0$, este será un punto de acumulación. Para demostrarlo basta con ver que $\lim{n\to \infty}\frac{\operatorname{sen}(n)}{n} = 0$, ya que, como $-1\leq\operatorname{sin}(x)\leq 1$ $\forall n\in \mathbb{N}$, se tiene que 
+
+    $$
+    \frac{-1}{n}\leq \frac{\operatorname{sen}(n)}{n}\leq \frac{1}{n}
+    $$
+
+    y como $\lim_{n\to\infty} \frac{-1}{n}=\lim_{n\to\infty} \frac{1}{n} = 0$, y por el teorema de compresión de sucesiones se tiene que $\lim{n\to \infty}\frac{\operatorname{sen}(n)}{n} = 0$, y por tanto, se cumple que $\forall \varepsilon>0$ existe $k\in\mathbb{N}$ tal que $\left|\frac{\operatorname{sen}(n)}{n} - 0 \right| < \varepsilon$, por lo que podemos encontrar puntos de $A$ tan cerca de $0$ como queramos y $0$ es un punto de acumulación.
+
+    Veamos ahora que $0$ es el único punto de acumulación de $A$, es decir, que cualquier otro punto $x\neq 0$ no es punto de acumulación. Supongamos que $x\neq 0$ es un punto de acumulación de $A$, entonces es posible construir una sucesión de puntos $(a_n)_{n=1}^\infty$ tal que $a_n\in A$ y $a_n\neq x$ $\forall n\in \mathbb{N}$, que converge a $x$. Pero, por otro lado, como $\lim{n\to \infty}\frac{\operatorname{sen}(n)}{n} = 0$, cualquier subsucesión de la sucesión $\left(\frac{\operatorname{sen}(n)}{n}\right)$ converge a $0$, y en particular la sucesión $(a_n)_{n=1}^\infty$, por lo que $\lim_{n\to\infty} a_n = 0$, lo cual es contradictorio con que $x\neq 0$.
+
+a.  $A$ no puede ser cerrado porque $0$ es un punto de acumulación suyo pero $0\not\in A$ (ver [teorema](https://aprendeconalf.es/analisis-manual/03-topologia-reales.html#thm-conjunto-cerrado-puntos-acumulacion)). Pero $A$ tampoco es abierto porque sus puntos son aislados, es decir, para cualquier $n\in\mathbb{N}$, y $\forall \varepsilon>0$ el intervalo $\left(\frac{\operatorname{sen}(n)}{n}-\varepsilon, \frac{\operatorname{sen}(n)}{n}-\varepsilon\right)$ siempre contiene puntos que no son de $A$.
+:::
+
+:::{#exr-4}
+Dada la función $f(x)=\dfrac{ax^n}{x^2+bx}$, 
+
+a.  ¿Cuánto debe valer $a$, $b$ y $n$ para que $f$ tenga una asíntota vertical $x=3$ y una asíntota horizontal $y=2$?
+a.  ¿Cuánto debe valer $a$, $b$ y $n$ para que $f$ tenga una asíntota oblicua $y=3x-1$?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Para que $f$ tenga una asíntota vertical en $x=3$ debe anularse el denominador, es decir, $3^2+3b=0$, de donde se deduce que $b=-3$, ya que 
+
+    \begin{align*}
+    \lim_{x\to 3^-}\frac{ax^n}{x^2-3x}  
+    &= \infty \\
+    \lim_{x\to 3^+}\frac{ax^n}{x^2-3x}  
+    &= -\infty
+    \end{align*}
+
+    Y para que $f$ tenga una asíntota horizontal $y=2$, debe ser $\lim_{x\to \pm\infty} \frac{ax^n}{x^2-3x} = 2$, y para ello es necesario que el grado del polinomio del numerador sea igual al grado del polinomio del denominador, es decir, $n=2$. En tal caso, 
+
+    $$
+    \lim_{x\to \pm\infty} \frac{ax^2}{x^2-3x}
+    = \lim_{x\to \pm\infty} \frac{\frac{ax^2}{x^2}}{\frac{x^2-3x}{x^2}}
+    = \lim_{x\to \pm\infty} \frac{a}{1-\frac{3}{x}} 
+    = a,
+    $$
+
+    de modo que debe ser $a=2$.
+
+a.  Para que $f$ tenga una asíntota oblicua $y=3x-1$, debe ser $\lim_{x\to\pm\infty} \frac{f(x)}{x}=3$. Como 
+
+    $$
+    \lim_{x\to\pm\infty} \frac{\frac{ax^n}{x^2+bx}}{x} 
+    = \lim_{x\to\pm\infty} \frac{ax^n}{x^3+bx^2},
+    $$
+
+    y para que este límite exista, el grado del polinomio del numerador debe ser igual que el del denominador, es decir, $n=3$, y en tal caso se tiene
+
+    $$
+    \lim_{x\to\pm\infty} \frac{\frac{ax^3}{x^2+bx}}{x} 
+    = \lim_{x\to\pm\infty} \frac{ax^3}{x^3+bx^2}
+    = \lim_{x\to\pm\infty} \frac{\frac{ax^3}{x^3}}{\frac{x^3+bx^2}{x^3}}
+    = \lim_{x\to\pm\infty} \frac{a}{1+\frac{b}{x}}
+    = a,
+    $$
+
+    de manera que debe ser $a=3$.
+
+    Por otro lado, también debe cumplirse que $\lim_{x\to\pm\infty} f(x)-3x = -1$. Como
+
+    \begin{align*}
+    \lim_{x\to\pm\infty} \frac{3x^3}{x^2+bx} -3x 
+    &= \lim_{x\to\pm\infty} \frac{3x^3-3x^3-3bx^2}{x^2+bx}
+    = \lim_{x\to\pm\infty} \frac{\frac{-3bx^2}{x^2}}{\frac{x^2+bx}{x^2}} \\
+    &= \lim_{x\to\pm\infty} \frac{-3b}{1+\frac{b}{x}}
+    = -3b,
+    \end{align*}
+
+    de donde se deduce que $b=1/3$.
+:::
+
+:::{#exr-5}
+La sucesión de Fibonacci se define como 
+
+$$
+a_1 = a_2 = 1 \quad \mbox{y}\quad a_{n+1} = a_n + a_{n-1}.
+$$
+
+Demostrar que la sucesión $\left(\dfrac{a_{n+1}}{a_n}\right)_{n=1}^\infty$ converge al número $\phi = \frac{1+\sqrt{5}}{2}$.
+
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Sea $x_n=\frac{a_{n+1}}{a_n}$, donde $(a_n)_{n=1}^\infty$ es la sucesión de Fibonacci. Entonces
+
+$$
+x_{n+1} 
+= \frac{a_{n+2}}{a_{n+1}}
+= \frac{a_{n+1}+a_n}{a_{n+1}}
+= 1 + \frac{a_{n}}{a_{n+1}}
+= 1 + \frac{1}{\frac{a_{n+1}}{a_n}}
+= 1 + \frac{1}{x_n},
+$$
+
+que converge al número $\phi = \frac{1+\sqrt{5}}{2}$, tal y como se vió en este [ejercicio](https://aprendeconalf.es/analisis-ejercicios/04-sucesiones.html#exr-numero-aureo). 
+:::
