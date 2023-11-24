@@ -1,0 +1,224 @@
+---
+title: 2023-11-14 <br>Examen de Análisis III
+lang: es
+date: 2023-11-14
+---
+
+:::{#exr-1}
+Una fábrica de componentes electrónicos produce dos tipos de chips. Los ingresos, en cientos de euros,  obtenidos por la venta de $x$ miles de unidades del primer tipo e $y$ miles de unidades del segundo tipo vienen dados por la función $I(x,y) = -x^2-\frac{1}{2}y^2-\frac{1}{4}xy+280x+260y+1000$, mientras que los gastos de producción, vienen dados por la función $C(x,y) = 100x+120y+6000$. ¿Qué cantidad de chips de cada tipo debe producir la fábrica para maximizar el beneficio?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Si $I(x,y)$ es la función que da los ingresos y $C(x,y)$ la que da los costes, la función que da los beneficios es
+
+\begin{align*}
+B(x,y) 
+&= -x^2 - \frac{1}{2}y^2 - \frac{1}{4}xy + 280x + 260y + 1000 - (100x + 120y + 6000) \\
+&= -x^2 - \frac{1}{2}y^2 - \frac{1}{4}xy + 180x + 140y - 5000.
+\end{align*}
+
+Para calcular el máximo de esta función primero hay que obtener los puntos críticos, es decir, los puntos que anulan las derivadas parciales.
+
+\begin{align*}
+\frac{\partial B}{\partial x} 
+&= -2x -\frac{1}{4}y + 180 = 0,\\
+\frac{\partial B}{\partial y} 
+&= -y -\frac{1}{4}x + 140 = 0.\\
+\end{align*}
+
+Resolviendo el sistema de ecuaciones se tiene que la única solución es el punto $\left(\frac{2320}{31}, \frac{3760}{31}\right)$.
+
+A continuación, calculamos el hessiano.
+
+$$
+|\nabla^2 B(x,y)| =
+\begin{vmatrix}
+-2 & -\frac{1}{4}\\
+-\frac{1}{4} & -1
+\end{vmatrix}
+= \frac{31}{16},
+$$
+
+que es positivo en cualquier punto, y en particular en el punto crítico $\left(\frac{2320}{31}, \frac{3760}{31}\right)$, por lo en este punto hay un extremo relativo, y como $\frac{\partial^2 B}{\partial x^2} = -2<0$, se trata de un máximo relativo. En este punto, el beneficio es 
+
+\begin{align*}
+B\left(\frac{2320}{31}, \frac{3760}{31}\right) 
+&= -\left(\frac{2320}{31}\right)^2 - \frac{1}{2}\left(\frac{3760}{31}\right)^2 - \frac{1}{4}\frac{2320}{31}\frac{3760}{31}  \\
+&+ 180 \left(\frac{2320}{31}\right) + 140\left(\frac{3760}{31}\right) - 5000
+\approx 10225.81\cdot 10^2 \mbox{€}
+\end{align*}
+
+Para ver que es el máximo absoluto, basta con ver que en los límites de la región del dominio de la función, en este caso $\{(x,y), x\geq 0, y\geq 0\}$, no hay ningún punto donde la función tome un valor mayor. En particular, para $x=0$ la función de beneficio es 
+
+$$
+f(y) = -\frac{1}{2}y^2 + 140y - 5000,
+$$
+
+cuyos puntos críticos son 
+
+$$
+f'(y) = -y + 140 = 0 \Leftrightarrow y = 140.
+$$
+
+que es un máximo relativo al ser $f''(y) = -1<0$, pero $f(140) = 4800 < 10225.81$.
+
+Del mismo modo se comprueba que para $y=0$ tampoco hay valores de $x$ donde la función tome un valor mayor que en el máximo relativo.
+:::
+
+:::{#exr-2}
+La presión (en Pascales) en la posición $(x,y,z)$ de un espacio es $p(x,y,z)= x^2+y^2-z^3$, y la posición de un objeto en cada instante $t>0$ (en segundos) en ese mismo espacio está dada por la función vectorial
+
+$$
+\begin{cases}
+x=\sqrt{t}\\
+y=1\\
+z=1/t
+\end{cases}
+$$
+
+a.  Calcular la ecuación de la recta tangente a la trayectoria en el punto $(1,1,1)$.
+
+a.  Calcular la ecuación del plano normal a la trayectoria en el punto $(1,1,1)$.
+
+a.  ¿Es la dirección de esta trayectoria al pasar por el punto $(1,1,1)$ aquella en la que que el crecimiento de la presión es máximo?
+
+a.  ¿Cuál es la tasa de variación de la presión que soporta el objeto con respecto al tiempo en ese mismo instante?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Sea $g(t) = \left(\sqrt{t}, 1, \frac{1}{t}\right)$. Resulta sencillo ver que la trayectoria de $g$ pasa por el punto $(1, 1, 1)$ cuanto $t=1$. Por tanto, se trata de calcular la ecuación de la recta tangente a la trayectoria de $g$ para $t=1$. La recta tangente la trayectoria de $g$ tiene la dirección que la derivada de la función vectorial, que vale $g'(t) = \left(\frac{1}{2\sqrt{t}}, 0, -\frac{1}{t^2}\right)$, y en particular, en $t=1$ vale $g'(1) = \left(\frac{1}{2}, 0, -1\right)$, por lo que la ecuación vectorial de la recta tangente resulta ser
+
+    $$
+    g(1) + tg'(1) 
+    = (1, 1, 1) + t\left(\frac{1}{2}, 0, -1\right)
+    = \left(1+\frac{t}{2}, 1, 1-t\right).
+    $$
+
+a.  El plano normal es perpendicular al vector de la derivada, por lo que el producto escalar de cualquier vector del plano normal y la derivada se anulará, es decir, 
+
+    $$
+    \begin{gathered}
+    ((x, y, z) - g(1)) g'(1) = 0 
+    \Leftrightarrow ((x, y, z) - (1, 1, 1)) \left(\frac{1}{2}, 0, -1\right) = 0 \\
+    \Leftrightarrow \frac{x-1}{2} -(z-1) = 0
+    \Leftrightarrow \frac{x}{2}-z+\frac{1}{2} = 0. 
+    \end{gathered}
+    $$
+
+a.  Ya hemos visto que la dirección de la recta tangente a la trayectoria de $g$ es la del vector $\left(\frac{1}{2}, 0, -1\right)$. Por otro lado, la dirección de máximo crecimiento de la $f$ es la dirección del vector gradiente, que vale $\nabla p(x, y, z)= (2x, 2y, -3z^2)$, y en particular en el punto $(1, 1, 1,)$ vale $\nabla f(1, 1, 1) = (2, 2, -3)$. Para que la dirección de la recta tangente a la trayectoria de $g$ sea la misma que la dirección de máximo crecimiento de $p$, ambos vectores deberían ser proporcionales, pero no lo son, por lo que ambas direcciones son distintas.
+
+a.  La tasa de variación de la presión con respecto al tiempo es la derivada de $p\circ g$, que, aplicando la regla de la cadena, vale
+
+$$
+\frac{dp}{dt} 
+= \nabla(1,1,1) g'(1)
+= (2, 2, -3) \left(\frac{1}{2},0,-1\right)
+= 4 \mbox{ Pa/s}.
+$$
+:::
+
+:::{#exr-3}
+El consumo de combustible de una avioneta (en l/m) depende de la altura a la que vuela $h$ (en km) y su velocidad $v$ (en cientos de km/h) según la función $c(h,v) = \frac{v^2}{\ln(\sqrt{h+2})}$.
+
+a.  En el momento en que el avión tiene una altitud de 2 km y una velocidad de 250 km/h, ¿cómo cambiará el consumo si empezamos a cambiar la velocidad y la altura de manera velocidad disminuya la mitad de lo que aumenta la altura? 
+
+a.  En ese mismo instante, ¿cómo debería cambiar la altitud y la velocidad para que el consumo se reduzca lo más rápidamente posible? 
+
+a.  Si en ese instante, el avión empieza a acelerar a razón de 5 km/h por minuto y su altura empieza a disminuir a razón de 100 m por minuto. ¿Cuál será la tasa de variación del consumo de combustible con respecto al tiempo?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Para que la velocidad disminuya a razón de la mitad de lo que aumenta la altura, debemos cambiar la altura y la velocidad en la dirección del vector $(-1/2, 1)$. La tasa de variación del consumo la da la derivada direccional de $c$ en esta dirección, y para ello primero hay que calcular el vector gradiente. Las derivadas parciales de $c$ son
+
+    \begin{align*}
+    \frac{\partial c}{\partial h} 
+    &= \frac{-2v^2}{\ln(h+2)^2}\frac{1}{h+2}
+    = \frac{-2v^2}{\ln(h+2)^2(h+2)}, \\
+    \frac{\partial c}{\partial v} 
+    &= \frac{4v}{\ln(h+2)},
+    \end{align*}
+
+    por lo que el vector gradiente en el punto $(2, 2.5)$ vale 
+
+    $$
+    \nabla (2, 2.5) 
+    = \left(\frac{-2\cdot 2.5^2}{\ln(2+2)^2(2+2)}, \frac{4\cdot 2.5}{\ln(2+2)}\right)
+    = \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right).
+    $$
+
+    Así pues, la derivada direccional de $c$ en la dirección del vector $\mathbf{u}=(-1/2, 1)$ es
+
+    $$
+    c'_{\mathbf{u}} 
+    = \nabla c(2, 2.5) \frac{\mathbf{u}}{|\mathbf{u}|}
+    = \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right) \frac{(-1/2, 1)}{\sqrt{(-1/2)^2+1^2}} \approx 7.46.
+    $$
+
+a.  Para que el consumo se reduzca lo más rápidamente posible, deberíamos cambiar la altitud y la velocidad en la dirección opuesta al gradiente, es decir, en la dirección del vector $-\nabla c(2,2.5) = \left(\frac{3.125}{\ln(4)^2}, \frac{-10}{\ln(4)}\right)$.
+
+a.  La tasa de variación del consumo con respecto al tiempo es
+
+    $$
+    \frac{dc}{dt} 
+    = \nabla c(2, 2.5) \left(\frac{dh}{dt}, \frac{dv}{dt}\right)
+    = \left(\frac{3.125}{\ln(4)^2}, \frac{-10}{\ln(4)}\right) (-0.1, 0.05)
+    \approx 0.5233 \mbox{ l/min}^2.
+    $$
+:::
+
+:::{#exr-4}
+Un cable de longitud $l$ tiene una sección circular de radio $r$ y se enrolla sobre un cilindro de radio $R$. ¿Cuál es la longitud más corta que debe tener el cilindro para poder enrollar todo el cable sin que se solape? 
+
+Calcular la longitud para un cilindro de radio 10 cm y un cable de 10 m con una sección circular de radio 2 cm. ¿Cuántas vueltas completas daría el cable alrededor del cilindro?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+La trayectoria que describe el cable al enrollarlo sobre el cilindro es una espiral. Como el radio de la espiral es el radio del cilindro sobre el que se enrolla $R$ y la distancia vertical que recorre la espiral en cada vuelta es el diámetro del cable $2r$, se tiene que la espiral está definida por la vectorial $f(t) = (R\cos(t), R\operatorname{sen(t)}, \frac{r}{\pi}t)$.
+
+La distancia recorrida por esta espiral viene dada por la integral
+
+\begin{align*}
+s(t) 
+&= \int_0^t |f'(x)|\,dx 
+= \int_0^t \left|\left(-R\operatorname{sen}(x), R\cos(x), \frac{r}{\pi}\right)\right|\, dx \\
+&= \int_0^t \sqrt{(-R\operatorname{sen}(x))^2, (R\cos(x))^2, \left(\frac{r}{\pi}\right)^2} \\
+&= \int_0^t \sqrt{R^2(\operatorname{sen}(x)^2+\cos(x)^2) + \frac{r^2}{\pi^2}}\, dx \\
+&= \int_0^t \sqrt{R^2 + \frac{r^2}{\pi^2}}\, dx
+= \left[\frac{\sqrt{R^2\pi^2+r^2}}{\pi} x\right]_0^t \\
+&= \frac{\sqrt{R^2\pi^2+r^2}}{\pi}t
+\end{align*}
+
+Como la longitud del cable es $l$ debe cumplirse que 
+
+$$
+\frac{\sqrt{R^2\pi^2+r^2}}{\pi}t = l \Leftrightarrow t = \frac{\pi l}{\sqrt{R^2\pi^2+r^2}}.
+$$
+
+La altura del cilindro es la tercera componente de la función vectorial $\frac{r}{\pi}t$, de manera, que para el valor de $t$ anterior se tiene que la mínima altura del cilindro debe ser
+
+$$
+\frac{r}{\pi}\frac{\pi l}{\sqrt{R^2\pi^2+r^2}} = \frac{rl}{\sqrt{R^2\pi^2+r^2}} 
+$$
+
+En el caso de un cilindro de radio $R=10$ cm y un cable de $10$ m y sección circular de radio $2$ cm, sustituyendo en la expresión anterior se tiene
+
+$$
+\frac{2\cdot 1000}{\sqrt{10^2\pi^2+2^2}} \approx 63.5334 \mbox{ cm}.
+$$
+
+Finalmente, el número de vueltas que dará el cable alrededor del cilindro es
+
+$$
+\frac{t}{2\pi} 
+= \frac{l}{2\sqrt{R^2\pi^2+r^2}} 
+= \frac{1000}{2\sqrt{10^2\pi^2+2^2}}
+\approx 15.8833,
+$$
+
+es decir, $15$ vueltas enteras.
+:::
+
