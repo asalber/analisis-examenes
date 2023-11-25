@@ -131,7 +131,7 @@ a.  Si en ese instante, el avión empieza a acelerar a razón de 5 km/h por minu
 
 :::{.callout-tip collapse="true"}
 ## Solución
-a.  Para que la velocidad disminuya a razón de la mitad de lo que aumenta la altura, debemos cambiar la altura y la velocidad en la dirección del vector $(-1/2, 1)$. La tasa de variación del consumo la da la derivada direccional de $c$ en esta dirección, y para ello primero hay que calcular el vector gradiente. Las derivadas parciales de $c$ son
+a.  Para que la velocidad disminuya a razón de la mitad de lo que aumenta la altura, debemos cambiar la altura y la velocidad en la dirección del vector $(1, -1/2)$. La tasa de variación del consumo la da la derivada direccional de $c$ en esta dirección, y para ello primero hay que calcular el vector gradiente. Las derivadas parciales de $c$ son
 
     \begin{align*}
     \frac{\partial c}{\partial h} 
@@ -149,12 +149,12 @@ a.  Para que la velocidad disminuya a razón de la mitad de lo que aumenta la al
     = \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right).
     $$
 
-    Así pues, la derivada direccional de $c$ en la dirección del vector $\mathbf{u}=(-1/2, 1)$ es
+    Así pues, la derivada direccional de $c$ en la dirección del vector $\mathbf{u}=(1, -1/2)$ es
 
     $$
     c'_{\mathbf{u}} 
     = \nabla c(2, 2.5) \frac{\mathbf{u}}{|\mathbf{u}|}
-    = \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right) \frac{(-1/2, 1)}{\sqrt{(-1/2)^2+1^2}} \approx 7.46.
+    = \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right) \frac{(1, -1/2)}{\sqrt{1^2 + (-1/2)^2}} \approx -4.6804.
     $$
 
 a.  Para que el consumo se reduzca lo más rápidamente posible, deberíamos cambiar la altitud y la velocidad en la dirección opuesta al gradiente, es decir, en la dirección del vector $-\nabla c(2,2.5) = \left(\frac{3.125}{\ln(4)^2}, \frac{-10}{\ln(4)}\right)$.

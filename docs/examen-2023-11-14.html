@@ -360,7 +360,7 @@ Solución
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="a">
-<li><p>Para que la velocidad disminuya a razón de la mitad de lo que aumenta la altura, debemos cambiar la altura y la velocidad en la dirección del vector <span class="math inline">\((-1/2, 1)\)</span>. La tasa de variación del consumo la da la derivada direccional de <span class="math inline">\(c\)</span> en esta dirección, y para ello primero hay que calcular el vector gradiente. Las derivadas parciales de <span class="math inline">\(c\)</span> son</p>
+<li><p>Para que la velocidad disminuya a razón de la mitad de lo que aumenta la altura, debemos cambiar la altura y la velocidad en la dirección del vector <span class="math inline">\((1, -1/2)\)</span>. La tasa de variación del consumo la da la derivada direccional de <span class="math inline">\(c\)</span> en esta dirección, y para ello primero hay que calcular el vector gradiente. Las derivadas parciales de <span class="math inline">\(c\)</span> son</p>
 <p><span class="math display">\[\begin{align*}
 \frac{\partial c}{\partial h}
 &amp;= \frac{-2v^2}{\ln(h+2)^2}\frac{1}{h+2}
@@ -374,11 +374,11 @@ Solución
 = \left(\frac{-2\cdot 2.5^2}{\ln(2+2)^2(2+2)}, \frac{4\cdot 2.5}{\ln(2+2)}\right)
 = \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right).
 \]</span></p>
-<p>Así pues, la derivada direccional de <span class="math inline">\(c\)</span> en la dirección del vector <span class="math inline">\(\mathbf{u}=(-1/2, 1)\)</span> es</p>
+<p>Así pues, la derivada direccional de <span class="math inline">\(c\)</span> en la dirección del vector <span class="math inline">\(\mathbf{u}=(1, -1/2)\)</span> es</p>
 <p><span class="math display">\[
 c'_{\mathbf{u}}
 = \nabla c(2, 2.5) \frac{\mathbf{u}}{|\mathbf{u}|}
-= \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right) \frac{(-1/2, 1)}{\sqrt{(-1/2)^2+1^2}} \approx 7.46.
+= \left(\frac{-3.125}{\ln(4)^2}, \frac{10}{\ln(4)}\right) \frac{(1, -1/2)}{\sqrt{1^2 + (-1/2)^2}} \approx -4.6804.
 \]</span></p></li>
 <li><p>Para que el consumo se reduzca lo más rápidamente posible, deberíamos cambiar la altitud y la velocidad en la dirección opuesta al gradiente, es decir, en la dirección del vector <span class="math inline">\(-\nabla c(2,2.5) = \left(\frac{3.125}{\ln(4)^2}, \frac{-10}{\ln(4)}\right)\)</span>.</p></li>
 <li><p>La tasa de variación del consumo con respecto al tiempo es</p>
