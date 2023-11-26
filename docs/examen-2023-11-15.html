@@ -270,16 +270,16 @@ Solución
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Como <span class="math inline">\(-1\leq \operatorname{sen}(t)\leq 1\)</span> y <span class="math inline">\(-1\leq \cos(t)\leq 1\)</span> <span class="math inline">\(\forall t\in\mathbb{R}\)</span>, en particular, para <span class="math inline">\(t&gt;1\)</span>se tiene que</p>
+<p>Como <span class="math inline">\(-1\leq \operatorname{sen}(3t)\leq 1\)</span> y <span class="math inline">\(-1\leq \cos(2t)\leq 1\)</span> <span class="math inline">\(\forall t\in\mathbb{R}\)</span>, en particular, para <span class="math inline">\(t&gt;1\)</span>se tiene que</p>
 <p><span class="math display">\[
 \begin{gathered}
 0 &lt; 10t-1 \leq 10t+\cos(2t) \leq 10t+1 \\
-0 &lt; 4t-2 \leq 4t+2\operatorname{sen}(t) \leq 4t+2
+0 &lt; 4t-2 \leq 4t+2\operatorname{sen}(3t) \leq 4t+2
 \end{gathered}
 \]</span></p>
 <p>y por tanto</p>
 <p><span class="math display">\[
-\frac{10t-1}{4t+2} \leq \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(t)} \leq \frac{10t+1}{4t-2}.
+\frac{10t-1}{4t+2} \leq \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)} \leq \frac{10t+1}{4t-2}.
 \]</span></p>
 <p>Como además, aplicando álgebra de límites,</p>
 <p><span class="math display">\[\begin{align*}
@@ -292,9 +292,26 @@ Solución
 = \lim_{t\to\infty} \frac{10+\frac{1}{t}}{4-\frac{2}{t}}
 = \frac{10}{4},
 \end{align*}\]</span></p>
-<p>por el <a href="https://aprendeconalf.es/analisis-manual/06-limites.html#thm-compresi%C3%B3n-funciones">teorema de comprensión de funciones</a>, se tiene que</p>
+<p>por el <a href="https://aprendeconalf.es/analisis-manual/06-limites.html#thm-compresi%C3%B3n-funciones">teorema de compresión de funciones</a>, se tiene que</p>
 <p><span class="math display">\[
 \lim_{t\to\infty} \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)} = \frac{10}{4}.
+\]</span></p>
+<p>Otra forma de verlo sería dividiendo numerador y denominador por <span class="math inline">\(t\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\lim_{t\to\infty} \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)}
+&amp;= \lim_{t\to\infty} \frac{\frac{10t+\cos(2t)}{t}}{\frac{4t+2\operatorname{sen}(3t)}{t}}
+= \lim_{t\to\infty} \frac{10 + \frac{\cos(2t)}{t}}{4 + \frac{2\operatorname{sen}(3t)}{t}} \\
+&amp;= \frac{\lim_{t\to\infty}10 +\lim_{t\to\infty} \frac{\cos(2t)}{t}}{\lim_{t\to\infty}4 + \lim_{t\to\infty}\frac{2\operatorname{sen}(3t)}{t}}.
+\end{align*}\]</span></p>
+<p>Ahora bien, como <span class="math inline">\(-1\leq \cos(2t)\leq 1\)</span>, se tiene que</p>
+<p><span class="math display">\[
+\frac{-1}{t}\leq \frac{\cos(2t)}{t}\leq \frac{1}{t},
+\]</span></p>
+<p>y como <span class="math inline">\(\lim_{t\to\infty} \frac{-1}{t} = \lim_{t\to\infty} \frac{1}{t} = 0\)</span>, por el teorema de compresión de funciones se tiene que <span class="math inline">\(\lim_{t\to\infty} \frac{\cos(2t)}{t} = 0\)</span>.</p>
+<p>Del mismo modo se puede probar que <span class="math inline">\(\lim_{t\to\infty} \frac{2\operatorname{sen}(3t)}{t} =0\)</span>, por lo que finalmente se tiene que</p>
+<p><span class="math display">\[
+\lim_{t\to\infty} \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)}
+= \frac{10+0}{4+0} = 2.5.
 \]</span></p>
 <p>Así pues, a largo plazo, la cantidad de agua en el embalse converge a <span class="math inline">\(2.5\)</span> Hm<span class="math inline">\(^3\)</span>.</p>
 </div>

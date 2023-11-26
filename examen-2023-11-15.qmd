@@ -35,19 +35,19 @@ Analizar si la cantidad de agua converge o no a largo plazo.
 
 :::{.callout-tip collapse="true"}
 ## Solución
-Como $-1\leq \operatorname{sen}(t)\leq 1$ y $-1\leq \cos(t)\leq 1$ $\forall t\in\mathbb{R}$, en particular, para $t>1$se tiene que 
+Como $-1\leq \operatorname{sen}(3t)\leq 1$ y $-1\leq \cos(2t)\leq 1$ $\forall t\in\mathbb{R}$, en particular, para $t>1$se tiene que 
 
 $$
 \begin{gathered}
 0 < 10t-1 \leq 10t+\cos(2t) \leq 10t+1 \\
-0 < 4t-2 \leq 4t+2\operatorname{sen}(t) \leq 4t+2
+0 < 4t-2 \leq 4t+2\operatorname{sen}(3t) \leq 4t+2
 \end{gathered}
 $$
 
 y por tanto
 
 $$
-\frac{10t-1}{4t+2} \leq \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(t)} \leq \frac{10t+1}{4t-2}.
+\frac{10t-1}{4t+2} \leq \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)} \leq \frac{10t+1}{4t-2}.
 $$
 
 Como además, aplicando álgebra de límites,
@@ -63,11 +63,35 @@ Como además, aplicando álgebra de límites,
 = \frac{10}{4},
 \end{align*}
 
-por el [teorema de comprensión de funciones](https://aprendeconalf.es/analisis-manual/06-limites.html#thm-compresi%C3%B3n-funciones), se tiene que 
+por el [teorema de compresión de funciones](https://aprendeconalf.es/analisis-manual/06-limites.html#thm-compresi%C3%B3n-funciones), se tiene que 
 
 
 $$
 \lim_{t\to\infty} \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)} = \frac{10}{4}.
+$$
+
+Otra forma de verlo sería dividiendo numerador y denominador por $t$
+
+\begin{align*}
+\lim_{t\to\infty} \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)} 
+&= \lim_{t\to\infty} \frac{\frac{10t+\cos(2t)}{t}}{\frac{4t+2\operatorname{sen}(3t)}{t}} 
+= \lim_{t\to\infty} \frac{10 + \frac{\cos(2t)}{t}}{4 + \frac{2\operatorname{sen}(3t)}{t}} \\
+&= \frac{\lim_{t\to\infty}10 +\lim_{t\to\infty} \frac{\cos(2t)}{t}}{\lim_{t\to\infty}4 + \lim_{t\to\infty}\frac{2\operatorname{sen}(3t)}{t}}.
+\end{align*}
+
+Ahora bien, como $-1\leq \cos(2t)\leq 1$, se tiene que 
+
+$$
+\frac{-1}{t}\leq \frac{\cos(2t)}{t}\leq \frac{1}{t},
+$$
+
+y como $\lim_{t\to\infty} \frac{-1}{t} = \lim_{t\to\infty} \frac{1}{t} = 0$, por el teorema de compresión de funciones se tiene que $\lim_{t\to\infty} \frac{\cos(2t)}{t} = 0$.
+
+Del mismo modo se puede probar que $\lim_{t\to\infty} \frac{2\operatorname{sen}(3t)}{t} =0$, por lo que finalmente se tiene que 
+
+$$
+\lim_{t\to\infty} \frac{10t+\cos(2t)}{4t+2\operatorname{sen}(3t)} 
+= \frac{10+0}{4+0} = 2.5.
 $$
 
 Así pues, a largo plazo, la cantidad de agua en el embalse converge a $2.5$ Hm$^3$.
