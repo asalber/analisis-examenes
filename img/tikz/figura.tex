@@ -1,0 +1,73 @@
+% Thanks to http://tex.stackexchange.com/a/30782/5645 for this
+% example!
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{ amssymb}
+\usepackage{mathptmx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{polar}
+\usepgfplotslibrary{fillbetween}
+\usepackage{tkz-fct}
+\usetikzlibrary{angles, quotes}
+\usetikzlibrary{arrows.meta, arrows}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{external}
+\tikzexternalize[prefix={external/}]
+
+\tikzset{
+    export as png/.style={
+        external/system call/.add={}{
+            && convert -density #1 -transparent white "\image.pdf" "\image.png"
+        },
+    },
+    export as png/.default={200},
+    % Arrow tips
+    >=stealth,
+}
+
+% pgfplots settings
+\input{colors}
+\input{pgfplots}
+
+\DeclareSymbolFont{symbolsb}{OMS}{cmsy}{m}{n}
+\SetSymbolFont{symbolsb}{bold}{OMS}{cmsy}{b}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{symbolsb}
+
+\def\req{\protect\rotatebox{90}{$\scriptstyle=$}}
+
+\newcommand{\addaxes}{\draw (0em,1em) -- (0em,-1em)
+                            (-1em,0em) -- (1em,0em);}
+\newcommand{\stepfunc}{\draw[line width=1.5pt] (0.65em,0.65em) -- (0,0.65em) 
+                                    -- (0,-0.65em) -- (-0.65em,-0.65em);}
+
+\begin{document}
+
+\tikzset{export as png}
+
+\tikzsetnextfilename{helado}
+
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+    \begin{axis}[
+        height=6cm,
+        3dfun,
+        xmin=-2, xmax=2,
+        ymin=-2, ymax=2,
+        zmin=0, zmax=3,
+        axis equal=true,
+        clip=false,
+        color = myblack,
+        view/h=110,
+        view/v=10,
+        colormap/viridis,
+        mesh/interior colormap={blueblack}{color=(myblue) color=(myblue)},
+    ]
+        \addplot3+[surf, shader=interp, domain=-1:1, opacity=0.8]  {2*sqrt(x^2+y^2)};
+        \addplot3+[surf, shader=interp, domain=-1:1, opacity=0.8]  {2+sqrt(1-x^2-y^2)};
+        \node at (-2, 2, 3.5) {$\mathbb{R}^3$};
+    \end{axis}
+    \end{tikzpicture}
+   
+
+\end{document}

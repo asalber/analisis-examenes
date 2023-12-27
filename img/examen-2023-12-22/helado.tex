@@ -1,0 +1,22 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+\begin{axis}[
+    height=6cm,
+    3dfun,
+    xmin=-3, xmax=3,
+    ymin=-3, ymax=3,
+    zmin=-4, zmax=4,
+    %axis equal=true,
+    clip=false,
+    color = myblack,
+    view/h=110,
+    view/v=10,
+    colormap/viridis,
+    mesh/interior colormap={blueblack}{color=(myblue) color=(myblue)},
+]
+    \addplot3+[surf, shader=interp, domain=-3:3, opacity=0.8]  {x*y/2};
+    \node at (-3, 3, 4.5) {$\mathbb{R}^3$};
+    \node[myblue] at (0, 0, -2.5) {$f(x,y) = \frac{xy}{2}$};
+\end{axis}
+\end{tikzpicture}
+    
