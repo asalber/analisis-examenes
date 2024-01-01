@@ -55,7 +55,7 @@ Por tanto, la máxima producción se obtendrá para 200 unidades de capital  y 1
 :::
 
 :::{#exr-2}
-Calcular los polinomios de Maclaurin de segundo grado de la función $f(x,y)=\cos(x)\operatorname{sen}(y)$ en los puntos $(0,\pi/2)$, $(\pi/2,0)$ y $(\pi,\pi/2)$, Justificar, en función del término cuadrático del polinomio si la función tiene un máximo relativo, un mínimo relativo o un punto de inflexión en cada uno de estos puntos.
+Calcular los polinomios de Taylor de segundo grado de la función $f(x,y)=\cos(x)\operatorname{sen}(y)$ en los puntos $(0,\pi/2)$, $(\pi/2,0)$ y $(\pi,\pi/2)$, Justificar, en función del término cuadrático del polinomio si la función tiene un máximo relativo, un mínimo relativo o un punto de inflexión en cada uno de estos puntos.
 :::
 
 :::{.callout-tip collapse="true"}
@@ -131,7 +131,7 @@ Se trata de una integral racional pero resulta más sencilla si se invierte el o
 :::
 
 :::{#exr-4}
-Calcular el volumen de un helado formado por un cono de barquillo con ecuación $2x^2+2y^2-z^2=0$ sobre el que se coloca semiesfera de ecuación $x^2+y^2+(z-2)^2 = 1$ como se muestra en la figura. ¿Qué cantidad de barquillo se necesita para construir el cono del helado?
+Calcular el volumen de un helado formado por un cono de barquillo con ecuación $4x^2+4y^2-z^2=0$ sobre el que se coloca semiesfera de ecuación $x^2+y^2+(z-2)^2 = 1$ como se muestra en la figura. ¿Qué cantidad de barquillo se necesita para construir el cono del helado?
 
 :::{.content-visible when-format="html"}
 ![](img/examen-2023-12-22/helado.svg)
@@ -144,7 +144,7 @@ Calcular el volumen de un helado formado por un cono de barquillo con ecuación 
 
 :::{.callout-tip collapse="true"}
 ## Solución
-Despejando $z$ de ambas ecuaciones, se tiene que la función que define el cono es $f(x,y) = 2\sqrt{x^2+y^2}$ y la que define la semiesfera superior es $g(x,y) = 2 + \sqrt{1-x^2-y^2}$, de manera que el volumen del helado será el volumen comprendido entre las superficies de $g$ y $f$.
+Despejando $z$ de ambas ecuaciones, se tiene que la función que define el cono es $f(x,y) = \sqrt{4x^2+4y^2} = 2\sqrt{x^2+y^2}$ y la que define la semiesfera superior es $g(x,y) = 2 + \sqrt{1-x^2-y^2}$, de manera que el volumen del helado será el volumen comprendido entre las superficies de $g$ y $f$.
 
 Para determinar la región de integración, resolvemos la ecuación que resulta de igualar las dos funciones.
 
