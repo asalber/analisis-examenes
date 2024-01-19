@@ -1,0 +1,23 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+\begin{axis}[
+    axis equal,
+    axis lines=center, % Place the axis at the center of the plot
+    axis line style={-LaTeX}, % Add arrowheads to the axes
+    xlabel={}, % Remove x-axis label
+    ylabel={}, % Remove y-axis label
+    xmin=-0.1, xmax=1.2,
+    ymin=-0.1, ymax=1.2,
+    xtick={0,1}, % Set x-axis tick positions
+    ytick={0,1}, % Set y-axis tick positions
+    ]
+    \addplot [domain=0:pi/2, samples=100] ({cos(deg(x))}, {sin(deg(x))});
+    \draw (0,0) -- ({cos(deg(pi/4))}, {sin(deg(pi/4))}) -- (1,0);
+    \draw [dashed] ({cos(deg(pi/4))}, 0) -- ({cos(deg(pi/4))}, {sin(deg(pi/4))});
+    \draw (0,0) -- (1, {tan(deg(pi/4))}) -- (1,0);
+    \fill [blue!20, opacity=0.5] [dashed] (1,0) arc (0:45:1) -- (0,0);
+    % Angle symbol and label
+    \draw [red, thick] (0.25,0) arc (0:45:0.25);
+    \node at (0.15,0.06) {$x$};
+\end{axis}
+\end{tikzpicture}

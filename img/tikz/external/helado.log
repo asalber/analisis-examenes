@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  27 DEC 2023 16:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  19 JAN 2024 05:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -884,418 +884,32 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
 
 \openout4 = `external/helado.dpth'.
 
-NOTE: coordinate (2Y1.0e0],2Y1.0e0],3Y0.0e0]) has been dropped because it is un
-bounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.833345e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.000015e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y4.166684e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y3.333353e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y2.500021e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.66669e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.3336e-2],2Y1.0e0],3Y0.0e0]) has been dropped because it i
-s unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.33302e-2],2Y1.0e0],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y1.666634e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y2.499965e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y3.333296e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.166628e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.999957e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y5.833289e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y1.0e0],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y9.16667e-1],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becaus
-e it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.833345e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.000015e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y4.166684e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.166628e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.999957e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y5.833289e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becaus
-e it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y9.16667e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y8.333339e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.833345e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y5.833289e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y8.333339e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y7.500008e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y7.500008e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y6.666676e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y6.666676e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],2Y6.666676e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],2Y6.666676e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],2Y6.666676e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],2Y6.666676e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y6.666676e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y6.666676e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y5.833345e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y5.833345e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],2Y5.833345e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],2Y5.833345e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y5.833345e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y5.833345e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y5.000015e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y5.000015e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y5.000015e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y5.000015e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y4.166684e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],2Y4.166684e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],2Y4.166684e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y4.166684e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y3.333353e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y3.333353e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y2.500021e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y2.500021e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y1.66669e-1],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y1.66669e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y8.3336e-2],3Y0.0e0]) has been dropped because it i
-s unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],2Y8.3336e-2],3Y0.0e0]) has been dropped becaus
-e it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],2Y2.9e-6],3Y0.0e0]) has been dropped because it is u
-nbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y8.33302e-2],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y8.33302e-2],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y1.666634e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y1.666634e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y2.499965e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y2.499965e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y3.333296e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y3.333296e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y4.166628e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y4.166628e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y4.166628e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y4.166628e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y4.999957e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y4.999957e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y4.999957e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y4.999957e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y5.833289e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y5.833289e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],1Y5.833289e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],1Y5.833289e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y5.833289e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y5.833289e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y6.66662e-1],3Y0.0e0]) has been dropped because it 
-is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y6.66662e-1],3Y0.0e0]) has been dropped becaus
-e it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],1Y6.66662e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],1Y6.66662e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],1Y6.66662e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],1Y6.66662e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y6.66662e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y6.66662e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y7.499951e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y7.499951e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y8.333282e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.833345e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y5.833289e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y8.333282e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y9.166612e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.833345e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.000015e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y4.166684e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.166628e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.999957e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y5.833289e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y9.166612e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.0e0],1Y9.999944e-1],3Y0.0e0]) has been dropped because it
- is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y9.16667e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.333339e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y7.500008e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y6.666676e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.833345e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y5.000015e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y4.166684e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y3.333353e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y2.500021e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y1.66669e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (2Y8.3336e-2],1Y9.999944e-1],3Y0.0e0]) has been dropped becaus
-e it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.33302e-2],1Y9.999944e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y1.666634e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y2.499965e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y3.333296e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.166628e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y4.999957e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y5.833289e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y6.66662e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped becau
-se it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y7.499951e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y8.333282e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.166612e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
-NOTE: coordinate (1Y9.999944e-1],1Y9.999944e-1],3Y0.0e0]) has been dropped beca
-use it is unbounded (in z). (see also unbounded coords=jump). 
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 69.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 69.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 69.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 69.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
-
-Package pgfplots Warning: the combination 'shader=interp,interior colormap name
-' is inefficient (it uses 'shader=faceted interp,faceted color=none') and may s
-low down the *display* of your document on input line 69.
-
- [warning /pgfplots/warning/interior colormap inefficient]
-
-Package pgfplots Warning: the combination 'shader=interp,interior colormap name
-' is inefficient (it uses 'shader=faceted interp,faceted color=none') and may s
-low down the *display* of your document on input line 69.
-
- [warning /pgfplots/warning/interior colormap inefficient]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/al
@@ -1306,20 +920,19 @@ L3 programming layer <2023-06-16>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 29713 strings out of 477580
- 770069 string characters out of 5827698
- 2069769 words of memory out of 5000000
- 49627 multiletter control sequences out of 15000+600000
- 536966 words of font info for 91 fonts, out of 8000000 for 9000
+ 29629 strings out of 477580
+ 768490 string characters out of 5827698
+ 1856769 words of memory out of 5000000
+ 49552 multiletter control sequences out of 15000+600000
+ 526416 words of font info for 64 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 106i,11n,114p,764b,4577s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/alf/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/alf/texmf/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></home/alf/texmf/fonts/type1/urw/
-times/utmr8a.pfb></home/alf/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on external/helado.pdf (1 page, 1566698 bytes).
+ 106i,11n,114p,764b,2156s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/alf/texmf/fonts/type1/urw/times/utmr8a.pfb></home/alf/texmf/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on external/helado.pdf (1 page, 11075 bytes).
 PDF statistics:
- 3971 PDF objects out of 4296 (max. 8388607)
- 1976 compressed objects within 20 object streams
+ 46 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13745 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

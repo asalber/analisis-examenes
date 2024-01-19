@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  27 DEC 2023 16:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  19 JAN 2024 05:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -929,25 +929,27 @@ e
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
 
-\openout3 = `external/helado.md5'.
+\openout3 = `external/arco-circunferencia.md5'.
 
 \openout3 = `figura.auxlock'.
 
 ===== 'mode=convert with system call': Invoking 'pdflatex -shell-escape -halt-o
-n-error -interaction=batchmode -jobname "external/helado" "\def\tikzexternalrea
-ljob{figura}\input{figura}" && convert -density 200 -transparent white "externa
-l/helado.pdf" "external/helado.png" ' ========
+n-error -interaction=batchmode -jobname "external/arco-circunferencia" "\def\ti
+kzexternalrealjob{figura}\input{figura}" && convert -density 200 -transparent w
+hite "external/arco-circunferencia.pdf" "external/arco-circunferencia.png" ' ==
+======
 runsystem(pdflatex -shell-escape -halt-on-error -interaction=batchmode -jobname
- "external/helado" "\def\tikzexternalrealjob{figura}\input{figura}" && convert 
--density 200 -transparent white "external/helado.pdf" "external/helado.png" )..
-.executed.
+ "external/arco-circunferencia" "\def\tikzexternalrealjob{figura}\input{figura}
+" && convert -density 200 -transparent white "external/arco-circunferencia.pdf"
+ "external/arco-circunferencia.png" )...executed.
 
 \openout3 = `figura.auxlock'.
 
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/al
-f/texmf/fonts/enc/dvips/base/8r.enc} <./external/helado.pdf>] (./figura.aux)
+f/texmf/fonts/enc/dvips/base/8r.enc} <./external/arco-circunferencia.pdf>]
+(./figura.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-16>
@@ -955,19 +957,18 @@ L3 programming layer <2023-06-16>
  ) 
 Here is how much of TeX's memory you used:
  29062 strings out of 477580
- 753105 string characters out of 5827698
+ 753118 string characters out of 5827698
  1852769 words of memory out of 5000000
  49005 multiletter control sequences out of 15000+600000
  514972 words of font info for 36 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  102i,5n,111p,728b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/alf/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/alf/texmf/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></home/alf/texmf/fonts/type1/urw/
-times/utmr8a.pfb></home/alf/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on figura.pdf (1 page, 1590714 bytes).
+</home/alf/texmf/fonts/type1/urw/times/utmr8a.pfb></home/alf/texmf/fonts/type
+1/urw/times/utmri8a.pfb>
+Output written on figura.pdf (1 page, 13145 bytes).
 PDF statistics:
- 3984 PDF objects out of 4296 (max. 8388607)
- 1987 compressed objects within 20 object streams
+ 55 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
