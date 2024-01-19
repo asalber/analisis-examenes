@@ -344,7 +344,47 @@ Solución
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p><strong>Asíntotas verticaes</strong></p>
+<p>Para determinar las asíntotas verticales primero debemos estudiar el dominio de la función. Como el dominio de la función logarítmica es <span class="math inline">\(\mathbb{R}⁺\)</span>, <span class="math inline">\(f(x)\)</span> está definida en los valores de <span class="math inline">\(x\)</span> tales que <span class="math inline">\(\sqrt{x^4e^x}&gt;0\)</span>, y esto ocurre para cualquier <span class="math inline">\(x\neq 0\)</span>, por tanto, el único punto donde puede haber asíntota vertical es en <span class="math inline">\(x=0\)</span>. Estudiamos los límites laterales de la función en este punto.</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to 0^-} f(x)
+&amp;= \lim_{x\to 0^-} \ln(\sqrt{x^4e^x})
+= -\infty.\\
+\lim_{x\to 0^+} f(x)
+&amp;= \lim_{x\to 0^+} \ln(\sqrt{x^4e^x})
+= -\infty.
+\end{align*}\]</span></p>
+<p>Como ambos límites no existen, no hay asíntota vertical en <span class="math inline">\(x=0\)</span>.</p>
+<p><strong>Asíntotas horizontales</strong></p>
+<p>Para determinar las asíntotas horizontales, tenemos que calcular los límites en el infinito.</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to -\infty} f(x)
+&amp;= \lim_{x\to -\infty} \ln(\sqrt{x^4e^x})
+\lim_{x\to -\infty} \frac{1}{2}\ln(x^4e^x)
+= -\infty \tag{1}\\
+\lim_{x\to \infty} f(x)
+&amp;= \lim_{x\to \infty} \ln(\sqrt{x^4e^x})
+= \infty
+\end{align*}\]</span> (1) <span class="math inline">\(x^4e^x\)</span> es indeterminado cuando <span class="math inline">\(x\to-\infty\)</span>, pero como la función exponencial crece más rápidamente que cualquier función potencial, se tiene que $<span class="math inline">\(\lim_{x\to-\infty} x^4e^x = 0\)</span>.</p>
+<p>Y como ambos límites tampoco no existen, no hay asíntotas horizontales.</p>
+<p><strong>Asíntotas oblicuas</strong></p>
+<p>Finalmente para ver si hay asíntotas oblicuas, tenemos que estudiar los siguientes límites en el infinito.</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to -\infty} \frac{f(x)}{x}
+&amp;= \lim_{x\to -\infty} \frac{\ln(\sqrt{x^4e^x})}{x}
+= \lim_{x\to -\infty} \frac{\ln(x^4e^x)}{2x} \\
+&amp;= \lim_{x\to -\infty} \frac{\ln(x^4)+x}{2x}
+= \lim_{x\to -\infty} \frac{\ln(x^4)}{2x} + \frac{1}{2}
+= \frac{1}{2} \tag{1}\\
+\lim_{x\to \infty} f(x) -\frac{1}{2}x
+&amp;= \lim_{x\to \infty} \ln(\sqrt{x^4e^x}) - \frac{x}{2}
+= \lim_{x\to \infty} \frac{1}{2}\ln(x^4e^x) - \frac{x}{2} \\
+&amp;= \lim_{x\to \infty} \frac{1}{2}(\ln(x^4)+x) - \frac{x}{2}
+= \lim_{x\to \infty} \frac{1}{2}\ln(x^4)
+= \infty
+\end{align*}\]</span> (1) <span class="math inline">\(\frac{\ln(x^4)}{2x}\)</span> es indeterminado cuando <span class="math inline">\(x\to\infty\)</span>, pero como la función logarítmica creces siempre más despacio que cualquier función lineal, al final se tiene <span class="math inline">\(\lim_{x\to\infty} \frac{\ln(x^4)}{2x} = 0\)</span>.</p>
+<p>Como el último límite no existe, tampoco hay asíntota oblicua en <span class="math inline">\(\infty\)</span> y si calculamos los límites en <span class="math inline">\(-\infty\)</span> se obtiene lo mismo, por lo que no hay asíntotas oblicuas.</p>
+<p>A pesar de no haber asíntotas oblicuas, como <span class="math inline">\(\lim_{x\to -\infty} \frac{f(x)}{x} =\frac{1}{2}\)</span>, la pendiente de la recta tangente a <span class="math inline">\(f\)</span> cuanto <span class="math inline">\(x\to \infty\)</span> tiende a <span class="math inline">\(\frac{1}{2}\)</span>.</p>
 </div>
 </div>
 </div>

@@ -95,7 +95,61 @@ Calcular las asíntotas de la función $f(x) = \ln(\sqrt{x^4e^x})$. ¿Hacia dón
 
 :::{.callout-tip collapse="true"}
 ## Solución
+**Asíntotas verticaes**
 
+Para determinar las asíntotas verticales primero debemos estudiar el dominio de la función. Como el dominio de la función logarítmica es $\mathbb{R}⁺$, $f(x)$ está definida en los valores de $x$ tales que $\sqrt{x^4e^x}>0$, y esto ocurre para cualquier $x\neq 0$, por tanto, el único punto donde puede haber asíntota vertical es en $x=0$. Estudiamos los límites laterales de la función en este punto.
+
+\begin{align*}
+\lim_{x\to 0^-} f(x)
+&= \lim_{x\to 0^-} \ln(\sqrt{x^4e^x})
+= -\infty.\\
+\lim_{x\to 0^+} f(x)
+&= \lim_{x\to 0^+} \ln(\sqrt{x^4e^x})
+= -\infty.
+\end{align*}
+
+Como ambos límites no existen, no hay asíntota vertical en $x=0$.
+
+**Asíntotas horizontales**
+
+Para determinar las asíntotas horizontales, tenemos que calcular los límites en el infinito.
+
+\begin{align*}
+\lim_{x\to -\infty} f(x)
+&= \lim_{x\to -\infty} \ln(\sqrt{x^4e^x}) 
+\lim_{x\to -\infty} \frac{1}{2}\ln(x^4e^x) 
+= -\infty \tag{1}\\
+\lim_{x\to \infty} f(x)
+&= \lim_{x\to \infty} \ln(\sqrt{x^4e^x}) 
+= \infty
+\end{align*}
+(1) $x^4e^x$ es indeterminado cuando $x\to-\infty$, pero como la función exponencial crece más rápidamente que cualquier función potencial, se tiene que $$\lim_{x\to-\infty} x^4e^x = 0$.
+
+Y como ambos límites tampoco no existen, no hay asíntotas horizontales.
+
+**Asíntotas oblicuas**
+
+Finalmente para ver si hay asíntotas oblicuas, tenemos que estudiar los siguientes límites en el infinito.
+
+\begin{align*}
+\lim_{x\to -\infty} \frac{f(x)}{x}
+&= \lim_{x\to -\infty} \frac{\ln(\sqrt{x^4e^x})}{x}
+= \lim_{x\to -\infty} \frac{\ln(x^4e^x)}{2x} \\
+&= \lim_{x\to -\infty} \frac{\ln(x^4)+x}{2x} 
+= \lim_{x\to -\infty} \frac{\ln(x^4)}{2x} + \frac{1}{2}
+= \frac{1}{2} \tag{1}\\
+\lim_{x\to \infty} f(x) -\frac{1}{2}x
+&= \lim_{x\to \infty} \ln(\sqrt{x^4e^x}) - \frac{x}{2}
+= \lim_{x\to \infty} \frac{1}{2}\ln(x^4e^x) - \frac{x}{2} \\
+&= \lim_{x\to \infty} \frac{1}{2}(\ln(x^4)+x) - \frac{x}{2}
+= \lim_{x\to \infty} \frac{1}{2}\ln(x^4)
+= \infty
+\end{align*}
+(1) $\frac{\ln(x^4)}{2x}$ es indeterminado cuando $x\to\infty$, pero como la función logarítmica creces siempre más despacio que cualquier función lineal, al final se tiene $\lim_{x\to\infty} \frac{\ln(x^4)}{2x} = 0$.
+
+Como el último límite no existe, tampoco hay asíntota oblicua en $\infty$ y si calculamos los límites en $-\infty$ se obtiene lo mismo, por lo que no hay asíntotas oblicuas. 
+
+A pesar de no haber asíntotas oblicuas, como $\lim_{x\to -\infty} \frac{f(x)}{x} =\frac{1}{2}$, la pendiente de la recta tangente a $f$ cuanto $x\to \infty$ tiende a $\frac{1}{2}$.
 :::
 
 :::{#exr-4}
