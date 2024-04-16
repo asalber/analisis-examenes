@@ -1,0 +1,25 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{polaraxis}[
+        samples=360, % How many samples to take
+        grid=major, % Display both major and minor grids
+        %ymax=2.5, % Adjust the maximum r value to accommodate your curves
+        xtick={0, 90, 180, 270}, % Positions of the ticks in degrees
+        xticklabels={$0$, $\pi/2$, $\pi$, $3\pi/2$}, % Custom labels for each tick
+        yticklabel style={anchor=north east}, % Adjust label style if necessary
+        clip=false, % Prevent clipping of labels
+        tick label style={font=\small}, % Adjust font size if necessary
+        major grid style={mygray}, % Style for major grids
+        myblack
+      ]
+  \addplot[name path=A, domain=26.565:90, samples=100, smooth, thick, myblue] {cos(x)};
+  \addplot[name path=B, domain=0:26.565, samples=100, smooth, thick, myred] {2*sin(x)};
+  \draw[name path=C] (0,0) -- (26.565,0.8944);
+  \addplot[fill=myblue, opacity=0.3] fill between [of=A and C];  
+  \addplot[domain=0:360, samples=200, smooth, thick, myblue] {cos(x)};
+  \addplot[fill=myred, opacity=0.3] fill between [of=B and C];  
+  \addplot[domain=0:360, samples=200, smooth, thick, myred] {2*sin(x)};
+  \node[color=myred] at (axis cs:90,1) {$g(\theta) = 2\operatorname{sen}(\theta)$};
+  \node[color=myblue] at (axis cs:-45,1) {$f(\theta) = \cos(\theta)$};
+  \end{polaraxis}
+  \end{tikzpicture}

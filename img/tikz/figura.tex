@@ -8,7 +8,7 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{polar}
 \usepgfplotslibrary{fillbetween}
-\usepackage{tkz-fct}
+%\usepackage{tkz-fct}
 \usetikzlibrary{angles, quotes}
 \usetikzlibrary{arrows.meta, arrows}
 \usetikzlibrary{shapes.geometric}
@@ -45,30 +45,32 @@
 
 \tikzset{export as png}
 
-\tikzsetnextfilename{arco-circunferencia}
+\tikzsetnextfilename{interseccion-circulos-int-11-gen}
 
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 \begin{tikzpicture}
-    \begin{axis}[
-      axis equal,
-      axis lines=center, % Place the axis at the center of the plot
-      axis line style={-LaTeX}, % Add arrowheads to the axes
-      xlabel={}, % Remove x-axis label
-      ylabel={}, % Remove y-axis label
-      xmin=-0.1, xmax=1.2,
-      ymin=-0.1, ymax=1.2,
-      xtick={0,1}, % Set x-axis tick positions
-      ytick={0,1}, % Set y-axis tick positions
+  \begin{polaraxis}[
+        samples=360, % How many samples to take
+        grid=major, % Display both major and minor grids
+        %ymax=2.5, % Adjust the maximum r value to accommodate your curves
+        xtick={0, 90, 180, 270}, % Positions of the ticks in degrees
+        xticklabels={$0$, $\pi/2$, $\pi$, $3\pi/2$}, % Custom labels for each tick
+        yticklabel style={anchor=north east}, % Adjust label style if necessary
+        clip=false, % Prevent clipping of labels
+        tick label style={font=\small}, % Adjust font size if necessary
+        major grid style={mygray}, % Style for major grids
+        myblack
       ]
-      \addplot [domain=0:pi/2, samples=100] ({cos(deg(x))}, {sin(deg(x))});
-      \draw (0,0) -- ({cos(deg(pi/4))}, {sin(deg(pi/4))}) -- (1,0);
-      \draw [dashed] ({cos(deg(pi/4))}, 0) -- ({cos(deg(pi/4))}, {sin(deg(pi/4))});
-      \draw (0,0) -- (1, {tan(deg(pi/4))}) -- (1,0);
-      \fill [blue!20, opacity=0.5] [dashed] (1,0) arc (0:45:1) -- (0,0);
-      % Angle symbol and label
-      \draw [red, thick] (0.25,0) arc (0:45:0.25);
-      \node at (0.15,0.06) {$x$};
-    \end{axis}
+  \addplot[name path=A, domain=26.565:90, samples=100, smooth, thick, myblue] {cos(x)};
+  \addplot[name path=B, domain=0:26.565, samples=100, smooth, thick, myred] {2*sin(x)};
+  \draw[name path=C] (0,0) -- (26.565,0.8944);
+  \addplot[fill=myblue, opacity=0.3] fill between [of=A and C];  
+  \addplot[domain=0:360, samples=200, smooth, thick, myblue] {cos(x)};
+  \addplot[fill=myred, opacity=0.3] fill between [of=B and C];  
+  \addplot[domain=0:360, samples=200, smooth, thick, myred] {2*sin(x)};
+  \node[color=myred] at (axis cs:90,1) {$g(\theta) = 2\operatorname{sen}(\theta)$};
+  \node[color=myblue] at (axis cs:-45,1) {$f(\theta) = \cos(\theta)$};
+  \end{polaraxis}
   \end{tikzpicture}
 
 \end{document}

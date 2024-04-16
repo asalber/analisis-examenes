@@ -102,7 +102,7 @@ Para estudiar la convergencia absoluta de la serie $\sum_{n=1}^\infty \frac{(\mu
 = \frac{\mu}{e^{\mu-1}}. 
 \end{align*}
 
-Como $\frac{mu}{e^{\mu-1}} < 1 \Leftrightarrow \mu < e^{\mu-1}$, es cierto para cualquier $\mu\geq 0$ excepto para $\mu=1$, la serie converge absolutamente $\forall \mu\geq 0$, $\mu\neq 1$. Para $\mu=1$ el criterio de la razón no es concluyente.
+Como $\frac{\mu}{e^{\mu-1}} < 1 \Leftrightarrow \mu < e^{\mu-1}$, es cierto para cualquier $\mu\geq 0$ excepto para $\mu=1$, la serie converge absolutamente $\forall \mu\geq 0$, $\mu\neq 1$. Para $\mu=1$ el criterio de la razón no es concluyente.
 :::
 
 :::{#exr-4}

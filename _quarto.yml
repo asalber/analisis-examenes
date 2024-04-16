@@ -38,6 +38,7 @@ book:
     - examen-2023-11-14.qmd
     - examen-2023-12-22.qmd
     - examen-2024-01-11.qmd
+    - examen-2024-04-16.qmd
 
 format:
   html:
@@ -46,6 +47,7 @@ format:
       dark: darkly
       light: flatly
     html-math-method: mathjax
+    default-image-extension: svg
   pdf:
     documentclass: scrreport
     papersize: a4
@@ -63,7 +65,8 @@ format:
     #mainfont: TeX Gyre Termes
     #mainfontoptions:
     #  - Numbers=Lowercase
-    #  - Numbers=Proportional    
+    #  - Numbers=Proportional   
+    default-image-extension: pdf 
     
   epub:
     cover-image: img/logos/sticker.png

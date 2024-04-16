@@ -117,9 +117,6 @@
 \definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tikz}{}{\usepackage{tikz}}
-\makeatother
-\makeatletter
 \@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
 \makeatother
 \makeatletter
@@ -163,20 +160,15 @@
 \AtBeginDocument{\renewcommand*{\proofname}{Prueba}}
 \newtheorem*{remark}{Observación}
 \newtheorem*{solution}{Solución}
+\newtheorem{refremark}{Observación}[chapter]
+\newtheorem{refsolution}{Solución}[chapter]
+\makeatother
+\makeatletter
+\@ifpackageloaded{tikz}{}{\usepackage{tikz}}
 \makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
@@ -190,7 +182,8 @@
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -236,8 +229,7 @@ Sánchez
 Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
 \end{tabular}
 \end{flushleft}
-\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, breakable, frame hidden]}{\end{tcolorbox}}\fi
-
+\end{titlepage}
 \renewcommand*\contentsname{Tabla de contenidos}
 {
 \hypersetup{linkcolor=}
@@ -246,8 +238,7 @@ Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
 }
 \bookmarksetup{startatroot}
 
-\hypertarget{prefacio}{%
-\chapter*{Prefacio}\label{prefacio}}
+\chapter*{Prefacio}\label{prefacio}
 \addcontentsline{toc}{chapter}{Prefacio}
 
 \markboth{Prefacio}{Prefacio}
@@ -257,9 +248,8 @@ Ingeniería Matemática.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-i}{%
 \chapter{\texorpdfstring{2022-11-14 Examen de Análisis
-I}{2022-11-14  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i}}
+I}{2022-11-14  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -269,7 +259,7 @@ Calcular los puntos de acumulación del conjunto
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Veamos primero que todos los puntos del intervalo \([0,1]\) son puntos
 de acumulación. Sea \(x\in[0,1]\). Entonces para cualquier
@@ -281,11 +271,11 @@ Veamos ahora que el conjunto
 \(B=\left\{\frac{n}{n-1}: n\in\mathbb{N}, n\geq 2\right\} = \left\{1+\frac{1}{n-1}: n\in\mathbb{N}, n\geq 2\right\}\)
 solo tiene \(1\) como punto de acumulación. En primer lugar, \(1\) es
 punto de acumulación, ya que para cualquier \(\varepsilon>0\),
-\((1-\varepsilon, 1+\varepsilon)\setminus \{1\}\) contiene puntos de
+\((1-\varepsilon, 1+\varepsilon)\setminus  \{1\}\) contiene puntos de
 \(A\). Para verlo, basta aplicar la propiedad arquimediana, por la que
 existe \(n\in\mathbb{N}\) tal que \(\frac{1}{n}<\varepsilon\), de manera
 que \(1+\frac{1}{n}<1+\varepsilon\), y por tanto
-\((1-\varepsilon, 1+\varepsilon)\setminus \{1\}\cap B\neq \emptyset\).
+\((1-\varepsilon, 1+\varepsilon)\setminus  \{1\}\cap B\neq \emptyset\).
 
 Si \(x<1\), tomando \(\varepsilon=|x-1|\) el entorno reducido
 \((x-\varepsilon, x+\varepsilon)\setminus\{x\}\) no contiene puntos de
@@ -324,7 +314,7 @@ Dada la sucesión \(\left(\frac{1}{2^n}\right)_{n=1}^\infty\),
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -364,7 +354,7 @@ tiempo?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Veamos que primero que la sucesión es monótona decreciente.
 \(x_1=3>x_n= \sqrt{\frac{3}{2}+3} = 2.12\). Supongamos ahora que
@@ -404,7 +394,7 @@ Demostrar, usando la definición de límite, que
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para cualquier \(\varepsilon>0\) existe
 \(\delta=\frac{2}{3}\varepsilon\), tal que si
@@ -432,7 +422,7 @@ siguientes funciones son infinitésimos equivalentes en \(x=0\):
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para que dos funciones \(f\) y \(g\) sean infinitésimos equivalentes en
 \(x=0\) se tiene que cumplir que \(\lim_{x\to 0}\frac{f(x)}{g(x)}=1\).
@@ -459,7 +449,7 @@ Determinar las asíntotas de la función
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 El dominio de la función es
 \(\operatorname{Dom}(f) = \mathbb{R}-[-1,0]\) de modo que solo puede
@@ -542,12 +532,10 @@ oblicua de \(f\) en \(-\infty\).
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-i-1}{%
 \chapter{\texorpdfstring{2022-12-14 Examen de Análisis
-I}{2022-12-14  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i-1}}
+I}{2022-12-14  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i-1}
 
-\hypertarget{primera-parte}{%
-\section{Primera parte}\label{primera-parte}}
+\section{Primera parte}\label{primera-parte}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -558,7 +546,7 @@ sucesión converge y calcular su límite.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 El término recurrente de la sucesión puede escribirse de la siguiente
 manera
@@ -616,15 +604,9 @@ El área de estos polígonos puede calcularse fácilmente descomponiendo
 los polígonos regulares en triángulos como en el siguiente ejemplo.
 
 \begin{figure}
-
-{\centering 
-
+\centering
 \input{./img/examen-2022-12-21/area-poligono-regular-inscrito.tex}
-
-}
-
 \caption{Descomposición de un hexágono en triángulos}
-
 \end{figure}
 
 \begin{enumerate}
@@ -638,7 +620,7 @@ los polígonos regulares en triángulos como en el siguiente ejemplo.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -649,15 +631,9 @@ los polígonos regulares en triángulos como en el siguiente ejemplo.
 \end{enumerate}
 
 \begin{figure}[H]
-
-{\centering 
-
+\centering
 \input{./img/examen-2022-12-21/area-triangulo.tex}
-
-}
-
 \caption{Dimensiones del triángulo}
-
 \end{figure}
 
 Puesto que para un polígono de \(n\) lados se obtienen \(n\) triángulos
@@ -712,7 +688,7 @@ equivalentes en \(x=0\), demostrar que también lo son
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Como \(\operatorname{sen}(x)\) y \(x\) son infinitésimos equivalentes en
 \(x=0\), se tiene que
@@ -739,7 +715,7 @@ Determinar el dominio y el tipo de asíntotas de la función
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para que exista la raíz, el radicando debe ser positivo, es decir,
 \(\frac{x^3}{4x-1}\geq 0\). Es fácil ver que
@@ -806,7 +782,7 @@ conjunto cerrado o abierto?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \(A\) puede expresarse con la unión de intervalos, ya que
 \(x^2-1\geq 0 \Leftrightarrow x^2\geq 1 \Leftrightarrow x\leq -1 \mbox{ o } x\geq 1\),
@@ -833,8 +809,7 @@ cualquier \(\varepsilon>0\) el intervalo
 
 \end{tcolorbox}
 
-\hypertarget{segunda-parte}{%
-\section{Segunda parte}\label{segunda-parte}}
+\section{Segunda parte}\label{segunda-parte}
 
 \begin{exercise}[]\protect\hypertarget{exr-6}{}\label{exr-6}
 
@@ -843,7 +818,7 @@ Taylor de cuarto grado.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para realizar la aproximación que se pide calcularemos el polinomio de
 Taylor de cuarto grado de la función \(f(x)=\ln(\sqrt{x})\) en el punto
@@ -890,7 +865,7 @@ y clasificar el resto de discontinuidades.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para que la función \(h(x)=\dfrac{x^2-2x+a}{x^3+bx^2-6x}\) tenga una
 discontinuidad evitable en \(x=2\), debe cumplirse que
@@ -957,7 +932,7 @@ envoltorio sea mínimo.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 El volumen de una esfera de radio \(r\) es \(v_e(r)=\frac{4}{3}\pi r^3\)
 y el de un cilindro de radio \(r\) y altura \(h\) es
@@ -966,9 +941,9 @@ y el de un cilindro de radio \(r\) y altura \(h\) es
 volumen de la píldora debe ser \(0.15\) ml \(=0.15\) cm\(^3\),
 imponiendo esta restricción, se tiene
 
-\begin{equation}\protect\hypertarget{eq-cont-01-gen-eq1}{}{
+\begin{equation}\phantomsection\label{eq-cont-01-gen-eq1}{
 v(r,h)=\frac{4}{3}\pi r^3 + \pi r^2 h = 0.15 \Leftrightarrow h = \frac{0.15-\frac{4}{3}\pi r^3}{\pi r^2}.
-}\label{eq-cont-01-gen-eq1}\end{equation}
+}\end{equation}
 
 Por otro lado, la superficie de una esfera de radio \(r\) es
 \(s_e(r)=4\pi r^2\) y la superficie del envolvente de un cilindro de
@@ -1019,7 +994,7 @@ más de una raíz en el intervalo \((0,1)\) para cualquier valor de \(k\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \(x^2-2x+\frac{3}{2}>0\) \(\forall x\in\mathbb{R}\), de manera que, para
 que exista la función \(f\), debe ser también \(k>0\) y, por tanto,
@@ -1054,7 +1029,7 @@ la curva implícita \(e^{x^2y}-\ln(\sqrt{x-y})= 0\) en el punto \(x=0\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 En primer lugar obtenemos los valores de \(y\) que cumplen la ecuación
 de la curva implícita para \(x=0\). Sustituyendo en la ecuación se tiene
@@ -1089,9 +1064,8 @@ Y la ecuación de la recta normal a la curva en \((0,-e^2)\) es
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-ii}{%
 \chapter{\texorpdfstring{2023-03-11 Examen de Análisis
-II}{2023-03-11  Examen de Análisis II}}\label{examen-de-anuxe1lisis-ii}}
+II}{2023-03-11  Examen de Análisis II}}\label{examen-de-anuxe1lisis-ii}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -1107,7 +1081,7 @@ Estudiar la convergencia de las siguientes series
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -1160,7 +1134,7 @@ Calcular la cantidad de petróleo extraída tras \(n\) años de actividad.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 La producción anual evoluciona según la sucesión
 
@@ -1199,7 +1173,7 @@ Determinar el dominio de convergencia puntual de la serie de potencias
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para determinar el radio de convergencia de la serie de potencias
 podemos usar el
@@ -1243,7 +1217,7 @@ Calcular la serie de Taylor de la función \(f(x)=\frac{1}{x}\) en
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Calculamos las primeras derivadas para obtener la expresión de la
 derivada de orden \(n\).
@@ -1293,7 +1267,7 @@ en el intervalo \([0,2]\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Si dividimos el intervalo \([0,2]\) en \(n\) subintervalos de igual
 amplitud, obtenemos la partición \(P_n=\{x_0=0,x_1,\ldots,x_n=2\}\) con
@@ -1328,12 +1302,10 @@ Así pues, la integral superior de Riemann es
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-ii-1}{%
 \chapter{\texorpdfstring{2023-06-01 Examen de Análisis
-II}{2023-06-01  Examen de Análisis II}}\label{examen-de-anuxe1lisis-ii-1}}
+II}{2023-06-01  Examen de Análisis II}}\label{examen-de-anuxe1lisis-ii-1}
 
-\hypertarget{primera-parte-1}{%
-\section{Primera parte}\label{primera-parte-1}}
+\section{Primera parte}\label{primera-parte-1}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -1349,7 +1321,7 @@ Calcular las siguientes sumas si existen
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -1408,7 +1380,7 @@ intervalos restantes. El procedimiento sería el siguiente:
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 En la primera etapa se elimina el intervalo \((1,9)\), que tiene
 longitud \(8\). En la segunda etapa se eliminan \(2\) intervalos,
@@ -1454,7 +1426,7 @@ convergente?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para estudiar la convergencia absoluta de la serie
 \(\sum_{n=1}^\infty \frac{(\mu n)^{n-1}}{e^{\mu n}n!}\), aplicamos el
@@ -1471,7 +1443,7 @@ criterio de la razón.
 = \frac{\mu}{e^{\mu-1}}. 
 \end{align*}
 
-Como \(\frac{mu}{e^{\mu-1}} < 1 \Leftrightarrow \mu < e^{\mu-1}\), es
+Como \(\frac{\mu}{e^{\mu-1}} < 1 \Leftrightarrow \mu < e^{\mu-1}\), es
 cierto para cualquier \(\mu\geq 0\) excepto para \(\mu=1\), la serie
 converge absolutamente \(\forall \mu\geq 0\), \(\mu\neq 1\). Para
 \(\mu=1\) el criterio de la razón no es concluyente.
@@ -1485,7 +1457,7 @@ en el intervalo \([0,10]\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Si dividimos el intervalo \([0,1]\) en \(n\) subintervalos de igual
 amplitud obtenemos la partición \(P_n=\{x_0=0, x_1,\ldots, x_n=10\}\)
@@ -1520,8 +1492,7 @@ Y la integral inferior de Riemann es
 
 \end{tcolorbox}
 
-\hypertarget{segunda-parte-1}{%
-\section{Segunda parte}\label{segunda-parte-1}}
+\section{Segunda parte}\label{segunda-parte-1}
 
 \begin{exercise}[]\protect\hypertarget{exr-5}{}\label{exr-5}
 
@@ -1532,7 +1503,7 @@ acumulado de la empresa entre el quinto y el décimo año.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para obtener el beneficio acumulado de la empresa ente el quinto y
 décimo año tenemos que calcular la integral definida de la función de
@@ -1577,7 +1548,7 @@ Calcular el área de región encerrada por la curva polar
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 La función \(r=2\cos(\theta)\operatorname{sen}(\theta)\) tiene periodo
 \(\pi\), pero para describir la curva completa es necesario que
@@ -1609,7 +1580,7 @@ construcción, sin llegar a calcularla.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Para calcular el volumen del sólido de revolución generado al rotar
 alrededor del eje \(y\) la gráfica de la función \(f(x)=(x-1)^2\) en el
@@ -1658,7 +1629,7 @@ de la gravedad es \(9.81\) m/s\(^2\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Supongamos que base de la pirámide está centrada en el origen de
 coordenadas del plano \(XZ\). Entonces, la ecuación de la recta en la
@@ -1723,9 +1694,8 @@ W
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-i-2}{%
 \chapter{\texorpdfstring{2023-11-15 Examen de Análisis
-I}{2023-11-15  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i-2}}
+I}{2023-11-15  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i-2}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -1739,7 +1709,7 @@ Demostrar que \(\lim_{n\to\infty}x_n = l\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Por la definición de límite, como \(\lim_{n\to\infty} x_{2n}= l\),
 \(\forall \varepsilon>0\) \(\exists k_1\in\mathbb{N}\) tal que si
@@ -1773,7 +1743,7 @@ Analizar si la cantidad de agua converge o no a largo plazo.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Como \(-1\leq \operatorname{sen}(3t)\leq 1\) y \(-1\leq \cos(2t)\leq 1\)
 \(\forall t\in\mathbb{R}\), en particular, para \(t>1\)se tiene que
@@ -1864,7 +1834,7 @@ Dado el conjunto
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -1896,7 +1866,7 @@ Dado el conjunto
   \(\lim{n\to \infty}\frac{\operatorname{sen}(n)}{n} = 0\). Por tanto,
   el máximo valor del \(A\) es el correspondiente a \(n=1\), es decir,
   \(\operatorname{sen}(1)\approx 0.8415\), y el mínimo corresponde a
-  \(n=5\), es decir \(\operatorname{sen}(5)/5 \approx -0.1917\). Y como
+  \(n=5\), es decir \(\operatorname{sen}(5)/5  \approx -0.1917\). Y como
   el mínimo y el máximo existen, coinciden con el ínfimo y el supremo,
   respectivamente.
 \item
@@ -1962,7 +1932,7 @@ Dada la función \(f(x)=\dfrac{ax^n}{x^2+bx}\),
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -2044,7 +2014,7 @@ Demostrar que la sucesión
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Sea \(x_n=\frac{a_{n+1}}{a_n}\), donde \((a_n)_{n=1}^\infty\) es la
 sucesión de Fibonacci. Entonces
@@ -2066,9 +2036,8 @@ vió en este
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-iii}{%
 \chapter{\texorpdfstring{2023-11-14 Examen de Análisis
-III}{2023-11-14  Examen de Análisis III}}\label{examen-de-anuxe1lisis-iii}}
+III}{2023-11-14  Examen de Análisis III}}\label{examen-de-anuxe1lisis-iii}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -2083,7 +2052,7 @@ producir la fábrica para maximizar el beneficio?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Si \(I(x,y)\) es la función que da los ingresos y \(C(x,y)\) la que da
 los costes, la función que da los beneficios es
@@ -2189,7 +2158,7 @@ z=1/t
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -2273,7 +2242,7 @@ según la función \(c(h,v) = \frac{v^2}{\ln(\sqrt{h+2})}\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -2340,7 +2309,7 @@ el cable alrededor del cilindro?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 La trayectoria que describe el cable al enrollarlo sobre el cilindro es
 una espiral. Como el radio de la espiral es el radio del cilindro sobre
@@ -2398,9 +2367,8 @@ es decir, \(15\) vueltas enteras.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-iii-1}{%
 \chapter{\texorpdfstring{2023-12-22 Examen de Análisis
-III}{2023-12-22  Examen de Análisis III}}\label{examen-de-anuxe1lisis-iii-1}}
+III}{2023-12-22  Examen de Análisis III}}\label{examen-de-anuxe1lisis-iii-1}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -2413,7 +2381,7 @@ calcular la máxima producción si el coste total no puede exceder los
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 La función de coste es \(c(k,l) = 200k+50l\) y debe cumplirse que
 \(c(k,l)\leq 40000\), por lo que se trata de un problema de optimización
@@ -2476,7 +2444,7 @@ mínimo relativo o un punto de inflexión en cada uno de estos puntos.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 La fórmula del polinomio de Taylor de segundo grado de la función \(f\)
 en el punto \((a,b)\) es
@@ -2565,7 +2533,7 @@ Calcular la integral
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Se trata de una integral racional pero resulta más sencilla si se
 invierte el orden de integración de las variables.
@@ -2592,7 +2560,7 @@ cantidad de barquillo se necesita para construir el cono del helado?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Despejando \(z\) de ambas ecuaciones, se tiene que la función que define
 el cono es \(f(x,y) = \sqrt{4x^2+4y^2} = 2\sqrt{x^2+y^2}\) y la que
@@ -2683,9 +2651,8 @@ Por tanto, hay que calcular la siguiente integral.
 
 \bookmarksetup{startatroot}
 
-\hypertarget{examen-de-anuxe1lisis-i-3}{%
 \chapter{\texorpdfstring{2024-01-11 Examen de Análisis
-I}{2024-01-11  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i-3}}
+I}{2024-01-11  Examen de Análisis I}}\label{examen-de-anuxe1lisis-i-3}
 
 \begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
 
@@ -2702,7 +2669,7 @@ Dar ejemplos de conjuntos que cumplan lo siguiente y demostrarlo.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
@@ -2762,7 +2729,7 @@ valor límite.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Si calculamos los primeros términos de la sucesión
 
@@ -2837,7 +2804,7 @@ Calcular las asíntotas de la función \(f(x) = \ln(\sqrt{x^4e^x})\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 \textbf{Asíntotas verticaes}
 
@@ -2923,7 +2890,7 @@ equivalentes en \(0\).
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Como se puede apreciar en la figura, el área del sector de la
 circunferencia unidad correspondiente a un ángulo \(x\) del primer
@@ -2997,7 +2964,7 @@ depósito.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 El volumen de un cono de radio \(r\) y altura \(h\) viene dado por la
 función de dos variables \(V(r,h)=\frac{1}{3}\pi r^2h\), pero en el caso
@@ -3057,7 +3024,7 @@ Calcular el polinomio de Maclaurin de tercer grado de la función
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 La fórmula del polinomio de Maclaurin de orden \(3\) para la función
 \(f\) es
@@ -3146,7 +3113,7 @@ máxima utilidad si dispone de un presupuesto de 1000€?
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 La función de utilidad es una función de dos variables, pero tenemos a
 restricción de que la empresa solo puede gastarse 1000€, por lo que debe
@@ -3210,7 +3177,7 @@ salto en \(x=1\) y demostrar que la función tiene esas discontinuidades.
 
 \end{exercise}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, rightrule=.15mm, arc=.35mm, opacityback=0, titlerule=0mm, bottomrule=.15mm, toprule=.15mm, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, toptitle=1mm, bottomtitle=1mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-tip-color!10!white, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, left=2mm, coltitle=black, breakable]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
 
 Hay muchas funciones que cumplen lo que se pide, así que daremos una
 función a trozos bastante sencilla.
@@ -3256,6 +3223,214 @@ Finalmente en \(x=1\) los límites laterales valen
 
 y como lo límites son distintos la función presenta una discontinuidad
 de salto finito.
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\chapter{\texorpdfstring{2024-04-16 Examen de Análisis
+II}{2024-04-16  Examen de Análisis II}}\label{examen-de-anuxe1lisis-ii-2}
+
+\begin{exercise}[]\protect\hypertarget{exr-1}{}\label{exr-1}
+
+Calcular mediante sumas de Riemann la integral inferior de Riemann de la
+función \(f(x) = x^3-3x^2\) en el intervalo \([1, 2]\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
+
+Veamos primero si la función es creciente o decreciente en el intervalo
+\([1, 2]\).
+
+\[
+f'(x) = 3x^2-6x = 3x(x-2) = 0 \Leftrightarrow x=0 \mbox{ o } x=2
+\]
+
+Como \(f'(1) = -3 < 0\) la función es decreciente en el intervalo
+\([1, 2]\), y por tanto, \(f(x)\) alcanzará el valor mínimo en el
+extremo derecho de cualquier subintervalo de una partición de
+\([1, 2]\).
+
+Si consideramos una partición del intervalo \([1, 2]\) en \(n\)
+subintervalos de longitud \(\Delta x = \frac{2-1}{n} = \frac{1}{n}\),
+entonces los extremos de los subintervalos serán
+\(P_n([0,1]) = \left\{x_i = 1 + \frac{i}{n}: i = 0, \ldots, n\right\}\).
+
+Calculamos ahora la suma inferior de Riemann para esta partición.
+
+\begin{align*}
+s(f,P_n) 
+&= \sum_{i=1}^{n} f(x_i) \Delta x = \sum_{i=1}^{n} f\left(1 + \frac{i}{n}\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(1 + \frac{i}{n}\right)^3 - 3\left(1 + \frac{i}{n}\right)^2 \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(1 + 3\frac{i}{n} + 3\frac{i^2}{n^2} + \frac{i^3}{n^3}\right) - 3\left(1 + 2\frac{i}{n} + \frac{i^2}{n^2}\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(1 + 3\frac{i}{n} + 3\frac{i^2}{n^2} + \frac{i^3}{n^3} - 3 - 6\frac{i}{n} - 3\frac{i^2}{n^2}\right) \frac{1}{n}\\
+&= \sum_{i=1}^{n} \left(-2 - 3\frac{i}{n} + \frac{i^3}{n^3}\right) \frac{1}{n}\\
+&= -\frac{2}{n} \sum_{i=1}^{n} 1 - \frac{3}{n^2} \sum_{i=1}^{n} i + \frac{1}{n^4}\sum_{i=1}^{n} i^3 \\
+&= -\frac{2}{n} n - \frac{3}{n^2} \frac{n(n+1)}{2} + \frac{1}{n^4} \left(\frac{n(n+1)}{2}\right)^2 \\
+&= -2 - \frac{3}{2} \frac{n+1}{n} + \frac{1}{4} \frac{(n+1)^2}{n^2}.
+\end{align*}
+
+Por lo tanto, la integral inferior de Riemann de \(f(x)\) en el
+intervalo \([1, 2]\) es
+
+\begin{align*}
+\underline{\int_1^2} f(x) 
+&= \lim_{n \to \infty} s(f,P_n) 
+= \lim_{n \to \infty} \left(-2 - \frac{3}{2} \frac{n+1}{n} + \frac{1}{4} \frac{(n+1)^2}{n^2}\right) \\
+&= -2 - \frac{3}{2} + \frac{1}{4} = -\frac{13}{4}.
+\end{align*}
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-2}{}\label{exr-2}
+
+Calcular el volumen del sólido de revolución que se obtiene al rotar al
+rededor de la recta \(x=1\) la región limitada por las curvas
+\(y=\frac{x+1}{2}\) y \(x=(y-2)^2\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
+
+Primero obtenemos los puntos de intersección de las curvas.
+\(y=\frac{x+1}{2} \Leftrightarrow x = 2y-1\), de manera que igualando
+con la otra curva obtenemos
+
+\[
+2y-1 = (y-2)^2 \Leftrightarrow y^2 - 6y + 5 = 0 \Leftrightarrow y = 1 \mbox{ o } y = 5.
+\]
+
+A continuación dibujamos las gráficas de las curvas y la recta \(x=1\)
+para visualizar la región.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\textwidth,height=\textheight]{img/examen-2024-04-16/region-solido-revolucion-int-10-gen.pdf}
+
+}
+
+\caption{Región encerrada por las curvas \(y=\frac{x+1}{2}\) y
+\(x=(y-2)^2\).}
+
+\end{figure}%
+
+Para calcular el volumen del sólido de revolución que se obtiene a rotar
+esta región alrededor de la recta \(x=1\) podríamos utilizar el método
+de los discos cilíndricos, pero en ese caso tendríamos que descomponer
+la región en dos partes, de \([0, 1]\), donde integraríamos la región
+entre las dos ramas de la parábola, y de \([1, 9]\), donde integraríamos
+la región entre la parábola y la recta. Resulta más rápido utilizar el
+método de los envoltorios cilíndricos integrando con respecto a \(y\) en
+el intervalo \([1, 5]\). Como la rotación es alrededor de la recta
+\(x=1\), el radio de la base de los envoltorios cilíndricos será la
+distancia del valor de \(y\) a esta recta, es decir, \(y-1\), y por
+tanto la integral que nos da el volumen del sólido de revolución es
+
+\begin{align*}
+\int_1^5 2\pi(y-1)((2y-1) - (y-2)^2)\, dy 
+&= 2\pi \int_1^5 (y-1)(2y-1-y^2+4y-4)\, dy \\
+&= 2\pi \int_1^5 (y-1)(-y^2+6y-5)\, dy \\ 
+&= 2\pi \int_1^5 (-y^3+7y^2-11y+5)\, dy \\
+&= 2\pi \left[-\frac{y^4}{4} + \frac{7y^3}{3} - \frac{11y^2}{2} + 5y\right]_1^5 \\
+&= 2\pi \left(-\frac{625}{4} + \frac{875}{3} - \frac{275}{2} + 25 + \frac{1}{4} - \frac{7}{3} + \frac{11}{2} - 5\right) \\
+&=\frac{128\pi}{3}.
+\end{align*}
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-3}{}\label{exr-3}
+
+Calcular mediante una integral definida la longitud del arco de
+circunferencia del círculo \(x^2+y^2=25\) desde el punto \((-3,4)\)
+hasta el punto \((4,3)\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
+
+El arco de circunferencia con el que hay que trabajar está en la
+semicircunferencia positiva, que viene dada por la función
+\(f(x) = \sqrt{25-x^2}\). Así pues, la longitud de la curva de \(f\) en
+el intervalo \([-3,4]\) viene dada por la integral
+
+\begin{align*}
+\int_{-3}^4 \sqrt{1 + f'(x)^2}\, dx &=
+\int_{-3}^4 \sqrt{1 + \left(\frac{-x}{\sqrt{25-x^2}}\right)^2}\, dx \\
+&= \int_{-3}^4 \sqrt{1 + \frac{x^2}{25-x^2}}\, dx \\
+&= \int_{-3}^4 \sqrt{\frac{25}{25-x^2}}\, dx \\
+&= \int_{-3}^4 \sqrt{\frac{1}{1-(x/25)^2}}\, dx \\
+&= \int_{-3/5}^{4/5} \frac{5}{\sqrt{1-y^2}}\, dy \tag{Cambio $y=\frac{x}{5}$}\\
+&= [5\operatorname{arcsen(y)}]_{-3/5}^{4/5} \\
+&= 5\left(\operatorname{arcsen}\left(\frac{4}{5}\right) - \operatorname{arcsen}\left(\frac{-3}{5}\right)\right) \\
+&\approx 7.854.
+\end{align*}
+
+\end{tcolorbox}
+
+\begin{exercise}[]\protect\hypertarget{exr-4}{}\label{exr-4}
+
+Calcular el area comprendida entre los círculos \(r=\cos(\theta)\) y
+\(r=2\operatorname{sen}(\theta)\).
+
+\end{exercise}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toprule=.15mm, colback=white, bottomrule=.15mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, opacityback=0, bottomtitle=1mm, toptitle=1mm, opacitybacktitle=0.6, rightrule=.15mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, coltitle=black, leftrule=.75mm, left=2mm]
+
+En primer lugar dibujamos los círculos para visualizar la región.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\textwidth,height=\textheight]{img/examen-2024-04-16/interseccion-circulos-int-11-gen.pdf}
+
+}
+
+\caption{Círculos \(r=\cos(\theta)\) y
+\(r=2\operatorname{sen}(\theta)\).}
+
+\end{figure}%
+
+En la gráfica se observa que uno de los puntos de corte de los dos
+círculos es el origen, que se alcanza para \(\theta = \pi/2\) en el caso
+de \(f\) y para \(\theta = 0\) en el caso de \(g\). El otro punto de
+corte está en el primer cuadrante, y para determinar su ángulo basta
+resolver la ecuación
+
+\[
+\cos(\theta) = 2\operatorname{sen}(\theta)
+\Leftrightarrow \frac{\operatorname{sen}(\theta)}{\cos(\theta)} = \frac{1}{2}
+\Leftrightarrow \operatorname{tg}(\theta) = \frac{1}{2}
+\Leftrightarrow \theta = \operatorname{arctg}(1/2) = 0.4636.
+\]
+
+El área de la región que nos piden es la suma de las áreas de las
+regiones sombreadas en azul y rojo. El área de la región en azul, que
+corresponde a la función \(f(\theta)\) se puede obtener mediante la
+integral
+
+\begin{align*}
+\int_{0.4636}^{\pi/2} \frac{1}{2}(\cos(\theta))^2\, d\theta
+&= \frac{1}{2} \int_{0.4636}^{\pi/2} \frac{1 + \cos(2\theta)}{2}\, d\theta \\
+&= \frac{1}{4} \int_{0.4636}^{\pi/2} 1 + \cos(2\theta)\, d\theta \\
+&= \frac{1}{4} \left[\theta + \frac{1}{2}\sin(2\theta)\right]_{0.4636}^{\pi/2} \\
+&= \frac{1}{4} \left[\frac{\pi}{2} + \frac{1}{2}\sin(\pi) - 0.4636 - \frac{1}{2}\sin(2\cdot 0.4636)\right] \\
+&= \frac{1}{4} \left[\frac{\pi}{2} - 0.4636 - \frac{1}{2}\sin(0.9272)\right] \\
+&\approx 0.1768.
+\end{align*}
+
+Y el área de la región en rojo, que corresponde a la función
+\(g(\theta)\), se obtiene mediante la integral
+
+\begin{align*}
+\int_{0}^{0.4636} \frac{1}{2}(2\operatorname{sen}(\theta))^2\, d\theta 
+&= \int_{0}^{0.4636} 2\operatorname{sen}^2(\theta)\, d\theta \\
+&= \int_{0}^{0.4636} 1 - \cos(2\theta)\, d\theta \\
+&= \left[\theta - \frac{1}{2}\sin(2\theta)\right]_{0}^{0.4636} \\
+&= 0.4636 - \frac{1}{2}\sin(0.9272) \\
+&\approx 0.0636.
+\end{align*}
+
+Por tanto, el area total es \(0.1768 + 0.0636 = 0.2404\).
 
 \end{tcolorbox}
 
