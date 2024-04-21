@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  16 APR 2024 23:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.21)  21 APR 2024 09:39
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -686,7 +686,7 @@ enefit from \pgfplotsset{compat=1.18} (current compat level: 1.14).
 
 \openout4 = `external/interseccion-circulos-int-11-gen.dpth'.
 
-Package pgfplots info on input line 73: fill between: activating layered graphi
+Package pgfplots info on input line 71: fill between: activating layered graphi
 cs
 \pgf@layerbox@axis background=\box67
 \pgf@layerboxsaved@axis background=\box68
@@ -704,41 +704,35 @@ cs
 \pgf@layerboxsaved@axis descriptions=\box80
 \pgf@layerbox@axis foreground=\box81
 \pgf@layerboxsaved@axis foreground=\box82
-Package pgfplots info on input line 73: Setting layers 'axis background,axis gr
+Package pgfplots info on input line 71: Setting layers 'axis background,axis gr
 id,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis 
 foreground'...
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 73.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 73.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 73.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 73.
+ 71.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 71.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/al
@@ -749,22 +743,21 @@ L3 programming layer <2023-06-16>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 26344 strings out of 477580
- 693270 string characters out of 5827698
- 1865769 words of memory out of 5000000
- 46419 multiletter control sequences out of 15000+600000
- 540104 words of font info for 96 fonts, out of 8000000 for 9000
+ 26332 strings out of 477580
+ 693244 string characters out of 5827698
+ 1861769 words of memory out of 5000000
+ 46407 multiletter control sequences out of 15000+600000
+ 530153 words of font info for 71 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 106i,8n,110p,764b,2097s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/alf/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/alf/texmf/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></home/alf/texmf/fonts/type1/urw/symbol
-/usyr.pfb></home/alf/texmf/fonts/type1/urw/times/utmr8a.pfb></home/alf/texmf/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on external/interseccion-circulos-int-11-gen.pdf (1 page, 52561 
+ 106i,8n,379p,764b,2615s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/alf/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/alf/texmf/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></home/alf/texmf/fonts/type1/urw/times/
+utmr8a.pfb></home/alf/texmf/fonts/type1/urw/times/utmri8a.pfb>
+Output written on external/interseccion-circulos-int-11-gen.pdf (1 page, 36655 
 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 32 PDF objects out of 1000 (max. 8388607)
+ 20 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

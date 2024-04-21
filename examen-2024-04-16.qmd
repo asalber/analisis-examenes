@@ -45,7 +45,7 @@ Por lo tanto, la integral inferior de Riemann de $f(x)$ en el intervalo $[1, 2]$
 :::
 
 :::{#exr-2}
-Calcular el volumen del sólido de revolución que se obtiene al rotar al rededor de la recta $x=1$ la región limitada por las curvas $y=\frac{x+1}{2}$ y $x=(y-2)^2$.
+Calcular el volumen del sólido de revolución que se obtiene al rotar al rededor de la recta $y=1$ la región limitada por las curvas $y=\frac{x+1}{2}$ y $x=(y-2)^2$.
 :::
 
 :::{.callout-tip collapse="true"}
@@ -56,11 +56,11 @@ $$
 2y-1 = (y-2)^2 \Leftrightarrow y^2 - 6y + 5 = 0 \Leftrightarrow y = 1 \mbox{ o } y = 5.
 $$
 
-A continuación dibujamos las gráficas de las curvas y la recta $x=1$ para visualizar la región.
+A continuación dibujamos las gráficas de las curvas y la recta $y=1$ para visualizar la región.
 
 ![Región encerrada por las curvas $y=\frac{x+1}{2}$ y $x=(y-2)^2$.](img/examen-2024-04-16/region-solido-revolucion-int-10-gen){width=70%}
 
-Para calcular el volumen del sólido de revolución que se obtiene a rotar esta región alrededor de la recta $x=1$ podríamos utilizar el método de los discos cilíndricos, pero en ese caso tendríamos que descomponer la región en dos partes, de $[0, 1]$, donde integraríamos la región entre las dos ramas de la parábola, y de $[1, 9]$, donde integraríamos la región entre la parábola y la recta. Resulta más rápido utilizar el método de los envoltorios cilíndricos integrando con respecto a $y$ en el intervalo $[1, 5]$. Como la rotación es alrededor de la recta $x=1$, el radio de la base de los envoltorios cilíndricos será la distancia del valor de $y$ a esta recta, es decir, $y-1$, y por tanto la integral que nos da el volumen del sólido de revolución es
+Para calcular el volumen del sólido de revolución que se obtiene a rotar esta región alrededor de la recta $y=1$ podríamos utilizar el método de los discos cilíndricos, pero en ese caso tendríamos que descomponer la región en dos partes, de $[0, 1]$, donde integraríamos la región entre las dos ramas de la parábola, y de $[1, 9]$, donde integraríamos la región entre la parábola y la recta. Resulta más rápido utilizar el método de los envoltorios cilíndricos integrando con respecto a $y$ en el intervalo $[1, 5]$. Como la rotación es alrededor de la recta $x=1$, el radio de la base de los envoltorios cilíndricos será la distancia del valor de $y$ a esta recta, es decir, $y-1$, y por tanto la integral que nos da el volumen del sólido de revolución es
 
 \begin{align*}
 \int_1^5 2\pi(y-1)((2y-1) - (y-2)^2)\, dy 

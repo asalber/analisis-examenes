@@ -325,7 +325,7 @@ s(f,P_n)
 </div>
 </div>
 <div id="exr-2" class="theorem exercise">
-<p><span class="theorem-title"><strong>Ejercicio 9.2</strong></span> Calcular el volumen del sólido de revolución que se obtiene al rotar al rededor de la recta <span class="math inline">\(x=1\)</span> la región limitada por las curvas <span class="math inline">\(y=\frac{x+1}{2}\)</span> y <span class="math inline">\(x=(y-2)^2\)</span>.</p>
+<p><span class="theorem-title"><strong>Ejercicio 9.2</strong></span> Calcular el volumen del sólido de revolución que se obtiene al rotar al rededor de la recta <span class="math inline">\(y=1\)</span> la región limitada por las curvas <span class="math inline">\(y=\frac{x+1}{2}\)</span> y <span class="math inline">\(x=(y-2)^2\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -343,14 +343,14 @@ Solución
 <p><span class="math display">\[
 2y-1 = (y-2)^2 \Leftrightarrow y^2 - 6y + 5 = 0 \Leftrightarrow y = 1 \mbox{ o } y = 5.
 \]</span></p>
-<p>A continuación dibujamos las gráficas de las curvas y la recta <span class="math inline">\(x=1\)</span> para visualizar la región.</p>
+<p>A continuación dibujamos las gráficas de las curvas y la recta <span class="math inline">\(y=1\)</span> para visualizar la región.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/examen-2024-04-16/region-solido-revolucion-int-10-gen.svg" class="img-fluid figure-img" style="width:70.0%"></p>
 <figcaption>Región encerrada por las curvas <span class="math inline">\(y=\frac{x+1}{2}\)</span> y <span class="math inline">\(x=(y-2)^2\)</span>.</figcaption>
 </figure>
 </div>
-<p>Para calcular el volumen del sólido de revolución que se obtiene a rotar esta región alrededor de la recta <span class="math inline">\(x=1\)</span> podríamos utilizar el método de los discos cilíndricos, pero en ese caso tendríamos que descomponer la región en dos partes, de <span class="math inline">\([0, 1]\)</span>, donde integraríamos la región entre las dos ramas de la parábola, y de <span class="math inline">\([1, 9]\)</span>, donde integraríamos la región entre la parábola y la recta. Resulta más rápido utilizar el método de los envoltorios cilíndricos integrando con respecto a <span class="math inline">\(y\)</span> en el intervalo <span class="math inline">\([1, 5]\)</span>. Como la rotación es alrededor de la recta <span class="math inline">\(x=1\)</span>, el radio de la base de los envoltorios cilíndricos será la distancia del valor de <span class="math inline">\(y\)</span> a esta recta, es decir, <span class="math inline">\(y-1\)</span>, y por tanto la integral que nos da el volumen del sólido de revolución es</p>
+<p>Para calcular el volumen del sólido de revolución que se obtiene a rotar esta región alrededor de la recta <span class="math inline">\(y=1\)</span> podríamos utilizar el método de los discos cilíndricos, pero en ese caso tendríamos que descomponer la región en dos partes, de <span class="math inline">\([0, 1]\)</span>, donde integraríamos la región entre las dos ramas de la parábola, y de <span class="math inline">\([1, 9]\)</span>, donde integraríamos la región entre la parábola y la recta. Resulta más rápido utilizar el método de los envoltorios cilíndricos integrando con respecto a <span class="math inline">\(y\)</span> en el intervalo <span class="math inline">\([1, 5]\)</span>. Como la rotación es alrededor de la recta <span class="math inline">\(x=1\)</span>, el radio de la base de los envoltorios cilíndricos será la distancia del valor de <span class="math inline">\(y\)</span> a esta recta, es decir, <span class="math inline">\(y-1\)</span>, y por tanto la integral que nos da el volumen del sólido de revolución es</p>
 <p><span class="math display">\[\begin{align*}
 \int_1^5 2\pi(y-1)((2y-1) - (y-2)^2)\, dy
 &amp;= 2\pi \int_1^5 (y-1)(2y-1-y^2+4y-4)\, dy \\
