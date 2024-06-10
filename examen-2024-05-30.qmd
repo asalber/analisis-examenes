@@ -1,0 +1,383 @@
+---
+title: 2024-05-30 <br>Examen de Análisis II
+lang: es
+date: 2024-05-30
+---
+
+:::{#exr-1}
+Calcular la integral superior de Riemann de la función $f(x) = 2x^2-12x$ en el intervalo $[2,4]$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Estudiamos primero el crecimiento de la función en el intervalo $[2, 4]$.
+
+$$
+f'(x) = 4x - 12 = 0 \Rightarrow x = 3.
+$$
+
+Como $f'(2) = -4 < 0$ la función es decreciente en el intervalo $[2, 3]$, y como $f'(4) = 4 > 0$ la función es creciente en el intervalo $[3, 4]$.
+
+Así pues, para calcular la suma de Riemann descompondremos el intervalo en dos subintervalos: $[2, 3]$ y $[3, 4]$.
+
+Para calcular la suma de Riemann superior de $f$ en el intervalo $[2,3]$, tomamos una partición del intervalo $[2, 3]$ en $n$ subintervalos de longitud $\Delta x = \frac{3-2}{n} = \frac{1}{n}$, de manera que los extremos de los subintervalos serán $P_n([2,3]) = \left\{x_i = 2 + \frac{i}{n}: i = 0, \ldots, n\right\}$.
+
+Como $f$ es decreciente en este intervalo, el valor máximo de $f$ en cada subintervalo se alcanza en el extremo izquierdo del subintervalo. Así pues, la suma superior de Riemann para esta partición es
+
+\begin{align*}
+s(f,P_n) 
+&= \sum_{i=1}^{n} f(x_{i-1}) \Delta x = \sum_{i=1}^{n} f\left(2 + \frac{i-1}{n}\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(2\left(2 + \frac{i-1}{n}\right)^2 - 12\left(2 + \frac{i-1}{n}\right)\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(2\left(4 + \frac{4i-4}{n} + \frac{i^2-2i+1}{n^2}\right) - 12\left(2 + \frac{i-1}{n}\right)\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(8 + \frac{8i-8}{n} + \frac{2i^2-4i+2}{n^2} - 24 - 12\frac{i-1}{n}\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(-16 + \frac{8i}{n}-\frac{8}{n} + \frac{2i^2}{n^2}-\frac{4i}{n^2}+\frac{2}{n^2} - \frac{12i}{n}+\frac{12}{n}\right) \frac{1}{n} \\
+&= \left(\sum_{i=1}^{n} \left(-16 + \frac{4}{n} + \frac{2}{n^2}\right) - \sum_{i=1}^n \left(\frac{4i}{n^2} + \frac{4i}{n}\right) + \sum_{i=1}^n \frac{2i^2}{n^2} \right) \frac{1}{n} \\
+&= \left(\left(-16 + \frac{4}{n} + \frac{2}{n^2}\right)\sum_{i=1}^{n} 1 - \left(\frac{4}{n^2} + \frac{4}{n}\right) \sum_{i=1}^n i +  \frac{2}{n^2} \sum_{i=1}^n i^2 \right) \frac{1}{n} \\
+&= \left(\left(-16 + \frac{4}{n} + \frac{2}{n^2}\right)n - \left(\frac{4}{n^2} + \frac{4}{n}\right) \frac{n(n+1)}{2} +  \frac{2}{n^2} \frac{n(n+1)(2n+1)}{6} \right) \frac{1}{n}\\
+&= -16 + \frac{4}{n} + \frac{2}{n^2} - 2 - \frac{2}{n} - \frac{2}{n} - \frac{2}{n^2} + \frac{2}{3} +  \frac{1}{n} + \frac{1}{3n^2} \\
+&= -\frac{52}{3} + \frac{1}{n} + \frac{1}{3n^2}.
+\end{align*}
+
+Por lo tanto, la integral superior de Riemann de $f(x)$ en el intervalo $[2, 3]$ es
+
+$$
+\overline{\int_2^3} f(x) 
+= \lim_{n \to \infty} s(f,P_n) 
+= \lim_{n \to \infty} -\frac{52}{3} + \frac{1}{n} + \frac{1}{3n^2}
+= -\frac{52}{3}.
+$$
+
+Del mismo modo, para calcular la suma de Riemann superior de $f$ en el intervalo $[3,4]$, tomamos una partición del intervalo $[3, 4]$ en $n$ subintervalos de longitud $\Delta x = \frac{3-2}{n} = \frac{1}{n}$, de manera que los extremos de los subintervalos serán $Q_n([3,4]) = \left\{x_i = 3 + \frac{i}{n}: i = 0, \ldots, n\right\}$.
+
+Como $f$ es creciente en este intervalo, el valor máximo de $f$ en cada subintervalo se alcanza en el extremo derecho del subintervalo. Así pues, la suma superior de Riemann para esta partición es
+
+\begin{align*}
+s(f,Q_n)
+&= \sum_{i=1}^{n} f(x_i) \Delta x = \sum_{i=1}^{n} f\left(3 + \frac{i}{n}\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(2\left(3 + \frac{i}{n}\right)^2 - 12\left(3 + \frac{i}{n}\right)\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(2\left(9 + \frac{6i}{n} + \frac{i^2}{n^2}\right) - 12\left(3 + \frac{i}{n}\right)\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(18 + \frac{12i}{n} + \frac{2i^2}{n^2} - 36 - 12\frac{i}{n}\right) \frac{1}{n} \\
+&= \sum_{i=1}^{n} \left(-18 + \frac{2i^2}{n^2} \right) \frac{1}{n} \\
+&= \left(-18\sum_{i=1}^{n} 1 + \frac{2}{n^2}\sum_{i=1}^n i^2 \right) \frac{1}{n} \\
+&= \left(-18n + \frac{2}{n^2} \frac{n(n+1)(2n+1)}{6} \right) \frac{1}{n} \\
+&= -18 + \frac{2}{3} + \frac{1}{n} + \frac{1}{3n^2} \\
+&= \frac{-52}{3} + \frac{1}{n} + \frac{1}{3n^2}.
+\end{align*}
+
+Por lo tanto, la integral superior de Riemann de $f(x)$ en el intervalo $[3, 4]$ es
+
+$$
+\overline{\int_3^4} f(x)
+= \lim_{n \to \infty} s(f,Q_n)
+= \lim_{n \to \infty} \frac{-52}{3} + \frac{1}{n} + \frac{1}{3n^2} 
+= -\frac{52}{3}.
+$$
+
+Finalmente, la integral superior de Riemann de $f(x)$ en el intervalo $[2, 4]$ es
+
+$$
+\overline{\int_2^4} f(x)
+= \overline{\int_2^3} f(x) + \overline{\int_3^4} f(x)
+= -\frac{52}{3} - \frac{52}{3}
+= -\frac{104}{3}.
+$$
+:::
+
+:::{#exr-2}
+Se dispone de un cable de 50 m de longitud que se sostiene en sus extremos por dos postes. ¿A qué distancia deben colocarse los postes para que la altura del cable sobre el suelo sea de 10 m en su punto más bajo?
+
+Nota: La ecuación de la curva que describe el cable, suponiendo que la curva esté centrada en el eje $y$, es una catenaria de ecuación $y = a \cosh \left( \frac{x}{a} \right)$, donde $a$ es la altura de la catenaria en el punto más bajo.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Como la altura de la catenaria en el punto más bajo es 10 m, la función que describe esta catenaria es $f(x) = 10 \cosh \left( \frac{x}{10} \right)$, y la longitud de la curva descrita por la función $f(x)$ en el intervalo $[-d, d]$ viene dada por la integral
+
+\begin{align*}
+\int_{-d}^{d} \sqrt{1 + f'(x)^2} \, dx
+&= \int_{-d}^{d} \sqrt{1 + \operatorname{senh} \left( \frac{x}{10}\right)^2} \, dx \\
+&= \int_{-d}^{d} \sqrt{\cosh \left( \frac{x}{10}\right)^2} \, dx \\
+&= \int_{-d}^{d} \cosh \left( \frac{x}{10}\right) \, dx \\
+&= 10 \left[ \operatorname{senh} \left( \frac{x}{10}\right) \right]_{-d}^{d} \\
+&= 10 \left( \operatorname{senh} \left( \frac{d}{10}\right) - \operatorname{senh} \left( -\frac{d}{10}\right) \right) \\
+&= 10\cdot 2 \operatorname{senh} \left( \frac{d}{10}\right)\\
+&= 20 \operatorname{senh} \left( \frac{d}{10}\right).
+\end{align*}
+
+Como la longitud del cable es 50 m, tenemos que
+
+$$
+\begin{gathered}
+50 = 20 \operatorname{senh} \left( \frac{d}{10}\right) 
+\Leftrightarrow \operatorname{senh} \left(\frac{d}{10}\right) = \frac{50}{20} = \frac{5}{2} \\
+\Leftrightarrow d = 10\operatorname{arcsenh}(2.5) = 10 \ln \left(2.5 + \sqrt{2.5^2 + 1}\right) \approx 16.4723.
+\end{gathered}
+$$
+
+Así pues, los postes deben colocarse a una distancia de $2 \cdot 16.4723 = 32.9446$ m.
+:::
+
+:::{#exr-3}
+Calcular el volumen de un depósito con forma de sólido de revolución obtenido al rotar alrededor del eje $y$ la función $y = \operatorname{sen}(x/2)^2$ en el intervalo $[0, \pi]$ en dm$^3$.
+
+Si empezamos a introducir agua en el depósito a un ritmo dado por la función $e(t)=e^{1-t}$ l/m y al mismo tiempo sale agua a un ritmo dado por la función $s(t)=te^{1-t}$. Calcular el volumen de agua en el depósito en cada instante $t$ desde el instante en que comienza a entrar agua en el depósito. ¿Se llenará el depósito en algún momento? ¿Qué cantidad de agua habrá en el depósito a largo plazo?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Para calcular el volumen del sólido de revolución obtenido al rotar la función $f(x) = \operatorname{sen}(x/2)^2$ en el intervalo $[0, \pi]$ alrededor del eje $y$, utilizaremos el método de los envoltorios cilíndricos, de manera que hay que calcular la siguiente integral
+
+\begin{align*}
+\int_0^\pi 2\pi xf(x)\, dx 
+&= 2\pi \int_0^\pi x\operatorname{sen}(x/2)^2\, dx \\
+&= 2\pi \int_0^\pi x\left(\frac{1-\cos(x)}{2}\right)\, dx \\
+&= \pi \int_0^\pi x - x\cos(x)\, dx \\
+&= \pi \left[\frac{x^2}{2} - x\operatorname{sen}(x) - \cos(x)\right]_0^\pi \\
+&= \pi \left(\frac{\pi^2}{2} - \pi\operatorname{sen}(\pi) - \cos(\pi) - 0 + 0\operatorname{sen}(0) + \cos(0) \right)\\
+&= \frac{\pi^3}{2} + 2\pi.
+\end{align*}
+
+Este es el volumen que queda por fuera del depósito en el intervalo $[0, \pi]$, de manera que el volumen del depósito es el volumen de un cilindro de radio $\pi$ y altura $f(\pi)=1$ menos el volumen calculado anteriormente, ya que $f$ es creciente en el intervalo $[0, \pi]$. Así pues, el volumen del depósito es
+
+$$
+\pi \pi^2 - \left(\frac{\pi^3}{2} + 2\pi\right) = \pi^3 - \frac{\pi^3}{2} - 2\pi = \frac{\pi^3}{2} - 2\pi \approx 9.22 \mbox{dm}^3.
+$$
+
+Por otro lado, la tasa de variación instantánea del volumen de agua en el depósito en el instante $t$ es la cantidad de agua que entra menos la que sale, es decir, $e(t) - s(t)$, de manera que el volumen de agua en el depósito en el instante $t$ viene dado por la integral
+
+\begin{align*}
+F(x) 
+&= \int_0^t e(x) - s(x)\, dx 
+= \int_0^t e^{1-x} - xe^{1-x}\, dx 
+= \int_0^t (1-x)e^{1-x}\, dx  \\
+&= \left[xe^{1-x}\right]_0^t
+= te^{1-t} - 0 
+= te^{1-t}.
+\end{align*}
+
+Para saber si el depósito se llenará en algún instante, calculamos el máximo de $F$ en el intervalo $[0, \infty)$. Como $F'(t) = (1-t)e^{1-t}$, el único punto crítico está en $t=1$, y además se trata de un máximo ya que el signo de $F'$ es positivo a la izquierda de $1$ y negativo a la derecha. Pero como $F(1) = 1e^{1-1} = 1 < \frac{\pi^3}{2} - 2\pi$, el depósito no se llenará en ningún instante.
+
+Por último, para saber cuánta agua habrá en el depósito a largo plazo, calculamos el límite de $F$ cuando $t$ tiende a infinito
+
+\begin{align*}
+\lim_{t \to \infty} te^{1-t} 
+&= \lim_{t \to \infty} \frac{t}{e^{t-1}} \tag{L'Hôpital} \\
+&= \lim_{t \to \infty} \frac{1}{e^{t-1}} 
+= 0.
+\end{align*}
+:::
+
+:::{#exr-4}
+El centroide de la región plana encerrada entre la gráfica de una función $f(x)$ y el eje $x$ en un intervalo $[a,b]$ tiene coordenadas
+
+\begin{align*}
+\bar x &= \frac{\int_a^b x f(x)\,dx}{\int_a^b f(x)\,dx},\\
+\bar y &= \frac{\int_a^b f(x)^2\, dx}{2\int_a^b f(x)\,dx}.
+\end{align*}
+
+Aplicar el mismo razonamiento usado en la deducción de estas fórmulas para deducir las fórmulas del centroide de la región plana encerrada entre las gráficas de dos funciones $f(x)$ y $g(x)$ en el intervalo $[a,b]$, siendo $f(x)\geq g(x)$ $\forall x\in[a,b]$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Para calcular el centroide de la región plana encerrada entre las gráficas de dos funciones $f(x)$ y $g(x)$ en el intervalo $[a,b]$, siendo $f(x)\geq g(x)$ $\forall x\in[a,b]$, tomamos una partición del intervalo $[a, b]$ en $n$ subintervalos de longitud $\Delta x = \frac{b-a}{n}$.
+
+Si llamamos $\bar x_i$ al centro del subintervalo $i$-ésimo, $[x_{i-1}, x_i]$ y consideramos el rectángulo de base $[x_{i-1}, x_i]$ y altura $f(\bar x_i) - g(\bar x_i)$, el centroide de este rectángulo de igual densidad es $(\bar x_i, \frac{f(\bar x_i) + g(\bar x_i)}{2})$. Así pues, el momento con respecto al eje $y$ de este rectángulo es 
+
+$$
+\bar x_i M_i
+= \bar x_i \delta(f(\bar x_i) - g(\bar x_i)) \Delta x,
+$$
+
+lo que da lugar a la suma de Riemann
+
+$$
+\delta \sum_{i=1}^n \bar x_i (f(\bar x_i) - g(\bar x_i)) \Delta x,
+$$
+
+y al tomar particiones cada vez más refinadas, obtenemos la integral 
+
+$$
+\delta \int_a^b x(f(x) - g(x))\, dx,
+$$
+
+de manera que al dividir por la masa de la región plana encerrada entre las gráficas de $f(x)$ y $g(x)$ en el intervalo $[a,b]$, que es $\delta \int_a^b (f(x) - g(x))\, dx$, obtenemos la coordenada $x$ del centroide de la región 
+
+$$
+\bar x = \frac{\int_a^b x(f(x) - g(x))\, dx}{\int_a^b (f(x) - g(x))\, dx}.
+$$
+
+Por otro lado, el momento con respecto al eje $x$ del rectángulo correspondiente al subintervalo $i$-ésimo es 
+
+$$
+\frac{f(\bar x_i) + g(\bar x_i)}{2} M_i
+= \frac{f(\bar x_i) + g(\bar x_i)}{2} \delta(f(\bar x_i) - g(\bar x_i)) \Delta x
+= \delta \frac{f(\bar x_i)^2 - g(\bar x_i)^2}{2} \Delta x,
+$$
+
+lo que da lugar a la suma de Riemann
+
+$$
+\delta \sum_{i=1}^n \frac{f(\bar x_i)^2 - g(\bar x_i)^2}{2} \Delta x,
+$$
+
+y al tomar particiones cada vez más refinadas, obtenemos la integral
+
+$$
+\delta \int_a^b \frac{f(x)^2 - g(x)^2}{2}\, dx,
+$$
+
+de manera que al dividir por la masa de la región, obtenemos la coordenada $y$ del centroide de la región
+
+$$
+\bar y = \frac{\int_a^b f(x)^2 - g(x)^2\, dx}{2\int_a^b (f(x) - g(x))\, dx}.
+$$
+:::
+
+:::{#exr-5}
+Estudiar la convergencia de las siguientes series y, en caso de que converjan, dar una cota del error cometido al aproximar su suma mediante la suma parcial de orden 100.
+
+a.  $\displaystyle \sum_{n=1}^\infty \frac{e^{1/n}}{n^2}$.
+a.  $\displaystyle \sum_{n=1}^\infty \sqrt{\frac{(n+1)}{n^2+n-1}}$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  $\frac{e^{1/n}}{n^2} > 0$ $\forall n \in \mathbb{N}$, por lo que se trata de una serie de términos positivos.
+
+    Utilizando el criterio de la integral con $f(x) = \frac{e^{1/x}}{x^2}$, tenemos que
+
+    $$
+    \int_1^\infty \frac{e^{1/x}}{x^2}\, dx
+    = [-e^{1/x}]_1^\infty 
+    = -\lim_{x \to \infty} e^{1/x} + e
+    = e - 1,
+    $$
+
+    y como la integral es finita, la serie converge.
+
+    Otra forma de demostrar la convergencia de esta serie es utilizando el criterio del cociente, comparando con la serie $\sum \frac{1}{n^2}$, de manera que
+
+    $$
+    \lim_{n \to \infty} \frac{\frac{e^{1/n}}{n^2}}{\frac{1}{n^2}} 
+    = \lim_{n \to \infty} e^{1/n}
+    = e^0 = 1.
+    $$
+
+    Como el límite es finito y positivo, ambas series tienen el mismo comportamiento, y como $\sum \frac{1}{n^2}$ sabemos que converge, la serie $\sum \frac{e^{1/n}}{n^2}$ también converge.
+
+    Para dar una cota del error cometido al aproximar la suma de la serie mediante la suma parcial de orden 100, podemos usar la [proposición de la acotación del residuo de la serie](https://aprendeconalf.es/analisis-manual/09-series.html#prp-residuo-acotado), de manera que una cota del error viene dada por la integral
+
+    $$
+    \int_{100}^\infty \frac{e^{1/x}}{x^2}\, dx
+    = [-e^{1/x}]_{100}^\infty
+    = -\lim_{x \to \infty} e^{1/x} + e^{1/100}
+    = e^{1/100} - 1
+    \approx 0.01005.
+    $$ 
+
+b.  $\sqrt{\frac{(n+1)}{n^2+n-1}} > 0$ $\forall n \in \mathbb{N}$, por lo que también se trata de una serie de términos positivos.
+
+    Utilizando el criterio del cociente, comparando con la serie $\sum \frac{1}{\sqrt{n}}$, tenemos que 
+
+    $$
+    \lim_{n \to \infty} \frac{\sqrt{\frac{(n+1)}{n^2+n-1}}}{\frac{1}{\sqrt{n}}}
+    = \lim_{n \to \infty} \sqrt{\frac{n(n+1)}{n^2+n-1}} 
+    = 1.
+    $$
+
+    Como el límite es finito y positivo, ambas series tienen el mismo comportamiento, y como $\sum \frac{1}{\sqrt{n}} = \sum \frac{1}{n^{1/2}}$ sabemos que diverge, al ser una serie $p$ con $p<1$, la serie $\sum \sqrt{\frac{(n+1)}{n^2+n-1}}$ también diverge.
+:::
+
+:::{#exr-6}
+Dos personas lanzan una moneda de manera alternada y gana el primero que obtenga una cara. Expresar con una serie la probabilidad de que gane cada una de ellas. Demostrar que la suma de esas dos series es 1. 
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Sea $f(n)$ la probabilidad de sacar la primera cara en el lanzamiento $n$. Entonces, $f(n)=\left(\frac{1}{2}\right)^n$ ya que para que esto ocurra los $n-1$ lanzamientos anteriores deben ser cruces, con probabilidad $\left(\frac{1}{2}\right)^{n-1}$ y el lanzamiento $n$ debe ser cara, con probabilidad $\frac{1}{2}$.
+
+El jugador 1 gana si la cara sale en la tirada impar, y por tanto, la probabilidad de que gane viene dada por la suma de la serie
+
+\begin{align*}
+\sum_{n=1}^\infty \left(\frac{1}{2}\right)^{2n-1}
+&= \frac{1}{2}\sum_{n=1}^\infty \left(\frac{1}{2}\right)^{2n-2} 
+= \frac{1}{2}\sum_{n=1}^\infty \left(\frac{1}{2}\right)^{2(n-1)}\\
+&= \frac{1}{2}\sum_{n=0}^\infty \left(\frac{1}{2}\right)^{2n}
+= \frac{1}{2}\sum_{n=0}^\infty \left(\frac{1}{4}\right)^n,
+\end{align*}
+
+que es una serie geométrica de razón $1/4$, y por tanto converge, y su suma es 
+
+$$
+\frac{1}{2}\sum_{n=0}^\infty \left(\frac{1}{4}\right)^n
+= \frac{1}{2}\frac{1}{1-\frac{1}{4}}
+= \frac{2}{3}. 
+$$
+
+Por otro lado, el jugador 2 gana si la cara sale en la tirada par, y por tanto, la probabilidad de que gane viene dada por la suma de la serie
+
+\begin{align*}
+\sum_{n=1}^\infty \left(\frac{1}{2}\right)^{2n}
+&= \sum_{n=0}^\infty \left(\frac{1}{4}\right)^n - 1,
+\end{align*}
+
+que de nuevo es una serie geométrica de razón $1/4$, y por tanto converge, y su suma es 
+
+$$
+\sum_{n=0}^\infty \left(\frac{1}{4}\right)^n - 1 
+= \frac{1}{1-\frac{1}{4}} - 1
+= \frac{1}{3}. 
+$$
+
+Como se ve, la suma de las dos probabilidades es $\frac{2}{3} + \frac{1}{3} = 1$, algo que debe cumplir todo espacio probabilístico.
+:::
+
+:::{#exr-7}
+(2.5 puntos) Calcular la serie de Taylor de la función $f(x)=\ln(x-1)$ en $a=2$ y determinar su dominio de convergencia puntual.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Sabemos que la serie de MacLaurin de la función $\ln(1+x)$ es 
+
+$$
+\sum_{n=1}^\infty (-1)^{n-1}\frac{x^n}{n}. 
+$$
+
+Como $f(x) = \ln(x-1) = \ln(1+x-2)$, haciendo un cambio de variable en el polinomio anterior, se tiene que el polinomio de Taylor de $f(x)$ en $a=2$ es 
+
+$$
+\sum_{i=1}^\infty (-1)^{n-1}\frac{(x-2)^n}{n},
+$$
+
+que es una serie de potencias centrada en $2$.
+
+Calculamos ahora su radio de convergencia por el criterio de la razón
+
+$$
+R = \lim_{n\to\infty} \left | \frac{\frac{(-1)^{n-1}}{n}}{\frac{(-1)^n}{n+1}}\right| 
+= \lim_{n\to\infty} \left|\frac{n+1}{n}\right|
+= 1,
+$$
+
+de manera que la serie converge para $|x-2|<1$, es decir, $x\in (1, 3)$. 
+
+Finalmente, estudiamos la convergencia en los extremos del intervalo anterior. En $x=1$ resulta la serie
+
+$$
+\sum_{n=1}^\infty \frac{(-1)^{2n-1}}{n} = -\sum_{n=1}^\infty \frac{1}{n},
+$$
+
+que diverge al ser la serie armónica.
+
+Y en $x=3$ resulta la serie
+
+$$
+\sum_{n=1}^\infty \frac{(-1)^{n-1}}{n},
+$$
+
+que es la serie armónica alternada y ya sabemos que converge. 
+
+Así pues, el dominio de convergencia puntual de la serie es $\mathcal{C} = (1,3]$.
+:::
