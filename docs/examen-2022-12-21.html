@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -250,6 +250,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./examen-2024-05-30.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">2024-05-30 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-11-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">2024-11-05 <br>Examen de Análisis III</span></span></a>
   </div>
 </li>
     </ul>
@@ -612,7 +618,7 @@ s'(r) = \frac{4}{3}\pi 2r -\frac{0.3}{r^2} =0 \Leftrightarrow \frac{8}{3}\pi r =
 <p><span class="math display">\[
 s''(r) = \frac{8}{3}\pi -\frac{0.3(-2)}{r^3} =\frac{8}{3}\pi+\frac{0.6}{r^3} &gt;0\ \forall r&gt;0.
 \]</span></p>
-<p>Por tanto, <span class="math inline">\(s\)</span> tiene un mínimo local en <span class="math inline">\(r=0.3296\)</span>, y la altura del la píldora con la mínima superficie será, utilizando la <a href="#eq-cont-01-gen-eq1" class="quarto-xref">Ecuación&nbsp;<span>2.1</span></a>,</p>
+<p>Por tanto, <span class="math inline">\(s\)</span> tiene un mínimo local en <span class="math inline">\(r=0.3296\)</span>, y la altura del la píldora con la mínima superficie será, utilizando la <a href="#eq-cont-01-gen-eq1" class="quarto-xref">Ecuación&nbsp;<span class="quarto-unresolved-ref">eq-cont-01-gen-eq1</span></a>,</p>
 <p><span class="math display">\[h =\frac{0.15-\frac{4}{3}\pi 0.3296^3}{\pi 0.3296^2}\approx 0.\]</span></p>
 <p>Así pues, las dimensiones óptimas serían <span class="math inline">\(x=h=0\)</span> cm e <span class="math inline">\(y=2r=0.6592\)</span> cm, que en realidad es una esfera de diámetro <span class="math inline">\(0.6592\)</span> cm.</p>
 </div>
@@ -903,24 +909,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -955,11 +943,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1235,12 +1219,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./examen-2022-11-14.html" class="pagination-link" aria-label="2022-11-14 <br>Examen de Análisis I">
+      <a href="./examen-2022-11-14.html" class="pagination-link  aria-label=" &lt;span="" &lt;br&gt;examen="" de="" análisis="" i&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">2022-11-14 <br>Examen de Análisis I</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./examen-2023-03-11.html" class="pagination-link" aria-label="2023-03-11 <br>Examen de Análisis II">
+      <a href="./examen-2023-03-11.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>2023-03-11 <br>Examen de Análisis II</span>">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">2023-03-11 <br>Examen de Análisis II</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

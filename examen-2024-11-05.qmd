@@ -1,0 +1,248 @@
+---
+title: 2024-11-05 <br>Examen de Análisis III
+lang: es
+date: 2024-05-30
+---
+
+:::{#exr-1}
+Una moto se mueve siguiendo la trayectoria dada por la función vectorial $\mathbf{f}(t)=2t^3 \mathbf{i} + (3t-t^3) \mathbf{j}$. 
+
+a.  ¿Con qué rapidez se mueve en el instante $t=1$?
+
+a.  Calcular la curvatura de la trayectoria en el instante $t=1$.
+
+a.  Calcular las componentes tangencial y normal de la aceleración en el instante $t=1$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  La rapidez de la moto en el instante $t=1$ se obtiene calculando el módulo del vector derivada de $\mathbf{f}(t)$ en $t=1$.
+
+    $$
+    \mathbf{f}'(t) = (6t^2, 3-t^2)
+    $$
+
+    y
+
+    $$
+    |\mathbf{f}'(1)| = |(6, 0)| = 6
+    $$
+
+a.  La [curvatura de la trayectoria](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#thm-curvatura-trayectoria-espacio-real) en el instante $t=1$ se obtiene mediante la fórmula
+
+    $$
+    \kappa(t) = \frac{|\mathbf{f}'(t) \times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
+    $$
+
+    Calculamos la derivada segunda de $\mathbf{f}(t)$.
+
+    $$
+    \mathbf{f}''(t) = (12t, -6t)\quad \mbox{y}\quad \mathbf{f}''(1) = (12, -6)
+    $$
+
+    y
+
+    $$
+    \kappa(1) 
+    = \frac{|\mathbf{f}'(1) \times \mathbf{f}''(1)|}{|\mathbf{f}'(1)|^3} 
+    = \frac{|(6, 0) \times (12, -6)|}{|6,0|^3} 
+    = \frac{|(0, 0, -36)|}{6^3} 
+    = \frac{36}{216}
+    = \frac{1}{6}. 
+    $$
+
+a.  La aceleración de la moto la da el vector de la segunda derivada de $\mathbf{f}(t)$, que ya hemos calculado en el apartado anterior y vale $\mathbf{f}''(1) = (12, -6)$. 
+
+    Como el vector tangente $\mathbf{f}'(1) = (6, 0)$ tiene la dirección del eje $x$, la componente tangencial de la aceleración es la primera componente de $\mathbf{f}''(1)$, es decir, $12$, y la componente normal es la segunda componente de $\mathbf{f}''(1)$, es decir, $-6$.
+
+    Podemos llegar al mismo resultado aplicando las [fórmulas de las componentes tangencial y normal del vector aceleración](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#def-componente-tangencial-normal-aceleracion).
+
+    \begin{align*}
+    a_T(1) 
+    &= |v(1)|'
+    = \frac{\mathbf{f}'(1) \cdot \mathbf{f}''(1)}{|\mathbf{f}'(1)|} 
+    = \frac{(6, 0) \cdot (12, -6)}{6}
+    = \frac{72}{6}
+    = 12, \\
+    a_N(1)
+    &= \frac{|\mathbf{f}'(1) \times \mathbf{f}''(1)|}{|\mathbf{f}'(1)|}
+    = \frac{|(6, 0) \times (12, -6)|}{6}
+    = \frac{|(0, 0, -36)|}{6}
+    = \frac{36}{6}
+    = -6.
+    \end{align*}
+:::
+
+:::{#exr-2}
+Una compañía produce productos de dos tipos $X$ e $Y$. La demanda de estos productos viene dada por las funciones 
+
+\begin{align*}
+d_x(x,y) &= 120 - 2x + y\\
+d_y(x,y) &= 100 + \frac{x}{2} - y
+\end{align*}
+
+donde $d_x$ y $d_y$ son las unidades demandadas de productos $X$ e $Y$ respectivamente, y $x$ e $y$ sus precios. El coste de producción de $d_x$ unidades de $x$ y $d_y$ unidades de $y$ viene dado por la función $c(d_x,d_y) = 20 d_x + 30 d_y + \frac{1}{2}d_xd_y$. 
+
+a.  Calcular las derivadas parciales de las funciones de demanda e interpretarlas.
+
+a.  Calcular las derivadas parciales de la función de beneficio con respecto a los precios de los productos e interpretarlas.
+
+a.  ¿Cuál es el beneficio máximo?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Las derivadas parciales de las funciones de demanda son
+
+    \begin{align*}
+    \frac{\partial d_x}{\partial x} 
+    &= -2, & 
+    \frac{\partial d_x}{\partial y} 
+    &= 1, \\
+    \frac{\partial d_y}{\partial x} 
+    &= \frac{1}{2}, 
+    & \frac{\partial d_y}{\partial y} 
+    &= -1.
+    \end{align*}
+
+    Como $\frac{\partial d_x}{\partial x} = -2$ por cada unidad que aumente el precio de $X$ manteniendo el precio de $Y$ constante, la demanda de $X$ baja en dos unidades. La interpretación de las otras derivadas parciales es análoga.
+
+a.  El beneficio de la compañía es la diferencia entre los ingresos y los costes, es decir, 
+
+    \begin{align*}
+    b(x,y) 
+    &= x d_x(x,y) + y d_y(x,y) - c(d_x(x,y), d_y(x,y))\\
+    &= x(120 - 2x + y) + y\left(100 + \frac{x}{2} - y\right) - 20(120 - 2x + y) \\
+    &- 30\left(100 + \frac{x}{2} - y\right) - \frac{1}{2}(120 - 2x + y)\left(100 + \frac{x}{2} - y\right) \\
+    &=120x - 2x^2 + xy + 100y + \frac{xy}{2} - y^2 - 2400 + 40x - 20y \\
+    &- 3000 - 15x + 30y + \frac{x^2}{2} + \frac{y^2}{2} -\frac{5}{4}xy + 70x + 10y - 6000\\
+    &= \frac{-3}{2}x^2 + \frac{1}{4}xy - \frac{1}{2}y^2 + 215x + 120y - 11400.
+    \end{align*}
+
+    Y sus derivadas parciales son
+
+    \begin{align*}
+    \frac{\partial b}{\partial x}
+    &= -3x + \frac{1}{4}y + 215, \\
+    \frac{\partial b}{\partial y}
+    &= \frac{1}{4}x - y + 120.
+    \end{align*}
+
+    La derivada parcial $\frac{\partial b}{\partial x}$ nos dice que si el precio de $X$ aumenta, manteniendo constante el precio de $Y$, el beneficio experimenta una variación inversamente proporcional al precio de $X$ y directamente proporcional al precio de $Y$, mientras que la derivada parcial $\frac{\partial b}{\partial y}$ nos dice que si el precio de $Y$ aumenta, manteniendo constante el precio de $X$, el beneficio experimenta una variación inversamente proporcional al precio de $Y$ y directamente proporcional al precio de $X$.
+
+a.  Para maximizar el beneficio, calculamos primero los puntos críticos de la función $b(x,y)$, es decir, los puntos donde las derivadas parciales se anulan. Resolviendo el sistema de ecuaciones
+
+    \begin{align*}
+    -3x + \frac{1}{4}y + 215 &= 0, \\
+    \frac{1}{4}x - y + 120 &= 0,
+    \end{align*}
+
+    se obtiene $x=83.4043$ e $y=140.8511$. Para comprobar que este punto es un máximo relativo, calculamos el determinante de la matriz hessiana de $b(x,y)$.
+
+    $$
+    \nabla^2 b(x,y) = 
+    \begin{pmatrix}
+    \frac{\partial^2 b}{\partial x^2} & \frac{\partial^2 b}{\partial x \partial y} \\
+    \frac{\partial^2 b}{\partial y \partial x} & \frac{\partial^2 b}{\partial y^2}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    -3 & \frac{1}{4} \\
+    \frac{1}{4} & -1
+    \end{pmatrix}
+    $$
+
+    y
+
+    $$
+    |\nabla^2 b(83.4043, 140.8511)| = 
+    \begin{vmatrix}
+    -3 & \frac{1}{4} \\
+    \frac{1}{4} & -1
+    \end{vmatrix}
+    = 3 - \frac{1}{16} = \frac{47}{16} > 0.
+    $$
+
+    Como además $\frac{\partial^2 b}{\partial x^2} = -3 < 0$, el punto $(83.4043, 140.8511)$ es un máximo relativo de la función $b(x,y)$ y el beneficio máximo es $b(83.4043, 140.8511) = 6107.0213$.
+:::
+
+:::{#exr-3}
+La superficie de una función $f(x,y)$ contiene las trayectorias dadas por las funciones vectoriales $\mathbf{f}(t)=(e^{-t}, 2t+2, 3-2t+t^2)$ y $\mathbf{g}(t)=\left(\sqrt(t), \frac{t^2+3}{2}, 4t^4-t\right)$.
+
+a.  Calcular la ecuación de la recta tangente a la trayectoria de $\mathbf{g}$ en el punto $(1,2,3)$.
+
+a.  Calcular la ecuación del plano tangente a la superficie de $f$ en el punto $(1,2,3)$. 
+
+a.  En ese mismo punto, ¿cuál es la tasa de variación instantánea de $f$ con respecto a $x$ si $y$ se mantiene constante? ¿Cuál es la tasa de variación instantánea de $f$ con respecto a $y$ si $x$ se mantiene constante?
+
+a.  Usar el polinomio de Taylor de primer grado de $f$ en el punto $(1,2)$ para aproximar el valor de $f(0.9, 2.1)$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  $\mathbf{g}(t)$ pasa por el punto $(1,2,3)$ cuando $t=1$. La recta tangente a la trayectoria de $\mathbf{g}$ en ese punto es la recta que pasa por $(1,2,3)$ y tiene la misma dirección que $\mathbf{g}'(1)$.
+
+    $$
+    \mathbf{g}'(t) = \left(\frac{1}{2\sqrt{t}}, t, 16t^3-1\right)
+    $$
+
+    y
+
+    $$
+    \mathbf{g}'(1) = \left(\frac{1}{2}, 1, 15\right).
+    $$
+
+    Por tanto, la ecuación de la recta tangente es 
+    
+    $$
+    T(t) 
+    = (1,2,3) + t \mathbf{g}'(1)
+    = (1,2,3) + t \left(\frac{1}{2}, 1, 15\right)
+    = \left(1+\frac{t}{2}, 2+t, 3+15t\right).
+    $$
+
+a.  Como $\mathbf{f}(t)$ también pasa por el punto $(1,2,3)$ cuando $t=0$, $\mathbf{f}'(0) también será tangente a la superficie de $f$ en el punto $(1,2,3)$. Por tanto, el plano tangente a $f$ en $(1,2,3)$ contendrá tanto a $\mathbf{f}'(0)$ como a $\mathbf{g}'(1)$.
+
+    $$
+    \mathbf{f}'(t) = (-e^{-t}, 2, -2+2t)
+    $$
+
+    y
+
+    $$
+    \mathbf{f}'(0) = (-1, 2, -2).
+    $$
+
+    Así pues, el producto vectorial de $\mathbf{f}'(0)$ y $\mathbf{g}'(1)$ nos da un vector normal al plano tangente.
+
+    $$
+    \mathbf{f}'(0) \times \mathbf{g}'(1) 
+    = \begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    -1 & 2 & -2 \\
+    \frac{1}{2} & 1 & 15
+    \end{vmatrix}
+    = (30 + 2)\mathbf{i} + (-1+ 15)\mathbf{j} + (- 1 - 1)\mathbf{k}
+    = (32,14-2).
+    $$
+
+    Por tanto, la ecuación del plano tangente es
+
+    $$
+    (x-1, y-2, z-3) \cdot (32, 14, -2) = 0 
+    \Leftrightarrow 32(x-1) + 14(y-2) - 2(z-3) = 0
+    \Leftrightarrow 32(x-1) + 12(y-2) + 30(z-3) = 0
+    \Leftrightarrow z = 16x + 7y - 27.
+    $$
+
+a.  La tasa de variación instantánea de $f$ con respecto a $x$ si $y$ se mantiene constante en el punto $(1,2,3)$ es $\frac{\partial f}{\partial x}(1,2,3)$, que es el valor que multiplica a $x$ en la [ecuación del plano tangente](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#def-plano-tangente-superficie), y vale $16$.
+
+    Del mismo modo, la tasa de variación instantánea de $f$ con respecto a $y$ si $x$ se mantiene constante en el punto $(1,2,3)$ es $\frac{\partial f}{\partial y}(1,2,3)$, que es el valor que multiplica a $y$ en la [ecuación del plano tangente](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#def-plano-tangente-superficie), y vale $7$.
+
+a.  El [polinomio de Taylor de primer grado](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#aproximaci%C3%B3n-lineal-de-una-funci%C3%B3n-de-varias-variables) de $f$ en el punto $(1,2)$ coincide con la ecuación del plano tangente a la superficie de $f$ en ese punto. Por tanto, la aproximación de $f(0.9, 2.1)$ es
+
+    $$
+    f(0.9, 2.1) \approx 16(0.9) + 7(2.1) - 27 = 14.4 + 14.7 - 27 = 2.1.
+    $$
+:::
+
