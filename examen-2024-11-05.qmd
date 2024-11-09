@@ -229,10 +229,12 @@ a.  Como $\mathbf{f}(t)$ también pasa por el punto $(1,2,3)$ cuando $t=0$, $\ma
     Por tanto, la ecuación del plano tangente es
 
     $$
-    (x-1, y-2, z-3) \cdot (32, 14, -2) = 0 
-    \Leftrightarrow 32(x-1) + 14(y-2) - 2(z-3) = 0
-    \Leftrightarrow 32(x-1) + 12(y-2) + 30(z-3) = 0
+    \begin{gathered}
+    (x-1, y-2, z-3) \cdot (32, 14, -2) = 0 \\
+    \Leftrightarrow 32(x-1) + 14(y-2) - 2(z-3) = 0 \\
+    \Leftrightarrow 32(x-1) + 12(y-2) + 30(z-3) = 0 \\
     \Leftrightarrow z = 16x + 7y - 27.
+    \end{gathered}
     $$
 
 a.  La tasa de variación instantánea de $f$ con respecto a $x$ si $y$ se mantiene constante en el punto $(1,2,3)$ es $\frac{\partial f}{\partial x}(1,2,3)$, que es el valor que multiplica a $x$ en la [ecuación del plano tangente](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#def-plano-tangente-superficie), y vale $16$.
