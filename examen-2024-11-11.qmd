@@ -1,0 +1,265 @@
+---
+title: 2024-11-11 <br>Examen de Análisis I
+lang: es
+date: 2024-11-11
+---
+
+:::{#exr-1}
+Calcular las asíntotas de la función $f(x) = e^{\frac{x}{x^2-1}}+3x$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+**Asíntotas verticales**
+
+Buscamos las asíntotas verticales en los puntos donde la función no está definida. La función está definida en todo $\mathbb{R}$, excepto en $x=1$ y $x=-1$, ya que en estos puntos se anula el denominador del exponente.
+
+Estudiamos primero el límite en $x=-1$.
+
+\begin{align*}
+\lim_{x\to -1^-} e^{\frac{x}{x^2-1}}+3x 
+&= \lim_{x\to -1^-} e^{\frac{x}{x^2-1}}+\lim_{x\to -1^-} 3x \\
+&= e^{\lim_{x\to -1^-}\frac{x}{x^2-1}}+3(-1) \\
+&= e^{-\infty}-3 = -3.\\
+\lim_{x\to -1^+} e^{\frac{x}{x^2-1}}+3x
+&= \lim_{x\to -1^+} e^{\frac{x}{x^2-1}}+\lim_{x\to -1^+} 3x \\
+&= e^{\lim_{x\to -1^+}\frac{x}{x^2-1}}+3(-1) \\
+&= e^{\infty}-3 = \infty.
+\end{align*}
+
+Por tanto, la función tiene una asíntota vertical en $x=-1$ por la derecha.
+
+Estudiamos ahora el límite en $x=1$.
+
+\begin{align*}
+\lim_{x\to 1^-} e^{\frac{x}{x^2-1}}+3x
+&= \lim_{x\to 1^-} e^{\frac{x}{x^2-1}}+\lim_{x\to 1^-} 3x \\
+&= e^{\lim_{x\to 1^-}\frac{x}{x^2-1}}+3(1) \\
+&= e^{-\infty}+3 = 3.\\
+\lim_{x\to 1^+} e^{\frac{x}{x^2-1}}+3x
+&= \lim_{x\to 1^+} e^{\frac{x}{x^2-1}}+\lim_{x\to 1^+} 3x \\
+&= e^{\lim_{x\to 1^+}\frac{x}{x^2-1}}+3(1) \\
+&= e^{\infty}+3 = \infty.
+\end{align*}
+
+Por tanto, la función tiene una asíntota vertical en $x=1$ por la derecha.
+
+**Asíntotas horizontales**
+
+Estudiamos los límites en el infinito.
+
+\begin{align*}
+\lim_{x\to \infty} e^{\frac{x}{x^2-1}}+3x
+&= \lim_{x\to -\infty} e^{\frac{x}{x^2-1}}+\lim_{x\to -\infty} 3x \\
+&= e^{\lim_{x\to -\infty}\frac{x}{x^2-1}}+3\lim_{x\to -\infty} x \\
+&= e^0-3\infty = -\infty. \\
+\lim_{x\to \infty} e^{\frac{x}{x^2-1}}+3x
+&= \lim_{x\to \infty} e^{\frac{x}{x^2-1}}+\lim_{x\to \infty} 3x \\ 
+&= e^{\lim_{x\to \infty}\frac{x}{x^2-1}}+3\lim_{x\to \infty} x \\
+&= e^0+3\infty = \infty.
+\end{align*}
+
+Por tanto, la función no tiene asíntotas horizontales.
+
+**Asíntotas oblicuas**
+
+Para determiar la pendiente de la asíntota estudiamos los límites en el infinito de $f(x)/x$.
+
+\begin{align*}
+\lim_{x\to -\infty} \frac{e^{\frac{x}{x^2-1}}+3x}{x}
+&= \lim_{x\to -\infty} \frac{e^{\frac{x}{x^2-1}}}{x}+\lim_{x\to -\infty} \frac{3x}{x} \\
+&= \frac{\lim_{x\to -\infty} e^{\frac{x}{x^2-1}}}{\lim_{x\to -\infty} x}+3 \\
+&= \frac{1}{-\infty}+3 
+= 3. \\
+\end{align*}
+
+Así pues, la función tiene una asíntota oblicua en $-\infty$ con pendiente $3$.
+
+Para determinar el término independiente de la asíntota oblicua, calculamos el límite de $f(x)-3x$ en el infinito.
+
+\begin{align*}
+\lim_{x\to -\infty} e^{\frac{x}{x^2-1}}+3x-3x
+&= \lim_{x\to -\infty} e^{\frac{x}{x^2-1}} \\
+&= e^{\lim_{x\to -\infty}\frac{x}{x^2-1}} \\
+&= e^0 = 1.
+\end{align*}
+
+Por tanto, la función tiene una asíntota oblicua en $-\infty$ con ecuación $y=3x+1$.
+
+Del mismo modo se puede demostrar que la misma recta $y=3x+1$ es una asíntota oblicua en $+\infty$.
+:::
+
+:::{#exr-2}
+Una inversión financiera ofrece una rentabilidad anual dada por la sucesión
+
+$$
+\begin{cases}
+a_1 = 2\%, \\
+a_{n+1} = \frac{8a_n}{a_n+4}\%
+\end{cases}
+$$
+
+¿Hacia qué valor tiende la rentabilidad a largo plazo?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Calculamos los primeros términos de la sucesión para darnos una idea de su comportamiento.
+
+\begin{align*}
+a_1 &= 2, \\
+a_2 &= \frac{8\cdot 2}{2+4} = \frac{16}{6} = \frac{8}{3} \approx 2.67, \\
+a_3 &= \frac{8\cdot 8/3}{8/3+4} = \frac{64/3}{20/3} = \frac{64}{20} = \frac{16}{5} = 3.2, \\
+a_4 &= \frac{8\cdot 16/5}{16/5+4} = \frac{128/5}{36/5} = \frac{128}{36} = \frac{32}{9} \approx 3.56, \\
+a_5 &= \frac{8\cdot 32/9}{32/9+4} = \frac{256/9}{68/9} = \frac{256}{68} = \frac{64}{17} \approx 3.76, \\
+\ldots
+\end{align*}
+
+Parece que la sucesión tiende a $4$, así que probaremos por inducción que 4 es una cota superior de la sucesión.
+
+**Caso base:** $a_1 = 2 < 4$.
+**Hipótesis de inducción:** Supongamos que $a_n < 4$.
+**Paso inductivo:** Probaremos que $a_{n+1} < 4$, o lo que es equivalente, $\frac{1}{a_{n+1}} > \frac{1}{4}$.
+
+\begin{align*}
+\frac{1}{a_{n+1}}
+&= \frac{a_n+4}{8a_n} 
+= \frac{a_n}{8a_n} + \frac{4}{8a_n} 
+= \frac{1}{8} + \frac{1}{2a_n} \\
+&> \frac{1}{8} + \frac{1}{2\cdot 4}
+= \frac{1}{8} + \frac{1}{8}
+= \frac{1}{4}.
+\end{align*}
+
+Por tanto, $a_n < 4$ $\forall n\in\mathbb{N}$.
+
+Probaremos ahora que la sucesión es creciente. Para ello, calculamos la diferencia entre dos términos consecutivos.
+
+\begin{align*}
+a_{n+1}-a_n 
+&= \frac{8a_n}{a_n+4}-a_n 
+= \frac{8a_n-a_n(a_n+4)}{a_n+4} 
+= \frac{a_n(4-a_n)}{a_n+4}
+> 0
+\end{align*}
+
+ya que $0<a_n<4$ $\forall n\in\mathbb{N}$.
+
+Como la sucesión es creciente y acotada superiormente, según el [teorema de convergencia de sucesiones monótonas](https://aprendeconalf.es/analisis-manual/04-sucesiones.html#thm-convergencia-monotona), la sucesión converge. Tomando límites en la ecuación de recurrencia, obtenemos
+
+$$
+a 
+= \lim_{n\to\infty} a_{n+1} 
+= \lim_{n\to\infty} \frac{8a_n}{a_n+4} 
+= \frac{8\lim_{n\to\infty a_n}}{\lim_{n\to\infty} a_n+4} \\
+= \frac{8a}{a+4}
+$$
+
+Resolviendo la ecuación anterior se tiene
+
+$$
+\begin{gathered}
+a = \frac{8a}{a+4} 
+\Leftrightarrow a(a+4) = 8a 
+\Leftrightarrow a^2+4a = 8a 
+\Leftrightarrow a^2-4a = 0 \\
+\Leftrightarrow a(a-4) = 0
+\Leftrightarrow a = 0 \quad \text{o} \quad a = 4.
+\end{gathered}
+$$
+
+Como $a_1 = 2 > 0$, se tiene que $a = 4$, y por tanto, la rentabilidad a largo plazo tiende al $4\%$.
+:::
+
+:::{#exr-3}
+Demostrar sin usar la regla de L'Hôpital que $1 - \cos(x)$ y $\frac{x^2}{2}$ son infinitésimos equivalentes en $x=0$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Usando la fórmula del coseno del ángulo doble, tenemos que 
+
+$$
+\cos(x) = \cos\left(\frac{x}{2}\right)^2 - \sin\left(\frac{x}{2}\right)^2 = 1 - 2\sin\left(\frac{x}{2}\right)^2 \Leftrightarrow 1 - \cos(x) = 2\sin\left(\frac{x}{2}\right)^2.
+$$
+
+Como $\sin(x) \approx x$ para $x\approx 0$, se tiene que $\sin\left(\frac{x}{2}\right) \approx \frac{x}{2}$ para $x\approx 0$, y por tanto, se tiene
+
+$$
+\lim_{x\to 0} \frac{1-\cos(x)}{\frac{x^2}{2}} = \lim_{x\to 0} \frac{2\sin\left(\frac{x}{2}\right)^2}{\frac{x^2}{2}} = \lim_{x\to 0} \frac{2\left(\frac{x}{2}\right)^2}{\frac{x^2}{2}} = \lim_{x\to 0} \frac{x^2}{x^2} = 1,
+$$
+
+y por tanto $1-\cos(x)$ y $\frac{x^2}{2}$ son infinitésimos equivalentes en $x=0$.
+:::
+
+:::{#exr-4}
+Dado el conjunto $A=\left\{x\in\mathbb{Q}: 2x^3-3x^2+x>0\right\}$, calcular su supremo, su ínfimo, su máximo y su mínimo. ¿Es un conjunto abierto o cerrado? Dar sus puntos de acumulación que no pertenecen al conjunto y demostrarlo.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Primero vamos a expresar el conjunto $A$ mediante la unión de intervalos. Para ello, factorizamos el polinomio $2x^3-3x^2+x$ y se tiene
+
+$$
+2x^3-3x^2+x = x(2x^2-3x+1) = x(2x-1)(x-1).
+$$
+
+Para que $2x^3-3x^2+x>0$, necesitamos que $x>0$ y que $(2x-1)(x-1)>0$, o que $x<0$ y $(2x-1)(x-1)<0$. Por su parte, $(2x-1)(x-1)>0$ si $x>1$ o $x<1/2$. Así pues, el conjunto $A$ se puede expresar como
+
+$$
+A = \left\{x\in\mathbb{Q}: x>0 \land x>1 \right\} \cup \left\{x\in\mathbb{Q}: x>0 \land x<1/2 \right\} = \mathbb{Q}\cap((0,1/2) \cup (1,\infty)).
+$$
+
+Resulta fácil ver que $A$ no tiene supremo ya que no está acotado superiormente, y por tanto tampoco tiene máximo. Por otro lado, su ínfimo es $0$ ya que es la mayor de las cotas inferiores, pero como $0\not\in A$, no tiene mínimo.
+
+El conjunto $A$ no es abierto ya que sus puntos no son interiores. Si tomamos cualquier valor $x\in A$, para cualquier $\varepsilon>0$ se tiene que el entorno $(x-\varepsilon, x+\varepsilon)$ contiene valores irracionales debido a la densidad de los números irracionales en los reales. Por tanto, $A$ no es abierto. Del mismo modo, su contrario tampoco es abierto ya que si tomamos por ejemplo un valor $x\in \mathbb{R}\setminus \mathbb{Q}$ tal que $x>1$, para cualquier $\varepsilon$ el $(x-\varepsilon, x+\varepsilon)$ contiene valores racionales por la densidad de los racionales en los reales. Por tanto, $\mathbb{R}\setminus A$ no es abierto y $A$ no es cerrado. 
+
+Finalmente, veamos que puntos de acumulación de $A$ que no pertenecen a $A$. En primer lugar, $0$ es un punto de acumulación de $A$ ya que cualquier entorno reducido de $0$ contiene valores racionales positivos. Del mismo modo, $1/2$ es otro punto de acumulación ya que  cualquier entorno reducido de $1/2$ contiene valores racionales menores de $1/2$. Y $1$ es también otro punto de acumulación ya que cualquier entorno reducido de $1$ contiene valores racionales mayores de $1$. Por tanto, $0$, $1/2$ y $1$ son puntos de acumulación de $A$ que no pertenecen a $A$. Pero además, cualquier número irracional $x\in (0,1/2) \cup (1,\infty)$ es un punto de acumulación de $A$ que no pertenece a $A$, ya que, una vez más, por la densidad de los racionales en los reales, cualquier entorno de $x$ contiene valores racionales en $(0,1/2) \cup (1,\infty)$, es decir en $A$. Por tanto, los puntos de acumulación de $A$ que no pertenecen a $A$ son $0$, $1/2$, $1$ y $\mathbb{R}\setminus\mathbb{Q}\cap((0,1/2) \cup (1,\infty))$.
+:::
+
+:::{#exr-5}
+Demostrar usando la definición de límite que $\lim_{x\to 1}\frac{x-1}{x^2-1} = \frac{1}{2}$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Dado un $\varepsilon>0$, veamos si existe un $\delta>0$ tal que $|\frac{x-1}{x^2-1} -\frac{1}{2}|<\varepsilon$ $\forall x\in\mathbb{R}$ tal que $|x-1|<\delta$.
+
+$$
+\left|\frac{x-1}{x^2-1} -\frac{1}{2}\right| 
+= \left|\frac{(x-1)}{(x+1)(x-1)} -\frac{1}{2}\right| 
+= \left|\frac{1}{x+1}-\frac{1}{2}\right|
+= \left|\frac{1-x}{2(x+1)}\right|
+= \frac{|x-1|}{2|x+1|}.
+$$
+
+Necesitamos que 
+
+$$
+\frac{|x-1|}{2|x+1|}<\varepsilon.
+$$
+
+Para acotar inferiormente $|x+1|$, supongamos que $|x-1|<1$, de modo que $0<x<2$. Entonces $1<x+1<3$, y por tanto, $|x+1|>1$. Así pues, si $|x-1|<1$, tenemos que
+
+$$
+\frac{|x-1|}{2|x+1|} < \frac{|x-1|}{2}.
+$$
+
+Necesitamos, por tanto, que 
+
+$$
+\frac{|x-1|}{2}<\varepsilon \Leftrightarrow |x-1|<2\varepsilon.
+$$
+
+De manera que tomando $\delta = \min\{1,2\varepsilon\}$, se tiene que 
+
+$$
+\left|\frac{x-1}{x^2-1} -\frac{1}{2}\right|
+= \left|\frac{1-x}{2(x+1)}\right|
+< \left|\frac{1-x}{2}\right|
+< \frac{2\varepsilon}{2} 
+= \varepsilon,
+$$
+
+lo que prueba que $\lim_{x\to 1}\frac{x-1}{x^2-1} = \frac{1}{2}$.
+:::

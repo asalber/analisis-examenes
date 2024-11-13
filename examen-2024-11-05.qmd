@@ -1,7 +1,7 @@
 ---
 title: 2024-11-05 <br>Examen de Análisis III
 lang: es
-date: 2024-05-30
+date: 2024-11-05
 ---
 
 :::{#exr-1}
@@ -201,7 +201,7 @@ a.  $\mathbf{g}(t)$ pasa por el punto $(1,2,3)$ cuando $t=1$. La recta tangente 
     = \left(1+\frac{t}{2}, 2+t, 3+15t\right).
     $$
 
-a.  Como $\mathbf{f}(t)$ también pasa por el punto $(1,2,3)$ cuando $t=0$, $\mathbf{f}'(0) también será tangente a la superficie de $f$ en el punto $(1,2,3)$. Por tanto, el plano tangente a $f$ en $(1,2,3)$ contendrá tanto a $\mathbf{f}'(0)$ como a $\mathbf{g}'(1)$.
+a.  Como $\mathbf{f}(t)$ también pasa por el punto $(1,2,3)$ cuando $t=0$, $\mathbf{f}'(0)$ también será tangente a la superficie de $f$ en el punto $(1,2,3)$. Por tanto, el plano tangente a $f$ en $(1,2,3)$ contendrá tanto a $\mathbf{f}'(0)$ como a $\mathbf{g}'(1)$.
 
     $$
     \mathbf{f}'(t) = (-e^{-t}, 2, -2+2t)
