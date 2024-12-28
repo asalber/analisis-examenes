@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; 2024-12-20  Examen de Análisis III – Exámenes de Análisis Matemático</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./examen-2024-11-11.html" rel="prev">
+<link href="./img/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-3e476e15ae565c222d94875412ae43a1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d3043699f4f525e226433170f63674df.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d0774ced39d4e73f762c8327fb4dd574.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-49be2458b57e36096c4d858f2d8bd5ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="13&nbsp; 2024-12-20 Examen de Análisis III – Exámenes de Análisis Matemático">
+<meta property="og:image" content="img/examen-2024-12-20/ventana.svg">
+<meta property="og:site_name" content="Exámenes de Análisis Matemático">
+<meta name="twitter:title" content="13&nbsp; 2024-12-20 Examen de Análisis III – Exámenes de Análisis Matemático">
+<meta name="twitter:image" content="img/examen-2024-12-20/ventana.svg">
+<meta name="twitter:site" content="@aprendeconalf">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./examen-2024-12-20.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2024-12-20 <br>Examen de Análisis III</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Exámenes de Análisis Matemático</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-11-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">2022-11-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-12-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2022-12-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-03-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">2023-03-11 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-06-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">2023-06-01 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-11-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">2023-11-15 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-11-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">2023-11-14 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-12-22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">2023-12-22 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-01-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">2024-01-11 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-04-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">2024-04-16 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-05-30.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">2024-05-30 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-11-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">2024-11-05 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-11-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">2024-11-11 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-12-20.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2024-12-20 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2024-12-20 <br>Examen de Análisis III</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">20 de diciembre de 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13.1</strong></span> La temperatura de una placa de inducción térmica en cada punto <span class="math inline">\((x,y)\)</span> de su superficie viene dada por la función <span class="math inline">\(T(x,y) = ye^{-x^2-2y^2}\)</span>.</p>
+<ol type="a">
+<li><p>¿Cuál es la tasa de variación instantánea de la temperatura en el punto <span class="math inline">\((0,0)\)</span> si empezamos a movernos en la dirección en la que <span class="math inline">\(x\)</span> decrece un tercio de lo que aumenta <span class="math inline">\(y\)</span>?</p></li>
+<li><p>¿En qué puntos la temperatura será máxima y mínima? ¿Cuál será la temperatura en esos puntos?</p></li>
+<li><p>Usar el polinomio de Taylor de segundo grado en el punto <span class="math inline">\((1,0)\)</span> para aproximar la temperatura en el punto <span class="math inline">\((0.9,0.1)\)</span>.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>La tasa de variación instantánea la da la derivada direccional de <span class="math inline">\(T\)</span> en <span class="math inline">\((0,0)\)</span> siguiendo la dirección del vector <span class="math inline">\(\mathbf{v} =\left(-\frac{1}{3}, 1\right)\)</span>.</p>
+<p>Calculamos primero el gradiente de la función.</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial T}{\partial x}
+&amp;= ye^{-x^2-2y^2}\frac{\partial (-x^2-2y^2)}{\partial x}
+= ye^{-x^2-2y^2}(-2x) \\
+\frac{\partial T}{\partial y}
+&amp;= e^{-x^2-2y^2} + y\frac{\partial \left(e^{-x^2-2y^2}\right)}{\partial y}
+= e^{-x^2-2y^2} + ye^{-x^2-2y^2}\frac{\partial (-x^2-2y^2)}{\partial y} \\
+&amp;= e^{-x^2-2y^2} + ye^{-x^2-2y^2}(-4y)
+= e^{-x^2-2y^2}(1-4y^2)
+\end{align*}\]</span></p>
+<p>Así pues, el gradiente es</p>
+<p><span class="math display">\[\nabla T(x,y) = \left(e^{-x^2-2y^2}(-2xy), e^{-x^2-2y^2}(1-4y^2)\right),\]</span></p>
+<p>y en el punto <span class="math inline">\((0,0)\)</span> vale</p>
+<p><span class="math display">\[
+\nabla T(0,0) = \left(e^{-0^2-20^2}(-2\cdot 0), e^{-0^2-20^2}(1-4\cdot 0^2)\right) = (0, 1).
+\]</span></p>
+<p>Por tanto, la derivada direccional es</p>
+<p><span class="math display">\[\begin{align*}
+T_{\mathbf{v}}(0,0)
+&amp;= \nabla T(0,0)\frac{\left(-\frac{1}{3}, 1\right)}{\left|\left(-\frac{1}{3}, 1\right)\right|}
+= (0,1)\frac{\left(-\frac{1}{3}, 1\right)}{\sqrt{\left(-\frac{1}{3}\right)^2+1^2}} \\
+&amp; = (0,1)\left(-\frac{1}{\sqrt{10}}, \frac{3}{\sqrt{10}}\right)
+= \frac{3}{\sqrt{10}}.
+\end{align*}\]</span></p></li>
+<li><p>Para encontrar los puntos críticos de la función, igualamos el gradiente al vector nulo y resolvemos el sistema de ecuaciones.</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial T}{\partial x} &amp;= 0 \Rightarrow -2xye^{-x^2-2y^2} = 0 \Rightarrow x = 0 \mbox{ o } y = 0, \\
+\frac{\partial T}{\partial y} &amp;= 0 \Rightarrow (1-4y^2)e^{-x^2-2y^2} = 0 \Rightarrow y = \pm \frac{1}{2}.
+\end{align*}\]</span></p>
+<p>Por tanto, los puntos críticos son <span class="math inline">\((0,1/2)\)</span> y <span class="math inline">\((0,-1/2)\)</span>.</p>
+<p>Para determinar si son máximos o mínimos, calculamos el determinante de la matriz hessiana en cada punto crítico.</p>
+<p><span class="math display">\[\begin{align*}
+\nabla^2T(x,y) &amp;= \begin{pmatrix}
+\frac{\partial^2 T}{\partial x^2} &amp; \frac{\partial^2 T}{\partial x\partial y} \\
+\frac{\partial^2 T}{\partial y\partial x} &amp; \frac{\partial^2 T}{\partial y^2}
+\end{pmatrix} \\
+&amp;= \begin{pmatrix}
+\frac{\partial}{\partial x}(-2xye^{-x^2-2y^2}) &amp; \frac{\partial}{\partial x}(1-4y^2)e^{-x^2-2y^2} \\
+\frac{\partial}{\partial y}(-2xye^{-x^2-2y^2}) &amp; \frac{\partial}{\partial y}(1-4y^2)e^{-x^2-2y^2}
+\end{pmatrix} \\
+&amp;= \begin{pmatrix}
+4x^2ye^{-x^2 - 2y^2} - 2ye^{-x^2 - 2y^2} &amp; 8xy^2e^{-x^2 - 2y^2} - 2xe^{-x^2 - 2y^2} \\
+8xy^2e^{-x^2 - 2y^2} - 2xe^{-x^2 - 2y^2} &amp; 16y^3e^{-x^2 - 2y^2} - 12ye^{-x^2 - 2y^2}
+\end{pmatrix}.
+\end{align*}\]</span></p>
+<p>La matriz hessiana en el punto <span class="math inline">\((0,1/2)\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+\nabla^2T(0,1/2)
+&amp;= \begin{pmatrix}
+4\cdot 0^2\frac{1}{2}e^{-0^2 - 2\left(\frac{1}{2}\right)^2} - 2\frac{1}{2}e^{-0^2 - 2\left(\frac{1}{2}\right)^2} &amp; 8\cdot 0\left(\frac{1}{2}\right)^2e^{-0^2 - 2\left(\frac{1}{2}\right)^2} - 2\cdot 0e^{-0^2 - 2*\left(\frac{1}{2}\right)^2} \\
+8\cdot 0\left(\frac{1}{2}\right)^2e^{-0^2 - 2\left(\frac{1}{2}\right)^2} - 2\cdot 0e^{-0^2 - 2*\left(\frac{1}{2}\right)^2} &amp; 16\left(\frac{1}{2}\right)^3e^{-0^2 - 2\left(\frac{1}{2}\right)^2} - 12\frac{1}{2}e^{-0^2 - 2\left(\frac{1}{2}\right)^2}
+\end{pmatrix}\\
+&amp;= \begin{pmatrix}
+-e^{-1/2} &amp; 0 \\
+0 &amp; -4e^{-1/2}
+\end{pmatrix}.
+\end{align*}\]</span></p>
+<p>y su determinante vale <span class="math inline">\(H(0,1/2) = -e^{-1/2}(-4e^{-1/2}) = 4e^{-1}\)</span>, que es positivo, por lo que en el punto <span class="math inline">\((0,1/2)\)</span> hay un extremo relativo, y como <span class="math inline">\(\frac{\partial^2 T}{\partial x^2}(0,1/2) = -e^{-1/2} &lt; 0\)</span>, es un máximo relativo. La temperatura en este punto vale <span class="math inline">\(T(0,1/2) = 1/2e^{-0^2 - 2\left(\frac{1}{2}\right)^2} = 1/2e^{-1/2} \approx 0.3033\)</span>.</p>
+<p>En el punto <span class="math inline">\((0,-1/2)\)</span> la matriz hessiana es</p>
+<p><span class="math display">\[\begin{align*}
+\nabla^2T(0,-1/2)
+&amp;= \begin{pmatrix}
+4\cdot 0^2\frac{-1}{2}e^{-0^2 - 2\left(\frac{-1}{2}\right)^2} - 2\frac{-1}{2}e^{-0^2 - 2\left(\frac{-1}{2}\right)^2} &amp; 8\cdot 0\left(\frac{-1}{2}\right)^2e^{-0^2 - 2\left(\frac{-1}{2}\right)^2} - 2\cdot 0e^{-0^2 - 2*\left(\frac{-1}{2}\right)^2} \\
+8\cdot 0\left(\frac{-1}{2}\right)^2e^{-0^2 - 2\left(\frac{-1}{2}\right)^2} - 2\cdot 0e^{-0^2 - 2*\left(\frac{-1}{2}\right)^2} &amp; 16\left(\frac{-1}{2}\right)^3e^{-0^2 - 2\left(\frac{-1}{2}\right)^2} - 12\frac{-1}{2}e^{-0^2 - 2\left(\frac{-1}{2}\right)^2}
+\end{pmatrix}\\
+&amp;= \begin{pmatrix}
+e^{-1/2} &amp; 0 \\
+0 &amp; 4e^{-1/2}
+\end{pmatrix}.
+\end{align*}\]</span></p>
+<p>y su determinante vale <span class="math inline">\(H(0,-1/2) = e^{-1/2}4e^{-1/2} = 4e^{-1}\)</span>, que es positivo, por lo que en el punto <span class="math inline">\((0,-1/2)\)</span> también hay un extremo relativo, y como <span class="math inline">\(\frac{\partial^2 T}{\partial x^2}(0,1/2) = e^{-1/2} &gt; 0\)</span>, es un mínimo relativo. La temperatura en este punto vale <span class="math inline">\(T(0,-1/2) = -1/2e^{-0^2 - 2\left(\frac{-1}{2}\right)^2} = -1/2e^{-1/2} \approx -0.3033\)</span>.</p></li>
+<li><p>La fórmula del polinomio de Taylor de segundo grado en el punto <span class="math inline">\((1,0)\)</span> es</p>
+<p><span class="math display">\[
+P_T^2(x,y) = T(1,0) + \nabla T(1,0) (x-1, y) + \frac{1}{2} \left((x-1,y)\nabla^2T(1,0)\begin{pmatrix}x-1 \\ y\end{pmatrix}\right).
+\]</span></p>
+<p>Calculamos el gradiente en el punto <span class="math inline">\((1,0)\)</span></p>
+<p><span class="math display">\[
+\nabla T(1,0) = \left(e^{-1^2-2\cdot 0^2}(-2\cdot 1\cdot 0), e^{-1^2-2\cdot 0^2}(1-4\cdot 0^2)\right) = (0,e^{-1}),
+\]</span></p>
+<p>y la matriz hessiana en el punto <span class="math inline">\((1,0)\)</span></p>
+<p><span class="math display">\[\begin{align*}
+\nabla^2T(1,0) &amp;=
+\begin{pmatrix}
+4\cdot 1^2\cdot 0e^{-1^2 - 2\cdot 0^2} - 2\cdot 0e^{-1^2 - 2\cdot 0^2} &amp; 8\cdot 1\cdot 0^2e^{-1^2 - 2\cdot 0^2} - 2\cdot 1e^{-1^2 - 2\cdot 0^2} \\
+8\cdot 1\cdot 0^2e^{-1^2 - 2\cdot 0^2} - 2\cdot 1e^{-1^2 - 2\cdot 0^2} &amp; 16\cdot 0^3e^{-1^2 - 2\cdot 0^2} - 12\cdot 0e^{-1^2 - 2\cdot 0^2}
+\end{pmatrix} \\
+&amp;= \begin{pmatrix}
+0 &amp; -2e^{-1} \\
+-2e^{-1} &amp; 0
+\end{pmatrix}.
+\end{align*}\]</span></p>
+<p>Sustituyendo en la fórmula del polinomio de Taylor de segundo grado, obtenemos</p>
+<p><span class="math display">\[\begin{align*}
+P_T^2(x,y) &amp;= 0 + (0,e^{-1})(x-1, y) + \frac{1}{2} \left((x-1,y)\begin{pmatrix}0 &amp; -2e^{-1} \\ -2e^{-1} &amp; 0\end{pmatrix}\begin{pmatrix}x-1 \\ y\end{pmatrix}\right) \\
+&amp;= e^{-1}y - 2e^{-1}(x-1)y.
+\end{align*}\]</span></p>
+<p>Y la aproximación de la temperatura en el punto <span class="math inline">\((0.9,0.1)\)</span> es</p>
+<p><span class="math display">\[
+T(0.9,0.1)
+\approx P_T^2(0.9,0.1)
+= e^{-1}0.1 - 2e^{-1}(0.9-1)0.1
+= 0.1e^{-1} + 0.02e^{-1}
+\approx 0.0441455
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13.2</strong></span> Un coche circula por una circuito elíptico cuya trayectoria viene dada por la función vectorial <span class="math inline">\(f(t)=(400\cos(10t), 100\operatorname{sen}(10t))\)</span>, donde <span class="math inline">\(t\)</span> está dado en minutos y las coordenadas de <span class="math inline">\(f\)</span> en metros.</p>
+<ol type="a">
+<li><p>Calcular la rapidez del vehículo en el instante <span class="math inline">\(t=\pi\)</span>.</p></li>
+<li><p>Calcular la curvatura de la trayectoria en ese instante.</p></li>
+<li><p>Calcular la componente tangencial del vector aceleración en ese instante.</p></li>
+<li><p>Calcular la componente normal del vector aceleración en ese instante.</p></li>
+<li><p>Suponiendo que los neumáticos no proporcionan ningún agarre (por ejemplo porque hay hielo en la carretera), ¿cuál es el mínimo ángulo que debería tener el peralte de la curva en este instante para que el coche no se salga del circuito? Tómese una aceleración debida a la gravedad de <span class="math inline">\(9.8\)</span> m/s<span class="math inline">\(^2\)</span>.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>La rapidez del vehículo en el instante <span class="math inline">\(t=\pi\)</span> es módulo del vector velocidad en ese instante, así que calculamos primero el vector velocidad.</p>
+<p><span class="math display">\[
+\mathbf{f}'(t) = (-4000\sin(10t), 1000\cos(10t))
+\]</span></p>
+<p>y en el instante <span class="math inline">\(t=\pi\)</span> vale</p>
+<p><span class="math display">\[
+\mathbf{f}'(\pi) = (-4000\sin(10\pi), 1000\cos(10\pi)) = (0,1000).
+\]</span></p>
+<p>por lo que la rapidez es <span class="math inline">\(|\mathbf{f}'(\pi)| = \sqrt{0^2+1000^2} = 1000\)</span> m/min.</p></li>
+<li><p>La <a href="https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#thm-curvatura-trayectoria-espacio-real">curvatura de la trayectoria</a> en el instante <span class="math inline">\(t\)</span> viene dada por la fórmula</p>
+<p><span class="math display">\[
+\kappa(t) = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
+\]</span></p>
+<p>Calculamos primero el vector aceleración.</p>
+<p><span class="math display">\[
+\mathbf{f}''(t) = (-40000\cos(10t), -10000\sin(10t))
+\]</span></p>
+<p>que en el instante <span class="math inline">\(t=\pi\)</span> vale</p>
+<p><span class="math display">\[
+\mathbf{f}''(\pi) = (-40000\cos(10\pi), -10000\sin(10\pi)) = (-40000,0).
+\]</span></p>
+<p>Por tanto, la curvatura en el instante <span class="math inline">\(t=\pi\)</span> es</p>
+<p><span class="math display">\[
+\kappa(\pi) = \frac{|(0,1000,0)\times (-40000,0,0)|}{|(0,1000)|^3} = \frac{|(0,0,4\cdot 10^7)|}{10^9} = \frac{4\cdot 10^7}{1000^9} = 0.04.
+\]</span></p></li>
+<li><p>La <a href="https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#def-componente-tangencial-normal-aceleracion">componente tangencial del vector aceleración</a> en el instante <span class="math inline">\(t=\pi\)</span> es</p>
+<p><span class="math display">\[
+a_T(\pi) = \frac{\mathbf{f}'(\pi)\cdot \mathbf{f}''(\pi)}{|\mathbf{f}'(\pi)|} = \frac{(0,1000)\cdot (-40000,0)}{1000} = \frac{-40000\cdot 0 + 1000\cdot 0}{1000} = 0.
+\]</span></p></li>
+<li><p>La componente normal del vector aceleración en el instante <span class="math inline">\(t=\pi\)</span> es</p>
+<p><span class="math display">\[
+a_N(\pi) = \frac{|\mathbf{f}'(\pi)\times \mathbf{f}''(\pi)|}{|\mathbf{f}'(\pi)|} = \frac{|(0,0,4\cdot 10^7)|}{10^3} = \frac{4\cdot 10^7}{10^3} = 40000.
+\]</span></p></li>
+<li><p>La fuerza centrípeta que debe ejercer el peralte de la curva para que el coche no se salga del circuito es la misma pero opuesta a la fuerza centrífuga del movimiento del coche. Como la fuerza centrífuga es la componente normal del vector aceleración que hemos calculado antes, se tiene que la fuerza centrípeta es <span class="math inline">\(F_c = 40000m\)</span> kg<span class="math inline">\(\cdot\)</span> m/min<span class="math inline">\(^2 = 40000/3600\)</span> kg<span class="math inline">\(\cdot\)</span>m/s<span class="math inline">\(^2\)</span>, donde <span class="math inline">\(m\)</span> es la masa del coche. Por otro lado, la fuerza <span class="math inline">\(F\)</span> que ejerce la carretera sobre el coche se descompone en la componente gravitatoria <span class="math inline">\(F_g=mg\)</span>, que compensa la fuerza de la gravedad, y la componente normal a la componente gravitatoria, que es la fuerza centrípeta <span class="math inline">\(F_c\)</span>. Si <span class="math inline">\(\theta\)</span> es el ángulo del peralte de la carretera, se cumple que <span class="math inline">\(F_g = F\cos(\theta)\)</span> y <span class="math inline">\(F_c = F\sin(\theta)\)</span>. Así que la fuerza centrípeta es <span class="math inline">\(F_c = F\sin(\theta) = 40000m\)</span>, y la fuerza gravitatoria es <span class="math inline">\(F_g = F\cos(\theta) = mg\)</span>. Resolviendo el sistema de ecuaciones, se tiene que el peralte de la curva en este instante para que el coche no se salga del circuito es</p>
+<p><span class="math display">\[
+\theta
+= \arctan\left(\frac{F_c}{F_g}\right)
+= \arctan\left(\frac{40000/3600m}{mg}\right)
+= \arctan\left(\frac{11.11}{9.8}\right)
+\approx 48.6^\circ.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13.3</strong></span> La ecuación <span class="math inline">\((x^2+y^2+z^2+R^2-r^2)^2 = 4R^2(x^2+y^2)\)</span> define la superficie de un toroide de radio mayor <span class="math inline">\(R\)</span> y radio menor <span class="math inline">\(r\)</span>.</p>
+<ol type="a">
+<li><p>Para un toro de radio mayor <span class="math inline">\(4\)</span> y radio menor <span class="math inline">\(2\)</span>, probar que la ecuación anterior define implícitamente a <span class="math inline">\(z\)</span> como una función de <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span> en un entorno del punto <span class="math inline">\((4,0,2)\)</span>.</p></li>
+<li><p>Calcular el gradiente de <span class="math inline">\(z\)</span> como función implícita de <span class="math inline">\(x\)</span> y <span class="math inline">\(y\)</span> en el punto <span class="math inline">\((4,0)\)</span> e interpretarlo.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>La ecuación del toro es</p>
+<p><span class="math display">\[
+(x^2+y^2+z^2+4^2-2^2)^2 = 4\cdot 4^2(x^2+y^2) \Leftrightarrow (x^2+y^2+z^2+12)^2 - 64(x^2+y^2) = 0.
+\]</span></p>
+<p>Par demostrar que la ecuación anterior define a <span class="math inline">\(z\)</span> como función implícita de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> en un entorno del punto <span class="math inline">\((4,0,2)\)</span> debemos comprobar que se cumplen las condiciones del <a href="https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-funcion-implicita">teorema de la función implícita</a>.</p>
+<p>Sea <span class="math inline">\(F(x,y,z) = (x^2+y^2+z^2+12)^2 - 64(x^2+y^2)\)</span>. Entonces <span class="math inline">\(F(4,0,2) = (4^2+0^2+2^2+12)^2 - 64(4^2+0^2) = 0\)</span>, de modo que el punto <span class="math inline">\((4, 0, 2)\)</span> pertenece a la superficie del toro.</p>
+<p>En segundo lugar, <span class="math inline">\(F\)</span> es diferenciable en un entorno de <span class="math inline">\((4,0,2)\)</span>, puesto que es una función polinómica y las derivadas parciales son</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial F}{\partial x}
+&amp;= 2(x^2+y^2+z^2+12)2x - 64\cdot 2x
+= 4x(x^2+y^2+z^2-20), \\
+\frac{\partial F}{\partial y}
+&amp;= 2(x^2+y^2+z^2+12)2y - 64\cdot 2y
+= 4y(x^2+y^2+z^2-20), \\
+\frac{\partial F}{\partial z}
+&amp;= 2(x^2+y^2+z^2+12)2z
+= 4z(x^2+y^2+z^2+12).
+\end{align*}\]</span></p>
+<p>Como todas las derivadas parciales son funciones polinómicas, son continuas en todo <span class="math inline">\(\mathbb{R}^3\)</span>, y en particular en el punto <span class="math inline">\((4,0,2)\)</span>.</p>
+<p>Finalmente, <span class="math inline">\(\frac{\partial F}{\partial z}(4,0,2) = 4\cdot 2(4^2+0^2+2^2+12) = 4\cdot 2\cdot 32 = 256 \neq 0\)</span>, por lo que se cumplen las condiciones del teorema de la función implícita y la ecuación define implícitamente a <span class="math inline">\(z\)</span> como función de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> en un entorno del punto <span class="math inline">\((4,0,2)\)</span>.</p></li>
+<li><p>Para calcular el gradiente de <span class="math inline">\(z\)</span> como función implícita de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> en el punto <span class="math inline">\((4,0)\)</span>, tenemos que calcular las derivadas parciales de <span class="math inline">\(z\)</span> con respecto a <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>. Para ello, primero calculamos las derivadas parciales de <span class="math inline">\(F\)</span> en el punto <span class="math inline">\((4,0,2)\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial F}{\partial x}(4,0,2)
+&amp;= 4\cdot 4(4^2+0^2+2^2-20) = 0, \\
+\frac{\partial F}{\partial y}(4,0,2)
+&amp;= 4\cdot 0(4^2+0^2+2^2-20) = 0, \\
+\frac{\partial F}{\partial z}(4,0,2)
+&amp;= 4\cdot 2(4^2+0^2+2^2+12) = 256.
+\end{align*}\]</span></p>
+<p>Por tanto, las derivadas parciales de <span class="math inline">\(z\)</span> con respecto a <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> en el punto <span class="math inline">\((4,0)\)</span> valen</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial z}{\partial x}
+&amp;= -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}}
+= -\frac{0}{256} = 0, \\
+\frac{\partial z}{\partial y}
+&amp;= -\frac{\frac{\partial F}{\partial y}}{\frac{\partial F}{\partial z}}
+= -\frac{0}{256} = 0.
+\end{align*}\]</span></p>
+<p>Es decir, el punto <span class="math inline">\((4,0)\)</span>, es un punto críttico de <span class="math inline">\(z\)</span> y por tanto en este punto la función ni crece ni decrece en cualquier dirección.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13.4</strong></span> Una ventana como la de la figura de más abajo está formada por un rectángulo de base <span class="math inline">\(l\)</span> y altura <span class="math inline">\(h\)</span> y un semicírculo de diámetro <span class="math inline">\(l\)</span>. Si el área de la ventana es fija, qué relación debe haber entre <span class="math inline">\(l\)</span> y <span class="math inline">\(h\)</span> para que el perímetro de la ventana sea mínimo. Calcular las dimensiones óptimas para un área de 1 m<span class="math inline">\(^2\)</span>. Usar el método de los multiplicadores de Lagrange.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/examen-2024-12-20/ventana.svg" class="img-fluid figure-img" style="width:7cm"></p>
+<figcaption>Ventana</figcaption>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El área de la ventana es la suma de las áreas del rectángulo y le semicírculo, así que la función que da el área de la ventana es</p>
+<p><span class="math display">\[
+A(l,h)=lh+\frac{\pi}{2}\left(\frac{l}{2}\right)^2 = lh + \frac{\pi}{8}l^2.
+\]</span></p>
+<p>Por otro lado, el perímetro de la ventana es la suma de los tres lados del rectángulo y el perímetro del semicírculo, así que la función que da el perímetro de la ventana es</p>
+<p><span class="math display">\[
+P(l,h)=l+2h+\frac{\pi}{2}l.
+\]</span></p>
+<p>Para minimizar el perímetro de la ventana podemos aplicar el método de los multiplicadores de Lagrange. Así que debemos resolver el sistema de ecuaciones</p>
+<p><span class="math display">\[
+\begin{cases}
+\nabla A(l,h) &amp;= \lambda \nabla P(l,h) \\
+A(l,h) &amp;= k
+\end{cases}
+\]</span></p>
+<p>El gradiente de la función del área es</p>
+<p><span class="math display">\[
+\nabla A(l,h) = \left( h + \frac{\pi}{4}l,  l\right)
+\]</span></p>
+<p>y el gradiente de la función del perímetro es</p>
+<p><span class="math display">\[
+\nabla P(l,h) = \left( 1 + \frac{\pi}{2}, 2\right).
+\]</span></p>
+<p>Así que el sistema de ecuaciones a resolver es</p>
+<p><span class="math display">\[
+\begin{cases}
+h + \frac{\pi}{4}l &amp;= \lambda \left( 1 + \frac{\pi}{2}\right) \\
+l &amp;= 2\lambda \\
+lh + \frac{\pi}{8}l^2 &amp;= k
+\end{cases}
+\]</span></p>
+<p>De la segunda ecuación obtenemos que <span class="math inline">\(l=2\lambda\)</span>, sustituyendo en la primera ecuación obtenemos que</p>
+<p><span class="math display">\[
+h + \frac{\pi}{4}2\lambda = \lambda \left( 1 + \frac{\pi}{2}\right)
+\]</span>,</p>
+<p>de donde se deduce que que <span class="math inline">\(h = \lambda\)</span>, y por tanto la relación entre <span class="math inline">\(l\)</span> y <span class="math inline">\(h\)</span> es <span class="math inline">\(l=2h\)</span>.</p>
+<p>Finalmente, sustituyendo en la tercera ecuación, para un área de 1 <span class="math inline">\(m^2\)</span>, se tiene</p>
+<p><span class="math display">\[
+2hh + \frac{\pi}{8}(2h)^2 = 1
+\Rightarrow h^2\left( 2 + \frac{\pi}{2}\right) = 1
+\Rightarrow h = \frac{1}{\sqrt{2 + \frac{\pi}{2}}}
+\approx 0.5292 \mbox{ m},
+\]</span></p>
+<p>y <span class="math inline">\(l = 2h \approx 2\cdot 0.5292 = 1.0584\)</span> m.</p>
+</div>
+</div>
+</div>
+<div id="exr-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13.5</strong></span> Calcular el centro de masas de una placa metálica semicircular de radio <span class="math inline">\(a\)</span> en los siguientes casos:</p>
+<ol type="a">
+<li>La densidad en cada punto es proporcional a la distancia al origen.</li>
+<li>La densidad en cada punto es proporcional a la distancia al eje <span class="math inline">\(x\)</span>.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>La distancia al origen de un punto <span class="math inline">\((x,y)\)</span> es <span class="math inline">\(\sqrt{x^2+y^2}\)</span>, así que la densidad en cada punto es <span class="math inline">\(\delta(x,y)=k\sqrt{x^2+y^2}\)</span>, donde <span class="math inline">\(k\)</span> es una constante de proporcionalidad.</p>
+<p>La región de integración es el semicírculo de radio <span class="math inline">\(a\)</span>, que en coordenadas rectangulares es</p>
+<p><span class="math display">\[
+R = \left\{ (x,y) \in \mathbb{R}^2: x^2+y^2 \leq a^2, y \geq 0 \right\}
+= \left\{ (x,y) \in \mathbb{R}^2: -a \leq x \leq a, 0 \leq y \leq \sqrt{a^2-x^2} \right\}.
+\]</span></p>
+<p>y en coordenadas polares es</p>
+<p><span class="math display">\[
+R = \left\{ (r,\theta) \in \mathbb{R}^+\times \mathbb{R}: 0 \leq r \leq a, 0 \leq \theta \leq \pi \right\}.
+\]</span></p>
+<p>Puesto que la región de integración es más simple en coordenadas polares, calculamos el centro de masas en estas coordenadas. Además la función de densidad se simplifica en coordenadas polares, puesto que <span class="math inline">\(\sqrt{x^2+y^2} = r\)</span>. Así que la densidad en cada punto es <span class="math inline">\(\delta(r,\theta)=kr\)</span>. La masa de la placa es</p>
+<p><span class="math display">\[\begin{align*}
+M &amp;= \int_R \delta(r,\theta)\, dA
+= \int_0^a \int_0^\pi kr r\, d\theta dr \\
+&amp;= \int_0^a \int_0^\pi kr^2\, d\theta dr
+= k \int_0^a r^2[\theta]_0^\pi\, dr \\
+&amp;= k\pi \int_0^a r^2\, dr
+= k\pi \left[ \frac{r^3}{3} \right]_0^a \\
+&amp;= \frac{k\pi a^3}{3}.
+\end{align*}\]</span></p>
+<p>Por otro lado, los momentos respecto al eje <span class="math inline">\(x\)</span> y al eje <span class="math inline">\(y\)</span> son</p>
+<p><span class="math display">\[\begin{align*}
+M_x &amp;=
+\int_R y\delta(x,y)\, dA
+= \int_0^a \int_0^\pi r\operatorname{sen}(\theta) kr^2\, d\theta dr\\
+&amp;= k \int_0^a r^3 \int_0^\pi \operatorname{sen}(\theta)\, d\theta dr
+= k \int_0^a r^3 [-\cos(\theta)]_0^\pi\, dr \\
+&amp;= k \int_0^a r^3 [-(-1-1)]\, dr
+= 2k \int_0^a r^3\, dr\\
+&amp;= 2k \left[ \frac{r^4}{4} \right]_0^a
+= \frac{ka^4}{2}. \\
+M_y &amp;=
+\int_R x\delta(x,y)\, dA
+= \int_0^a \int_0^\pi r\cos(\theta) kr^2\, d\theta dr\\
+&amp;= k \int_0^a r^3 \int_0^\pi \cos(\theta)\, d\theta dr
+= k \int_0^a r^3 [\operatorname{sen}(\theta)]_0^\pi\, dr \\
+&amp;= k \int_0^a r^3 [\operatorname{sen}(\pi)-\operatorname{sen}(0)]\, dr
+= k \int_0^a r^3 [0-0]\, dr
+= 0.
+\end{align*}\]</span></p>
+<p>Así pues, el centroide tiene coordenadas</p>
+<p><span class="math display">\[\begin{align*}
+\bar{x} &amp;= \frac{M_y}{M} = \frac{0}{k\pi a^3/3} = 0, \\
+\bar{y} &amp;= \frac{M_x}{M} = \frac{ka^4/2}{k\pi a^3/3} = \frac{3a}{2\pi}.
+\end{align*}\]</span></p></li>
+<li><p>La distancia al eje <span class="math inline">\(x\)</span> de un punto <span class="math inline">\((x,y)\)</span> es <span class="math inline">\(|y|\)</span>, así que, en la región de integración, que cae en el semiplano <span class="math inline">\(y&gt;0\)</span>, la densidad en cada punto es <span class="math inline">\(\delta(x,y)=ky\)</span>, donde <span class="math inline">\(k\)</span> es una constante de proporcionalidad.</p>
+<p>Al igual que antes trabajaremos en coordenadas polares ya que los cálculos son más simples. En coordenadas polares la función de densidad es <span class="math inline">\(\delta(r,\theta)=kr\operatorname{sen}(\theta)\)</span>. La masa de la placa es</p>
+<p><span class="math display">\[\begin{align*}
+M &amp;= \int_R \delta(r,\theta)\, dA
+= \int_0^a \int_0^\pi kr\operatorname{sen}(\theta) r\, d\theta dr \\
+&amp;= k \int_0^a \int_0^\pi r^2\operatorname{sen}(\theta)\, d\theta dr
+= k \int_0^a r^2\int_0^\pi \operatorname{sen}(\theta)\, d\theta dr \\
+&amp;= k \int_0^a r^2 [-\cos(\theta)]_0^\pi\, dr
+= k \int_0^a r^2 [-(-1-1)]\, dr \\
+&amp;= 2k \int_0^a r^2\, dr
+= 2k \left[ \frac{r^3}{3} \right]_0^a
+= \frac{2ka^3}{3}.
+\end{align*}\]</span></p>
+<p>Y los momentos respecto al eje <span class="math inline">\(x\)</span> y al eje <span class="math inline">\(y\)</span> son</p>
+<p><span class="math display">\[\begin{align*}
+M_x &amp;=
+\int_R y\delta(x,y)\, dA
+= \int_0^a \int_0^\pi r\operatorname{sen}(\theta) kr\operatorname{sen}(\theta)r\, d\theta dr \\
+&amp;= k \int_0^a r^3\int_0^\pi \operatorname{sen}^2(\theta)\, d\theta dr
+= k \int_0^a r^3\int_0^\pi \frac{1-\cos(2\theta)}{2}\, d\theta dr \\
+&amp;= k \int_0^a r^3\left[ \frac{\theta}{2}-\frac{\operatorname{sen}(2\theta)}{4} \right]_0^\pi\, dr
+= k \int_0^a r^3 \left(\frac{\pi}{2}-0\right)\, dr \\
+&amp;= \frac{k\pi}{2} \int_0^a r^3\, dr
+= \frac{k\pi}{2} \left[ \frac{r^4}{4} \right]_0^a
+= \frac{k\pi a^4}{8}. \\
+M_y &amp;=
+\int_R x\delta(x,y)\, dA
+= \int_0^a \int_0^\pi r\cos(\theta) kr\operatorname{sen}(\theta)r\, d\theta dr \\
+&amp;= k \int_0^a r^3\int_0^\pi \operatorname{sen}(\theta)\cos(\theta)\, d\theta dr
+= k \int_0^a r^3\left[ \frac{\operatorname{sen}(\theta)^2}{2} \right]_0^\pi\, dr \\
+&amp;= k \int_0^a r^3\left(\frac{\operatorname{sen}(\pi)^2}{2} - \frac{\operatorname{sen}(0)^2}{2}\right) \, dr
+= k \int_0^a r^3 (0 - 0) \, dr
+= 0.
+\end{align*}\]</span></p>
+<p>Así pues, el centroide tiene coordenadas</p>
+<p><span class="math display">\[\begin{align*}
+\bar{x} &amp;= \frac{M_x}{M} = \frac{k\pi a^4/8}{2ka^3/3} = \frac{3\pi a}{16} \\
+\bar{y} &amp;= \frac{M_y}{M} = \frac{0}{2ka^3/3} = 0.
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 13.6</strong></span> Calcular el volumen comprendido entre la gráfica de la función <span class="math inline">\(f(x,y)=\frac{x}{y}\)</span> y el plano <span class="math inline">\(z=0\)</span> en la región limitada por las curvas de la figura.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/examen-2024-12-20/region-integracion.svg" class="img-fluid figure-img" style="width:12cm"></p>
+<figcaption>Región de integración</figcaption>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En primer lugar determinamos los puntos de corte de las dos gráficas para expresar la región de integración. Para ello, resolvemos el sistema de ecuaciones</p>
+<p><span class="math display">\[
+\begin{cases}
+y &amp;= \sqrt[3]{x}\\
+x = y-y^3 \\
+\end{cases}
+\]</span></p>
+<p>Despejando <span class="math inline">\(x\)</span> en la primera ecuación obtenemos que <span class="math inline">\(x=y^3\)</span>, y sustituyendo en la segunda ecuación obtenemos que <span class="math inline">\(y^3 = y-y^3\)</span>, de donde se deduce que <span class="math inline">\(y(1-2y^2)=0\)</span>, y por tanto tenemos tres soluciones <span class="math inline">\(y=0\)</span>, <span class="math inline">\(y=1/\sqrt{2}=2^{-1/2}\)</span> y <span class="math inline">\(y=-1/\sqrt{2}=-2^{-1/2}\)</span>. Sustituyendo en la primera ecuación obtenemos que <span class="math inline">\(x=0\)</span>, <span class="math inline">\(x=2^{-3/2}\)</span> y <span class="math inline">\(x=-2^{-3/2}\)</span>. Por lo tanto, los puntos de corte son <span class="math inline">\((0,0)\)</span>, <span class="math inline">\((2^{-3/2}, 2^{-1/2})\)</span> y <span class="math inline">\((-2^{-3/2}, -2^{-1/2})\)</span>.</p>
+<p>Si integramos primero con respecto a <span class="math inline">\(y\)</span> y luego con respecto a <span class="math inline">\(x\)</span>, la región de integración resulta más compleja porque los límites de <span class="math inline">\(x\)</span> no serían los puntos de corte de las dos gráficas, sino los extremos de la función <span class="math inline">\(x=y-y^3\)</span>, pero además habría que descomponer la región de integración en cuatro partes. Por lo tanto, es más conveniente integrar primero con respecto a <span class="math inline">\(x\)</span> y luego con respecto a <span class="math inline">\(y\)</span>. En este caso, la región de integración puede descomponerse en las dos subregiones siguientes</p>
+<p><span class="math display">\[\begin{align*}
+R_1 &amp;= \left\{ (x,y) \in \mathbb{R}^2:  y-y^3 \leq x \leq y^3, -2^{-1/2} \leq y \leq 0 \right\} \\
+R_2 &amp;= \left\{ (x,y) \in \mathbb{R}^2:  y^3 \leq x \leq y-y^3, 0 \leq y \leq 2^{-1/2} \right\}
+\end{align*}\]</span></p>
+<p>Como la función <span class="math inline">\(f(x,y)=\frac{x}{y}\)</span> es simétrica en el primer y tercer cuadrantes, para calcular el volumen encerrado entre la superficie y el plano <span class="math inline">\(z=0\)</span> en la región de integración, podemos calcular el volumen en la región <span class="math inline">\(R_2\)</span> y multiplicarlo por 2. Así que el volumen es</p>
+<p><span class="math display">\[\begin{align*}
+\int_R f(x,y) dA
+&amp;= 2\int_0^{2^{-1/2}} \int_{y^3}^{y-y^3} \frac{x}{y} \,dx dy
+= 2\int_0^{2^{-1/2}} \left[ \frac{x^2}{2y} \right]_{y^3}^{y-y^3} dy \\
+&amp;= 2\int_0^{2^{-1/2}} \left[ \frac{(y-y^3)^2}{2y} - \frac{y^6}{2y} \right] dy
+= 2\int_0^{2^{-1/2}} \left[ \frac{y^2-2y^4+y^6}{2y} - \frac{y^5}{2} \right] dy \\
+&amp;= 2\int_0^{2^{-1/2}} \left[ \frac{y-2y^3+y^5}{2} - \frac{y^5}{2} \right] dy
+= 2\int_0^{2^{-1/2}} \left[ \frac{y-2y^3}{2} \right] dy \\
+&amp;= 2\left[ \frac{y^2}{4} - \frac{y^4}{4} \right]_0^{2^{-1/2}}
+= 2\left( \frac{1}{4\cdot 2} - \frac{1}{4\cdot 2^2}  \right) \\
+&amp;= 2\left( \frac{1}{8} - \frac{1}{16} \right)
+= 2\left( \frac{1}{16} \right)
+= \frac{1}{8}.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./examen-2024-11-11.html" class="pagination-link" aria-label="2024-11-11 <br>Examen de Análisis I">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">2024-11-11 <br>Examen de Análisis I</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
