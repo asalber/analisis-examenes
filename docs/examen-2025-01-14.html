@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.6">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; 2025-01-14  Examen de Análisis I – Exámenes de Análisis Matemático</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./examen-2024-12-20.html" rel="prev">
+<link href="./img/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-20113cbb85fc39cad5b8d615ed7b1347.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8d84315e6ae7d8f2232a6ca32c2f4107.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d0774ced39d4e73f762c8327fb4dd574.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-49be2458b57e36096c4d858f2d8bd5ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="14&nbsp; 2025-01-14 Examen de Análisis I – Exámenes de Análisis Matemático">
+<meta property="og:image" content="img/logos/sticker.png">
+<meta property="og:site_name" content="Exámenes de Análisis Matemático">
+<meta name="twitter:title" content="14&nbsp; 2025-01-14 Examen de Análisis I – Exámenes de Análisis Matemático">
+<meta name="twitter:image" content="img/logos/sticker.png">
+<meta name="twitter:site" content="@aprendeconalf">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./examen-2025-01-14.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">2025-01-14 <br>Examen de Análisis I</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Exámenes de Análisis Matemático</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-11-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">2022-11-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-12-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2022-12-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-03-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">2023-03-11 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-06-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">2023-06-01 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-11-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">2023-11-15 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-11-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">2023-11-14 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-12-22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">2023-12-22 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-01-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">2024-01-11 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-04-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">2024-04-16 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-05-30.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">2024-05-30 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-11-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">2024-11-05 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-11-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">2024-11-11 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-12-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2024-12-20 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2025-01-14.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">2025-01-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">2025-01-14 <br>Examen de Análisis I</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">14 de enero de 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.1</strong></span> Dada la colección de conjuntos <span class="math inline">\(A_n = \left[1-\frac{2}{n}, 2+\frac{1}{n}\right)\)</span> con <span class="math inline">\(n \in \mathbb{N}\)</span>, calcular para cada uno de los conjuntos <span class="math inline">\(\bigcup_{n=1}^{\infty} A_n\)</span> y <span class="math inline">\(\bigcap_{n=1}^{\infty} A_n\)</span>:</p>
+<ol type="a">
+<li>Supremo, ínfimo, máximo y mínimo.</li>
+<li>Puntos interiores, puntos exteriores y puntos frontera.</li>
+<li>Determinar si son abiertos o cerrados.</li>
+</ol>
+<p>Justificar la respuesta de cada apartado.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Veamos primero cuáles son los primeros conjuntos de la colección.</p>
+<p><span class="math display">\[\begin{align*}
+A_1 &amp;= \left[1-\frac{2}{1}, 2+\frac{1}{1}\right) = [-1,3)\\
+A_2 &amp;= \left[1-\frac{2}{2}, 2+\frac{1}{2}\right) = [0,2.5)\\
+A_3 &amp;= \left[1-\frac{2}{3}, 2+\frac{1}{3}\right) = [0.3333,2.3333)\\
+A_4 &amp;= \left[1-\frac{2}{4}, 2+\frac{1}{4}\right) = [0.5,2.25)\\
+\ldots
+\end{align*}\]</span></p>
+<p>Como se puede ver, se trata de una colección de intervalos encajados. Por tanto, la unión de todos los conjuntos es el primer conjunto <span class="math inline">\(\cup_{n=1}^\infty A_n = A_1=[-1,3)\)</span> que contiene a todos los demás. Para determinar la intersección de todos los conjuntos, tenemos que calcular hacia dónde tienden los extremos de los intervalos. El extremo inferior <span class="math inline">\(1-\frac{2}{n}\to 1\)</span> cuando <span class="math inline">\(n\to\infty\)</span>, y el extremo superior <span class="math inline">\(2+\frac{1}{n}\to 2\)</span> cuando <span class="math inline">\(n\to\infty\)</span>, por lo que la intersección de todos los conjuntos es <span class="math inline">\(\cap_{n=1}^\infty A_n = [1,2]\)</span>.</p>
+<ol type="a">
+<li><p>El supremo de la unión es <span class="math inline">\(3\)</span>, ya que es la menor de las cotas inferiores,pero como <span class="math inline">\(3\)</span> no pertenece al conjunto unión, no existe máximo. El ínfimo es <span class="math inline">\(-1\)</span>, ya que es la mayor de las cotas inferiores, y como <span class="math inline">\(-1\)</span> pertenece al conjunto unión es el mínimo.</p>
+<p>El supremo de la intersección es <span class="math inline">\(2\)</span>, ya que es la menor de las cotas superiores, y como <span class="math inline">\(2\)</span> pertenece al conjunto intersección, es el máximo. El ínfimo es <span class="math inline">\(1\)</span>, ya que es la mayor de las cotas inferiores, y como <span class="math inline">\(1\)</span> pertenece al conjunto intersección es el mínimo.</p></li>
+<li><p>El conjunto de los puntos interiores de la unión es <span class="math inline">\((-1,3)\)</span>, ya que <span class="math inline">\(\forall x\in(1,3)\)</span> <span class="math inline">\(\exists \varepsilon=\min\{x+1,3-x\}\)</span> tal que <span class="math inline">\((x-\varepsilon, x+\varepsilon)\subseteq (-1,3)\)</span>. El conjunto de los puntos exteriores es <span class="math inline">\((-\infty,-1)\cup(3,\infty)\)</span> ya que <span class="math inline">\(\forall x\in (-\infty, -1)\)</span> <span class="math inline">\(\exists \varepsilon -1-x\)</span> tal que $(x-,x+)(-, -1), y <span class="math inline">\(\forall x\in (3,\infty)\)</span> <span class="math inline">\(\exists \varepsilon = x-3\)</span> tal que <span class="math inline">\((x-\varepsilon,x+\varepsilon)\subseteq (3,\infty)\)</span>. Y el conjunto de los puntos frontera es <span class="math inline">\(\{-1,3\}\)</span>, ya que son los dos únicos puntos que no son puntos interiores ni exteriores.</p>
+<p>En cuanto a la intersección, el conjunto de puntos interiores es <span class="math inline">\((1,2)\)</span>, ya que <span class="math inline">\(\forall x\in(1,2)\)</span> <span class="math inline">\(\exists \varepsilon=\min\{x-1,2-x\}\)</span> tal que <span class="math inline">\((x-\varepsilon, x+\varepsilon)\subseteq (1,2)\)</span>. El conjunto de puntos exteriores es <span class="math inline">\((-\infty,1)\cup(2,\infty)\)</span> ya que <span class="math inline">\(\forall x\in (-\infty, 1)\)</span> <span class="math inline">\(\exists \varepsilon = 1-x\)</span> tal que <span class="math inline">\((x-\varepsilon,x+\varepsilon)\subseteq (-\infty, 1)\)</span>, y <span class="math inline">\(\forall x\in (2,\infty)\)</span> <span class="math inline">\(\exists \varepsilon = x-2\)</span> tal que <span class="math inline">\((x-\varepsilon,x+\varepsilon)\subseteq (2,\infty)\)</span>. Y el conjunto de los puntos frontera es <span class="math inline">\(\{1,2\}\)</span>, ya que son los dos únicos puntos que no son puntos interiores ni exteriores.</p></li>
+<li><p>El conjunto unión no es abierto ni cerrado, ya que es un intervalo semiabierto. Y el conjunto intersección es cerrado ya que es un intervalo cerrado.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.2</strong></span> Calcular las derivadas de las siguientes funciones usando la definición de derivada.</p>
+<ol type="a">
+<li><span class="math inline">\(f(x)=e^x\)</span>.</li>
+<li><span class="math inline">\(g(x)=\ln(x)\)</span>.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>La derivada de <span class="math inline">\(f(x)=e^x\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+f'(x)
+&amp;= \lim_{h\to 0}\frac{e^{x+h}-e^x}{h}
+= \lim_{h\to 0}\frac{e^x e^h-e^x}{h}\\
+&amp; = \lim_{h\to 0}\frac{e^x(e^h-1)}{h}
+= e^x\lim_{h\to 0}\frac{e^h-1}{h} \\
+&amp; = e^x\lim_{h\to 0}\frac{h}{h}
+= e^x,
+\end{align*}\]</span></p>
+<p>ya que <span class="math inline">\(e^h-1\)</span> y <span class="math inline">\(h\)</span> son infinitésimos equivalentes cuando <span class="math inline">\(h\to 0\)</span>.</p></li>
+<li><p>La derivada de <span class="math inline">\(g(x) = \ln(x)\)</span> es</p></li>
+</ol>
+<p><span class="math display">\[\begin{align*}
+g'(x)
+&amp;= \lim_{h\to 0}\frac{\ln(x+h)-\ln(x)}{h}
+= \lim_{h\to 0}\frac{\ln\left(\frac{x+h}{x}\right)}{h}\\
+&amp;= \lim_{h\to 0}\frac{\ln\left(1+\frac{h}{x}\right)}{h}
+= \lim_{h\to 0}\frac{\ln\left(1+\frac{h}{x}\right)}{\frac{h}{x}}\frac{1}{x}\\
+&amp;= \frac{1}{x}\lim_{h\to 0}\frac{\ln\left(1+\frac{h}{x}\right)}{\frac{h}{x}}
+= \frac{1}{x}\lim_{h\to 0}\frac{\frac{h}{x}}{\frac{h}{x}}\\
+&amp;= \frac{1}{x},
+\end{align*}\]</span></p>
+<p>ya que <span class="math inline">\(\ln\left(1+\frac{h}{x}\right)\)</span> y <span class="math inline">\(\frac{h}{x}\)</span> son infinitésimos equivalentes cuando <span class="math inline">\(h\to 0\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.3</strong></span> Calcular el límite de las siguientes sucesiones.</p>
+<ol type="a">
+<li><span class="math inline">\(\left(\sqrt{n^2+n}-n\right)_{n=1}^\infty\)</span></li>
+<li><span class="math inline">\(\left(\frac{(n+1)!}{n^n}\right)_{n=1}^\infty\)</span></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Estudiamos primero el límite de <span class="math inline">\(\left(\sqrt{n^2+n}-n\right)_{n=1}^\infty\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{n\to\infty} \sqrt{n^2+n}-n
+&amp;= \lim_{n\to\infty} \frac{(\sqrt{n^2+n}-n)(\sqrt{n^2+n}+n)}{\sqrt{n^2+n}+n}\\
+&amp;= \lim_{n\to\infty} \frac{n^2+n-n^2}{\sqrt{n^2+n}+n}
+= \lim_{n\to\infty} \frac{n}{\sqrt{n^2+n}+n}\\
+&amp;= \lim_{n\to\infty} \frac{\frac{n}{n}}{\frac{\sqrt{n^2+n}}{n}+\frac{n}{n}}
+= \lim_{n\to\infty} \frac{1}{\sqrt{1+\frac{1}{n}}+1}\\
+&amp;= \frac{1}{\sqrt{1+0}+1} = \frac{1}{2}.
+\end{align*}\]</span></p></li>
+<li><p>Estudiamos ahora el límite de <span class="math inline">\(\left(\frac{(n+1)!}{n^n}\right)_{n=1}^\infty\)</span>. Aplicando el <a href="https://aprendeconalf.es/analisis-manual/04-sucesiones.html#prp-criterio-cociente-sucesiones">criterio del cociente</a> se tiene</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{n\to\infty} \frac{\frac{(n+2)!}{(n+1)^{n+1}}}{\frac{(n+1)!}{n^n}}
+&amp;= \lim_{n\to\infty} \frac{(n+2)!n^n}{(n+1)!(n+1)^{n+1}} \\
+&amp;= \lim_{n\to\infty} \frac{(n+2)(n+1)! n^n}{(n+1)!(n+1)(n+1)^n} \\
+&amp;= \lim_{n\to\infty} \frac{n+2}{n+1}\left(\frac{n}{n+1}\right)^n \\
+&amp;= \lim_{n\to\infty} \frac{n+2}{n+1}\lim_{n\to\infty}\left(\left(\frac{n+1}{n}\right)^{-1}\right)^n\\
+&amp;= 1\cdot \lim_{n\to\infty}\left(\left(\frac{n+1}{n}\right)^n\right)^{-1} \\
+&amp;=  \lim_{n\to\infty}\frac{1}{\left(1+\frac{1}{n}\right)^n} \\
+&amp;= \frac{1}{\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n} \\
+&amp;= \frac{1}{e}.
+\end{align*}\]</span></p>
+<p>Y como <span class="math inline">\(\frac{1}{e}&lt;1\)</span>, según el criterio del cociente se tiene que</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} \frac{(n+1)!}{n^n} = 0.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.4</strong></span> Dar un ejemplo de una función no polinómica que tenga una asíntota vertical <span class="math inline">\(x=2\)</span>, una asíntota horizontal <span class="math inline">\(y=1\)</span> y una asíntota oblicua <span class="math inline">\(y=2x-1\)</span>, y demostrarlo.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Asíntota vertical <span class="math inline">\(x=2\)</span></strong></p>
+<p>La forma más sencilla de obtener una asíntota vertical en <span class="math inline">\(x=2\)</span> es con una función racional tal que el denominador se anule en <span class="math inline">\(2\)</span>, como por ejemplo <span class="math inline">\(\frac{p(x)}{x-2}\)</span>, siempre y cuando <span class="math inline">\(p(2)\neq 0\)</span>. En tal caso, se tiene</p>
+<p><span class="math display">\[
+\lim_{x\to 2} \frac{p(x)}{x-2} = \pm\infty.
+\]</span></p>
+<p>y la función tiene una asíntota vertical en <span class="math inline">\(x=2\)</span>.</p>
+<p><strong>Asíntota horizontal <span class="math inline">\(y=1\)</span></strong></p>
+<p>Para obtener una asíntota horizontal en <span class="math inline">\(y=1\)</span> el límite de la función en <span class="math inline">\(-\infty\)</span> o en <span class="math inline">\(\infty\)</span> debe ser <span class="math inline">\(1\)</span>. Lo más sencillo es tomar una función racional tal que el grado del numerador sea igual al grado del denominador y con los coeficientes de los términos de mayor grado iguales. Podemos aprovechar la función anterior tomando <span class="math inline">\(p(x) = x\)</span>, de manera que</p>
+<p><span class="math display">\[
+\lim_{x\to-\infty} \frac{x}{x-2} = 1,
+\]</span></p>
+<p>y la función tiene una asíntota horizontal en <span class="math inline">\(y=1\)</span>.</p>
+<p><strong>Asíntota oblicua <span class="math inline">\(y=2x-1\)</span></strong></p>
+<p>Para obtener una asíntota oblicua en <span class="math inline">\(y=2x-1\)</span> la función debe ser de la forma <span class="math inline">\(f(x) = 2x-1+g(x)\)</span>, donde <span class="math inline">\(g(x)\)</span> es una función que tiende a <span class="math inline">\(0\)</span> cuando <span class="math inline">\(x\to\pm\infty\)</span>. Por ejemplo, tomando <span class="math inline">\(g(x) = \frac{1}{x}\)</span>, se tiene la función <span class="math display">\[
+2x-1 + \frac{1}{x} = \frac{2x^2-x+1}{x}.
+\]</span></p>
+<p>Para demostrar que esta función tiene asíntota oblicua en <span class="math inline">\(y=2x-1\)</span> calculamos primero el límite</p>
+<p><span class="math display">\[
+\lim_{x\to\infty} \frac{\frac{2x^2-x+1}{x}}{x}
+= \frac{2x^2-x+1}{x^2} = 2,
+\]</span></p>
+<p>de manera que existe una asíntota oblicua con pendiente <span class="math inline">\(2\)</span>, y el término independiente de la asíntota nos lo da el límite</p>
+<p><span class="math display">\[
+\lim_{x\to\infty} \frac{2x^2-x+1}{x}-2x
+= \lim_{x\to\infty} \frac{2x^2-x+1-2x^2}{x}
+= \lim_{x\to\infty} \frac{-x+1}{x}
+=-1.
+\]</span></p>
+<p>Y por tanto la función tienen una asíntota oblicua en <span class="math inline">\(y=2x-1\)</span>.</p>
+<p>Así pues, una función que cumple con las tres condiciones es</p>
+<p><span class="math display">\[
+f(x) =
+\begin{cases}
+\frac{x}{x-2} &amp; \mbox{si } x\neq 3,\\
+\frac{2x^2-x+1}{x} &amp; \mbox{si } x&gt;3.
+\end{cases}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="exr-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.5</strong></span> La concentración de un fármaco en sangre, <span class="math inline">\(C\)</span> en mg/dl, y el tiempo, <span class="math inline">\(t\)</span> en s, están relacionados mediante la expresión <span class="math inline">\(e^{tC}-t^2C^3-\ln(C)=0\)</span>.</p>
+<ol type="a">
+<li><p>¿Cómo varía la concentración del fármaco en sangre con el tiempo en el instante <span class="math inline">\(t=0\)</span>?</p></li>
+<li><p>Calcular la ecuación de la recta normal a la curva definida por la ecuación anterior en ese mismo instante.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>En primer lugar necesitamos saber la concentración del fármaco en el instante <span class="math inline">\(t=0\)</span>. Sustituyendo en la ecuación se tiene</p>
+<p><span class="math display">\[
+e^{0\cdot C}-0^2C^3-\ln(C)=0 \Leftrightarrow 1-\ln(C)=0 \Leftrightarrow \ln(C)=1 \Leftrightarrow C = e,
+\]</span></p>
+<p>y por tanto, la concentración del fármaco en sangre en el instante <span class="math inline">\(t=0\)</span> es <span class="math inline">\(e\)</span> mg/dl.</p>
+<p>Para ver cómo varía la concentración del fármaco con el tiempo en ese instante, necesitamos calcular la derivada en el instante. Derivando implícitamente la ecuación respecto de <span class="math inline">\(t\)</span> se tiene</p>
+<p><span class="math display">\[
+\begin{gathered}
+\frac{d}{dt}\left(e^{tC}-t^2C^3-\ln(C)\right) = \frac{d}{dt}0 = 0 \\
+\Leftrightarrow \frac{de^{tC}}{dt}-\frac{d(t^2C^3)}{dt}-\frac{d\ln(C)}{dt} = 0 \\
+\Leftrightarrow e^{tC}\frac{d(tC)}{dt}-\left(\frac{dt^2}{dt}C^3+t^2\frac{dC^3}{dt}\right)-\frac{1}{C}\frac{dC}{dt} = 0 \\
+\Leftrightarrow e^{tC}\left(C+t\frac{dC}{dt}\right)-2tC^3-t^23C^2\frac{dC}{dt}-\frac{1}{C}\frac{dC}{dt} = 0.
+\end{gathered}
+\]</span></p>
+<p>Sustituyendo <span class="math inline">\(t=0\)</span> y <span class="math inline">\(C=e\)</span> se tiene</p>
+<p><span class="math display">\[
+\begin{gathered}
+e^{0\cdot e}\left(e+0\frac{dC}{dt}\right)-2\cdot 0\cdot e^3-0^23e^2\frac{dC}{dt}-\frac{1}{e}\frac{dC}{dt} = 0 \\
+\Leftrightarrow e -\frac{1}{e}\frac{dC}{dt} = 0 \\
+\Leftrightarrow \frac{dC}{dt} = e^2 \\
+\end{gathered}
+\]</span></p></li>
+<li><p>La ecuación de la <a href="https://aprendeconalf.es/analisis-manual/07-derivadas.html#def-normal-funcion">recta normal a la curva</a> en el punto <span class="math inline">\((0,e)\)</span> es</p>
+<p><span class="math display">\[
+C = e -\frac{1}{dC/dt (0,e)(x-0)}
+\Leftrightarrow C = e -\frac{x}{e^2}.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.6</strong></span> Un globo que está lleno de un gas perfecto tiene un volumen de 5 litros, una presión de 1 atmósfera y una temperatura de 300 K.</p>
+<ol type="a">
+<li><p>Si en ese instante se empieza a calentar el gas a razón de 5 K/min, ¿cómo cambiará la presión suponiendo que el volumen se mantiene constante?</p></li>
+<li><p>Si en ese instante se empieza a comprimir el globo de manera que el volumen decrece a razón de 10 cl/min, ¿que variación experimentará la presión si se mantiene la temperatura constante? Dar una aproximación lineal del instante en el que el globo explotará, suponiendo que la presión máxima que puede soportar es de 1.1 atmósferas.</p></li>
+</ol>
+<p>Nota: La ecuación de los gases perfectos es <span class="math inline">\(PV = cT\)</span>, donde <span class="math inline">\(P\)</span> es la presión, <span class="math inline">\(V\)</span> el volumen, <span class="math inline">\(T\)</span> la temperatura absoluta y <span class="math inline">\(c\)</span> una constante.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En primer lugar vamos a calcular la constante <span class="math inline">\(c\)</span> de la ecuación de los gases perfectos. Para ello, sustituimos los valores iniciales en la ecuación.</p>
+<p><span class="math display">\[
+1\cdot 5 = c\cdot 300 \Leftrightarrow c = \frac{1\cdot 5}{300} = \frac{1}{60} \mbox{atm$\cdot$L/K}.
+\]</span></p>
+<ol type="a">
+<li><p>Para ver cómo cambia la presión con la temperatura expresamos la presión en función de la temperatura</p>
+<p><span class="math display">\[
+P = \frac{cT}{V} = \frac{1}{60}\frac{T}{5} = \frac{T}{300},
+\]</span></p>
+<p>y como la temperatura varía con el tiempo de manera que <span class="math inline">\(\frac{dT}{dt} = 5\)</span> K/min, aplicando la regla de la cadena se tiene</p>
+<p><span class="math display">\[
+\frac{dP}{dt}
+= \frac{dP}{dT}\frac{dT}{dt}
+= \frac{1}{300}\cdot 5
+= \frac{1}{60} \mbox{ atm/min}.
+\]</span></p></li>
+<li><p>Para ver cómo cambia la presión con el volumen, expresamos la presión en función del volumen,</p>
+<p><span class="math display">\[
+P = \frac{cT}{V} = \frac{300}{60V} = \frac{5}{V},
+\]</span></p>
+<p>y como ahora el volumen varía con el tiempo de manera que <span class="math inline">\(\frac{dV}{dt} = -0.1\)</span> L/min, aplicando la regla de la cadena se tiene</p>
+<p><span class="math display">\[
+\frac{dP}{dt}
+= \frac{dP}{dV}\frac{dV}{dt}
+= -\frac{5}{V^2} (-0.1)
+= \frac{5}{5^2} 0.1
+= 0.02 \mbox{ atm/min}.
+\]</span></p>
+<p>Para ver cuándo explotará el globo, necesitamos encontrar el instante en el que la presión es de 1.1 atmósferas. Como la presión inicial es de 1 atmósfera, la variación de la presión necesaria para que explote el globo es de <span class="math inline">\(0.1\)</span> atmósferas. Utilizando la aproximación que nos da el diferencial <span class="math inline">\(dP = 0.02 dt\)</span>, para una variación de <span class="math inline">\(0.1\)</span> atmósferas se tiene</p>
+<p><span class="math display">\[
+0.1 = 0.02 dt \Leftrightarrow dt = \frac{0.1}{0.02} = 5 \mbox{min}.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.7</strong></span> Demostrar la fórmula del binomio</p>
+<p><span class="math display">\[
+(1+x)^n = 1+\binom{n}{1}x+ \binom{n}{2}x^2 + \ldots + \binom{n}{n}x^n.
+\]</span></p>
+<p>con <span class="math inline">\(n\in\mathbb{N}\)</span> usando polinomios de Taylor.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Considerando la función <span class="math inline">\(f(x) = (1+x)^n\)</span>, su polinomio de Maclaurin es de orden <span class="math inline">\(n\)</span> es</p>
+<p><span class="math display">\[
+P^n_{f,0}(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \ldots + \frac{f^{(n)}(0)}{n!}x^n.
+\]</span></p>
+<p>Calculamos las derivadas de <span class="math inline">\(f(x)\)</span> en <span class="math inline">\(x=0\)</span> hasta orden <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+f(x) = (1+x)^n &amp; &amp; f(0) = 1 \\
+f'(x) = n(1+x)^{n-1} &amp; &amp; f'(0) = n \\
+f''(x) = n(n-1)(1+x)^{n-2} &amp; &amp; f''(0) = n(n-1) \\
+f'''(x) = n(n-1)(n-2)(1+x)^{n-3} &amp; &amp; f'''(0) = n(n-1)(n-2) \\
+\vdots &amp; &amp; \vdots \\
+f^{(n)}(x) = n! &amp; &amp; f^{(n)}(0) = n!
+\end{array}
+\]</span></p>
+<p>Sustituyendo en el polinomio de Maclaurin se tiene</p>
+<p><span class="math display">\[\begin{align*}
+P^n_{f,0}(x)
+&amp;= 1 + n\cdot x + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!} + \ldots + \frac{n!}{n!}x^n \\
+&amp;= 1 + \binom{n}{1}x + \binom{n}{2}x^2 + \ldots + \binom{n}{n}x^n.
+\end{align*}\]</span></p>
+<p>La fórmula de Taylor de grado <span class="math inline">\(n\)</span> en <span class="math inline">\(a=0\)</span> permite expresar la función <span class="math inline">\(f\)</span> como la suma del polinomio de Taylor anterior más el resto de Taylor de orden <span class="math inline">\(n\)</span>, es decir</p>
+<p><span class="math display">\[
+f(x) = P^n_{f,0}(x) + R^n_{f,0}(x).
+\]</span></p>
+<p>Expresando el resto en la forma de Lagrange se tiene</p>
+<p><span class="math display">\[
+R^n_{f,0}(x) = \frac{f^{(n+1)}(c)}{(n+1)!}x^{n+1}, \mbox{ con $c\in(0,x)$}.
+\]</span></p>
+<p>Teniendo en cuenta que la derivada <span class="math inline">\(n\)</span>-ésima de <span class="math inline">\(f\)</span> es constante e igual a <span class="math inline">\(n!\)</span>, se tiene que la derivada <span class="math inline">\(n+1\)</span> se anula en cualquier punto, y por tanto el resto de Taylor es nulo. Así pues, según la fórmula de Taylor de grado <span class="math inline">\(n\)</span> en <span class="math inline">\(a=0\)</span>, <span class="math inline">\(f(x)\)</span> coincide con <span class="math inline">\(P^n_{f,0}(x)\)</span> para cualquier <span class="math inline">\(x\)</span>, y el polinomio de Taylor coincide con la fórmula del binomio.</p>
+</div>
+</div>
+</div>
+<div id="exr-8" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 14.8</strong></span> Se dice que una función <span class="math inline">\(f\)</span> es <em>Lipschitziana</em> en un intervalo <span class="math inline">\([a,b]\)</span> si existe una constante <span class="math inline">\(L&gt;0\)</span>, llamada constante de Lipschitz, tal que</p>
+<p><span class="math display">\[
+|f(x)-f(y)|\leq L|x-y|,
+\]</span></p>
+<p>para cualesquiera <span class="math inline">\(x,y\in [a,b]\)</span>.</p>
+<ol type="a">
+<li><p>Demostrar que si <span class="math inline">\(f\)</span> tiene derivada continua en <span class="math inline">\([a,b]\)</span>, entonces <span class="math inline">\(f\)</span> es Lipschitziana en <span class="math inline">\([a,b]\)</span> y la menor constante de Lipschitz es <span class="math inline">\(L=\max_{x\in [a,b]}|f'(x)|\)</span>.</p></li>
+<li><p>Usando el resultado anterior, demostrar que <span class="math inline">\(f(x) = (x^2-4)^2\)</span> es Lipschitziana en <span class="math inline">\([-2,2]\)</span>, y calcular la menor constante de Lipschitz.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Sean <span class="math inline">\([x,y]\subseteq [a,b]\)</span>. Como <span class="math inline">\(f\)</span> es derivable en <span class="math inline">\([a,b]\)</span>, en particular lo es en <span class="math inline">\([x,y]\)</span>, y aplicando el <a href="https://aprendeconalf.es/analisis-manual/07-derivadas.html#thm-valor-medio">teorema del valor medio</a>, existe <span class="math inline">\(c\in[x,y]\)</span> tal que</p>
+<p><span class="math display">\[
+f'(c) = \frac{f(y)-f(x)}{y-x}.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+|f(y)-f(x)| = |f'(c)||y-x| \leq \max_{z\in [a,b]}|f'(z)||y-x|,
+\]</span></p>
+<p>y por tanto <span class="math inline">\(f\)</span> es Lipschitziana en <span class="math inline">\([a,b]\)</span> con constante <span class="math inline">\(L=\max_{z\in [a,b]}|f'(z)|\)</span>, siempre y cuando <span class="math inline">\(f'\)</span> tenga máximo en <span class="math inline">\([a,b]\)</span>, pero como <span class="math inline">\(f'\)</span> es continua en <span class="math inline">\([a,b]\)</span>, por el <a href="https://aprendeconalf.es/analisis-manual/06-limites.html#thm-weierstrass">teorema de Weierstrass</a>, <span class="math inline">\(f'\)</span> alcanza su máximo en <span class="math inline">\([a,b]\)</span>.</p></li>
+<li><p>Para demostrar que <span class="math inline">\(f(x) = (x^2-4)^2\)</span> es Lipschitziana en <span class="math inline">\([-2,2]\)</span> calculamos la derivada</p>
+<p><span class="math display">\[
+f'(x) = 2(x^2-4)(2x) = 4x^3-16x.
+\]</span></p>
+<p>Como <span class="math inline">\(f'\)</span> es una función polinómica, es continua en <span class="math inline">\([-2,2]\)</span>, y por el teorema de Weierstrass, <span class="math inline">\(f'\)</span> alcanza su máximo en <span class="math inline">\([-2,2]\)</span>. Para calcular el máximo de <span class="math inline">\(f'\)</span> en <span class="math inline">\([-2,2]\)</span> obtenemos primero los puntos críticos de <span class="math inline">\(f'\)</span>,</p>
+<p><span class="math display">\[
+f''(x) = 12x^2-16 = 0 \Leftrightarrow x = \pm\frac{2}{\sqrt{3}}.
+\]</span></p>
+<p>Por tanto, el máximo de <span class="math inline">\(f'\)</span>, en valor absoluto, se debe alcanzar en alguno de estos puntos críticos o en los extremos del intervalo. Calculamos los valores de <span class="math inline">\(f'\)</span> en estos puntos y en los extremos,</p>
+<p><span class="math display">\[\begin{align*}
+f'(-2) &amp;= 4(-2)^3-16(-2) = 0,\\
+f'\left(-\frac{2}{\sqrt{3}}\right) &amp;= 4\left(-\frac{2}{\sqrt{3}}\right)^3-16\left(-\frac{2}{\sqrt{3}}\right) = \frac{64}{3\sqrt{3}},\\
+f'\left(\frac{2}{\sqrt{3}}\right) &amp;= 4\left(\frac{2}{\sqrt{3}}\right)^3-16\left(\frac{2}{\sqrt{3}}\right) = -\frac{64}{3\sqrt{3}},\\
+f'(2) &amp;= 4(2)^3-16(2) = 0.
+\end{align*}\]</span></p>
+<p>Así pues, <span class="math inline">\(\max_{x\in[-2,2]}|f'(x)| = \frac{64}{3\sqrt{3}}\)</span>, y por tanto <span class="math inline">\(f\)</span> es Lipschitziana en <span class="math inline">\([-2,2]\)</span> con constante <span class="math inline">\(L=\frac{64}{3\sqrt{3}}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = true;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./examen-2024-12-20.html" class="pagination-link" aria-label="2024-12-20 <br>Examen de Análisis III">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2024-12-20 <br>Examen de Análisis III</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

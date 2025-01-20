@@ -1,0 +1,394 @@
+---
+title: 2025-01-14 <br>Examen de Análisis I
+lang: es
+date: 2025-01-14
+---
+
+:::{#exr-1}
+Dada la colección de conjuntos $A_n = \left[1-\frac{2}{n}, 2+\frac{1}{n}\right)$ con $n \in \mathbb{N}$, calcular para cada uno de los conjuntos $\bigcup_{n=1}^{\infty} A_n$ y $\bigcap_{n=1}^{\infty} A_n$: 
+
+a.  Supremo, ínfimo, máximo y mínimo.
+a.  Puntos interiores, puntos exteriores y puntos frontera.
+a.  Determinar si son abiertos o cerrados.
+
+Justificar la respuesta de cada apartado.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Veamos primero cuáles son los primeros conjuntos de la colección.
+
+\begin{align*}
+A_1 &= \left[1-\frac{2}{1}, 2+\frac{1}{1}\right) = [-1,3)\\
+A_2 &= \left[1-\frac{2}{2}, 2+\frac{1}{2}\right) = [0,2.5)\\
+A_3 &= \left[1-\frac{2}{3}, 2+\frac{1}{3}\right) = [0.3333,2.3333)\\
+A_4 &= \left[1-\frac{2}{4}, 2+\frac{1}{4}\right) = [0.5,2.25)\\
+\ldots
+\end{align*}
+
+Como se puede ver, se trata de una colección de intervalos encajados. Por tanto, la unión de todos los conjuntos es el primer conjunto $\cup_{n=1}^\infty A_n = A_1=[-1,3)$ que contiene a todos los demás. Para determinar la intersección de todos los conjuntos, tenemos que calcular hacia dónde tienden los extremos de los intervalos. El extremo inferior $1-\frac{2}{n}\to 1$ cuando $n\to\infty$, y el extremo superior $2+\frac{1}{n}\to 2$ cuando $n\to\infty$, por lo que la intersección de todos los conjuntos es $\cap_{n=1}^\infty A_n = [1,2]$.
+
+a.  El supremo de la unión es $3$, ya que es la menor de las cotas inferiores,pero como $3$ no pertenece al conjunto unión, no existe máximo. El ínfimo es $-1$, ya que es la mayor de las cotas inferiores, y como $-1$ pertenece al conjunto unión es el mínimo. 
+
+    El supremo de la intersección es $2$, ya que es la menor de las cotas superiores, y como $2$ pertenece al conjunto intersección, es el máximo. El ínfimo es $1$, ya que es la mayor de las cotas inferiores, y como $1$ pertenece al conjunto intersección es el mínimo.
+
+a.  El conjunto de los puntos interiores de la unión es $(-1,3)$, ya que $\forall x\in(1,3)$ $\exists \varepsilon=\min\{x+1,3-x\}$ tal que $(x-\varepsilon, x+\varepsilon)\subseteq (-1,3)$. El conjunto de los puntos exteriores es $(-\infty,-1)\cup(3,\infty)$ ya que $\forall x\in (-\infty, -1)$ $\exists \varepsilon -1-x$ tal que $(x-\varepsilon,x+\varepsilon)\subseteq (-\infty, -1), y $\forall x\in (3,\infty)$ $\exists \varepsilon = x-3$ tal que $(x-\varepsilon,x+\varepsilon)\subseteq (3,\infty)$. Y el conjunto de los puntos frontera es $\{-1,3\}$, ya que son los dos únicos puntos que no son puntos interiores ni exteriores.
+
+    En cuanto a la intersección, el conjunto de puntos interiores es $(1,2)$, ya que $\forall x\in(1,2)$ $\exists \varepsilon=\min\{x-1,2-x\}$ tal que $(x-\varepsilon, x+\varepsilon)\subseteq (1,2)$. El conjunto de puntos exteriores es $(-\infty,1)\cup(2,\infty)$ ya que $\forall x\in (-\infty, 1)$ $\exists \varepsilon = 1-x$ tal que $(x-\varepsilon,x+\varepsilon)\subseteq (-\infty, 1)$, y $\forall x\in (2,\infty)$ $\exists \varepsilon = x-2$ tal que $(x-\varepsilon,x+\varepsilon)\subseteq (2,\infty)$. Y el conjunto de los puntos frontera es $\{1,2\}$, ya que son los dos únicos puntos que no son puntos interiores ni exteriores.
+
+a.  El conjunto unión no es abierto ni cerrado, ya que es un intervalo semiabierto. Y el conjunto intersección es cerrado ya que es un intervalo cerrado.
+:::
+
+:::{#exr-2}
+Calcular las derivadas de las siguientes funciones usando la definición de derivada.
+
+a.  $f(x)=e^x$.
+b.  $g(x)=\ln(x)$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  La derivada de $f(x)=e^x$ es
+
+    \begin{align*}
+    f'(x) 
+    &= \lim_{h\to 0}\frac{e^{x+h}-e^x}{h} 
+    = \lim_{h\to 0}\frac{e^x e^h-e^x}{h}\\
+    & = \lim_{h\to 0}\frac{e^x(e^h-1)}{h} 
+    = e^x\lim_{h\to 0}\frac{e^h-1}{h} \\
+    & = e^x\lim_{h\to 0}\frac{h}{h} 
+    = e^x,
+    \end{align*}
+
+    ya que $e^h-1$ y $h$ son infinitésimos equivalentes cuando $h\to 0$.
+
+a.  La derivada de $g(x) = \ln(x)$ es
+
+\begin{align*}
+g'(x) 
+&= \lim_{h\to 0}\frac{\ln(x+h)-\ln(x)}{h}
+= \lim_{h\to 0}\frac{\ln\left(\frac{x+h}{x}\right)}{h}\\
+&= \lim_{h\to 0}\frac{\ln\left(1+\frac{h}{x}\right)}{h}
+= \lim_{h\to 0}\frac{\ln\left(1+\frac{h}{x}\right)}{\frac{h}{x}}\frac{1}{x}\\
+&= \frac{1}{x}\lim_{h\to 0}\frac{\ln\left(1+\frac{h}{x}\right)}{\frac{h}{x}}
+= \frac{1}{x}\lim_{h\to 0}\frac{\frac{h}{x}}{\frac{h}{x}}\\
+&= \frac{1}{x},
+\end{align*}
+
+ya que $\ln\left(1+\frac{h}{x}\right)$ y $\frac{h}{x}$ son infinitésimos equivalentes cuando $h\to 0$.
+:::
+
+:::{#exr-3}
+Calcular el límite de las siguientes sucesiones.
+
+a.  $\left(\sqrt{n^2+n}-n\right)_{n=1}^\infty$
+a.  $\left(\frac{(n+1)!}{n^n}\right)_{n=1}^\infty$
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Estudiamos primero el límite de $\left(\sqrt{n^2+n}-n\right)_{n=1}^\infty$.
+
+    \begin{align*}
+    \lim_{n\to\infty} \sqrt{n^2+n}-n 
+    &= \lim_{n\to\infty} \frac{(\sqrt{n^2+n}-n)(\sqrt{n^2+n}+n)}{\sqrt{n^2+n}+n}\\
+    &= \lim_{n\to\infty} \frac{n^2+n-n^2}{\sqrt{n^2+n}+n}
+    = \lim_{n\to\infty} \frac{n}{\sqrt{n^2+n}+n}\\
+    &= \lim_{n\to\infty} \frac{\frac{n}{n}}{\frac{\sqrt{n^2+n}}{n}+\frac{n}{n}}
+    = \lim_{n\to\infty} \frac{1}{\sqrt{1+\frac{1}{n}}+1}\\
+    &= \frac{1}{\sqrt{1+0}+1} = \frac{1}{2}.
+    \end{align*}
+
+a.  Estudiamos ahora el límite de $\left(\frac{(n+1)!}{n^n}\right)_{n=1}^\infty$. Aplicando el [criterio del cociente](https://aprendeconalf.es/analisis-manual/04-sucesiones.html#prp-criterio-cociente-sucesiones) se tiene
+
+    \begin{align*}
+    \lim_{n\to\infty} \frac{\frac{(n+2)!}{(n+1)^{n+1}}}{\frac{(n+1)!}{n^n}}
+    &= \lim_{n\to\infty} \frac{(n+2)!n^n}{(n+1)!(n+1)^{n+1}} \\
+    &= \lim_{n\to\infty} \frac{(n+2)(n+1)! n^n}{(n+1)!(n+1)(n+1)^n} \\
+    &= \lim_{n\to\infty} \frac{n+2}{n+1}\left(\frac{n}{n+1}\right)^n \\
+    &= \lim_{n\to\infty} \frac{n+2}{n+1}\lim_{n\to\infty}\left(\left(\frac{n+1}{n}\right)^{-1}\right)^n\\ 
+    &= 1\cdot \lim_{n\to\infty}\left(\left(\frac{n+1}{n}\right)^n\right)^{-1} \\
+    &=  \lim_{n\to\infty}\frac{1}{\left(1+\frac{1}{n}\right)^n} \\
+    &= \frac{1}{\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n} \\
+    &= \frac{1}{e}.
+    \end{align*}
+
+    Y como $\frac{1}{e}<1$, según el criterio del cociente se tiene que 
+
+    $$
+    \lim_{n\to\infty} \frac{(n+1)!}{n^n} = 0. 
+    $$
+:::
+
+:::{#exr-4}
+Dar un ejemplo de una función no polinómica que tenga una asíntota vertical $x=2$, una asíntota horizontal $y=1$ y una asíntota oblicua $y=2x-1$, y demostrarlo.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+**Asíntota vertical $x=2$**
+
+La forma más sencilla de obtener una asíntota vertical en $x=2$ es con una función racional tal que el denominador se anule en $2$, como por ejemplo $\frac{p(x)}{x-2}$, siempre y cuando $p(2)\neq 0$. En tal caso, se tiene
+
+$$
+\lim_{x\to 2} \frac{p(x)}{x-2} = \pm\infty.
+$$
+
+y la función tiene una asíntota vertical en $x=2$.
+
+**Asíntota horizontal $y=1$**
+
+Para obtener una asíntota horizontal en $y=1$ el límite de la función en $-\infty$ o en $\infty$ debe ser $1$. Lo más sencillo es tomar una función racional tal que el grado del numerador sea igual al grado del denominador y con los coeficientes de los términos de mayor grado iguales. Podemos aprovechar la función anterior tomando $p(x) = x$, de manera que 
+
+$$
+\lim_{x\to-\infty} \frac{x}{x-2} = 1,
+$$
+
+y la función tiene una asíntota horizontal en $y=1$.
+
+**Asíntota oblicua $y=2x-1$**
+
+Para obtener una asíntota oblicua en $y=2x-1$ la función debe ser de la forma $f(x) = 2x-1+g(x)$, donde $g(x)$ es una función que tiende a $0$ cuando $x\to\pm\infty$. Por ejemplo, tomando $g(x) = \frac{1}{x}$, se tiene la función 
+$$
+2x-1 + \frac{1}{x} = \frac{2x^2-x+1}{x}.
+$$
+
+Para demostrar que esta función tiene asíntota oblicua en $y=2x-1$ calculamos primero el límite 
+
+$$
+\lim_{x\to\infty} \frac{\frac{2x^2-x+1}{x}}{x} 
+= \frac{2x^2-x+1}{x^2} = 2,
+$$
+
+de manera que existe una asíntota oblicua con pendiente $2$, y el término independiente de la asíntota nos lo da el límite
+
+$$
+\lim_{x\to\infty} \frac{2x^2-x+1}{x}-2x
+= \lim_{x\to\infty} \frac{2x^2-x+1-2x^2}{x} 
+= \lim_{x\to\infty} \frac{-x+1}{x}
+=-1.
+$$
+
+Y por tanto la función tienen una asíntota oblicua en $y=2x-1$.
+
+Así pues, una función que cumple con las tres condiciones es
+
+$$
+f(x) =
+\begin{cases}
+\frac{x}{x-2} & \mbox{si } x\neq 3,\\
+\frac{2x^2-x+1}{x} & \mbox{si } x>3.
+\end{cases}
+$$
+:::
+
+:::{#exr-5}
+La concentración de un fármaco en sangre, $C$ en mg/dl, y el tiempo, $t$ en s, están relacionados mediante la expresión $e^{tC}-t^2C^3-\ln(C)=0$.
+
+a.  ¿Cómo varía la concentración del fármaco en sangre con el tiempo en el instante $t=0$?
+
+a.  Calcular la ecuación de la recta normal a la curva definida por la ecuación anterior en ese mismo instante.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  En primer lugar necesitamos saber la concentración del fármaco en el instante $t=0$. Sustituyendo en la ecuación se tiene
+
+    $$
+    e^{0\cdot C}-0^2C^3-\ln(C)=0 \Leftrightarrow 1-\ln(C)=0 \Leftrightarrow \ln(C)=1 \Leftrightarrow C = e,
+    $$
+
+    y por tanto, la concentración del fármaco en sangre en el instante $t=0$ es $e$ mg/dl.
+
+    Para ver cómo varía la concentración del fármaco con el tiempo en ese instante, necesitamos calcular la derivada en el instante. Derivando implícitamente la ecuación respecto de $t$ se tiene
+
+    $$
+    \begin{gathered}
+    \frac{d}{dt}\left(e^{tC}-t^2C^3-\ln(C)\right) = \frac{d}{dt}0 = 0 \\
+    \Leftrightarrow \frac{de^{tC}}{dt}-\frac{d(t^2C^3)}{dt}-\frac{d\ln(C)}{dt} = 0 \\
+    \Leftrightarrow e^{tC}\frac{d(tC)}{dt}-\left(\frac{dt^2}{dt}C^3+t^2\frac{dC^3}{dt}\right)-\frac{1}{C}\frac{dC}{dt} = 0 \\
+    \Leftrightarrow e^{tC}\left(C+t\frac{dC}{dt}\right)-2tC^3-t^23C^2\frac{dC}{dt}-\frac{1}{C}\frac{dC}{dt} = 0.
+    \end{gathered}
+    $$
+
+    Sustituyendo $t=0$ y $C=e$ se tiene
+
+    $$
+    \begin{gathered}
+    e^{0\cdot e}\left(e+0\frac{dC}{dt}\right)-2\cdot 0\cdot e^3-0^23e^2\frac{dC}{dt}-\frac{1}{e}\frac{dC}{dt} = 0 \\
+    \Leftrightarrow e -\frac{1}{e}\frac{dC}{dt} = 0 \\
+    \Leftrightarrow \frac{dC}{dt} = e^2 \\
+    \end{gathered}
+    $$
+
+a.  La ecuación de la [recta normal a la curva](https://aprendeconalf.es/analisis-manual/07-derivadas.html#def-normal-funcion) en el punto $(0,e)$ es
+
+    $$
+    C = e -\frac{1}{dC/dt (0,e)(x-0)} 
+    \Leftrightarrow C = e -\frac{x}{e^2}.
+    $$
+:::
+
+:::{#exr-6}
+Un globo que está lleno de un gas perfecto tiene un volumen de 5 litros, una presión de 1 atmósfera y una temperatura de 300 K. 
+
+a.  Si en ese instante se empieza a calentar el gas a razón de 5 K/min, ¿cómo cambiará la presión suponiendo que el volumen se mantiene constante?
+
+a.  Si en ese instante se empieza a comprimir el globo de manera que el volumen decrece a razón de 10 cl/min, ¿que variación experimentará la presión si se mantiene la temperatura constante? Dar una aproximación lineal del instante en el que el globo explotará, suponiendo que la presión máxima que puede soportar es de 1.1 atmósferas.
+
+Nota: La ecuación de los gases perfectos es $PV = cT$, donde $P$ es la presión, $V$ el volumen, $T$ la temperatura absoluta y $c$ una constante.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+En primer lugar vamos a calcular la constante $c$ de la ecuación de los gases perfectos. Para ello, sustituimos los valores iniciales en la ecuación.
+
+$$
+1\cdot 5 = c\cdot 300 \Leftrightarrow c = \frac{1\cdot 5}{300} = \frac{1}{60} \mbox{atm$\cdot$L/K}.
+$$
+
+a.  Para ver cómo cambia la presión con la temperatura expresamos la presión en función de la temperatura
+
+    $$
+    P = \frac{cT}{V} = \frac{1}{60}\frac{T}{5} = \frac{T}{300},
+    $$
+
+    y como la temperatura varía con el tiempo de manera que $\frac{dT}{dt} = 5$ K/min, aplicando la regla de la cadena se tiene
+
+    $$
+    \frac{dP}{dt} 
+    = \frac{dP}{dT}\frac{dT}{dt}
+    = \frac{1}{300}\cdot 5 
+    = \frac{1}{60} \mbox{ atm/min}.
+    $$
+
+a.  Para ver cómo cambia la presión con el volumen, expresamos la presión en función del volumen, 
+
+    $$
+    P = \frac{cT}{V} = \frac{300}{60V} = \frac{5}{V},
+    $$
+
+    y como ahora el volumen varía con el tiempo de manera que $\frac{dV}{dt} = -0.1$ L/min, aplicando la regla de la cadena se tiene
+
+    $$
+    \frac{dP}{dt} 
+    = \frac{dP}{dV}\frac{dV}{dt}
+    = -\frac{5}{V^2} (-0.1) 
+    = \frac{5}{5^2} 0.1
+    = 0.02 \mbox{ atm/min}.
+    $$
+
+    Para ver cuándo explotará el globo, necesitamos encontrar el instante en el que la presión es de 1.1 atmósferas. Como la presión inicial es de 1 atmósfera, la variación de la presión necesaria para que explote el globo es de $0.1$ atmósferas. Utilizando la aproximación que nos da el diferencial $dP = 0.02 dt$, para una variación de $0.1$ atmósferas se tiene  
+    
+    $$
+    0.1 = 0.02 dt \Leftrightarrow dt = \frac{0.1}{0.02} = 5 \mbox{min}.
+    $$
+:::
+
+:::{#exr-7}
+Demostrar la fórmula del binomio 
+
+$$
+(1+x)^n = 1+\binom{n}{1}x+ \binom{n}{2}x^2 + \ldots + \binom{n}{n}x^n.
+$$
+
+con $n\in\mathbb{N}$ usando polinomios de Taylor.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Considerando la función $f(x) = (1+x)^n$, su polinomio de Maclaurin es de orden $n$ es
+
+$$
+P^n_{f,0}(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \ldots + \frac{f^{(n)}(0)}{n!}x^n.
+$$
+
+Calculamos las derivadas de $f(x)$ en $x=0$ hasta orden $n$:
+
+$$
+\begin{array}{lll}
+f(x) = (1+x)^n & & f(0) = 1 \\
+f'(x) = n(1+x)^{n-1} & & f'(0) = n \\
+f''(x) = n(n-1)(1+x)^{n-2} & & f''(0) = n(n-1) \\
+f'''(x) = n(n-1)(n-2)(1+x)^{n-3} & & f'''(0) = n(n-1)(n-2) \\
+\vdots & & \vdots \\
+f^{(n)}(x) = n! & & f^{(n)}(0) = n!
+\end{array}
+$$
+
+Sustituyendo en el polinomio de Maclaurin se tiene
+
+\begin{align*}
+P^n_{f,0}(x) 
+&= 1 + n\cdot x + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!} + \ldots + \frac{n!}{n!}x^n \\
+&= 1 + \binom{n}{1}x + \binom{n}{2}x^2 + \ldots + \binom{n}{n}x^n.
+\end{align*}
+
+La fórmula de Taylor de grado $n$ en $a=0$ permite expresar la función $f$ como la suma del polinomio de Taylor anterior más el resto de Taylor de orden $n$, es decir
+
+$$
+f(x) = P^n_{f,0}(x) + R^n_{f,0}(x).
+$$
+
+Expresando el resto en la forma de Lagrange se tiene 
+
+$$
+R^n_{f,0}(x) = \frac{f^{(n+1)}(c)}{(n+1)!}x^{n+1}, \mbox{ con $c\in(0,x)$}. 
+$$
+
+Teniendo en cuenta que la derivada $n$-ésima de $f$ es constante e igual a $n!$, se tiene que la derivada $n+1$ se anula en cualquier punto, y por tanto el resto de Taylor es nulo. Así pues, según la fórmula de Taylor de grado $n$ en $a=0$, $f(x)$ coincide con $P^n_{f,0}(x)$ para cualquier $x$, y el polinomio de Taylor coincide con la fórmula del binomio.
+:::
+
+:::{#exr-8}
+Se dice que una función $f$ es _Lipschitziana_ en un intervalo $[a,b]$ si existe una constante $L>0$, llamada constante de Lipschitz, tal que 
+
+$$
+|f(x)-f(y)|\leq L|x-y|,
+$$
+
+para cualesquiera $x,y\in [a,b]$.
+
+a.  Demostrar que si $f$ tiene derivada continua en $[a,b]$, entonces $f$ es Lipschitziana en $[a,b]$ y la menor constante de Lipschitz es $L=\max_{x\in [a,b]}|f'(x)|$.
+
+a.  Usando el resultado anterior, demostrar que $f(x) = (x^2-4)^2$ es Lipschitziana en $[-2,2]$, y calcular la menor constante de Lipschitz.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Sean $[x,y]\subseteq [a,b]$. Como $f$ es derivable en $[a,b]$, en particular lo es en $[x,y]$, y aplicando el [teorema del valor medio](https://aprendeconalf.es/analisis-manual/07-derivadas.html#thm-valor-medio), existe $c\in[x,y]$ tal que 
+
+    $$
+    f'(c) = \frac{f(y)-f(x)}{y-x}.
+    $$
+
+    Por tanto, 
+
+    $$
+    |f(y)-f(x)| = |f'(c)||y-x| \leq \max_{z\in [a,b]}|f'(z)||y-x|,
+    $$
+
+    y por tanto $f$ es Lipschitziana en $[a,b]$ con constante $L=\max_{z\in [a,b]}|f'(z)|$, siempre y cuando $f'$ tenga máximo en $[a,b]$, pero como $f'$ es continua en $[a,b]$, por el [teorema de Weierstrass](https://aprendeconalf.es/analisis-manual/06-limites.html#thm-weierstrass), $f'$ alcanza su máximo en $[a,b]$.
+
+a.  Para demostrar que $f(x) = (x^2-4)^2$ es Lipschitziana en $[-2,2]$ calculamos la derivada   
+
+    $$
+    f'(x) = 2(x^2-4)(2x) = 4x^3-16x.
+    $$
+
+    Como $f'$ es una función polinómica, es continua en $[-2,2]$, y por el teorema de Weierstrass, $f'$ alcanza su máximo en $[-2,2]$. Para calcular el máximo de $f'$ en $[-2,2]$ obtenemos primero los puntos críticos de $f'$,
+
+    $$
+    f''(x) = 12x^2-16 = 0 \Leftrightarrow x = \pm\frac{2}{\sqrt{3}}.
+    $$
+
+    Por tanto, el máximo de $f'$, en valor absoluto, se debe alcanzar en alguno de estos puntos críticos o en los extremos del intervalo. Calculamos los valores de $f'$ en estos puntos y en los extremos,
+
+    \begin{align*}
+    f'(-2) &= 4(-2)^3-16(-2) = 0,\\
+    f'\left(-\frac{2}{\sqrt{3}}\right) &= 4\left(-\frac{2}{\sqrt{3}}\right)^3-16\left(-\frac{2}{\sqrt{3}}\right) = \frac{64}{3\sqrt{3}},\\
+    f'\left(\frac{2}{\sqrt{3}}\right) &= 4\left(\frac{2}{\sqrt{3}}\right)^3-16\left(\frac{2}{\sqrt{3}}\right) = -\frac{64}{3\sqrt{3}},\\
+    f'(2) &= 4(2)^3-16(2) = 0.
+    \end{align*}
+
+    Así pues, $\max_{x\in[-2,2]}|f'(x)| = \frac{64}{3\sqrt{3}}$, y por tanto $f$ es Lipschitziana en $[-2,2]$ con constante $L=\frac{64}{3\sqrt{3}}$.
+:::
