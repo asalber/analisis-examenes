@@ -151,7 +151,7 @@ $$
 a 
 = \lim_{n\to\infty} a_{n+1} 
 = \lim_{n\to\infty} \frac{8a_n}{a_n+4} 
-= \frac{8\lim_{n\to\infty a_n}}{\lim_{n\to\infty} a_n+4} \\
+= \frac{8\lim_{n\to\infty a_n}}{\lim_{n\to\infty} a_n+4}
 = \frac{8a}{a+4}
 $$
 
