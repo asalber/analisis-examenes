@@ -199,15 +199,15 @@ a.  $\displaystyle \sum_{n=1}^\infty \sqrt{\frac{(n+1)}{n^2+n-1}}$.
 
 :::{.callout-tip collapse="true"}
 ## Solución
-a.  La serie $\displaystyle \sum_{n=1}^\infty \frac{\ln(n)}{n^2}$ es de términos positivos, por lo que, utilizando el [criterio de la integral](https://aprendeconalf.es/analisis-manual/09-series.html#thm-criterio-integral), tenemos
+a.  La serie $\displaystyle \sum_{n=1}^\infty \frac{\ln(n)}{n^2}$ es de términos positivos, y además se cumple que la función $f(x)=\frac{\ln(x)}{x^2}$ es decreciente para $x \geq 2$ y  $\lim_{x\to\infty} f(x) = 0$, por lo que, utilizando el [criterio de la integral](https://aprendeconalf.es/analisis-manual/09-series.html#thm-criterio-integral), tenemos
 
     \begin{align*}
-    \int_1^\infty \frac{\ln(x)}{x^2}\,dx
-    &= \int_1^\infty \ln(x) \cdot x^{-2}\,dx \\
-    &= \left[-\frac{\ln(x)}{x}\right]_1^\infty + \int_1^\infty x^{-2},dx \tag{Integración por partes}\\
-    &= \lim_{x\to\infty}-\frac{\ln(x)}{x} + \frac{\ln(1)}{1}+ \left[ -\frac{1}{x} \right]_1^\infty \\
-    &= 0 + \lim_{x\to\infty} -\frac{1}{x} + \frac{1}{1}
-    = 1.
+    \int_2^\infty \frac{\ln(x)}{x^2}\,dx
+    &= \int_2^\infty \ln(x) \cdot x^{-2}\,dx \\
+    &= \left[-\frac{\ln(x)}{x}\right]_2^\infty + \int_2^\infty x^{-2},dx \tag{Partes}\\
+    &= \lim_{x\to\infty}-\frac{\ln(x)}{x} + \frac{\ln(2)}{2} + \left[ -\frac{1}{x} \right]_2^\infty \\
+    &= 0 + \frac{\ln(2)}{2} + \lim_{x\to\infty} -\frac{1}{x} + \frac{1}{2}
+    = \frac{\ln(2)+1}{2}.
     \end{align*}
 
     Y como la integral existe y es finita, la serie converge.
