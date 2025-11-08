@@ -1,0 +1,185 @@
+---
+title: 2025-10-05 <br>Examen de Análisis I
+lang: es
+date: 2025-10-05
+---
+
+:::{#exr-1}
+Calcular los siguientes límites usando el teorema de comprensión de sucesiones.
+
+a.  $\displaystyle \lim_{n\to \infty} \frac{n^2+2}{2n^2+\cos(n)}$.
+a.  $\displaystyle \lim_{n\to \infty} \frac{\ln(n)}{n}$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Usaremos el hecho de que $-1 \leq \cos(n) \leq 1$ para acotar la sucesión:
+
+    $$
+    2n^2 - 1 \leq 2n^2 + \cos(n) \leq 2n^2 + 1 
+    \Leftrightarrow \frac{n^2+2}{2n^2+1} \leq \frac{n^2+2}{2n^2+\cos(n)} \leq \frac{n^2+2}{2n^2-1} 
+    $$
+
+    Como 
+
+    \begin{align*}
+    \lim_{n\to \infty} \frac{n^2+2}{2n^2+1} &= \lim_{n\to \infty} \frac{1 + \frac{2}{n^2}}{2 + \frac{1}{n^2}} = \frac{1 + 0}{2 + 0} = \frac{1}{2}, \\
+    \lim_{n\to \infty} \frac{n^2+2}{2n^2-1} &= \lim_{n\to \infty} \frac{1 + \frac{2}{n^2}}{2 - \frac{1}{n^2}} = \frac{1 + 0}{2 - 0} = \frac{1}{2},
+    \end{align*}
+
+    por el teorema de comprensión de sucesiones, se tiene que
+
+    $$
+    \lim_{n\to \infty} \frac{n^2+2}{2n^2+\cos(n)} = \frac{1}{2}.
+    $$
+
+a.  Usaremos el hecho de que $\ln(n) \leq \sqrt{n}\ \forall n \in \mathbb{N}$ para acotar la sucesión:
+
+    $$
+    0 \leq \frac{\ln(n)}{n} \leq \frac{\sqrt{n}}{n} = \frac{1}{\sqrt{n}}.
+    $$
+
+    Como
+
+    \begin{align*}
+    \lim_{n\to \infty} 0 &= 0, \\
+    \lim_{n\to \infty} \frac{1}{\sqrt{n}} &= 0,
+    \end{align*}
+
+    por el teorema de comparación de sucesiones, se tiene que
+    $$
+    \lim_{n\to \infty} \frac{\ln(n)}{n} = 0.
+    $$
+:::
+
+:::{#exr-2}
+La evolución de la renta o riqueza de una persona suele expresarse en economía mediante la sucesión recurrente:
+
+$$
+r_1 = p \qquad r_{n+1} = p + (1-q) r_n,
+$$
+
+donde $p$ es la cantidad de dinero que la persona ingresa cada mes (por ejemplo, su salario), y $q$ es la proporción de la renta que gasta cada mes (por ejemplo, en consumo). Estudiar la convergencia de la sucesión para $p = 2000$ € y $q = 0.5$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Tenemos la sucesión recurrente $r_1 = 2000$ y $r_{n+1} = 2000 + 0.5 r_n$. Probaremos primero que la sucesión es monótona creciente por inducción. 
+
+$$
+r_1 = 2000 < r_2 = 2000 + 0.5 \cdot 2000 = 3000.
+$$
+
+Supongamos ahora que $r_{n-1} < r_n$. Entonces, 
+
+$$
+r_{n+1} = 2000 + 0.5 r_n > 2000 + 0.5 r_{n-1} = r_n,
+$$
+
+y esto prueba que la sucesión es monótona creciente.
+
+Ahora probaremos que la sucesión está acotada superiormente por $4000$ también por inducción.
+
+$$
+r_1 = 2000 < 4000.
+$$
+
+Supongamos ahora que $r_n < 4000$. Entonces,
+
+$$
+r_{n+1} = 2000 + 0.5 r_n < 2000 + 0.5 \cdot 4000 = 4000,
+$$
+
+y esto prueba que la sucesión está acotada superiormente por $4000$.
+
+Así pues, por el [teorema de la convergencia de sucesiones monótonas](https://aprendeconalf.es/analisis-manual/04-sucesiones.html#thm-convergencia-monotona), la sucesión converge. Para calcular el límite supongamos que la sucesión converge a un valor $r$. Entonces, por la [cualquier cola suya converge al mismo valor](https://aprendeconalf.es/analisis-manual/04-sucesiones.html#prp-convergencia-cola-sucesion), y por tanto
+
+$$
+r = \lim_{n\to \infty} r_n = \lim_{n\to \infty} r_{n+1} = \lim_{n\to \infty} 2000 + 0.5 r_n = 2000 + 0.5 \lim_{n\to \infty} r_n = 2000 + 0.5 r.
+$$
+
+Despejando $r$, obtenemos:
+
+$$
+r - 0.5 r = 2000 \Rightarrow 0.5 r = 2000 \Rightarrow r = 4000.
+$$
+
+Por lo tanto, el límite de la sucesión es $4000$.
+:::
+
+:::{#exr-3}
+Calcular los siguientes límites sin usar la regla de l'Hôpital.
+
+a.  $\displaystyle \lim_{x\to 0} \frac{\cos(x+a)-\cos(a)}{x}$
+a.  $\displaystyle \lim_{x\to 4} \frac{\sqrt{x}-2}{x^2-16}$
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Usando la fórmula del coseno de la suma, tenemos 
+
+    \begin{align*}
+    \lim_{x\to 0} \frac{\cos(x+a)-\cos(a)}{x} 
+    &= \lim_{x\to 0} \frac{\cos(x)\cos(a) - \operatorname{sen}(x)\operatorname{sen}(a) - \cos(a)}{x} \\
+    &= \lim_{x\to 0} \frac{\cos(a)(\cos(x) - 1) - \operatorname{sen}(a)\operatorname{sen}(x)}{x} \\
+    &= \cos(a) \lim_{x\to 0} \frac{\cos(x) - 1}{x} - \operatorname{sen}(a) \lim_{x\to 0} \frac{\operatorname{sen}(x)}{x} \\
+    &= \cos(a) \lim_{x\to 0} \frac{-x^2/2}{x} - \operatorname{sen}(a) \lim_{x\to 0} \frac{x}{x} \tag{1} \\
+    &= \cos(a) \lim_{x\to 0} \frac{-x}{2} - \operatorname{sen}(a) \cdot 1 \\
+    &= 0 - \operatorname{sen}(a) 
+    = -\operatorname{sen}(a).
+    \end{align*}
+
+    (1) Usando infinitésimos equivalentes $1-\cos(x)\approx x$ y $\operatorname{sen}(x)\approx x$.
+
+a.  Haciendo el cambio de variable $y = \sqrt{x}$, tenemos que cuando $x \to 4$, $y \to 2$. Por tanto,
+
+    \begin{align*}
+    \lim_{x\to 4} \frac{\sqrt{x}-2}{x^2-16} 
+    &= \lim_{y\to 2} \frac{y-2}{y^4 - 16} \\
+    &= \lim_{y\to 2} \frac{y-2}{(y^2 - 4)(y^2 + 4)} \\
+    &= \lim_{y\to 2} \frac{y-2}{(y-2)(y+2)(y^2 + 4)} \\
+    &= \lim_{y\to 2} \frac{1}{(y+2)(y^2 + 4)} \\
+    &= \frac{1}{(2+2)(2^2 + 4)} 
+    = \frac{1}{4 \cdot 8} 
+    = \frac{1}{32}.
+    \end{align*}
+:::
+
+:::{#exr-4}
+Dado el conjunto de números reales
+
+$$
+A = \left\{ \frac{1}{n} + \frac{1}{m} : n, m \in \mathbb{N} \right\}
+$$
+
+a.  Estudiar si tiene supremo, ínfimo, máximo y mínimo. Calcularlos en caso de que existan.
+a.  Calcular sus puntos de acumulación.
+a.  Determinar si es un conjunto abierto o cerrado.
+a.  ¿Es un conjunto numerable?
+:::
+
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Como $n, m \in \mathbb{N}$, se tiene que $n,m\geq 1$, por lo que $\frac{1}{n}\leq 1$ y $\frac{1}{m}\leq 1$, y $\frac{1}{n} + \frac{1}{m} \leq 2$. Como en particular, para $n=m=1$ se tiene que $\frac{1}{1} + \frac{1}{1} = 2$, $2$ es el máximo y también el supremo. 
+
+    Del mismo modo, $n, m>0\ \forall n,m\in \mathbb{N}$, por lo que $\frac{1}{n} > 0$ y $\frac{1}{m} > 0$, y $\frac{1}{n} + \frac{1}{m} > 0$, así que $0$ es una cota inferior. Probaremos que $0$ es el ínfimo por reducción al absurdo. Supongamos que existe $c>0$ tal que $c$ es cota inferior. Entonces, por la propiedad arquimediana podemos encontrar $n\in \mathbb{N}$ tal que $n > \frac{2}{c}$, por lo que $\frac{1}{n} < \frac{c}{2}$ y $\frac{1}{n} + \frac{1}{n} < c$, lo que contradice que $c$ es cota inferior. Por tanto, $0$ es el ínfimo. Sin embargo, no existe mínimo ya que $\frac{1}{n} + \frac{1}{m} > 0 \ \forall n,m\in \mathbb{N}$.
+
+a.  Como $0$ es el ínfimo y $2$ el supremo, es evidente que ningún número fuera el intervalo $[0, 2]$ puede ser punto de acumulación. Veamos ahora que para cualquier $n\in \mathbb{N}$, el punto $\frac{1}{n}$ es un punto de acumulación. Para cualquier $\varepsilon > 0$, por la propiedad arquimediana existe $m\in \mathbb{N}$ tal que $\frac{1}{m} < \varepsilon$ de manera que $\frac{1}{n} + \frac{1}{m} < \frac{1}{n} + \varepsilon$.
+
+    El $0$ también es punto de acumulación, ya que para cualquier $\varepsilon > 0$, por la propiedad arquimediana existe $n\in \mathbb{N}$ tale que $\frac{1}{n} < \varepsilon/2$, de manera que $\frac{1}{n} + \frac{1}{n} < \varepsilon$.
+
+    Finalmente, veamos que ningún otro punto del intervalo $(0,2]$ es un punto de acumulación. El 2 no es punto de acumulación ya que para $\varepsilon = 0.1$, por ejemplo, no existe ningún elemento de $A$ en el intervalo $(2 - 0.1, 2 + 0.1)$ distinto de $2$. Para cualquier otro punto $c \in (0,2)$ que no sea de la forma $\frac{1}{n}$, sea $\frac{1}{k}$ el valor que más se aproxima a $c$ por debajo, es decir, $c-\frac{1}{k} = \min\left\{ c - \frac{1}{n}, n\in\mathbb{N}\right\}$. Entonces, por la propiedad arquimediana, existe $i\in \mathbb{N}$ tal que 
+    
+    $$
+    \frac{1}{i+1} < c - \frac{1}{k} < \frac{1}{i}
+    \Leftrightarrow \frac{1}{k} + \frac{1}{i+1} < c < \frac{1}{k} + \frac{1}{i}.
+    $$
+
+    De este modo, tomando $\varepsilon = \min\left\{ c - \left( \frac{1}{k} + \frac{1}{i+1} \right), \left( \frac{1}{k} + \frac{1}{i} \right) - c \right\}$, se tiene que el intervalo $\left( c - \varepsilon, c + \varepsilon \right)$ no contiene ningún elemento de $A$ y, por tanto, $c$ no es punto de acumulación.
+
+    Así pues, el conjunto de puntos de acumulación de $A$ es $\operatorname{Ac}(A)=\left\{ 0 \right\} \cup \left\{ \frac{1}{n} : n \in \mathbb{N} \right\}$.
+
+a.  El conjunto no es abierto, ya que por ejemplo el punto $2 \in A$ no es un punto interior (cualquier entorno de $2$ contendrá puntos mayores que $2$ que no pertenecen a $A$). Tampoco es cerrado, ya que el punto de acumulación $0$ no pertenece a $A$.
+
+a.  Sí, es un conjunto numerable, ya que es la imagen de la función $f:\mathbb{N}\times \mathbb{N} \to \mathbb{R}$ definida por $f(n,m) = \frac{1}{n} + \frac{1}{m}$, y como $\mathbb{N}\times \mathbb{N}$ es numerable, su imagen también lo es.

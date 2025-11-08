@@ -85,23 +85,169 @@ Un depósito tiene forma de sólido de revolución generado por la rotación alr
 
 ![](/img/examen-2025-extraordinario/deposito)
 
-a.  Calcular el volumen del depósito.
+a.  Calcular el volumen del depósito tomando unidades en metros.
 
 b.  Si el depósito está lleno de etanol, plantear la integral para calcular el trabajo necesario para bombear todo el etanol hasta la parte superior del depósito. Suponer que la densidad del etanol es de $790 \, \mathrm{kg/m^3}$ y que la aceleración de la gravedad es $9.81 \, \mathrm{m/s^2}$.
 :::
 
 :::{.callout-tip collapse="true"}
 ## Solución
+a.  Podemos obtener el volumen del depósito calculando el volumen del sólido de revolución generado por la rotación alrededor del eje $Y$ de la región limitada por las curva $f$ y restándole el volumen del sólido generado por la rotación alrededor del eje $Y$ de la región limitada por las curvas $g$.
 
+    Calculamos primero el volumen del sólido de revolución generado por $f$ usando envoltorios cilíndricos.
+
+    \begin{align*}
+    \int_0^4 2\pi xf(x)\, dx
+    &= \int_0^4 2\pi x\left(2-\operatorname{sen}\left(\frac{x}{4}-1\right)\right)\, dx 
+    = 2\pi \int_0^4 2x-x\operatorname{sen}\left(\frac{x}{4}-1\right)\, dx \\
+    &= 2\pi \left([x^2]_0^4 - \left[-4x\cos\left(\frac{x}{4}-1\right)\right]_0^4 - \int_0^4 -4\cos\left(\frac{x}{4}-1\right)\, dx\right) \tag{Partes} \\
+    &= 2\pi \left(16 + 4\cdot 4\cos(0) + \left[4^2 \operatorname{sen}\left(\frac{x}{4}-1\right)\right]_0^4 \right) \\
+    &= 2\pi (16 + 16 + 16 \operatorname{sen}(-1)) 
+    = 116.468 \mbox{m}^3.
+    \end{align*}
+
+    Y ahora calculamos el volumen del sólido de revolución generado por $g$ usando también envoltorios cilíndricos.
+
+    \begin{align*}
+    \int_1^4 2\pi xg(x)\, dx 
+    &= \int_1^4 2\pi x\log_2(x)\, dx \\
+    &= 2\pi\left(\left[ \frac{x^2}{2}\log_2(x)\right]_1^4 - \int_1^4 \frac{1}{x\ln(2)}\frac{x^2}{2}\, dx\right)  \tag{Partes}\\
+    &= 2\pi \left(\frac{16}{2}\log_2(4) - \frac{1}{2}\log_2(1) - \left[\frac{1}{2\ln(2)}\frac{x^2}{2}\right]_1^4\right) \\
+    &= 2\pi\left(16-\frac{4^2}{4\ln(2)} + \frac{1^2}{4\ln(2)}\right) 
+    = 66.5383 \mbox{m}^3.
+    \end{align*}
+
+    Así pues, el volumen del depósito es
+
+    $$
+    \int_1^4 2\pi xf(x)\, dx - \int_1^4 2\pi xg(x)\, dx 
+    = 116.468 - 66.5383
+    = 49.9297 \mbox{m}^3.
+    $$
+
+b.  Para calcular el trabajo necesario para vaciar el depósito por arriba, descomponemos el trabajo en dos partes, correspondientes a las secciones horizontales de cada función.
+
+    Para la sección correspondiente a $f$, el volumen de un disco cilíndrico de altura $dy$  viene dado por $\pi r^2 dy$, donde $r = f^{-1}(y)$ es el radio del disco. Despejando $y$, obtenemos la inversa de $f$,
+
+    $$
+    y = 2-\operatorname{sen}\left(\frac{x}{4}-1\right)
+    \Leftrightarrow
+    x = 4\left(\operatorname{arcsen}(2-y) + 1\right)
+    $$
+
+    de manera que el volumen del disco es 
+
+    $$
+    dV =\pi (4(\operatorname{arcsen}(2-y) + 1))^2 dy
+    $$
+
+    La masa del disco es 
+
+    $$
+    dm = \rho dV = 790 \pi (4(\operatorname{arcsen}(2-y) + 1))^2 dy
+    $$
+
+    y la fuerza necesaria para bombear el disco es
+
+    $$
+    dF = g\cdot dm = 9.81\cdot 790 \pi (4(\operatorname{arcsen}(2-y) + 1))^2 \, dy
+    $$
+
+    Por otro lado, como el punto más alto del depósito es $f(0) = 2 - \operatorname{sen}\left(\frac{0}{4}-1\right) = 2.8414$, el trabajo necesario para bombear el disco hasta esa altura es aproximadamente
+
+    $$
+    dW = 9.81\cdot 790 \pi (4(\operatorname{arcsen}(2-y) + 1))^2(2.8414-y) \, dy
+    $$
+
+    de manera que el trabajo total necesario para bombear el etanol correspondiente a la sección $f$ es
+
+    $$
+    W_f = \int_2^{2.8414} 9.81 \cdot 790 \pi (4(\operatorname{arcsen}(2-y) + 1))^2 (2.8414-y) \, dy
+    $$
+
+    Del mismo modo, para la sección correspondiente a $g$, el volumen de un disco cilíndrico de altura $dy$  viene dado por $\pi \left(g^{-1}(y)\right)^2 dy$, es decir,
+
+    $$
+    dV = \pi \left(2^y\right)^2 dy 
+    = \pi \left(4^y\right) dy
+    $$
+
+    La masa del disco es 
+
+    $$
+    dm = \rho dV = 790 \pi (4^y) dy,
+    $$
+
+    la fuerza necesaria para bombear el disco es
+
+    $$
+    dF = g\cdot dm = 9.81\cdot 790 \pi (4^y) \, dy
+    $$
+
+    y el trabajo necesario para bombear el disco hasta la parte superior del depósito es aproximadamente
+
+    $$
+    dW = 9.81\cdot 790 \pi (4^y) (2.8414-y) \, dy,
+    $$
+
+    por lo que el trabajo total necesario para bombear el etanol correspondiente a la sección $g$ es
+
+    $$
+    W_g = \int_0^{2.8414} 9.81 \cdot 790 \pi (4^y) (2.8414-y) \, dy
+    $$
+
+    Finalmente, el trabajo total necesario para bombear todo el etanol hasta la parte superior del depósito es la suma de los trabajos correspondientes a las dos secciones.
+
+    \begin{align*}
+    W 
+    &= W_f + W_g \\
+    &= \int_2^{2.8414} 9.81 \cdot 790 \pi (4(\operatorname{arcsen}(2-y) + 1))^2 (2.8414-y) \, dy
+    + \int_0^{2.8414} 9.81 \cdot 790 \pi (4^y) (2.8414-y) \, dy.
+    \end{align*}
 :::
 
 :::{#exr-3}
-Una cápsula de café tiene un volumen generado al rotar alrededor del eje $Y$ la región delimitada por curva $y = 2-\frac{x^2}{2}$ en el primer cuadrante. ¿Qué cantidad de lámina de aluminio se necesita para fabricar la cápsula? 
+Una cápsula de café tiene un volumen generado al rotar alrededor del eje $Y$ la región delimitada por curva $y = 2-\frac{x^2}{2}$ en el primer cuadrante (en cm). ¿Qué cantidad de lámina de aluminio se necesita para fabricar la cápsula? 
 :::
 
 :::{.callout-tip collapse="true"}
 ## Solución
+La cantidad de lámina de aluminio necesaria para fabricar la cápsula es igual al área de la superficie del sólido de revolución generado por la rotación alrededor del eje $Y$ de la región delimitada por la curva $f(x) = 2-\frac{x^2}{2}$ en el primer cuadrante.
 
+La fórmula para calcular el [área de la superficie de un sólido de revolución](https://aprendeconalf.es/analisis-manual/08-integrales.html#c%C3%A1lculo-de-superficies-de-s%C3%B3lidos-de-revoluci%C3%B3n) alrededor del eje $X$ es
+
+$$
+A = \int_a^b 2\pi f(x) \sqrt{1+f'(x)^2} \, dx.
+$$
+
+Ahora bien, como la rotación es alrededor del eje $Y$, el radio de los troncos de cono generados al rotar la gráfica de $f$ viene dado por $x$ y por tanto la fórmula para el área de la superficie de un sólido de revolución alrededor del eje $Y$ es
+$$
+A = \int_a^b 2\pi x \sqrt{1+f'(x)^2} \, dx.
+$$
+
+Para determinar los límites de integración, calculamos el punto de intersección de la curva con el eje $X$ en el primer cuadrante.
+
+$$
+2-\frac{x^2}{2} = 0
+\Leftrightarrow
+\frac{x^2}{2} = 2
+\Leftrightarrow
+x^2 = 4
+\Leftrightarrow
+x = 2.
+$$
+
+Por tanto, el área del sólido de revolución viene dada por la integral
+
+\begin{align*}
+A &= \int_0^2 2\pi x \sqrt{1+f'(x)^2} \, dx 
+= 2\pi \int_0^2 x\sqrt{1+(-x)^2} \, dx \\
+&= 2\pi \int_0^2 x\sqrt{1+x^2} \, dx
+= 2\pi \int_1^{\sqrt{5}} u^2 \, du \tag{Cambio $u = \sqrt{1+x^2}$} \\
+&= 2\pi \left[\frac{u^3}{3}\right]_1^{\sqrt{5}}
+= 2\pi \left(\frac{(\sqrt{5})^3}{3} - \frac{1^3}{3}\right)
+\approx 21.3217 \mbox{cm}^2.
+\end{align*}
 :::
 
 :::{#exr-4}
@@ -112,11 +258,101 @@ Haciendo uso del centroide, calcular el volumen de los sólidos de revolución q
 
 :::{.callout-tip collapse="true"}
 ## Solución
+Calculamos primero los puntos de corte de las dos curvas igualando sus ecuaciones.
 
+$$
+y^2 = 4-(y-2)^2
+\Leftrightarrow
+y^2 = 4 - (y^2 - 4y + 4)
+\Leftrightarrow
+y^2 = -y^2 + 4y
+\Leftrightarrow
+2y^2 = 4y
+\Leftrightarrow
+y(2y-4)=0
+\Leftrightarrow
+y=0 \text{ o } y=2.
+$$
+
+Así pues, el intervalo de integración es $[0, 2]$ y además, en ese intervalo, la curva $g(y) = 4-(y-2)^2$ está por encima de la curva $f(y) = y^2$, por lo que la coordenada $\bar y$ del centroide viene dada por la fórmula
+
+$$
+\bar y = \frac{\int_0^2 y(g(y)-f(y))\,dy}{\int_0^2 g(y)-f(y)\, dy}. 
+$$
+
+Calculamos primero la integral del denominador, que es el área de la región limitada por las curvas.
+
+\begin{align*}
+\int_0^2 g(y)-f(y)\, dy
+&= \int_0^2 4-(y-2)^2 - y^2\, dy 
+= \int_0^2 (4 - (y^2 - 4y + 4) - y^2)\, dy \\
+&= \int_0^2 (4 - y^2 + 4y - 4 - y^2)\, dy 
+= \int_0^2 (4y - 2y^2)\, dy \\
+&= \left[2y^2 - \frac{2}{3}y^3\right]_0^2 
+= \left(2(2)^2 - \frac{2(2)^3}{3}\right) - \left(2(0)^2 - \frac{2(0)^3}{3}\right) \\
+&= \frac{8}{3}.
+\end{align*}
+
+Ahora calculamos la integral del numerador, que es el momento de la región respecto al eje $X$.
+
+\begin{align*}
+\int_0^2 y(g(y)-f(y))\,dy
+&= \int_0^2 y\left(4-(y-2)^2 - y^2\right)\, dy 
+= \int_0^2 y\left(4 - (y^2 - 4y + 4) - y^2\right)\, dy \\
+&= \int_0^2 y(4 - y^2 + 4y - 4 - y^2)\, dy 
+= \int_0^2 4y^2 - 2y^3\, dy \\
+&= \left[\frac{4}{3}y^3 - \frac{2}{4}y^4\right]_0^2 
+= \left(\frac{4}{3}(2)^3 - \frac{1}{2}(2)^4\right) - \left(\frac{4}{3}(0)^3 - \frac{1}{2}(0)^4\right) \\
+&= \frac{8}{3}.
+\end{align*}
+
+Por tanto, la coordenada $\bar y$ del centroide es $\bar y = \frac{8/3}{8/3} = 1$.
+
+Por otro lado, la coordenada $\bar x$ del centroide viene dada por la fórmula
+
+$$
+\bar x = \frac{\int_0^2 g(y)^2-f(y)^2\,dy}{2\int_0^2 g(y)-f(y)\, dy}.
+$$
+
+La integral del denominador es el área de la región limitada por las curvas, que ya hemos calculado y es $\frac{8}{3}$, y la integral del numerador, que es el momento respecto al eje $Y$, es
+
+\begin{align*}
+\int_0^2 g(y)^2-f(y)^2\,dy
+&= \int_0^2 \left(4-(y-2)^2\right)^2 - y^4\, dy 
+= \int_0^2 16 - 8(y-2)^2 + (y-2)^4 - y^4\, dy \\
+&= \int_0^2 16 - 8(y^2 - 4y + 4) + (y^4 - 8y^3 + 24y^2 - 32y + 16) - y^4\, dy \\
+&= \int_0^2 16y^2-8y^3\,dy
+= \left[\frac{16}{3}y^3 - 2y^4\right]_0^2
+= \left(\frac{16}{3}(2)^3 - 2(2)^4\right) - \left(\frac{16}{3}(0)^3 - 2(0)^4\right) \\
+&= \frac{32}{3}.
+\end{align*}
+
+Por tanto, la coordenada $\bar x$ del centroide es $\bar x = \frac{32/3}{2\cdot 8/3} = 2$.
+
+Para calcular el volumen del sólido de revolución generado al rotar la región alrededor del eje $X$, usamos el teorema de Pappus y se tiene
+
+$$
+V_x 
+= 2\pi \bar y \int_0^2 g(y)-f(y)\, dy
+= 2\pi \cdot 1 \cdot \frac{8}{3}
+= \frac{16\pi}{3} 
+\approx 16.7552.
+$$
+
+Y para calcular el volumen del sólido de revolución generado al rotar la región alrededor del eje $Y$, usamos también el teorema de Pappus y se tiene
+
+$$
+V_y
+= 2\pi \bar x \int_0^2 g(y)-f(y)\, dy
+= 2\pi \cdot 2 \cdot \frac{8}{3}
+= \frac{32\pi}{3} 
+\approx 33.5104.
+$$
 :::
 
+
 :::{#exr-5}
-Una señal luminosa con una intensidad inicial de 1000 unidades se propaga por un cable de fibra óptica de manera que pierde un 20% de su intensidad por cada kilómetro recorrido.
+Una señal luminosa con una intensidad inicial de 1000 unidades se propaga por un cable de fibra óptica de manera que pierde un $20$% de su intensidad por cada kilómetro recorrido.
 
 a.  ¿Cuál es la pérdida de intensidad acumulada (energía disipada) durante los 10 primeros kilómetros?
 
@@ -129,7 +365,79 @@ a.  ¿Por qué factor debería multiplicar la intensidad el amplificador cada 5 
 
 :::{.callout-tip collapse="true"}
 ## Solución
+a.  Para obtener el término general de la sucesión de intensidades, calculamos la pérdida de intensidad en las primeras etapas. 
 
+    $$
+    \begin{array}{ccc}
+    \mbox{Kilómetro} & \mbox{Intensidad} & \mbox{Pérdida} \\
+    \hline
+    0 & 1000 & 0 \\
+    1 & 1000\cdot 0.8 = 800 & 1000\cdot 0.2 = 200 \\
+    2 & 800\cdot 0.8 = 1000\cdot 0.8^2 = 640 & 1000\cdot 0.8\cdot 0.2 = 800\cdot 0.2 = 160 \\
+    3 & 640\cdot 0.8 = 1000\cdot 0.8^3 = 512 & 1000\cdot 0.8^2\cdot 0.2 = 640\cdot 0.2 = 128 \\
+    \vdots & \vdots & \vdots \\
+    n & 1000\cdot 0.8^{n} & 1000\cdot 0.8^{n-1}\cdot 0.2
+    \end{array}
+    $$
+
+    Así pues, el término general de la sucesión de intensidades es $I_n = 1000\cdot 0.8^{n}$ y el término general de la sucesión de pérdidas es $P_n = 1000\cdot 0.8^{n-1}\cdot 0.2$.
+
+a.  La pérdida de intensidad acumulada (energía disipada) durante los 10 primeros kilómetros viene dada por la suma de los $10$ primeros términos de la sucesión de pérdidas, es decir,
+
+    $$
+    \sum_{n=1}^{10} P_n = \sum_{n=1}^{10} 1000\cdot 0.8^{n-1}\cdot 0.2
+    = 1000\cdot 0.2 \sum_{n=1}^{10} 0.8^{n-1}
+    = 200 \sum_{n=0}^{9} 0.8^{n}
+    $$
+
+    Esta última suma es la suma parcial de orden 9 de una serie geométrica de razón $0.8$, que se se puede calcular con la fórmula para la suma parcial de una serie geométrica y vale
+
+    $$
+    \sum_{n=1}^{10} P_n 
+    = 200\cdot \frac{1-0.8^{10}}{1-0.8}
+    = 200\cdot \frac{1-0.1073741824}{0.2}
+    = 892.6258176.
+    $$
+
+    Si el cable tiene una longitud ilimitada, la pérdida de intensidad acumulada es la suma de todos los términos de la sucesión de pérdidas, es decir, la suma de la serie geométrica, que vale
+
+    $$
+    \sum_{n=1}^{\infty} P_n 
+    = 200\sum_{n=1}^{\infty} 0.8^{n-1} 
+    = 200\sum_{n=0}^{\infty} 0.8^{n} 
+    = 200\cdot \frac{1}{1-0.8}
+    = 200\cdot 5
+    = 1000.
+    $$
+
+    Es decir, al final se pierde toda la intensidad inicial.
+
+a.  Si se pone un amplificador cada 5 kilómetros que multiplica por 2 la intensidad de la señal el término general de la sucesión de intensidades cambia. Para ver cuál es el nuevo término general, calculamos la pérdida de intensidad cada 5 kilómetros.
+
+    $$
+    \begin{array}{cccc}
+    \mbox{Etapa} & \mbox{Kilómetro} & \mbox{Intensidad} & \mbox{Pérdida} \\
+    \hline
+    1 & 5 & 1000\cdot 0.8^5 & 1000\cdot (1-0.8^5) \\
+    2 & 10 & 1000\cdot (0.8^5)^2\cdot 2 & 1000\cdot 0.8^5 \cdot 2 \cdot (1-0.8^5) \\
+    3 & 15 & 1000\cdot (0.8^5)^3\cdot 2^2 & 1000\cdot (0.8^5)^2\cdot 2^2 \cdot (1-0.8^5) \\
+    \vdots & \vdots & \vdots & \vdots \\
+    n & 5n & 1000\cdot (0.8^5)^n\cdot 2^{n-1} & 1000\cdot (0.8^5)^{n-1}\cdot 2^{n-1}\cdot (1-0.8^5)
+    \end{array}
+    $$
+
+    Así pues, la pérdida de intensidad acumulada es la suma de la serie
+
+    \begin{align*}
+    \sum_{n=1}^{\infty} 1000 (0.8^5)^{n-1}2^{n-1}(1-0.8^5)
+    &= 1000(1-0.8^5)\sum_{n=1}^{\infty} (0.8^5\cdot 2)^{n-1}\\
+    &= 1000(1-0.8^5)\sum_{n=0}^{\infty} (0.8^5\cdot 2)^{n}.\\
+    &= 1000(1-0.8^5)\cdot \frac{1}{1-(0.8^5\cdot 2)}\\
+    &= 1000(1-0.8^5)\cdot \frac{1}{1-1.6} = -1000(1-0.8^5)\\
+    &=1950.7892
+    \end{align*}
+
+a.  Para que la intensidad llegue al final del cable con la misma intensidad que al principio, el amplificador debería multiplicar por un factor $k$ la intensidad de la señal cada 5 kilómetros de manera que al final de cada tramo de 5km la intensidad sea la misma que al principio, es decir, $1000\cdot 0.8^5\cdot k = 1000$, de donde se deduce que $k = \frac{1}{(0.8^5)} = 3.0518$.
 :::
 
 :::{#exr-6}
@@ -144,7 +452,73 @@ Calcular su derivada y determinar también su dominio de convergencia puntual.
 
 :::{.callout-tip collapse="true"}
 ## Solución
+Para determinar el radio de convergencia puntual de la serie de potencias, aplicamos el [criterio de la razón](https://aprendeconalf.es/analisis-manual/09-series.html#thm-radio-convergencia-razon). 
 
+$$
+R = \lim_{n \to \infty} \left| \frac{c_n}{c_{n+1}} \right|
+= \lim_{n \to \infty} \left| \frac{\frac{1}{n2^n}}{\frac{1}{(n+1)2^{n+1}}} \right|
+= \lim_{n \to \infty} \frac{(n+1)2^{n+1}}{n2^n}
+= \lim_{n \to \infty} \frac{(n+1)2}{n}
+= 2.
+$$
+
+Como la serie de potencias está centrada en el $1$, el dominio de convergencia puntual incluye el intervalo $(1-2, 1+2) = (-1, 3)$. Como el criterio no es concluyente en los extremos, tenemos que estudiar la convergencia de la serie en los puntos $-1$ y $3$.
+
+Para $x = -1$, la serie se convierte en
+$$
+\sum_{n=1}^{\infty} \frac{(-2)^n}{n2^n}
+= \sum_{n=1}^{\infty} \frac{(-1)^n}{n},
+$$
+
+que converge al ser la serie armónica alteranada.
+
+Para $x = 3$, la serie se convierte en
+
+$$
+\sum_{n=1}^{\infty} \frac{2^n}{n2^n}
+= \sum_{n=1}^{\infty} \frac{1}{n},
+$$
+
+que diverge al ser la serie armónica.
+
+Por tanto, el dominio de convergencia puntual de la serie de potencias es $[-1, 3)$.
+
+La derivada de la serie de potencias es
+
+$$
+\sum_{n=1}^{\infty} \frac{n(x-1)^{n-1}}{n2^n}
+= \sum_{n=1}^{\infty} \frac{(x-1)^{n-1}}{2^n}
+= \frac{1}{2} \sum_{n=0}^{\infty} \frac{(x-1)^{n}}{2^n}.
+$$
+
+De nuevo, aplicando el criterio de la razón obtenemos el siguiente radio de convergencia
+
+$$
+R' = \lim_{n \to \infty} \left| \frac{c_n}{c_{n+1}} \right|
+= \lim_{n \to \infty} \left| \frac{\frac{1}{2^n}}{\frac{1}{2^{n+1}}} \right|
+= \lim_{n \to \infty} \frac{2^{n+1}}{2^n}
+= \lim_{n \to \infty} 2
+= 2.
+$$
+
+Así pues, al igual que antes, el dominio de convergencia puntual de la derivada de la serie de potencias incluye el intervalo $(1-2, 1+2) = (-1, 3)$, y como el criterio no es concluyente en los extremos, volvemos a estudiar la convergencia de la serie en los puntos $-1$ y $3$.
+
+Para $x = -1$, la serie se convierte en
+$$
+\sum_{n=0}^{\infty} \frac{(-2)^{n}}{2^n}
+= \sum_{n=0}^{\infty} (-1)^n,
+$$  
+
+que diverge, y para $x = 3$, la serie se convierte en
+
+$$
+\sum_{n=0}^{\infty} \frac{2^{n}}{2^n}
+= \sum_{n=0}^{\infty} 1,
+$$
+
+que también diverge.
+
+Por tanto, el dominio de convergencia puntual de la derivada de la serie de potencias es $(-1, 3)$.
 :::
 
 :::{#exr-7}
@@ -156,5 +530,23 @@ a. $\sum_{n=1}^\infty a_n$, donde $a_1 = 1$ y $a_{n+1} = \frac{\cos(n)}{n}a_n$. 
 
 :::{.callout-tip collapse="true"}
 ## Solución
+a.  Aplicando propiedades de los logaritmos, la serie se puede reescribir como
 
+    $$
+    \sum_{n=1}^\infty \ln\left(\frac{n+1}{n}\right)
+    = \sum_{n=1}^\infty \ln(n+1) - \ln(n),
+    $$
+
+    que es una serie telescópica, por lo que converge si existe el límite $\lim_{n \to \infty} \ln(n+1)$, pero este límite no existe, por lo que la serie diverge.
+
+a.  Para estudiar la convergencia de la segunda serie, aplicamos el [criterio de la razón](https://aprendeconalf.es/analisis-manual/09-series.html#thm-criterio-razon)\dots
+
+    $$
+    \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+    = \lim_{n \to \infty} \left| \frac{\frac{\cos(n)}{n}a_n}{a_n} \right|
+    = \lim_{n \to \infty} \left| \frac{\cos(n)}{n} \right|
+    = 0.
+    $$
+
+    Como el límite existe y es menor que $1$, la serie $\sum_{n=1}^\infty a_n$ converge absolutamente, y por tanto converge.
 :::
