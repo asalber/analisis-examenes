@@ -1,0 +1,38 @@
+using GLMakie, Symbolics, LinearAlgebra
+@variables x y z
+F = (sqrt(x^2 + y^2) - 2)^2 + z^2 - 1
+# Gradient (normal vector to the surface)
+∇F = Symbolics.gradient(F, [x, y, z])
+# Point on the torus:
+x0 = 5/2          # 2.5
+y0 = 0
+z0 = sqrt(3)/2
+# Evaluate the gradient at the point
+∇F_p = substitute.(∇F, Ref(Dict(x=>x0, y=>y0, z=>z0)))
+
+# Tangent plane: ∇F(p) ⋅ ((x - x0),(y - y0),(z - z0)) = 0
+plane = dot(∇F_p, [x - x0, y - y0, z - z0])  # implicit equation of the tangent plane
+# Solve for z to get explicit equation of the plane
+plane = solve_for(plane ~ 0, z)[1]
+f = Symbolics.build_function(plane, x, y, expression=Val{false})
+
+
+# Definimos las ecuaciones paramétricas del toro.
+U = range(-pi, pi, 100)
+V = range(-pi, pi, 30)
+x1 = [2cos(u) + cos(u) * cos(v) for u in U, v in V]
+y1 = [2sin(u) + sin(u) * cos(v) for u in U, v in V]
+z1 = [sin(v) for u in U, v in V]
+# Inicializamos la figura y los ejes.
+fig = Figure()
+ax = Axis3(fig[1, 1], xlabel = "x", ylabel = "y", zlabel = "z", title = "Plano tangente al toro", azimuth = -45, aspect = :data)
+# Dibujamos el toro.
+Makie.surface!(ax, x1, y1, z1)
+# Creamos un rango alrededor del punto de tangencia.
+xs = range(x0 - 2, x0 + 2, 2)
+ys = range(y0 - 2, y0 + 2, 2)
+# Dibujamos el punto de tangencia.
+scatter!(ax, Point3(x0, y0, z0), color = :red)
+# Dibujamos el plano tangente.
+surface!(ax, xs, ys, f, colormap = [:magenta], transparency = true, alpha = 0.5)
+save("img/examen-2025-11-12/plano-tangente-toro.png", fig)

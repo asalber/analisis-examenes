@@ -470,7 +470,7 @@ $$
 = \sum_{n=1}^{\infty} \frac{(-1)^n}{n},
 $$
 
-que converge al ser la serie armónica alteranada.
+que converge al ser la serie armónica alternada.
 
 Para $x = 3$, la serie se convierte en
 
