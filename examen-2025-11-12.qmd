@@ -204,7 +204,7 @@ a.  Como se trata de un movimiento circular uniforme, la aceleración tiene úni
     a_n = \frac{\pi^2}{10} \approx 0.987 \text{ m/s}^2.
     $$
 
-    La componente tangencial de la aceleración es cero, ya que la velocidad es constante en un movimiento circular uniforme.
+    La componente tangencial de la aceleración es cero, ya que la rapidez es constante en un movimiento circular uniforme.
 
 a.  Cuando la noria se para a los 5 segundos, la persona está en la posición $\mathbf{f}(5) = (10\operatorname{sen}(\frac{\pi \cdot 5}{10}), 10(1-\cos(\frac{\pi \cdot 5}{10}))) = (10, 10)$, así que, necesitamos que la pelota pase por esta posición en el momento de máxima altura, que se alcanzará cuado la velocidad vertical sea cero.
 
