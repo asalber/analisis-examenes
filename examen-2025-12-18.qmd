@@ -303,7 +303,7 @@ a.  Si la temperatura en ºC en cada punto del depósito viene dada por la dista
 
 a.  ¿Cuál será la temperatura media a lo largo de la curva $\mathbf{f}(t) = (t\cos(\pi t),t\operatorname{sen}(\pi t), 1+t)$ con $t\in[0,2]$?
 
-a.  Calcular mediante una integral la cantidad de material necesario para construir el techo.
+<!-- a.  Calcular mediante una integral la cantidad de material necesario para construir el techo. -->
 :::
 
 :::{.callout-tip collapse="true"}
@@ -371,13 +371,13 @@ a.  La temperatura a lo largo de la curva $\mathbf{f}(t) = (t\cos(\pi t),t\opera
     &= \int_0^2 \sqrt{\pi^2 t^2 + 2} \, dt \\
     &= \left[ \frac{t}{2}\sqrt{\pi^2 t^2 + 2} + \frac{1}{2\pi}\ln\left(\pi t + \sqrt{\pi^2 t^2 + 2}\right) \right]_0^2 \tag{1}\\
     &= \left( \sqrt{4\pi^2 + 2} + \frac{1}{2\pi}\ln\left(2\pi + \sqrt{4\pi^2 + 2}\right) \right) - \frac{1}{2\pi}\ln(\sqrt{2}) \\
-    &\approx 4.7473 \mbox{ m}.
+    &\approx 7.1397 \mbox{ m}.
     \end{align*}
     (1) [Sustitución trigonométrica](https://en.wikipedia.org/wiki/Trigonometric_substitution#Example_2_2).
 
     Finalmente, para obtener la temperatura media a lo largo de la curva, dividimos la temperatura a lo largo de la curva entre la longitud de la curva, 
 
     $$
-    \overline{T} = \frac{8.9267}{4.7473} \approx 1.8804 \mbox{ ºC}.
+    \overline{T} = \frac{8.9267}{7.1397} \approx 1.2503 \mbox{ ºC}.
     $$
 :::
