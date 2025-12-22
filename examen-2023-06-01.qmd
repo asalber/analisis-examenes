@@ -4,8 +4,6 @@ lang: es
 date: 2023-06-01
 ---
 
-## Primera parte
-
 :::{#exr-1}
 Calcular las siguientes sumas si existen
 
@@ -137,8 +135,6 @@ Y la integral inferior de Riemann es
 &= 500\cdot 2 + 100 = 1100.
 \end{align*}
 :::
-
-## Segunda parte
 
 :::{#exr-5}
 La función $f(t)=50\sqrt{t/2}+100$ da los ingresos de una empresa en miles de euros $t$ años después de su creación, mientras que la función $g(t)=\ln(t^2+1)+100$ da los gastos. Calcular el beneficio acumulado de la empresa entre el quinto y el décimo año. 

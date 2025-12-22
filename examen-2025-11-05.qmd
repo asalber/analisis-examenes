@@ -183,3 +183,4 @@ a.  Como $0$ es el ínfimo y $2$ el supremo, es evidente que ningún número fue
 a.  El conjunto no es abierto, ya que por ejemplo el punto $2 \in A$ no es un punto interior (cualquier entorno de $2$ contendrá puntos mayores que $2$ que no pertenecen a $A$). Tampoco es cerrado, ya que el punto de acumulación $0$ no pertenece a $A$.
 
 a.  Sí, es un conjunto numerable, ya que es la imagen de la función $f:\mathbb{N}\times \mathbb{N} \to \mathbb{R}$ definida por $f(n,m) = \frac{1}{n} + \frac{1}{m}$, y como $\mathbb{N}\times \mathbb{N}$ es numerable, su imagen también lo es.
+:::

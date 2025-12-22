@@ -4,8 +4,6 @@ lang: es
 date: 2022-12-14
 ---
 
-## Primera parte
-
 :::{#exr-1}
 La población de parásitos que infecta un árbol, en miles, evoluciona diariamente siguiendo la sucesión recursiva $x_1=2$ y $x_{n+1}=1-(2+x_n)^{-1}$ $\forall n\in\mathbb{N}$. Demostrar que la sucesión converge y calcular su límite.
 :::
@@ -197,8 +195,6 @@ $A$ no es abierto, ya que $-1\in A$, pero $-1$ no es un punto interior de A, ya 
 
 Por otro lado, $A$ tampoco es cerrado ya que $\overline{A}=(-1,1)\cup [2,\infty)$ no es abierto, pues $2\in\overline{A}$ pero no es un punto interior suyo, ya que para cualquier $\varepsilon>0$ el intervalo $(2-\varepsilon,2+\varepsilon)$ contiene puntos de $A$.
 :::
-
-## Segunda parte
 
 :::{#exr-6}
 Dar una aproximación de $\ln(\sqrt{1/2})$ usando un polinomio de Taylor de cuarto grado.

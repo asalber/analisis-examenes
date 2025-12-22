@@ -8,7 +8,7 @@ date: 2025-11-12
 El envoltorio de una tableta de chocolate tiene forma de prisma de altura $h$ con base un triángulo equilátero de lado $l$. El coste de la base es de 2 € por metro cuadrado y de los laterales de 3 € por metro cuadrado. Si el volumen de la tableta es 100 cm$^3$, ¿cuáles son las dimensiones óptimas para fabricar el envoltorio con el menor coste posible? Usar el método de los multiplicadores de Lagrange.
 
 
-![Envolotorio](img/examen-2025-11-12/prisma){width=250px}
+![Envoltorio](img/examen-2025-11-12/prisma){width=250px}
 :::
 
 :::{.callout-tip collapse="true"}
@@ -206,7 +206,7 @@ a.  Como se trata de un movimiento circular uniforme, la aceleración tiene úni
 
     La componente tangencial de la aceleración es cero, ya que la rapidez es constante en un movimiento circular uniforme.
 
-a.  Cuando la noria se para a los 5 segundos, la persona está en la posición $\mathbf{f}(5) = (10\operatorname{sen}(\frac{\pi \cdot 5}{10}), 10(1-\cos(\frac{\pi \cdot 5}{10}))) = (10, 10)$, así que, necesitamos que la pelota pase por esta posición en el momento de máxima altura, que se alcanzará cuado la velocidad vertical sea cero.
+a.  Cuando la noria se para a los 5 segundos, la persona está en la posición $\mathbf{f}(5) = (10\operatorname{sen}(\frac{\pi \cdot 5}{10}), 10(1-\cos(\frac{\pi \cdot 5}{10}))) = (10, 10)$, así que, necesitamos que la pelota pase por esta posición en el momento de máxima altura, que se alcanzará cuando la velocidad vertical sea cero.
 
     Para obtener la velocidad y la posición de la pelota lanzada desde la posición $(x_0,0)$ con una velocidad inicial $v_0=(-r\cos(\pi/3), r\operatorname{sen}(\pi/3))$, siendo $r$ la rapidez con la que se lanza la pelota, partimos de que la única fuerza que actúa sobre la pelota es la gravedad, que tiene una aceleración de magnitud $g = 9.81$ m/s$^2$ hacia abajo. Por lo tanto, la función vectorial de la aceleración es $\mathbf{a}(t) = (0, -g)$. Integrando, obtenemos la función vectorial de la velocidad
 
