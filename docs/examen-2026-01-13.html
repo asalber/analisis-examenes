@@ -656,16 +656,17 @@ P_A^3(0.5) = 2\left(0.5 - \frac{(0.5)^2}{2} + \frac{(0.5)^3}{3}\right) = 2\left(
 <p><span class="math display">\[\begin{align*}
 R^n(t)
 &amp;= \frac{A^{(n+1}(c)}{(n+1)!} t^{n+1}\\
-&amp;= 2(-1)^{n} \frac{n!}{(c+1)^{n+1}} t^{n+1}, \\
+&amp;= 2(-1)^{n} \frac{n!}{(n+1)!(c+1)^{n+1}} t^{n+1}, \\
+&amp;= \frac{2(-1)^{n}}{(n+1)(c+1)^{n+1}} t^{n+1},
 \end{align*}\]</span></p>
 <p>con <span class="math inline">\(c\in (0, t)\)</span>. Para <span class="math inline">\(n=3\)</span> y <span class="math inline">\(t=0.5\)</span>, tenemos</p>
 <p><span class="math display">\[\begin{align*}
 |R^3(0.5)|
-&amp;= \left|\frac{2(-1)^{3} 3!}{(c+1)^{4}} (0.5)^{4}\right| \\
-&amp;= \frac{12}{(c+1)^{4}} \cdot 0.0625 \\
-&amp;= \frac{0.75}{(c+1)^{4}},
+&amp;= \left|\frac{2(-1)^{3}}{4(c+1)^{4}} (0.5)^{4}\right| \\
+&amp;= \frac{1}{2(c+1)^{4}} \cdot 0.0625 \\
+&amp;= \frac{0.03125}{(c+1)^4},
 \end{align*}\]</span></p>
-<p>con <span class="math inline">\(c\in (0, 0.5)\)</span>. Puesto que se trata de una función decreciente en ese intervalo, el valor máximo se alcanza en <span class="math inline">\(c=0\)</span>, por lo que, una cota del error cometido es <span class="math inline">\(|R^3(0.5)|\leq \frac{0.75}{(0+1)^{4}} = 0.75\)</span>.</p></li>
+<p>con <span class="math inline">\(c\in (0, 0.5)\)</span>. Puesto que se trata de una función decreciente en ese intervalo, el valor máximo se alcanza en <span class="math inline">\(c=0\)</span>, por lo que, una cota del error cometido es <span class="math inline">\(|R^3(0.5)|\leq \frac{0.03125}{(0+1)^{4}} = 0.03125\)</span>.</p></li>
 </ol>
 </div>
 </div>
@@ -750,7 +751,8 @@ i(p) = p\cdot d(p)
 <p><span class="math display">\[
 i'(p)
 = \alpha - \beta \ln(p) - \beta = 0
-\Leftrightarrow \ln(p) = \frac{\alpha}{\beta} - 1.
+\Leftrightarrow \ln(p) = \frac{\alpha}{\beta} - 1
+\Leftrightarrow p = e^{\frac{\alpha}{\beta} - 1}.
 \]</span></p>
 <p>Para ver si este punto crítico es un máximo, calculamos la segunda derivada.</p>
 <p><span class="math display">\[
