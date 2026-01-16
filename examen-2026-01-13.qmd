@@ -104,7 +104,7 @@ $$
 
 al invertirse las desigualdades. 
 
-En ambos casos, la función $\frac{\ln(1+x)}{x}$ está acotada por las funciones $\frac{1}{1+x}$ y $1$ cuando $x \to 0$. Como $\lim_{x\to 0} \frac{1}{1+x} = 1$ y $\lim_{x\to 0} 1 = 1$, por el [teorema de la compresión de sucesiones convergentes](https://aprendeconalf.es/analisis-manual/04-sucesiones.html#thm-compresion-sucesiones-convergentes), se concluye que
+En ambos casos, la función $\frac{\ln(1+x)}{x}$ está acotada por las funciones $\frac{1}{1+x}$ y $1$ cuando $x \to 0$. Como $\lim_{x\to 0} \frac{1}{1+x} = 1$ y $\lim_{x\to 0} 1 = 1$, por el [teorema de la compresión de funciones](https://aprendeconalf.es/analisis-manual/06-limites.html#thm-compresi%C3%B3n-funciones), se concluye que
 
 $$
 \lim_{x\to 0} \frac{\ln(1+x)}{x} = 1,
