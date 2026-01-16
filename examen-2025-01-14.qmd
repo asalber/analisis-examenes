@@ -176,7 +176,7 @@ Así pues, una función que cumple con las tres condiciones es
 $$
 f(x) =
 \begin{cases}
-\frac{x}{x-2} & \mbox{si } x\neq 3,\\
+\frac{x}{x-2} & \mbox{si } x\leq 3,\\
 \frac{2x^2-x+1}{x} & \mbox{si } x>3.
 \end{cases}
 $$
