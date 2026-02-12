@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2026-02-05  Examen de Análisis I</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="extraordinario-1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="extraordinario-1_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="extraordinario-1_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="extraordinario-1_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="extraordinario-1_files/libs/quarto-html/popper.min.js"></script>
+<script src="extraordinario-1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="extraordinario-1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="extraordinario-1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="extraordinario-1_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="extraordinario-1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="extraordinario-1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="extraordinario-1_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">2026-02-05 <br>Examen de Análisis I</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> El tipo de interés de una cuenta corriente cambia cada año según la sucesión <span class="math inline">\(\left(\frac{n^2+n}{\sqrt{e^n}}\right)_{n=1}^\infty\)</span>. ¿A partir de qué término la sucesión es monótona? ¿Hacia dónde tiende el tipo de interés a largo plazo?</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculamos los primeros términos</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+a_1 = \frac{1^2+1}{\sqrt{e^1}} \approx 1.2131 &amp; &amp; a_2 = \frac{2^2+2}{\sqrt{e^2}} \approx 2.2073 \\
+a_3 = \frac{3^2+3}{\sqrt{e^3}} \approx 2.6776 &amp; &amp; a_4 = \frac{4^2+4}{\sqrt{e^4}} \approx 2.7067 \\
+a_5 = \frac{5^2+5}{\sqrt{e^5}} \approx 2.4625 &amp; &amp; a_6 = \frac{6^2+6}{\sqrt{e^6}} \approx 2.09 \\
+\end{array}
+\]</span></p>
+<p>Parece que a partir del término 4 la sucesión decrece. Para ver que es monótona decreciente, tenemos que probar que <span class="math inline">\(a_n&gt;a_{n+1}\)</span> para todo <span class="math inline">\(n\geq 4\)</span>, lo que es equivalente a probar que el cociente entre el término <span class="math inline">\(n+1\)</span> y el <span class="math inline">\(n\)</span> es menor que 1.</p>
+<p><span class="math display">\[\begin{align*}
+\frac{a_{n+1}}{a_n}
+&amp;= \frac{\frac{(n+1)^2+(n+1)}{e^{(n+1)/2}}}{\frac{n^2+n}{e^{n/2}}}
+= \frac{(n^2+2n+1+n+1)e^{n/2}}{(n^2+n)e^{(n+1)/2}} \\
+&amp;= \frac{(n^2+3n+2)e^{n/2}}{(n^2+n)e^{1/2}e^{n/2}}
+= \frac{1}{e^{1/2}}\frac{n^2+3n+2}{n^2+n}
+\end{align*}\]</span></p>
+<p>Si tomamos límites cuando <span class="math inline">\(n\to\infty\)</span> tenemos</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{n\to\infty}\frac{a_{n+1}}{a_n}
+&amp;= \lim_{n\to\infty}\frac{1}{e^{1/2}}\frac{n^2+3n+2}{n^2+n} \\
+&amp;= \frac{1}{e^{1/2}}\lim_{n\to\infty}\frac{n^2+3n+2}{n^2+n} \\
+&amp;= \frac{1}{e^{1/2}}\lim_{n\to\infty}\frac{1+\frac{3}{n}+\frac{2}{n^2}}{1+\frac{1}{n}} \\
+&amp;= \frac{1}{e^{1/2}} &lt; 1,
+\end{align*}\]</span></p>
+<p>por lo que para <span class="math inline">\(a_n&gt;a_{n+1}\)</span> para valores de <span class="math inline">\(n\)</span> suficientemente grandes. Además, por el criterio del cociente, podemos decir que <span class="math inline">\(\lim_{n\to\infty}a_n = \lim_{n\to\infty} \frac{n^2+n}{\sqrt{e^n}} = 0\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Dar ejemplos de conjuntos que cumplan lo siguiente y demostrarlo. En el caso de que no sea posible justificar porqué. Estudiar también su supremo, ínfimo, máximo y mínimo.</p>
+<ol type="a">
+<li>Un conjunto cerrado con exactamente un punto de acumulación.</li>
+<li>Un conjunto acotado, ni abierto ni cerrado, con infinitos puntos de acumulación, que no sea un intervalo.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Como conjunto cerrado con un único punto de acumulación podríamos considerar <span class="math inline">\(A = \{0\}\cup\left\{\frac{1}{n}:n\in \mathbb{N}\right\}\)</span>. Veamos que el único punto de acumulación es 0. En primer lugar 0 es punto de acumulación porque para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span> tomando <span class="math inline">\(n&gt;\frac{1}{\varepsilon}\)</span> se tiene que <span class="math inline">\(\frac{1}{n}&lt;\varepsilon\)</span>, por lo que podemos encontrar puntos del conjunto más cercanos a 0 que <span class="math inline">\(\varepsilon\)</span>. En segundo lugar, si consideramos cualquier otro punto <span class="math inline">\(x&lt;0\)</span>, el intervalo <span class="math inline">\((x,0)\)</span> no contiene puntos de <span class="math inline">\(A\)</span> por lo que <span class="math inline">\(x\)</span> no puede ser punto de acumulación. Si consideramos <span class="math inline">\(x&gt;1\)</span>, el intervalo <span class="math inline">\((1,x)\)</span> no contiene puntos de <span class="math inline">\(A\)</span>, por lo que <span class="math inline">\(x\)</span> tampoco puede ser punto de acumulación. Finalmente, si consideramos cualquier <span class="math inline">\(x\in (0,1]\)</span> y tomamos el número <span class="math inline">\(\frac{1}{n}\)</span> con <span class="math inline">\(n\in\mathbb{N}\)</span> más próximo a <span class="math inline">\(x\)</span> que no coincida con <span class="math inline">\(x\)</span>, el intervalo reducido <span class="math inline">\(\left(x-\frac{1}{n},x+\frac{1}{n}\right)\setminus \{x\}\)</span> no contiene ningún punto de <span class="math inline">\(A\)</span>, por lo que <span class="math inline">\(x\)</span> tampoco puede ser punto de acumulación.</p>
+<p>Por otro lado, <span class="math inline">\(A\)</span> es cerrado ya que contiene al 0, y por tanto, contiene a todos sus puntos de acumulación.</p>
+<p>Su supremo es 1, que al pertenecer al conjunto es también máximo, y su ínfimo es 0, que al pertenecer al conjunto es también el mínimo.</p></li>
+<li><p>Como conjunto acotado, ni abierto ni cerrado, con infinitos puntos de acumulación, que no sea un intervalo podemos considerar <span class="math inline">\(B=(0,1)\cap \mathbb{Q}\)</span>. En primer lugar, está acotado ya que 0 es una cota inferior y 1 una superior. En segundo lugar, todos sus puntos son puntos frontera, por lo que no es ni abierto ni cerrado, y en tercer lugar, todos los números reales del intervalo <span class="math inline">\([0,1]\)</span> son puntos de acumulación por la densidad de los racionales en los reales.</p>
+<p>Su supremo es 1, que es la menor de las cotas superiores, pero como no pertenece al conjunto no tiene máximo, y su ínfimo es 0, que es la mayor de las cotas inferiores, pero como no pertenece al conjunto tampoco tiene mínimo.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Calcular los siguientes límites indeterminados sin usar la regla de L’Hôpital.</p>
+<ol type="a">
+<li><span class="math inline">\(\displaystyle \lim_{x\to 0^+} x^{\operatorname{sen}(x)}\)</span></li>
+<li><span class="math inline">\(\displaystyle \lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2}\)</span></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p><span class="math inline">\(\lim_{x\to 0^+} x^{\operatorname{sen}(x)} = 0^0\)</span>, que es una indeterminación. Para resolverla, primero la convertimos en una de tipo cociente aplicando el logaritmo y su inversa,</p>
+<p><span class="math display">\[
+\lim_{x\to 0^+} x^{\operatorname{sen}(x)}
+= \lim_{x\to 0^+} e^{\ln(x^\operatorname{sen}(x))}
+= e^{\lim_{x\to 0^+} \operatorname{sen}(x)\ln(x)}
+\]</span></p>
+<p>Este último límite es también una indeterminación de tipo producto. Para resolverla, utilizando infinitésimos equivalentes <span class="math inline">\(\operatorname{sen}(x)\approx x\)</span> cuando <span class="math inline">\(x\to 0\)</span>, tenemos</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to 0^+} \operatorname{sen}(x)\ln(x)
+&amp;= \lim_{x\to 0^+} x\ln(x) \\
+&amp;= \lim_{u\to \infty} \frac{1}{u}\ln\left(\frac{1}{u}\right) \tag{Cambio u = 1/x} \\
+&amp;= \lim_{u\to \infty} -\frac{\ln(u)}{u} = 0,
+\end{align*}\]</span></p>
+<p>ya que el logaritmo crece más lento que cualquier polinomio.</p>
+<p>Por tanto,</p>
+<p><span class="math display">\[
+\lim_{x\to 0^+} x^{\operatorname{sen}(x)} = e^0 = 1.
+\]</span></p></li>
+<li><p><span class="math inline">\(\lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2}=\frac{0}{0}\)</span> que es otra indeterminación. Para resolverla primero multiplicamos y dividimos por el conjugado del numerador.</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2}
+&amp;= \lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2}\cdot \frac{\sqrt{\cos(x)}+1}{\sqrt{\cos(x)}+1}\\
+&amp;= \lim_{x\to 0} \frac{\cos(x)-1}{x^2(\sqrt{\cos(x)}+1)}
+\end{align*}\]</span></p>
+<p>Ahora podemos utilizar infinitésimos equivalentes <span class="math inline">\(\cos(x) \approx 1-\frac{x^2}{2}\)</span> cuando <span class="math inline">\(x\to 0\)</span>, y tenemos</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to 0} \frac{\cos(x)-1}{x^2(\sqrt{\cos(x)}+1)}
+&amp;= \lim_{x\to 0} \frac{1-\frac{x^2}{2}-1}{x^2(\sqrt{\cos(x)}+1)} \\
+&amp;= \lim_{x\to 0} \frac{-1}{2(\sqrt{\cos(x)}+1)}
+= -\frac{1}{4}.
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> Demostrar usando la definición de límite de una sucesión, que la sucesión <span class="math inline">\(\left(\frac{n^2-1}{n^2+1}\right)_{n=1}^\infty\)</span> converge a 1, mientras que la sucesión <span class="math inline">\(\left(\cos(n\pi)\right)_{n=1}^\infty\)</span> diverge.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Veamos primero que <span class="math inline">\(\lim_{n \to \infty} \frac{n^2-1}{n^2+1} = 1\)</span>.</p>
+<p>Por definición, debemos probar que para todo <span class="math inline">\(\varepsilon &gt; 0\)</span> existe <span class="math inline">\(k \in \mathbb{N}\)</span> tal que, si <span class="math inline">\(n &gt; k\)</span>, entonces <span class="math display">\[
+\left|\frac{n^2-1}{n^2+1} - 1\right| &lt; \varepsilon.
+\]</span></p>
+<p>Desarrollando el valor absoluto tenemos</p>
+<p><span class="math display">\[
+\left| \frac{n^2 - 1}{n^2 + 1} - 1 \right|
+= \left| \frac{n^2 - 1}{n^2 + 1} - \frac{n^2 + 1}{n^2 + 1} \right|
+= \left| \frac{-2}{n^2 + 1} \right|
+= \frac{2}{n^2 + 1}
+\leq \frac{2}{n^2}.
+\]</span></p>
+<p>Por tanto, basta imponer que <span class="math display">\[
+\frac{2}{n^2} &lt; \varepsilon,
+\]</span></p>
+<p>que es equivalente a</p>
+<p><span class="math display">\[
+n^2 &gt; \frac{2}{\varepsilon}
+\Leftrightarrow n &gt; \sqrt{\frac{2}{\varepsilon}}.
+\]</span></p>
+<p>Usando ahora la propiedad arquimediana, podemos encontrar entonces <span class="math inline">\(k\)</span> el primer número natural mayor o igual a <span class="math inline">\(\sqrt{\frac{2}{\varepsilon}}\)</span>, con lo que si <span class="math inline">\(n &gt; k &gt; \sqrt{\frac{2}{\varepsilon}}\)</span> se cumple que <span class="math inline">\(\left|\frac{n^2-1}{n^2+1} - 1\right| &lt; \varepsilon\)</span>, lo que prueba que la sucesión converge a 1.</p>
+<p>Veamos ahora que la sucesión <span class="math inline">\(\left(\cos(n\pi)\right)_{n=1}^\infty\)</span> diverge. Como <span class="math inline">\(n\)</span> es un número natural, se tiene que esta sucesión es la misma que la sucesión <span class="math inline">\((-1)^n\)</span>, que es una sucesión alternada.</p>
+<p>Para demostrar que no tiene límite, supongamos, por reducción al absurdo, que <span class="math inline">\((-1)^n\)</span> converge a algún límite real <span class="math inline">\(a\)</span>.<br>
+Entonces, por definición de límite, para <span class="math inline">\(\varepsilon = \frac{1}{2}\)</span> existe <span class="math inline">\(k\in\mathbb{N}\)</span> tal que si <span class="math inline">\(n&gt;k\)</span> entonces</p>
+<p><span class="math display">\[
+|(-1)^n - a| &lt; \frac{1}{2}.
+\]</span></p>
+<p>Si tomamos <span class="math inline">\(n&gt;k\)</span> par, entonces <span class="math inline">\((-1)^n = 1\)</span>, luego <span class="math display">\[
+|1 - a| &lt; \frac{1}{2}
+\Leftrightarrow a\in(\frac{1}{2}, \frac{3}{2})$.
+\]</span></p>
+<p>Pero si tomamos <span class="math inline">\(m&gt;k\)</span> impar, entonces <span class="math inline">\((-1)^m=-1\)</span>, luego <span class="math display">\[
+|-1 - a| &lt; \frac{1}{2}
+\Leftrightarrow a\in(-\frac{3}{2}, -\frac{1}{2}),
+\]</span></p>
+<p>lo cual es imposible porque dichos intervalos son disjuntos.</p>
+<p>Por tanto, nuestra suposición de que la sucesión converge es falsa, y concluimos que la sucesión diverge.</p>
+</div>
+</div>
+</div>
+<div id="exr-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Demostrar que la función <span class="math inline">\(f(x)=\ln(x)\)</span> es igual a su derivada en un único punto y calcular su valor aproximado con al menos 2 decimales.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Tenemos que resolver la ecuación <span class="math inline">\(f(x) = f'(x)\)</span>, es decir, <span class="math inline">\(\ln(x) = \frac{1}{x}\)</span>, que es equivalente a <span class="math inline">\(\ln(x)-\frac{1}{x}= 0\)</span>. Si consideramos la función <span class="math inline">\(g(x) = \ln(x)-\frac{1}{x}\)</span>, tenemos que <span class="math inline">\(g\)</span> está definida para <span class="math inline">\(x&gt;0\)</span>, y es continua y derivable en su dominio, que el logaritmo es una función continua en <span class="math inline">\(x&gt;0\)</span> y <span class="math inline">\(\frac{1}{x}\)</span> también lo es al ser racional y solo anularse su denominador en <span class="math inline">\(x=0\)</span>.</p>
+<p>Por otro lado, <span class="math inline">\(g(1) = \ln(1)-\frac{1}{1}=-1&lt;0\)</span> y <span class="math inline">\(g(2) = \ln(2)-\frac{1}{2} \approx 0.693-0.5 = 0.193&gt;0\)</span>. Por el <a href="https://aprendeconalf.es/analisis-manual/06-limites.html#thm-bolzano">teorema de Bolzano</a>, existe al menos un punto <span class="math inline">\(c\in (1,2)\)</span> tal que <span class="math inline">\(g(c)=0\)</span>, es decir, <span class="math inline">\(\ln(c) = \frac{1}{c}\)</span>. Aplicando el algoritmo de la bisección tenemos</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+x_1 = \frac{1+2}{2} = 1.5 &amp; &amp; g(1.5) \approx -0.262 &lt; 0 &amp; &amp; c\in [1.5, 2] \\
+x_2 = \frac{1.5+2}{2} = 1.75 &amp; &amp; g(1.75) \approx -0.012 &lt; 0 &amp; &amp; c\in [1.75, 2] \\
+x_3 = \frac{1.75+2}{2} = 1.875 &amp; &amp; g(1.875) \approx 0.096 &gt; 0 &amp; &amp; c\in [1.75, 1.875] \\
+x_4 = \frac{1.75+1.875}{2} = 1.8125 &amp; &amp; g(1.8125) \approx 0.043 &gt; 0 &amp; &amp; c\in [1.75, 1.8125] \\
+x_5 = \frac{1.75+1.8125}{2} = 1.78125 &amp; &amp; g(1.78125) \approx 0.016 &gt; 0 &amp; &amp; c\in [1.75, 1.78125] \\
+x_6 = \frac{1.75+1.78125}{2} = 1.765625 &amp; &amp; g(1.765625) \approx 0.002 &gt; 0 &amp; &amp; c\in [1.75, 1.765625] \\
+x_7 = \frac{1.75+1.765625}{2} = 1.7578125 &amp; &amp; g(1.7578125) \approx -0.006 &lt; 0 &amp; &amp; c\in [1.7578125, 1.765625] \\
+x_8 = \frac{1.7578125+1.765625}{2} = 1.76171875 &amp; &amp; g(1.76171875) \approx -0.002 &lt; 0 &amp; &amp; c\in [1.76171875, 1.765625] \\
+\end{array}
+\]</span></p>
+<p>Así pues <span class="math inline">\(c\approx 1.76\)</span> y no puede haber más raíces porque <span class="math inline">\(g(x)&gt;0\)</span> <span class="math inline">\(\forall x&gt;0\)</span> y es continua.</p>
+</div>
+</div>
+</div>
+<div id="exr-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> En un ecosistema en el que hay una especie <em>presa</em>, <span class="math inline">\(p\)</span>, y otra <em>depredador</em>, <span class="math inline">\(d\)</span>, la cantidad de individuos, en millones, de una y otra dependen del tiempo, en años, según las siguientes expresiones (<span class="math inline">\(t\geq 0\)</span>):</p>
+<p><span class="math display">\[
+\begin{cases}
+p(t) = \frac{\ln (t  + 2)}{t + 2}  \\
+d(t) = te^{- 2t}
+\end{cases}
+\]</span></p>
+<ol type="a">
+<li><p>¿En qué instante el número de presas será máximo? ¿Y mínimo?</p></li>
+<li><p>¿En qué instante el número de depredadores será máximo? ¿Y mínimo?</p></li>
+<li><p>Calcular la tasa de variación del número de presas con respecto al número de depredadores en el instante <span class="math inline">\(t=2\)</span> e interpretarla.</p></li>
+<li><p>En ese mismo instante, dar una aproximación lineal de la variación del número de presas si el número de depredadores disminuye en 10 mil individuos.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Para encontrar los extremos de <span class="math inline">\(p(t)\)</span>, calculamos sus puntos críticos igualando su derivada a cero.</p>
+<p><span class="math display">\[
+p'(t) = \frac{\frac{1}{t+2}(t+2)-\ln(t+2)}{(t+2)^2}
+= \frac{1-\ln(t+2)}{(t+2)^2}
+= 0
+\Leftrightarrow \ln(t+2) = 1
+\Leftrightarrow t+2 = e
+\Leftrightarrow t = e-2.
+\]</span></p>
+<p>Para determinar si es un máximo o un mínimo, estudiamos el signo de <span class="math inline">\(p'(t)\)</span> a ambos lados de <span class="math inline">\(t=e-2\)</span>. Para <span class="math inline">\(t&lt;e-2\)</span>, se tiene que <span class="math inline">\(\ln(t+2)&lt;1\)</span>, por lo que <span class="math inline">\(p'(t)&gt;0\)</span>, y para <span class="math inline">\(t&gt;e-2\)</span>, se tiene que <span class="math inline">\(\ln(t+2)&gt;1\)</span>, por lo que <span class="math inline">\(p'(t)&lt;0\)</span>. Por tanto, <span class="math inline">\(p(t)\)</span> es creciente antes de <span class="math inline">\(t=e-2\)</span> y decreciente después, lo que implica que el número de presas es máximo en <span class="math inline">\(t=e-2\)</span>. Para ver si se trata de un máximo absoluto y para determinar el mínimo evaluamos la función en los extremos de su dominio, que es <span class="math inline">\([0,\infty)\)</span>. Se tiene que <span class="math inline">\(p(0) = \frac{\ln(2)}{2} \approx 0.3466\)</span>, <span class="math inline">\(p(e-2) = \frac{1}{e} \approx 0.3679\)</span> y <span class="math inline">\(\lim_{t\to\infty} p(t) = 0\)</span>, por lo que el número de presas es máximo en <span class="math inline">\(t=e-2\)</span> y mínimo en el límite cuando <span class="math inline">\(t\to\infty\)</span>.</p></li>
+<li><p>Igualmente, para encontrar los extremos de <span class="math inline">\(d(t)\)</span>, calculamos sus puntos críticos igualando su derivada a cero.</p>
+<p><span class="math display">\[
+d'(t) = e^{-2t} + t(-2)e^{-2t} = e^{-2t}(1-2t) = 0 \Leftrightarrow 1-2t = 0
+\Leftrightarrow t = \frac{1}{2}.
+\]</span></p>
+<p>De nuevo, para determinar si es un máximo o un mínimo, estudiamos el signo de <span class="math inline">\(d'(t)\)</span> a ambos lados de <span class="math inline">\(t=\frac{1}{2}\)</span>. Para <span class="math inline">\(t&lt;\frac{1}{2}\)</span>, se tiene que <span class="math inline">\(1-2t&gt;0\)</span>, por lo que <span class="math inline">\(d'(t)&gt;0\)</span>, y para <span class="math inline">\(t&gt;\frac{1}{2}\)</span>, se tiene que <span class="math inline">\(1-2t&lt;0\)</span>, por lo que <span class="math inline">\(d'(t)&lt;0\)</span>. Por tanto, <span class="math inline">\(d(t)\)</span> es creciente antes de <span class="math inline">\(t=\frac{1}{2}\)</span> y decreciente después, lo que implica que el número de depredadores es máximo en <span class="math inline">\(t=\frac{1}{2}\)</span>. Para ver si se trata de un máximo absoluto y para determinar el mínimo evaluamos la función en los extremos de su dominio, que es <span class="math inline">\([0,\infty)\)</span>. Se tiene que <span class="math inline">\(d(0) = 0\)</span>, <span class="math inline">\(d(\frac{1}{2}) = \frac{1}{2}e^{-1} \approx 0.1839\)</span> y <span class="math inline">\(\lim_{t\to\infty} d(t) = 0\)</span>, por lo que el número de depredadores es máximo en <span class="math inline">\(t=\frac{1}{2}\)</span> y mínimo en <span class="math inline">\(t=0\)</span>.</p></li>
+<li><p>Para calcular la tasa de variación del número de presas con respecto al número de depredadores en el instante <span class="math inline">\(t=2\)</span>, calculamos el cociente entre las derivadas de ambas funciones en dicho instante.</p>
+<p><span class="math display">\[\begin{align*}
+\frac{dp}{dd}(2)
+&amp;= \frac{p'(2)}{d'(2)}
+= \frac{\frac{1-\ln(4)}{16}}{e^{-4}(1-4)}
+= \frac{e^4(1-\ln(4))}{-48}
+\approx 0.4394.
+\end{align*}\]</span></p>
+<p>Esto significa que en el instante <span class="math inline">\(t=2\)</span>, por cada millón de depredadores más, el número de presas aumenta en aproximadamente 0.4394 millones.</p></li>
+<li><p>Para dar una aproximación lineal de la variación del número de presas si el número de depredadores disminuye en 10 mil individuos, podemos utilizar el diferencial en el instante <span class="math inline">\(t=2\)</span>.</p>
+<p><span class="math display">\[
+\frac{dp}{dd}(2) \approx 0.4394
+\Leftrightarrow dp \approx 0.4394 \cdot dd
+\Leftrightarrow dp \approx 0.4394 \cdot (-0.01)
+= -0.0044,
+\]</span></p>
+<p>es decir, el número de presas disminuiría en aproximadamente 0.0044 millones, o lo que es lo mismo, en 4400 individuos.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 7</strong></span> Demostrar que para errores pequeños, el error relativo en la medición de una magnitud <span class="math inline">\(M\)</span> es aproximadamente el error absoluto en la medición de su logaritmo, es decir</p>
+<p><span class="math display">\[
+\frac{\Delta M}{M} \approx \Delta \ln(M)
+\]</span></p>
+<p>Usando el resultado anterior, calcular el error relativo en la medición de la masa de una célula esférica si el error relativo en la medición del radio es del 1% y en la medición de la densidad es del 2%. ¿Qué variable contribuye más al error?</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Si pensamos en el error absoluto como una variación de la magnitud <span class="math inline">\(M\)</span>, es decir, <span class="math inline">\(\Delta M = dM\)</span>, y en el error relativo como el cociente entre el error absoluto y la magnitud, es decir, $, entonces, aplicando la regla de la cadena, tenemos</p>
+<p><span class="math display">\[
+\Delta \ln(M) = d\ln(M) = \frac{dM}{M} = \frac{\Delta M}{M}.
+\]</span></p>
+<p>Para calcular el error relativo en la medición de la masa de una célula esférica, primero tenemos que expresar la masa en función del radio y la densidad. La masa de una esfera se calcula como <span class="math inline">\(M = \frac{4}{3}\pi r^3 \rho\)</span>, donde <span class="math inline">\(r\)</span> es el radio y <span class="math inline">\(\rho\)</span> es la densidad. Aplicando el resultado anterior, tenemos</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\Delta M}{M} \approx \Delta \ln(M)
+&amp;= \Delta \ln\left(\frac{4}{3}\pi r^3 \rho\right)
+= \Delta \left(\ln\left(\frac{4}{3}\pi\right) + 3\ln(r) + \ln(\rho)\right) \\
+&amp;= d \left(\ln\left(\frac{4}{3}\pi\right) + 3\ln(r) + \ln(\rho)\right)
+= d \ln\left(\frac{4}{3}\pi\right) + 3d\ln(r) + d\ln(\rho) \\
+&amp;= 3\frac{dr}{r} + \frac{d\rho}{\rho}
+= 3\cdot 0.01 + 0.02
+= 0.05,
+\end{align*}\]</span></p>
+<p>es decir, el error relativo en la medición de la masa es del 5%. En este caso, el error en la medición del radio contribuye más al error total que el error en la medición de la densidad, ya que el primero se multiplica por 3.</p>
+</div>
+</div>
+</div>
+<div id="exr-8" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 8</strong></span> La tangente hiperbólica</p>
+<p><span class="math display">\[
+\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\]</span></p>
+<p>se utiliza a menudo como función de activación en las redes neuronales artificiales.</p>
+<ol type="a">
+<li><p>Calcular sus asíntotas.</p></li>
+<li><p>Calcular su derivada y expresarla en función de ella misma.</p></li>
+<li><p>Haciendo el cambio de variable <span class="math inline">\(u=\tanh(x)\)</span> en la expresión anterior, ¿cuál es la recurrencia que permite calcular la derivada <span class="math inline">\(n+1\)</span> en función de la derivada <span class="math inline">\(n\)</span>.</p></li>
+<li><p>Calcular el polinomio de Maclaurin de tercer grado y usarlo para dar el valor aproximado de <span class="math inline">\(\tanh(0.1)\)</span>.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>La tangente hiperbólica está definida en todo <span class="math inline">\(\mathbb{R}\)</span> ya que las funciones exponenciales están definidas en todo <span class="math inline">\(\mathbb{R}\)</span> y su denominador no se anula en ningún punto al ser las exponenciales positivas, por lo que no puede tener asíntotas verticales. Para calcular las asíntotas horizontales, calculamos los límites cuando <span class="math inline">\(x\to\infty\)</span> y <span class="math inline">\(x\to -\infty\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{x\to-\infty} \tanh(x)
+&amp;= \lim_{x\to-\infty} \frac{e^x - e^{-x}}{e^x + e^{-x}}
+= \lim_{x\to-\infty} \frac{\frac{e^x - e^{-x}}{e^{-x}}}{\frac{e^x + e^{-x}}{e^{-x}}}
+= \lim_{x\to\infty} \frac{e^{2x}-1}{e^{2x}+1}
+= -1. \\
+\lim_{x\to\infty} \tanh(x)
+&amp;= \lim_{x\to\infty} \frac{e^x - e^{-x}}{e^x + e^{-x}}
+= \lim_{x\to\infty} \frac{\frac{e^x - e^{-x}}{e^x}}{\frac{e^x + e^{-x}}{e^x}}
+= \lim_{x\to\infty} \frac{1 - e^{-2x}}{1 + e^{-2x}}
+= 1.
+\end{align*}\]</span></p>
+<p>Por tanto existe una asíntota horizontal en <span class="math inline">\(y=-1\)</span> cuando <span class="math inline">\(x\to-\infty\)</span>, y otra asíntota horizontal en <span class="math inline">\(y=1\)</span> cuando <span class="math inline">\(x\to\infty\)</span>.</p>
+<p>Como hay asíntotas horizontales cuanto <span class="math inline">\(x\to\pm\infty\)</span>, no hay asíntotas oblicuas.</p></li>
+<li><p>Para calcular la derivada de <span class="math inline">\(\tanh(x)\)</span>, aplicamos la regla del cociente.</p>
+<p><span class="math display">\[\begin{align*}
+\tanh'(x)
+&amp;= \frac{(e^x + e^{-x})(e^x + e^{-x}) - (e^x - e^{-x})(e^x - e^{-x})}{(e^x + e^{-x})^2} \\
+&amp;= \frac{(e^x + e^{-x})^2 - (e^x - e^{-x})^2}{(e^x + e^{-x})^2} \\
+&amp;= 1- \left(\frac{e^x - e^{-x}}{e^x + e^{-x}}\right)^2 = 1 - \tanh^2(x)
+\end{align*}\]</span></p></li>
+<li><p>Haciendo el cambio de variable <span class="math inline">\(u=\tanh(x)\)</span>, tenemos que <span class="math inline">\(\tanh'(x) = 1-u^2\)</span>. Si calculamos las derivadas sucesivas tenemos</p>
+<p><span class="math display">\[\begin{align*}
+u' &amp;= 1-u^2 \\
+u'' &amp;= -2uu' = -2u(1-u^2) \\
+u''' &amp;= -2u'u' - 2uu'' = -2(1-u^2)^2 + 4u^2(1-u^2) \\
+&amp;= -2(1-u^2)^2 + 4u^2(1-u^2) = -2(1-u^2)(1-3u^2) \\
+u^{iv} &amp;= -2(-2uu'(1-3u^2) + (1-u^2)(-6uu')) \\
+&amp;= 4u(1-u^2)(1-3u^2) + 12u(1-u^2)^2
+= 4u(1-u^2)(4-6u^2)\\
+&amp;\vdots\\
+u^{(n+1} &amp;= \frac{du^{(n}}{dx} = \frac{du^{(n}}{du}\cdot \frac{du}{dx} = \frac{du^{(n)}}{du}\cdot (1-u^2).    
+\end{align*}\]</span></p></li>
+<li><p>Para calcular el polinomio de Maclaurin de tercer grado, calculamos las primeras derivadas de <span class="math inline">\(\tanh(x)\)</span> en <span class="math inline">\(x=0\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\tanh(0) &amp;= 0 \\
+\tanh'(0) &amp;= 1 - \tanh^2(0) = 1 \\
+\tanh''(0) &amp;= -2\tanh(0)(1-\tanh^2(0)) = 0 \\
+\tanh'''(0) &amp;= -2(1-\tanh^2(0))(1-3\tanh^2(0)) = -2
+\end{align*}\]</span></p>
+<p>Por tanto, el polinomio de Maclaurin de tercer grado es</p>
+<p><span class="math display">\[
+P^3(x) = 0 + 1\cdot x + \frac{0}{2!}x^2 + \frac{-2}{3!}x^3 = x - \frac{x^3}{3}.
+\]</span></p>
+<p>Finalmente, para dar el valor aproximado de <span class="math inline">\(\tanh(0.1)\)</span>, evaluamos el polinomio en <span class="math inline">\(x=0.1\)</span>.</p>
+<p><span class="math display">\[
+\tanh(0.1) \approx P^3(0.1) = 0.1 - \frac{(0.1)^3}{3} \approx 0.0997.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

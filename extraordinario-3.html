@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2026-01-19  Examen de Análisis III</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="extraordinario-3_files/libs/clipboard/clipboard.min.js"></script>
+<script src="extraordinario-3_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="extraordinario-3_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="extraordinario-3_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="extraordinario-3_files/libs/quarto-html/popper.min.js"></script>
+<script src="extraordinario-3_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="extraordinario-3_files/libs/quarto-html/anchor.min.js"></script>
+<link href="extraordinario-3_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="extraordinario-3_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="extraordinario-3_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="extraordinario-3_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="extraordinario-3_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">2026-01-19 <br>Examen de Análisis III</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 1</strong></span> Encontrar los puntos en los que el plano tangente a la superficie de la función <span class="math inline">\(x^3 -4xy + 2y^2 - 3y + 4z = 0\)</span> es paralelo al plano <span class="math inline">\(6x -4 y - 2z = 10\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Como el gradiente de una función <span class="math inline">\(F(x,y,z)\)</span> es normal a la superficie de nivel de esta <span class="math inline">\(F(x,y,z)=0\)</span> (ver <a href="https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-gradiente-normal-curvas-nivel">teorema</a>), también lo será al plano tangente en cada punto de la superficie. Por tanto, tenemos que buscar los puntos donde los gradientes de las funciones <span class="math inline">\(F(x,y,z) = x^3 -4xy + 2y^2 - 3y + 4z\)</span> y <span class="math inline">\(G(x,y,z) = 6x -4 y - 2z - 10\)</span> tienen la misma dirección, es decir, son proporcionales. Calculamos los gradientes:</p>
+<p><span class="math display">\[
+\begin{align*}
+\nabla F &amp;= \left(3x^2 -4y, -4x + 4y-3, 4\right)\\
+\nabla G &amp;= (6, -4, -2)
+\end{align*}
+\]</span></p>
+<p>Por tanto, imponiendo que <span class="math inline">\(\nabla F = \lambda \nabla G\)</span>, tenemos que resolver el sistema de ecuaciones <span class="math display">\[
+\begin{cases}
+3x^2 -4y &amp;= 6\lambda \\
+-4x + 4y - 3 &amp;= -4\lambda \\
+4 = -2\lambda
+\end{cases}
+\]</span></p>
+<p>De la última ecuación tenemos que <span class="math inline">\(\lambda = -2\)</span>. Sustituyendo en las dos primeras ecuaciones, obtenemos el sistema</p>
+<p><span class="math display">\[
+\begin{cases}
+3x^2 -4y &amp;= -12 \\
+-4x + 4y - 3 &amp;= 8
+\end{cases}
+\]</span></p>
+<p>Despejando <span class="math inline">\(y\)</span> de la primera ecuación e igualando con la segunda, obtenemos la ecuación <span class="math inline">\(3x^2-4x+1=0\)</span>, que tiene como soluciones <span class="math inline">\(x=1\)</span> y <span class="math inline">\(x=\frac{1}{3}\)</span>. Sustituyendo estos valores en la ecuación de <span class="math inline">\(y\)</span>, obtenemos <span class="math inline">\(y=\frac{15}{4}\)</span> e <span class="math inline">\(y =\frac{37}{12}\)</span> respectivamente. Finalmente, sustituyendo en la ecuación de la superficie, para <span class="math inline">\(x=1\)</span> e <span class="math inline">\(y=\frac{15}{4}\)</span>, tenemos</p>
+<p><span class="math display">\[
+1^3-4\cdot 1 \cdot \frac{15}{4} + 2 \left(\frac{15}{4}\right)^2 - 3 \frac{15}{4} + 4z = 0 \Leftrightarrow \frac{23}{8} + 4z = 0 \Leftrightarrow z = -\frac{23}{32}.
+\]</span></p>
+<p>Y para <span class="math inline">\(x=\frac{1}{3}\)</span> e <span class="math inline">\(y=\frac{37}{12}\)</span>, tenemos</p>
+<p><span class="math display">\[
+\left(\frac{1}{3}\right)^3 - 4 \cdot \frac{1}{3} \cdot \frac{37}{12} + 2 \left(\frac{37}{12}\right)^2 - 3 \cdot \frac{37}{12} + 4z = 0 \Leftrightarrow \frac{1229}{216} + 4z = 0 \Leftrightarrow z = -\frac{1229}{864}.
+\]</span></p>
+<p>Así pues hay dos puntos donde el plano tangente es paralelo al plano dado: <span class="math inline">\(\left(1, \frac{15}{4}, -\frac{23}{32}\right)\)</span> y <span class="math inline">\(\left(\frac{1}{3}, \frac{37}{12}, -\frac{1229}{864}\right)\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 2</strong></span> Dos satélites siguen órbitas dadas por las trayectorias de las funciones vectoriales <span class="math inline">\(\mathbf{f}(t) = (2\cos(t), \operatorname{sen}(t), \operatorname{sen}(t))\)</span> y <span class="math inline">\(\mathbf{g}(t) = (\operatorname{sen}(t), 2\cos(t), \operatorname{sen}(t))\)</span>.</p>
+<ol type="a">
+<li><p>¿En qué instante del intervalo <span class="math inline">\([0,\pi]\)</span> los satélites colisionarán?</p></li>
+<li><p>Calcular el plano tangente a ambas trayectorias en el instante en que colisionan.</p></li>
+<li><p>Calcular las componentes tangencial y normal de la aceleración del primer satélite en el instante de colisión.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Para que los dos satélites colisionen en un instante <span class="math inline">\(t\)</span> debe cumplirse que <span class="math inline">\(\mathbf{f}(t) = \mathbf{g}(t)\)</span>, es decir, que se cumpla el sistema de ecuaciones</p>
+<p><span class="math display">\[
+\begin{cases}
+2\cos(t) = \operatorname{sen}(t) \\
+\operatorname{sen}(t) = 2\cos(t) \\
+\operatorname{sen}(t) = \operatorname{sen}(t)
+\end{cases}
+\]</span></p>
+<p>La última ecuación se cumple para cualquier valor de <span class="math inline">\(t\)</span>, por lo que solo nos queda resolver las dos primeras, y de cualquiera de ellas se obtiene que</p>
+<p><span class="math display">\[
+\frac{\operatorname{sen}(t)}{\cos(t)} = 2 \Leftrightarrow \operatorname{tan}(t) = 2 \Leftrightarrow t = \operatorname{arctg}(2).
+\]</span></p></li>
+<li><p>El vector tangente a la primera trayectoria es</p>
+<p><span class="math display">\[
+\mathbf{f}'(t) = (-2\operatorname{sen}(t), \cos(t), \cos(t)),
+\]</span></p>
+<p>que para <span class="math inline">\(t=\operatorname{arctg}(2)\)</span> toma el valor</p>
+<p><span class="math display">\[
+\mathbf{f}'(\operatorname{arctg}(2)) = \left(-\frac{4}{\sqrt{5}}, \frac{1}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right).
+\]</span></p>
+<p>y el vector tangente a la segunda trayectoria es</p>
+<p><span class="math display">\[
+\mathbf{g}'(t) = (\cos(t), -2\operatorname{sen}(t), \cos(t)).
+\]</span>,</p>
+<p>que para <span class="math inline">\(t=\operatorname{arctg}(2)\)</span> toma el valor</p>
+<p><span class="math display">\[
+\mathbf{g}'(\operatorname{arctg}(2)) = \left(\frac{1}{\sqrt{5}}, -\frac{4}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right).   
+\]</span></p>
+<p>El plano tangente a ambas trayectorias en el punto de colisión debe contener ambos vectores tangentes, por lo que será perpendicular a el producto vectorial de ambos:</p>
+<p><span class="math display">\[
+\mathbf{f}'(\operatorname{arctg}(2)) \times \mathbf{g}'(\operatorname{arctg}(2))
+= \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+-\frac{4}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}} \\
+\frac{1}{\sqrt{5}} &amp; -\frac{4}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}}
+\end{vmatrix}
+= \left(\frac{5}{5}, \frac{5}{5}, \frac{15}{5}\right) = (1, 1, 3).
+\]</span></p>
+<p>Así pues, el plano tangente en el punto de colisión viene dado por la ecuación</p>
+<p><span class="math display">\[
+\begin{gathered}
+\left((x, y, z) - \mathbf{f}(\operatorname{arctg}(2))\right) \cdot (1, 1, 3) = 0 \\
+\Leftrightarrow \left(x - \frac{2}{\sqrt{5}}, y - \frac{2}{\sqrt{5}}, z - \frac{2}{\sqrt{5}}\right) \cdot (1, 1, 3) = 0 \\
+\Leftrightarrow x + y + z = \frac{10}{\sqrt{5}}.
+\end{gathered}
+\]</span></p></li>
+<li><p>La componente tangencial de la aceleración de <span class="math inline">\(\mathbf{f}\)</span> en el instante de la colisión es</p>
+<p><span class="math display">\[
+a_{T} = \frac{\mathbf{f}'(\operatorname{arctg}(2)) \cdot \mathbf{f}''(\operatorname{arctg}(2))}{|\mathbf{f}'(\operatorname{arctg}(2))|}
+\]</span></p>
+<p>como <span class="math inline">\(\mathbf{f}''(t) = (-2\cos(t), -\operatorname{sen}(t), -\operatorname{sen}(t))\)</span>, evaluando en <span class="math inline">\(t=\operatorname{arctg}(2)\)</span>, obtenemos <span class="math inline">\(\mathbf{f}''(\operatorname{arctg}(2)) = \left(-\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}\right)\)</span>, y por tanto, la componente tangencial vale</p>
+<p><span class="math display">\[
+a_{T} = \frac{\left(-\frac{4}{\sqrt{5}}, \frac{1}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right) \cdot \left(-\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}\right)}{\sqrt{\left(-\frac{4}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2}} = \frac{4}{\sqrt{90}}.
+\]</span></p>
+<p>La componente normal, por otro lado, viene dada por</p>
+<p><span class="math display">\[
+a_{N} = \frac{|\mathbf{f}'(\operatorname{arctg}(2)) \times \mathbf{f}''(\operatorname{arctg}(2))|}{|\mathbf{f}'(\operatorname{arctg}(2))|}.
+\]</span></p>
+<p>Calculando el producto vectorial, tenemos</p>
+<p><span class="math display">\[
+\mathbf{f}'(\operatorname{arctg}(2)) \times \mathbf{f}''(\operatorname{arctg}(2))
+= \begin{vmatrix}
+\mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
+-\frac{4}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}} &amp; \frac{1}{\sqrt{5}} \\
+-\frac{2}{\sqrt{5}} &amp; -\frac{2}{\sqrt{5}} &amp; -\frac{2}{\sqrt{5}}
+\end{vmatrix}
+= \left(0, -2, 2\right).
+\]</span></p>
+<p>Por tanto, la componente normal vale</p>
+<p><span class="math display">\[
+a_{N} = \frac{|(0, -2, 2)|}{\sqrt{\left(-\frac{4}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2}} = \frac{2\sqrt{10}}{\sqrt{18}}.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 3</strong></span> Encuentra los puntos de la superficie definida por la ecuación <span class="math inline">\(x^2 + y^2 + z^2 - xy - xz - 1 = 0\)</span> donde <span class="math inline">\(z\)</span> es máximo o mínimo. Resolver el problema utilizando multiplicadores de Lagrange y sin utilizarlos.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Se trata de buscar los extremos de la función <span class="math inline">\(f(x,y,z)=z\)</span> sujeto a la restricción <span class="math inline">\(g(x,y,z)=x^2 + y^2 + z^2 - xy - xz - 1 = 0\)</span>. Aplicando el <a href="https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-multiplicadores-lagrange">método de los multiplicadores de Lagrange</a> los extremos deben ser los puntos donde se cumple la condición <span class="math inline">\(\lambda \nabla f = \nabla g\)</span>. Se tiene que <span class="math display">\[
+\nabla f = \left( 0, 0, 1 \right) \quad \text{y} \quad \nabla g = \left( 2x - y - z, 2y - x, 2z - x \right),
+\]</span></p>
+<p>por lo que hay que resolver el sistema</p>
+<p><span class="math display">\[
+\begin{cases}
+2x - y - z = \lambda\cdot 0 = 0\\
+2y - x = \lambda \cdot 0 = 0\\
+2z - x = \lambda\\
+x^2 + y^2 + z^2 - xy - xz - 1 = 0
+\end{cases}
+\]</span></p>
+<p>De la segunda ecuación tenemos <span class="math inline">\(x = 2y\)</span> y sustituyendo en la primera tenemos <span class="math inline">\(2(2y) - y - z = 0 \Leftrightarrow z = 3y\)</span>. Sustituyendo ahora el la restricción tenemos</p>
+<p><span class="math display">\[
+\begin{gathered}
+(2y)2+y2+(3y)2−(2y)(y)−(2y)(3y)−1=0 \\
+\Leftrightarrow 4y^2+y^2+9y^2-2y^2-6y^2-1=0 \\
+\Leftrightarrow 6y^2 -1 = 0
+\Leftrightarrow y^2 = \frac{1}{6}
+\Leftrightarrow y=\pm\frac{1}{\sqrt{6}},
+\end{gathered}
+\]</span></p>
+<p>de donde se deduce <span class="math inline">\(y = \pm\frac{1}{\sqrt{6}}\)</span>, <span class="math inline">\(x=2y = \pm\frac{2}{\sqrt{6}}\)</span>, <span class="math inline">\(z=\pm 3y = \pm\frac{3}{\sqrt{6}}\)</span>. Esto nos da dos puntos críticos <span class="math inline">\(\left(\frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}}, \frac{3}{\sqrt{6}}\right)\)</span> y <span class="math inline">\(\left(-\frac{2}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, -\frac{3}{\sqrt{6}}\right)\)</span>. Como la componente <span class="math inline">\(z\)</span> del primer punto es mayor que la del segundo, el primer punto es un punto de máximo local y el segundo de mínimo local.</p>
+<p>Para resolver el problema sin usar el método de los multiplicadores de Lagrange, consideramos <span class="math inline">\(F(x,y,z) = x^2 + y^2 + z^2 -xy -xz -1\)</span> y pensamos en <span class="math inline">\(z\)</span> como una función implícita de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, es decir, <span class="math inline">\(z=f(x,y)\)</span>. Veamos primero que se cumple el <a href="https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-funcion-implicita">teorema de la función implícita</a>.</p>
+<ol type="a">
+<li><span class="math inline">\(F(x,y,z)=0\)</span> se cumple puesto que es la restricción.</li>
+<li><span class="math inline">\(\frac{\partial F}{\partial x} = 2x - y - z\)</span>, <span class="math inline">\(\frac{\partial F}{\partial y} = 2y - x\)</span> y <span class="math inline">\(\frac{\partial F}{\partial z} = 2z - x\)</span>. Las tres derivadas parciales son continuas para cualesquiera valores de <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> y <span class="math inline">\(z\)</span> ya que se trata de polinomios.</li>
+<li><span class="math inline">\(\frac{\partial F}{\partial z} = 2z -x \neq 0 \Leftrightarrow z \neq \frac{x}{2}\)</span>.</li>
+</ol>
+<p>Así pues, la ecuación <span class="math inline">\(F(x,y,z)=0\)</span> define a <span class="math inline">\(z\)</span> como función implícita de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> siempre que <span class="math inline">\(z\neq \frac{x}{2}\)</span>.</p>
+<p>Calculamos ahora las derivadas parciales de <span class="math inline">\(z\)</span> con respecto a <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial z}{\partial x} &amp;= -\frac{\partial F/\partial x}{\partial F/\partial z} = -\frac{2x-y-z}{2z-x}\\
+\frac{\partial z}{\partial y} &amp;= -\frac{\partial F/\partial y}{\partial F/\partial z} = -\frac{2y-x}{2z-x}
+\end{align*}\]</span></p>
+<p>Igualando las derivadas parciales a 0 y resolviendo el sistema, obtenemos los puntos críticos</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial z}{\partial x} = 0 &amp;\Leftrightarrow 2x-y-z = 0\\
+\frac{\partial z}{\partial y} = 0 &amp;\Leftrightarrow 2y-x=0
+\end{align*}\]</span></p>
+<p>De la segunda ecuación se deduce que <span class="math inline">\(x = 2y\)</span> y sustituyendo en la primera obtenemos que <span class="math inline">\(z = 3y\)</span>. Imponiendo ahora que se cumpla la restricción llegamos a los mismos puntos críticos de antes, que además cumplen que <span class="math inline">\(z\neq \frac{x}{2}\)</span>.</p>
+<p>Para ver que se trata de extremos, necesitamos evaluar el hessiano en los puntos críticos, así que calculamos las derivadas parciales de segundo orden. Para ello, partimos de las primeras derivadas parciales (cambiamos la notación <span class="math inline">\(F_x = \frac{\partial F}{\partial x}\)</span> para que sea más manejable)</p>
+<p><span class="math display">\[\begin{align*}
+z_x = -\frac{F_x}{F_z}\Leftrightarrow F_x+F_zz_x = 0\\
+z_y = -\frac{F_y}{F_z}\Leftrightarrow F_y+F_zz_y = 0
+\end{align*}\]</span></p>
+<p>Derivando la primera ecuación con respecto a <span class="math inline">\(x\)</span> tenemos</p>
+<p><span class="math display">\[
+F_{xx}​+2F_{xz}z_x​+F_{zz}​z_x^2​+F_z​z_{xx}​=0,
+\]</span></p>
+<p>que en los puntos críticos, al ser <span class="math inline">\(z_x=0\)</span>, se transforma en</p>
+<p><span class="math display">\[
+F_{xx}​+F_z​z_{xx}​=0 \Leftrightarrow z_{xx} = -\frac{F_{xx}}{F_z}.
+\]</span></p>
+<p>Análogamente, derivando la segunda ecuación con respecto a <span class="math inline">\(y\)</span> tenemos</p>
+<p><span class="math display">\[
+F_{yy}​+2F_{yz}z_y​+F_{zz}​z_y^2​+F_z​z_{yy}​=0,
+\]</span></p>
+<p>que en los puntos críticos, al ser <span class="math inline">\(z_y=0\)</span>, se transforma en</p>
+<p><span class="math display">\[
+F_{yy}​+F_z​z_{yy}​=0 \Leftrightarrow z_{yy} = -\frac{F_{yy}}{F_z}.
+\]</span></p>
+<p>Y para las derivadas cruzadas, derivando la primera ecuación con respecto a <span class="math inline">\(y\)</span> se tiene</p>
+<p><span class="math display">\[
+F_{xy}​+F_{xz}z_y​+F_{zy}​z_x​+F_{zz}​z_x​z_y​+F_z​z_{xy}​=0,
+\]</span></p>
+<p>que en los puntos críticos, al ser <span class="math inline">\(z_x = z_y = 0\)</span>, se queda en</p>
+<p><span class="math display">\[
+F_{xy} + F_zz_{xy} = 0 \Leftrightarrow z_{xy} = -\frac{F_{xy}}{F_z}.
+\]</span></p>
+<p>Calculando ahora las segundas derivadas parciales de <span class="math inline">\(F\)</span> tenemos</p>
+<p><span class="math display">\[\begin{align*}
+F_{xx} &amp;= 2\\
+F_{xy} &amp;= -1\\
+F_{yy} &amp;= 2
+\end{align*}\]</span></p>
+<p>por lo que la matriz hessiana es</p>
+<p><span class="math display">\[
+\nabla^2 z = -\frac{1}{2z-x}
+\begin{pmatrix}
+2 &amp; -1 \\
+-1 &amp; 2
+\end{pmatrix},
+\]</span></p>
+<p>y el hessiano vale <span class="math inline">\(Hz = \frac{3}{(2z-x)^2} \geq 0\)</span>, por lo que los dos puntos críticos son extremos.</p>
+<p>Finalmente para ver si son máximos o mínimos evaluamos la segunda derivada parcial de <span class="math inline">\(F_xx\)</span> en los puntos críticos,</p>
+<p><span class="math display">\[
+F_{xx} = -\frac{2}{2\frac{3}{\sqrt{6}}-\frac{2}{\sqrt{6}}} = -\frac{\sqrt{6}}{2}&lt; 0,
+\]</span></p>
+<p>por lo que en <span class="math inline">\(\left(\frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}}, \frac{3}{\sqrt{6}}\right)\)</span> hay un máximo local.</p>
+<p><span class="math display">\[
+F_{xx} = -\frac{2}{2\frac{-3}{\sqrt{6}}-\frac{-2}{\sqrt{6}}} = \frac{\sqrt{6}}{2}&gt; 0,
+\]</span></p>
+<p>por lo que en <span class="math inline">\(\left(\frac{-2}{\sqrt{6}}, \frac{-1}{\sqrt{6}}, \frac{-3}{\sqrt{6}}\right)\)</span> hay un mínimo local.</p>
+</div>
+</div>
+</div>
+<div id="exr-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 4</strong></span> Calcular la masa del cono de ecuación <span class="math inline">\(z=2-\sqrt{x^2+y^2}\)</span> con <span class="math inline">\(z\geq 0\)</span> donde la densidad en cada punto es la distancia a plano <span class="math inline">\(XY\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>La masa del sólido en <span class="math inline">\(\mathbb{R}^3\)</span> viene dada por la integral</p>
+<p><span class="math display">\[
+\int_V \delta(x,y,z)\,dV,
+\]</span></p>
+<p>donde <span class="math inline">\(\delta(x,y,z)=z\)</span> es la densidad en cada punto (distancia al plano <span class="math inline">\(XY\)</span>), y <span class="math inline">\(V\)</span> es la región que define el cono. La proyección del cono sobre el plano <span class="math inline">\(XY\)</span> es la región y que puede expresarse fácilmente en coordenadas</p>
+<p><span class="math display">\[2-\sqrt{x^2+y^2} = 0
+\Leftrightarrow x^2+y^2 = 4,
+\]</span></p>
+<p>que es un círculo centrado en el origen de radio <span class="math inline">\(2\)</span>, por lo que la región de integración es <span class="math inline">\(V=\{(x,y,z)\in \mathbb{R}^3: -2\leq x\leq 2, -\sqrt{4-x^2}\leq y\leq \sqrt{4-x^2}, 0\leq z\leq 2-\sqrt{x^2+y^2}\}\)</span>, que haciendo el cambio a coordenadas cilíndricas puede expresarse de manera más sencilla como <span class="math inline">\(V=\{(r,\theta,z)\in \mathbb{R}\times\mathbb{R}^2: 0\leq r\leq 2, 0\leq \theta\leq 2\pi, 0\leq z\leq 2-r,\}\)</span>.</p>
+<p>Con el cambio a coordenadas cilíndricas, la integral para calcular la masa es</p>
+<p><span class="math display">\[\begin{align*}
+M &amp;= \int_0^{2\pi} \int_0^2 \int_0^{2-r} z r \, dz \, dr \, d\theta \\
+&amp;= \int_0^{2\pi} \int_0^2 r \cdot \frac{(2-r)^2}{2} \, dr \, d\theta \\
+&amp;= \frac{1}{2} \int_0^{2\pi}\int_0^2 r(2-r)^2 \, dr \\
+&amp;= \frac{1}{2} \int_0^{2\pi}\int_0^2 (4r - 4r^2 + r^3) \, dr \, d\theta\\
+&amp;= \frac{1}{2} \int_0^{2\pi}\left[ 2r^2 - \frac{4}{3}r^3 + \frac{1}{4}r^4 \right]_0^2 \, d\theta\\
+&amp;= \frac{1}{2} \int_0^{2\pi}\frac{4}{3}\, d\theta.
+= \frac{2}{3}[\theta]_0^{2\pi}
+= \frac{4\pi}{3}.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div id="exr-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 5</strong></span> Calcular el área de un muro definido por debajo de la intersección de dos superficies <span class="math inline">\(x-y^2=0\)</span> y <span class="math inline">\(z-y^3=0\)</span> con <span class="math inline">\(x\in [0,2]\)</span> e <span class="math inline">\(y\geq 0\)</span> en metros.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Despejando <span class="math inline">\(x\)</span> de la primera ecuación y <span class="math inline">\(z\)</span> de la segunda tenemos</p>
+<p><span class="math display">\[
+x-y^2=0 \quad\Leftrightarrow\quad x=y^2,
+\qquad
+z-y^3=0 \quad\Leftrightarrow\quad z=y^3.
+\]</span></p>
+<p>Como tanto <span class="math inline">\(x\)</span> como <span class="math inline">\(z\)</span> quedan en función de <span class="math inline">\(y\)</span>, es sencillo encontrar una parametrización de la trayectoria de su intersección haciendo <span class="math inline">\(y=t\)</span>,</p>
+<p><span class="math display">\[
+\mathbf{f}(t)=(t^2, t, t^3)\ t\in [0,\sqrt{2}].
+\]</span></p>
+<p>La proyección de esta trayectoria sobre el plano <span class="math inline">\(XY\)</span> es la trayectoria definida por la función vectorial <span class="math inline">\(\mathbf{r}(t) = (t^2, t)\)</span> con <span class="math inline">\(t\in [0,\sqrt{2}]\)</span>. Así pues, el área del muro vertical bajo la curva de la intersección de las dos superficies viene dada por la integral de curva</p>
+<p><span class="math display">\[\begin{align*}
+A
+&amp;= \int_0^{\sqrt{2}} y^3 |\mathbf{r}'(t)|\, dt \\
+&amp;= \int_0^{\sqrt{2}} t^3 |(2t,1)|\,dt \\
+&amp;= \int_0^{\sqrt{2}} t^3 \sqrt{4t^2+1}\,dt \\
+&amp;= \int_1^9 \frac{u-1}{32}\sqrt{u}\,du \tag{Cambio $u=4t^2+1$}\\
+&amp;= \frac{1}{32}\int_1^9 u^{3/2}-u^{1/2}\, du\\
+&amp;= \frac{1}{32} \left[\frac{u^{5/2}}{5/2}-\frac{u^{3/2}}{3/2}\right]_1^9\\
+&amp;= \frac{1}{32} \left(\frac{2}{5}(9^{5/2}-1^{5/2})-\frac{2}{3}(9^{3/2}-1^{3/2})\right)\\
+&amp;= \frac{1}{32}\left(\frac{2}{5}243-\frac{2}{3}27\right)
+= \frac{149}{60}
+\approx 2.4833 \mbox{ m}^2.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div id="exr-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 6</strong></span> Sea la función</p>
+<p><span class="math display">\[
+f(x,y) = \frac{2xe^{-y}}{(1+x^2)^2}
+\]</span></p>
+<p>con <span class="math inline">\(x,y\geq 0\)</span>.</p>
+<ol type="a">
+<li><p>Demostrar que <span class="math inline">\(f\)</span> es una función de densidad de probabilidad.</p></li>
+<li><p>Calcular la probabilidad acumulada en la región <span class="math inline">\(R=\{(x,y)\in \mathbb{R}^2: 0\leq y\leq 1, 0\leq x\leq \sqrt{\frac{1}{y}-1}\}\)</span>.</p></li>
+<li><p>Calcular la media de la distribución de probabilidad de <span class="math inline">\(f\)</span>.</p></li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Veamos primero que <span class="math inline">\(f\)</span> es no negativa para <span class="math inline">\(x,y\geq 0\)</span>. Como <span class="math inline">\(x \ge 0\)</span>, <span class="math inline">\(e^{-y} \ge 0\)</span> y <span class="math inline">\((1+x^2)^2 &gt; 0\)</span>, se cumple que <span class="math inline">\(f(x,y) \ge 0\)</span>.</p>
+<p>Veamos ahora que que el volumen total acumulado por debajo de la superficie de <span class="math inline">\(f\)</span> para <span class="math inline">\(x,y\geq 0\)</span> es 1.</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^\infty \int_0^\infty f(x,y)\,dx\,dy
+&amp;= \int_0^\infty \int_0^\infty \frac{2x e^{-y}}{(1+x^2)^2}\,dx\,dy \\
+&amp;= \int_0^\infty e^{-y}\,dy \int_0^\infty \frac{2x}{(1+x^2)^2} \,dx
+\end{align*}\]</span></p>
+<p>que es el producto de dos integrales en una variable. La primera integral es sencilla</p>
+<p><span class="math display">\[\int_0^\infty e^{-y}\,dy = [-e^{-y}]_0^\infty  = -e^{-\infty}+e^0 = 1.\]</span></p>
+<p>Para resolver la segunda integral hacemos el cambio de variable <span class="math inline">\(u = 1 + x^2\)</span>, <span class="math inline">\(du = 2x\,dx\)</span>, con lo que tenemos</p>
+<p><span class="math display">\[
+\int_0^\infty \frac{2x}{(1+x^2)^2}\,dx
+= \int_1^\infty u^{-2}\,du
+= \left[-\frac{1}{u}\right]_1^\infty
+= \frac{-1}{\infty} + \frac{1}{1}
+= 1.
+\]</span></p>
+<p>Por tanto, <span class="math inline">\(\int_0^\infty \int_0^\infty f(x,y)\,dx\,dy = 1 \cdot 1 = 1\)</span>, y <span class="math inline">\(f\)</span> es una función de densidad. de densidad.</p></li>
+<li><p>La probabilidad acumulada en la región <span class="math inline">\(R = \{(x,y): 0 \le y \le 1,\; 0 \le x \le \sqrt{\frac{1}{y} - 1}\}\)</span> viene dada por la integral</p>
+<p><span class="math display">\[\begin{align*}
+P(R) &amp;= \int_0^1 \int_0^{\sqrt{\frac{1}{y} - 1}}
+\frac{2x e^{-y}}{(1+x^2)^2}\,dx\,dy \\
+&amp;= \int_0^1\int_1^{1/y} e^{-y} u^{-2}\,du\,dy \tag{Cambio $u=1+x^2$}\\
+&amp;= \int_0^1 e^{-y} \left[\frac{-1}{u}\right]_1^{1/y}\,dy \\
+&amp;= \int_0^1 e^{-y}(-y+1)\,dy \\
+&amp;= \int_0^1 e^{-y} - ye^{-y}\,dy\\
+&amp;= \int_0^1 e^{-y}\,dy -\int_0^1 ye^{-y}\,dy \\
+&amp;= [-e^{-y}]_0^1 - \left[-e^{-y}(1+y)\right]_0^1 \tag{Partes}\\
+&amp;= 1-e^{-1}+2e^{-1}-1
+= e^{-1}
+\approx 0.3679.
+\end{align*}\]</span></p></li>
+<li><p>La media de una variable aleatoria bidimensional es el par <span class="math inline">\(E(X,Y)= (\mu_x,\mu_y)\)</span>, donde</p>
+<p><span class="math display">\[
+\mu_x = \iint_{D} x f(x,y)\,dx\,dy \quad \mbox{y} \quad
+\mu_y = \iint_{D} y f(x,y)\,dx\,dy.
+\]</span></p>
+<p>siendo <span class="math inline">\(D\)</span> el dominio de la función.</p>
+<p>Calculamos la primera componente,</p>
+<p><span class="math display">\[\begin{align*}
+\mu_x
+&amp;= \int_0^\infty \int_0^\infty x\frac{2x e^{-y}}{(1+x^2)^2} \,dx\,dy\\
+&amp;= 2\int_0^\infty e^{-y}\,dy \int_0^\infty \frac{x^2}{(1+x^2)^2}\,dx.
+\end{align*}\]</span></p>
+<p>La primera integral es inmediata</p>
+<p><span class="math display">\[
+\int_0^\infty e^{-y}\,dy
+= [-e^{-y}]_0^\infty
+= 1.
+\]</span></p>
+<p>Y la segunda es una integral racional. Descomponiendo en fracciones simples tenemos</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^\infty \frac{x^2}{(1+x^2)^2}\,dx
+&amp;= \int_0^\infty  \frac{1}{1+x^2} - \frac{1}{(1+x^2)^2}\,dx \\
+&amp;= \int_0^\infty \frac{1}{1+x^2}\,dx - \int_0^\infty\frac{1}{(1+x^2)^2}\,dx
+\end{align*}\]</span></p>
+<p>La primera integral es inmediata</p>
+<p><span class="math display">\[
+\int_0^\infty \frac{1}{1+x^2}\,dx
+= \left[\operatorname{arctg}(x)\right]_0^\infty = \pi/2.
+\]</span></p>
+<p>Y para resolver la segunda podemos hacer el cambio <span class="math inline">\(x=\operatorname{tg}(\theta)\)</span>, con lo que <span class="math inline">\(dx = \sec(\theta)^2d\theta\)</span> y queda</p>
+<p><span class="math display">\[\begin{align*}
+\int_0^\infty\frac{1}{(1+x^2)^2}\,dx
+&amp;= \int_0^{\pi/2} \frac{\sec(\theta)^2}{(1+\operatorname{tg}(\theta)^2)^2}\,d\theta \\
+&amp;= \int_0^{\pi/2} \frac{\sec(\theta)^2}{(\sec(\theta)^2)^2}\,d\theta \\
+&amp;= \int_0^{\pi/2} \frac{1}{\sec(\theta)^2}\,d\theta \\
+&amp;= \int_0^{\pi/2} \cos(\theta)^2\,d\theta \\
+&amp;= \int_0^{\pi/2} \frac{1 +\cos(2\theta)}{2}\,d\theta \\
+&amp;= \left[\frac{\theta}{2} + \frac{\sin(2\theta)}{4}\right]_0^{\pi/2}\\
+&amp;= (\frac{\pi}{4} - 0) + (0- 0)
+= \frac{\pi}{4}.
+\end{align*}\]</span></p>
+<p>Por tanto, la primera componente de la media es</p>
+<p><span class="math display">\[
+\mu_x = 2\cdot 1\cdot \left(\frac{\pi}{2}-\frac{\pi}{4}\right) = \frac{\pi}{2}.
+\]</span></p>
+<p>Calculamos ahora la segunda componente de la media</p>
+<p><span class="math display">\[\begin{align*}
+\mu_y
+&amp;= \int_0^\infty \int_0^\infty y\frac{2x e^{-y}}{(1+x^2)^2} \,dx\,dy\\
+&amp;= \int_0^\infty ye^{-y}\,dy \int_0^\infty \frac{2x}{(1+x^2)^2} \,dx
+\end{align*}\]</span></p>
+<p>La primera integral ya la hemos resuelto antes por partes en el segundo apartado y queda</p>
+<p><span class="math display">\[
+\int_0^\infty ye^{-y}\,dy
+= \left[-e^{-y}(1+y)\right]_0^\infty
+= 1,
+\]</span></p>
+<p>y la segunda integral también la hemos resuelto antes en el primer apartado y queda</p>
+<p><span class="math display">\[
+\int_0^\infty \frac{2x}{(1+x^2)^2} = 1,
+\]</span></p>
+<p>por lo que la segunda componente de la media es</p>
+<p><span class="math display">\[
+\mu_y = 1\cdot 1 = 1.
+\]</span></p>
+<p>Así pues, la media de la variable aleatoria es <span class="math inline">\(E[X,Y] = \left(\frac{\pi}{2}, 1\right)\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

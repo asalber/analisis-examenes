@@ -1,0 +1,524 @@
+---
+title: 2026-01-19 <br>Examen de Análisis III
+lang: es
+---
+
+:::{#exr-1}
+Encontrar los puntos en los que el plano tangente a la superficie de la función $x^3 -4xy + 2y^2 - 3y + 4z = 0$ es paralelo al plano $6x -4 y - 2z = 10$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Como el gradiente de una función $F(x,y,z)$ es normal a la superficie de nivel de esta $F(x,y,z)=0$ (ver [teorema](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-gradiente-normal-curvas-nivel)), también lo será al plano tangente en cada punto de la superficie. Por tanto, tenemos que buscar los puntos donde los gradientes de las funciones $F(x,y,z) = x^3 -4xy + 2y^2 - 3y + 4z$ y $G(x,y,z) = 6x -4 y - 2z - 10$ tienen la misma dirección, es decir, son proporcionales. Calculamos los gradientes:
+
+$$
+\begin{align*}
+\nabla F &= \left(3x^2 -4y, -4x + 4y-3, 4\right)\\
+\nabla G &= (6, -4, -2)
+\end{align*}
+$$
+
+Por tanto, imponiendo que $\nabla F = \lambda \nabla G$, tenemos que resolver el sistema de ecuaciones
+$$
+\begin{cases}
+3x^2 -4y &= 6\lambda \\
+-4x + 4y - 3 &= -4\lambda \\
+4 = -2\lambda
+\end{cases}
+$$
+
+De la última ecuación tenemos que $\lambda = -2$. Sustituyendo en las dos primeras ecuaciones, obtenemos el sistema
+
+$$
+\begin{cases}
+3x^2 -4y &= -12 \\
+-4x + 4y - 3 &= 8
+\end{cases}
+$$
+
+Despejando $y$ de la primera ecuación e igualando con la segunda, obtenemos la ecuación $3x^2-4x+1=0$, que tiene como soluciones $x=1$ y $x=\frac{1}{3}$. Sustituyendo estos valores en la ecuación de $y$, obtenemos  $y=\frac{15}{4}$ e $y =\frac{37}{12}$ respectivamente. Finalmente, sustituyendo en la ecuación de la superficie, para $x=1$ e $y=\frac{15}{4}$, tenemos
+
+$$
+1^3-4\cdot 1 \cdot \frac{15}{4} + 2 \left(\frac{15}{4}\right)^2 - 3 \frac{15}{4} + 4z = 0 \Leftrightarrow \frac{23}{8} + 4z = 0 \Leftrightarrow z = -\frac{23}{32}. 
+$$
+
+Y para $x=\frac{1}{3}$ e $y=\frac{37}{12}$, tenemos
+
+$$
+\left(\frac{1}{3}\right)^3 - 4 \cdot \frac{1}{3} \cdot \frac{37}{12} + 2 \left(\frac{37}{12}\right)^2 - 3 \cdot \frac{37}{12} + 4z = 0 \Leftrightarrow \frac{1229}{216} + 4z = 0 \Leftrightarrow z = -\frac{1229}{864}.
+$$
+
+Así pues hay dos puntos donde el plano tangente es paralelo al plano dado: $\left(1, \frac{15}{4}, -\frac{23}{32}\right)$ y $\left(\frac{1}{3}, \frac{37}{12}, -\frac{1229}{864}\right)$.
+:::
+
+:::{#exr-2}
+Dos satélites siguen órbitas dadas por las trayectorias de las funciones vectoriales $\mathbf{f}(t) = (2\cos(t), \operatorname{sen}(t), \operatorname{sen}(t))$ y $\mathbf{g}(t) = (\operatorname{sen}(t), 2\cos(t), \operatorname{sen}(t))$. 
+
+a.  ¿En qué instante del intervalo $[0,\pi]$ los satélites colisionarán?
+
+a.  Calcular el plano tangente a ambas trayectorias en el instante en que colisionan.
+
+a.  Calcular las componentes tangencial y normal de la aceleración del primer satélite en el instante de colisión.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Para que los dos satélites colisionen en un instante $t$ debe cumplirse que $\mathbf{f}(t) = \mathbf{g}(t)$, es decir, que se cumpla el sistema de ecuaciones
+
+    $$
+    \begin{cases}
+    2\cos(t) = \operatorname{sen}(t) \\
+    \operatorname{sen}(t) = 2\cos(t) \\
+    \operatorname{sen}(t) = \operatorname{sen}(t)
+    \end{cases}
+    $$
+
+    La última ecuación se cumple para cualquier valor de $t$, por lo que solo nos queda resolver las dos primeras, y de cualquiera de ellas se obtiene que 
+
+    $$
+    \frac{\operatorname{sen}(t)}{\cos(t)} = 2 \Leftrightarrow \operatorname{tan}(t) = 2 \Leftrightarrow t = \operatorname{arctg}(2).
+    $$
+
+a.  El vector tangente a la primera trayectoria es
+
+    $$
+    \mathbf{f}'(t) = (-2\operatorname{sen}(t), \cos(t), \cos(t)),
+    $$
+
+    que para $t=\operatorname{arctg}(2)$ toma el valor
+
+    $$
+    \mathbf{f}'(\operatorname{arctg}(2)) = \left(-\frac{4}{\sqrt{5}}, \frac{1}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right).
+    $$
+
+    y el vector tangente a la segunda trayectoria es
+
+    $$
+    \mathbf{g}'(t) = (\cos(t), -2\operatorname{sen}(t), \cos(t)).
+    $$, 
+
+    que para $t=\operatorname{arctg}(2)$ toma el valor
+    
+    $$
+    \mathbf{g}'(\operatorname{arctg}(2)) = \left(\frac{1}{\sqrt{5}}, -\frac{4}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right).   
+    $$
+    
+    El plano tangente a ambas trayectorias en el punto de colisión debe contener ambos vectores tangentes, por lo que será perpendicular a el producto vectorial de ambos:
+
+    $$
+    \mathbf{f}'(\operatorname{arctg}(2)) \times \mathbf{g}'(\operatorname{arctg}(2))
+    = \begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    -\frac{4}{\sqrt{5}} & \frac{1}{\sqrt{5}} & \frac{1}{\sqrt{5}} \\
+    \frac{1}{\sqrt{5}} & -\frac{4}{\sqrt{5}} & \frac{1}{\sqrt{5}}
+    \end{vmatrix}
+    = \left(\frac{5}{5}, \frac{5}{5}, \frac{15}{5}\right) = (1, 1, 3).
+    $$
+
+    Así pues, el plano tangente en el punto de colisión viene dado por la ecuación
+
+    $$
+    \begin{gathered}
+    \left((x, y, z) - \mathbf{f}(\operatorname{arctg}(2))\right) \cdot (1, 1, 3) = 0 \\
+    \Leftrightarrow \left(x - \frac{2}{\sqrt{5}}, y - \frac{2}{\sqrt{5}}, z - \frac{2}{\sqrt{5}}\right) \cdot (1, 1, 3) = 0 \\
+    \Leftrightarrow x + y + z = \frac{10}{\sqrt{5}}.
+    \end{gathered}
+    $$
+
+a.  La componente tangencial de la aceleración de $\mathbf{f}$ en el instante de la colisión es 
+
+    $$
+    a_{T} = \frac{\mathbf{f}'(\operatorname{arctg}(2)) \cdot \mathbf{f}''(\operatorname{arctg}(2))}{|\mathbf{f}'(\operatorname{arctg}(2))|}
+    $$
+
+    como $\mathbf{f}''(t) = (-2\cos(t), -\operatorname{sen}(t), -\operatorname{sen}(t))$, evaluando en $t=\operatorname{arctg}(2)$, obtenemos $\mathbf{f}''(\operatorname{arctg}(2)) = \left(-\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}\right)$, y por tanto, la componente tangencial vale
+
+    $$
+    a_{T} = \frac{\left(-\frac{4}{\sqrt{5}}, \frac{1}{\sqrt{5}}, \frac{1}{\sqrt{5}}\right) \cdot \left(-\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}, -\frac{2}{\sqrt{5}}\right)}{\sqrt{\left(-\frac{4}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2}} = \frac{4}{\sqrt{90}}.
+    $$
+
+    La componente normal, por otro lado, viene dada por
+
+    $$
+    a_{N} = \frac{|\mathbf{f}'(\operatorname{arctg}(2)) \times \mathbf{f}''(\operatorname{arctg}(2))|}{|\mathbf{f}'(\operatorname{arctg}(2))|}.
+    $$
+
+    Calculando el producto vectorial, tenemos
+
+    $$
+    \mathbf{f}'(\operatorname{arctg}(2)) \times \mathbf{f}''(\operatorname{arctg}(2))
+    = \begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    -\frac{4}{\sqrt{5}} & \frac{1}{\sqrt{5}} & \frac{1}{\sqrt{5}} \\
+    -\frac{2}{\sqrt{5}} & -\frac{2}{\sqrt{5}} & -\frac{2}{\sqrt{5}}
+    \end{vmatrix}
+    = \left(0, -2, 2\right).
+    $$
+
+    Por tanto, la componente normal vale
+
+    $$
+    a_{N} = \frac{|(0, -2, 2)|}{\sqrt{\left(-\frac{4}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2 + \left(\frac{1}{\sqrt{5}}\right)^2}} = \frac{2\sqrt{10}}{\sqrt{18}}.
+    $$
+:::
+
+:::{#exr-3}
+Encuentra los puntos de la superficie definida por la ecuación $x^2 + y^2 + z^2 - xy - xz - 1 = 0$ donde $z$ es máximo o mínimo. Resolver el problema utilizando multiplicadores de Lagrange y sin utilizarlos.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Se trata de buscar los extremos de la función $f(x,y,z)=z$ sujeto a la restricción $g(x,y,z)=x^2 + y^2 + z^2 - xy - xz - 1 = 0$. Aplicando el [método de los multiplicadores de Lagrange](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-multiplicadores-lagrange) los extremos deben ser los puntos donde se cumple la condición $\lambda \nabla f = \nabla g$. Se tiene que
+$$
+\nabla f = \left( 0, 0, 1 \right) \quad \text{y} \quad \nabla g = \left( 2x - y - z, 2y - x, 2z - x \right),
+$$
+
+por lo que hay que resolver el sistema
+
+$$
+\begin{cases}
+2x - y - z = \lambda\cdot 0 = 0\\
+2y - x = \lambda \cdot 0 = 0\\
+2z - x = \lambda\\
+x^2 + y^2 + z^2 - xy - xz - 1 = 0
+\end{cases}
+$$
+
+De la segunda ecuación tenemos $x = 2y$ y sustituyendo en la primera tenemos $2(2y) - y - z = 0 \Leftrightarrow z = 3y$. Sustituyendo ahora el la restricción tenemos
+
+$$
+\begin{gathered}
+(2y)2+y2+(3y)2−(2y)(y)−(2y)(3y)−1=0 \\
+\Leftrightarrow 4y^2+y^2+9y^2-2y^2-6y^2-1=0 \\
+\Leftrightarrow 6y^2 -1 = 0 
+\Leftrightarrow y^2 = \frac{1}{6}
+\Leftrightarrow y=\pm\frac{1}{\sqrt{6}},
+\end{gathered}
+$$
+
+de donde se deduce $y = \pm\frac{1}{\sqrt{6}}$, $x=2y = \pm\frac{2}{\sqrt{6}}$, $z=\pm 3y = \pm\frac{3}{\sqrt{6}}$. Esto nos da dos puntos críticos $\left(\frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}}, \frac{3}{\sqrt{6}}\right)$ y $\left(-\frac{2}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, -\frac{3}{\sqrt{6}}\right)$. Como la componente $z$ del primer punto es mayor que la del segundo, el primer punto es un punto de máximo local y el segundo de mínimo local.
+
+Para resolver el problema sin usar el método de los multiplicadores de Lagrange, consideramos $F(x,y,z) = x^2 + y^2 + z^2 -xy -xz -1$ y pensamos en $z$ como una función implícita de $x$ e $y$, es decir, $z=f(x,y)$. Veamos primero que se cumple el [teorema de la función implícita](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-funcion-implicita).
+
+a.  $F(x,y,z)=0$ se cumple puesto que es la restricción.
+a.  $\frac{\partial F}{\partial x} = 2x - y - z$, $\frac{\partial F}{\partial y} = 2y - x$ y $\frac{\partial F}{\partial z} = 2z - x$. Las tres derivadas parciales son continuas para cualesquiera valores de $x$, $y$ y $z$ ya que se trata de polinomios.
+a.  $\frac{\partial F}{\partial z} = 2z -x \neq 0 \Leftrightarrow z \neq \frac{x}{2}$.
+
+Así pues, la ecuación $F(x,y,z)=0$ define a $z$ como función implícita de $x$ e $y$ siempre que $z\neq \frac{x}{2}$.
+
+Calculamos ahora las derivadas parciales de $z$ con respecto a $x$ e $y$.
+
+\begin{align*}
+\frac{\partial z}{\partial x} &= -\frac{\partial F/\partial x}{\partial F/\partial z} = -\frac{2x-y-z}{2z-x}\\
+\frac{\partial z}{\partial y} &= -\frac{\partial F/\partial y}{\partial F/\partial z} = -\frac{2y-x}{2z-x}
+\end{align*}
+
+Igualando las derivadas parciales a 0 y resolviendo el sistema, obtenemos los puntos críticos
+
+\begin{align*}
+\frac{\partial z}{\partial x} = 0 &\Leftrightarrow 2x-y-z = 0\\
+\frac{\partial z}{\partial y} = 0 &\Leftrightarrow 2y-x=0
+\end{align*}
+
+De la segunda ecuación se deduce que $x = 2y$ y sustituyendo en la primera obtenemos que $z = 3y$. Imponiendo ahora que se cumpla la restricción llegamos a los mismos puntos críticos de antes, que además cumplen que $z\neq \frac{x}{2}$.
+
+Para ver que se trata de extremos, necesitamos evaluar el hessiano en los puntos críticos, así que calculamos las derivadas parciales de segundo orden. Para ello, partimos de las primeras derivadas parciales (cambiamos la notación $F_x = \frac{\partial F}{\partial x}$ para que sea más manejable)
+
+\begin{align*}
+z_x = -\frac{F_x}{F_z}\Leftrightarrow F_x+F_zz_x = 0\\
+z_y = -\frac{F_y}{F_z}\Leftrightarrow F_y+F_zz_y = 0
+\end{align*}
+
+Derivando la primera ecuación con respecto a $x$ tenemos
+
+$$
+F_{xx}​+2F_{xz}z_x​+F_{zz}​z_x^2​+F_z​z_{xx}​=0,
+$$
+
+que en los puntos críticos, al ser $z_x=0$, se transforma en 
+
+$$
+F_{xx}​+F_z​z_{xx}​=0 \Leftrightarrow z_{xx} = -\frac{F_{xx}}{F_z}.
+$$
+
+Análogamente, derivando la segunda ecuación con respecto a $y$ tenemos 
+
+$$
+F_{yy}​+2F_{yz}z_y​+F_{zz}​z_y^2​+F_z​z_{yy}​=0,
+$$
+
+que en los puntos críticos, al ser $z_y=0$, se transforma en 
+
+$$
+F_{yy}​+F_z​z_{yy}​=0 \Leftrightarrow z_{yy} = -\frac{F_{yy}}{F_z}.
+$$
+
+Y para las derivadas cruzadas, derivando la primera ecuación con respecto a $y$ se tiene
+
+$$
+F_{xy}​+F_{xz}z_y​+F_{zy}​z_x​+F_{zz}​z_x​z_y​+F_z​z_{xy}​=0,
+$$
+
+que en los puntos críticos, al ser $z_x = z_y = 0$, se queda en 
+
+$$
+F_{xy} + F_zz_{xy} = 0 \Leftrightarrow z_{xy} = -\frac{F_{xy}}{F_z}.
+$$
+
+Calculando ahora las segundas derivadas parciales de $F$ tenemos 
+
+\begin{align*}
+F_{xx} &= 2\\
+F_{xy} &= -1\\
+F_{yy} &= 2
+\end{align*}
+
+por lo que la matriz hessiana es
+
+$$
+\nabla^2 z = -\frac{1}{2z-x} 
+\begin{pmatrix}
+2 & -1 \\
+-1 & 2
+\end{pmatrix},
+$$
+
+y el hessiano vale $Hz = \frac{3}{(2z-x)^2} \geq 0$, por lo que los dos puntos críticos son extremos. 
+
+Finalmente para ver si son máximos o mínimos evaluamos la segunda derivada parcial de $F_xx$ en los puntos críticos, 
+
+$$
+F_{xx} = -\frac{2}{2\frac{3}{\sqrt{6}}-\frac{2}{\sqrt{6}}} = -\frac{\sqrt{6}}{2}< 0,
+$$
+
+por lo que en $\left(\frac{2}{\sqrt{6}}, \frac{1}{\sqrt{6}}, \frac{3}{\sqrt{6}}\right)$ hay un máximo local.
+
+$$
+F_{xx} = -\frac{2}{2\frac{-3}{\sqrt{6}}-\frac{-2}{\sqrt{6}}} = \frac{\sqrt{6}}{2}> 0,
+$$
+
+por lo que en $\left(\frac{-2}{\sqrt{6}}, \frac{-1}{\sqrt{6}}, \frac{-3}{\sqrt{6}}\right)$ hay un mínimo local.
+:::
+
+:::{#exr-4}
+Calcular la masa del cono de ecuación $z=2-\sqrt{x^2+y^2}$ con $z\geq 0$ donde la densidad en cada punto es la distancia a plano $XY$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+La masa del sólido en $\mathbb{R}^3$ viene dada por la integral
+
+$$
+\int_V \delta(x,y,z)\,dV,
+$$
+
+donde $\delta(x,y,z)=z$ es la densidad en cada punto (distancia al plano $XY$), y $V$ es la región que define el cono. La proyección del cono sobre el plano $XY$ es la región  y que puede expresarse fácilmente en coordenadas 
+
+$$2-\sqrt{x^2+y^2} = 0 
+\Leftrightarrow x^2+y^2 = 4,
+$$
+
+que es un círculo centrado en el origen de radio $2$, por lo que la región de integración es $V=\{(x,y,z)\in \mathbb{R}^3: -2\leq x\leq 2, -\sqrt{4-x^2}\leq y\leq \sqrt{4-x^2}, 0\leq z\leq 2-\sqrt{x^2+y^2}\}$, que haciendo el cambio a coordenadas cilíndricas puede expresarse de manera más sencilla como $V=\{(r,\theta,z)\in \mathbb{R}\times\mathbb{R}^2: 0\leq r\leq 2, 0\leq \theta\leq 2\pi, 0\leq z\leq 2-r,\}$. 
+
+Con el cambio a coordenadas cilíndricas, la integral para calcular la masa es
+
+\begin{align*}
+M &= \int_0^{2\pi} \int_0^2 \int_0^{2-r} z r \, dz \, dr \, d\theta \\
+&= \int_0^{2\pi} \int_0^2 r \cdot \frac{(2-r)^2}{2} \, dr \, d\theta \\
+&= \frac{1}{2} \int_0^{2\pi}\int_0^2 r(2-r)^2 \, dr \\
+&= \frac{1}{2} \int_0^{2\pi}\int_0^2 (4r - 4r^2 + r^3) \, dr \, d\theta\\
+&= \frac{1}{2} \int_0^{2\pi}\left[ 2r^2 - \frac{4}{3}r^3 + \frac{1}{4}r^4 \right]_0^2 \, d\theta\\
+&= \frac{1}{2} \int_0^{2\pi}\frac{4}{3}\, d\theta. 
+= \frac{2}{3}[\theta]_0^{2\pi} 
+= \frac{4\pi}{3}.
+\end{align*}
+:::
+
+:::{#exr-5}
+Calcular el área de un muro definido por debajo de la intersección de dos superficies $x-y^2=0$ y $z-y^3=0$ con $x\in [0,2]$ e $y\geq 0$ en metros.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Despejando $x$ de la primera ecuación y $z$ de la segunda tenemos 
+
+$$
+x-y^2=0 \quad\Leftrightarrow\quad x=y^2,
+\qquad
+z-y^3=0 \quad\Leftrightarrow\quad z=y^3.
+$$
+
+Como tanto $x$ como $z$ quedan en función de $y$, es sencillo encontrar una parametrización de la trayectoria de su intersección haciendo $y=t$,
+
+$$
+\mathbf{f}(t)=(t^2, t, t^3)\ t\in [0,\sqrt{2}].
+$$
+
+La proyección de esta trayectoria sobre el plano $XY$ es la trayectoria definida por la función vectorial $\mathbf{r}(t) = (t^2, t)$ con $t\in [0,\sqrt{2}]$. Así pues, el área del muro vertical bajo la curva de la intersección de las dos superficies viene dada por la integral de curva 
+
+\begin{align*}
+A 
+&= \int_0^{\sqrt{2}} y^3 |\mathbf{r}'(t)|\, dt \\
+&= \int_0^{\sqrt{2}} t^3 |(2t,1)|\,dt \\
+&= \int_0^{\sqrt{2}} t^3 \sqrt{4t^2+1}\,dt \\
+&= \int_1^9 \frac{u-1}{32}\sqrt{u}\,du \tag{Cambio $u=4t^2+1$}\\
+&= \frac{1}{32}\int_1^9 u^{3/2}-u^{1/2}\, du\\
+&= \frac{1}{32} \left[\frac{u^{5/2}}{5/2}-\frac{u^{3/2}}{3/2}\right]_1^9\\
+&= \frac{1}{32} \left(\frac{2}{5}(9^{5/2}-1^{5/2})-\frac{2}{3}(9^{3/2}-1^{3/2})\right)\\
+&= \frac{1}{32}\left(\frac{2}{5}243-\frac{2}{3}27\right)
+= \frac{149}{60}
+\approx 2.4833 \mbox{ m}^2.
+\end{align*}
+:::
+
+:::{#exr-6}
+Sea la función 
+
+$$
+f(x,y) = \frac{2xe^{-y}}{(1+x^2)^2}
+$$
+
+con $x,y\geq 0$. 
+
+a.  Demostrar que $f$ es una función de densidad de probabilidad.
+
+a.  Calcular la probabilidad acumulada en la región $R=\{(x,y)\in \mathbb{R}^2: 0\leq y\leq 1, 0\leq x\leq \sqrt{\frac{1}{y}-1}\}$.
+
+a.  Calcular la media de la distribución de probabilidad de $f$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Veamos primero que $f$ es no negativa para $x,y\geq 0$. Como $x \ge 0$, $e^{-y} \ge 0$ y $(1+x^2)^2 > 0$, se cumple que $f(x,y) \ge 0$.
+
+    Veamos ahora que que el volumen total acumulado por debajo de la superficie de $f$ para $x,y\geq 0$ es 1. 
+
+    \begin{align*}
+    \int_0^\infty \int_0^\infty f(x,y)\,dx\,dy
+    &= \int_0^\infty \int_0^\infty \frac{2x e^{-y}}{(1+x^2)^2}\,dx\,dy \\
+    &= \int_0^\infty e^{-y}\,dy \int_0^\infty \frac{2x}{(1+x^2)^2} \,dx 
+    \end{align*}
+
+    que es el producto de dos integrales en una variable. La primera integral es sencilla
+
+    $$\int_0^\infty e^{-y}\,dy = [-e^{-y}]_0^\infty  = -e^{-\infty}+e^0 = 1.$$
+
+    Para resolver la segunda integral hacemos el cambio de variable $u = 1 + x^2$, $du = 2x\,dx$, con lo que tenemos
+
+    $$
+    \int_0^\infty \frac{2x}{(1+x^2)^2}\,dx
+    = \int_1^\infty u^{-2}\,du
+    = \left[-\frac{1}{u}\right]_1^\infty 
+    = \frac{-1}{\infty} + \frac{1}{1}
+    = 1. 
+    $$
+
+    Por tanto, $\int_0^\infty \int_0^\infty f(x,y)\,dx\,dy = 1 \cdot 1 = 1$, y $f$ es una función de densidad. de densidad.
+
+a.  La probabilidad acumulada en la región $R = \{(x,y): 0 \le y \le 1,\; 0 \le x \le \sqrt{\frac{1}{y} - 1}\}$ viene dada por la integral 
+
+    \begin{align*}
+    P(R) &= \int_0^1 \int_0^{\sqrt{\frac{1}{y} - 1}}
+    \frac{2x e^{-y}}{(1+x^2)^2}\,dx\,dy \\
+    &= \int_0^1\int_1^{1/y} e^{-y} u^{-2}\,du\,dy \tag{Cambio $u=1+x^2$}\\
+    &= \int_0^1 e^{-y} \left[\frac{-1}{u}\right]_1^{1/y}\,dy \\
+    &= \int_0^1 e^{-y}(-y+1)\,dy \\
+    &= \int_0^1 e^{-y} - ye^{-y}\,dy\\
+    &= \int_0^1 e^{-y}\,dy -\int_0^1 ye^{-y}\,dy \\
+    &= [-e^{-y}]_0^1 - \left[-e^{-y}(1+y)\right]_0^1 \tag{Partes}\\
+    &= 1-e^{-1}+2e^{-1}-1
+    = e^{-1}
+    \approx 0.3679.
+    \end{align*}
+
+a.  La media de una variable aleatoria bidimensional es el par $E(X,Y)= (\mu_x,\mu_y)$, donde
+
+    $$
+    \mu_x = \iint_{D} x f(x,y)\,dx\,dy \quad \mbox{y} \quad 
+    \mu_y = \iint_{D} y f(x,y)\,dx\,dy.
+    $$
+
+    siendo $D$ el dominio de la función.
+
+    Calculamos la primera componente, 
+
+    \begin{align*}
+    \mu_x 
+    &= \int_0^\infty \int_0^\infty x\frac{2x e^{-y}}{(1+x^2)^2} \,dx\,dy\\
+    &= 2\int_0^\infty e^{-y}\,dy \int_0^\infty \frac{x^2}{(1+x^2)^2}\,dx.
+    \end{align*}
+
+    La primera integral es inmediata 
+
+    $$
+    \int_0^\infty e^{-y}\,dy
+    = [-e^{-y}]_0^\infty 
+    = 1.
+    $$
+
+    Y la segunda es una integral racional. Descomponiendo en fracciones simples tenemos
+
+    \begin{align*}
+    \int_0^\infty \frac{x^2}{(1+x^2)^2}\,dx
+    &= \int_0^\infty  \frac{1}{1+x^2} - \frac{1}{(1+x^2)^2}\,dx \\
+    &= \int_0^\infty \frac{1}{1+x^2}\,dx - \int_0^\infty\frac{1}{(1+x^2)^2}\,dx 
+    \end{align*}
+
+    La primera integral es inmediata
+
+    $$
+    \int_0^\infty \frac{1}{1+x^2}\,dx 
+    = \left[\operatorname{arctg}(x)\right]_0^\infty = \pi/2.
+    $$
+
+    Y para resolver la segunda podemos hacer el cambio $x=\operatorname{tg}(\theta)$, con lo que $dx = \sec(\theta)^2d\theta$ y queda
+
+    \begin{align*}
+    \int_0^\infty\frac{1}{(1+x^2)^2}\,dx 
+    &= \int_0^{\pi/2} \frac{\sec(\theta)^2}{(1+\operatorname{tg}(\theta)^2)^2}\,d\theta \\
+    &= \int_0^{\pi/2} \frac{\sec(\theta)^2}{(\sec(\theta)^2)^2}\,d\theta \\
+    &= \int_0^{\pi/2} \frac{1}{\sec(\theta)^2}\,d\theta \\
+    &= \int_0^{\pi/2} \cos(\theta)^2\,d\theta \\
+    &= \int_0^{\pi/2} \frac{1 +\cos(2\theta)}{2}\,d\theta \\
+    &= \left[\frac{\theta}{2} + \frac{\sin(2\theta)}{4}\right]_0^{\pi/2}\\
+    &= (\frac{\pi}{4} - 0) + (0- 0)
+    = \frac{\pi}{4}.
+    \end{align*}
+
+    Por tanto, la primera componente de la media es
+
+    $$
+    \mu_x = 2\cdot 1\cdot \left(\frac{\pi}{2}-\frac{\pi}{4}\right) = \frac{\pi}{2}. 
+    $$
+
+    Calculamos ahora la segunda componente de la media
+
+    \begin{align*}
+    \mu_y 
+    &= \int_0^\infty \int_0^\infty y\frac{2x e^{-y}}{(1+x^2)^2} \,dx\,dy\\
+    &= \int_0^\infty ye^{-y}\,dy \int_0^\infty \frac{2x}{(1+x^2)^2} \,dx
+    \end{align*}
+
+    La primera integral ya la hemos resuelto antes por partes en el segundo apartado y queda
+
+    $$
+    \int_0^\infty ye^{-y}\,dy 
+    = \left[-e^{-y}(1+y)\right]_0^\infty
+    = 1,
+    $$
+
+    y la segunda integral también la hemos resuelto antes en el primer apartado y queda 
+
+    $$
+    \int_0^\infty \frac{2x}{(1+x^2)^2} = 1,
+    $$
+
+    por lo que la segunda componente de la media es
+
+    $$
+    \mu_y = 1\cdot 1 = 1. 
+    $$
+
+    Así pues, la media de la variable aleatoria es $E[X,Y] = \left(\frac{\pi}{2}, 1\right)$.
+:::
+

@@ -1,0 +1,395 @@
+---
+title: 2026-02-05 <br>Examen de Análisis I
+lang: es
+---
+
+:::{#exr-1}
+El tipo de interés de una cuenta corriente cambia cada año según la sucesión $\left(\frac{n^2+n}{\sqrt{e^n}}\right)_{n=1}^\infty$. ¿A partir de qué término la sucesión es monótona? ¿Hacia dónde tiende el tipo de interés a largo plazo?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Calculamos los primeros términos 
+
+$$
+\begin{array}{lll}
+a_1 = \frac{1^2+1}{\sqrt{e^1}} \approx 1.2131 & & a_2 = \frac{2^2+2}{\sqrt{e^2}} \approx 2.2073 \\
+a_3 = \frac{3^2+3}{\sqrt{e^3}} \approx 2.6776 & & a_4 = \frac{4^2+4}{\sqrt{e^4}} \approx 2.7067 \\
+a_5 = \frac{5^2+5}{\sqrt{e^5}} \approx 2.4625 & & a_6 = \frac{6^2+6}{\sqrt{e^6}} \approx 2.09 \\
+\end{array}
+$$
+
+Parece que a partir del término 4 la sucesión decrece. Para ver que es monótona decreciente, tenemos que probar que $a_n>a_{n+1}$ para todo $n\geq 4$, lo que es equivalente a probar que el cociente entre el término $n+1$ y el $n$ es menor que 1.
+
+\begin{align*}
+\frac{a_{n+1}}{a_n} 
+&= \frac{\frac{(n+1)^2+(n+1)}{e^{(n+1)/2}}}{\frac{n^2+n}{e^{n/2}}} 
+= \frac{(n^2+2n+1+n+1)e^{n/2}}{(n^2+n)e^{(n+1)/2}} \\
+&= \frac{(n^2+3n+2)e^{n/2}}{(n^2+n)e^{1/2}e^{n/2}} 
+= \frac{1}{e^{1/2}}\frac{n^2+3n+2}{n^2+n}
+\end{align*}
+
+Si tomamos límites cuando $n\to\infty$ tenemos
+
+\begin{align*}
+\lim_{n\to\infty}\frac{a_{n+1}}{a_n} 
+&= \lim_{n\to\infty}\frac{1}{e^{1/2}}\frac{n^2+3n+2}{n^2+n} \\
+&= \frac{1}{e^{1/2}}\lim_{n\to\infty}\frac{n^2+3n+2}{n^2+n} \\
+&= \frac{1}{e^{1/2}}\lim_{n\to\infty}\frac{1+\frac{3}{n}+\frac{2}{n^2}}{1+\frac{1}{n}} \\
+&= \frac{1}{e^{1/2}} < 1,
+\end{align*}
+
+por lo que para $a_n>a_{n+1}$ para valores de $n$ suficientemente grandes. Además, por el criterio del cociente, podemos decir que $\lim_{n\to\infty}a_n = \lim_{n\to\infty} \frac{n^2+n}{\sqrt{e^n}} = 0$.
+:::
+
+:::{#exr-2}
+Dar ejemplos de conjuntos que cumplan lo siguiente y demostrarlo. En el caso de que no sea posible justificar porqué. Estudiar también su supremo, ínfimo, máximo y mínimo.
+
+a.  Un conjunto cerrado con exactamente un punto de acumulación.
+a.  Un conjunto acotado, ni abierto ni cerrado, con infinitos puntos de acumulación, que no sea un intervalo.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Como conjunto cerrado con un único punto de acumulación podríamos considerar $A = \{0\}\cup\left\{\frac{1}{n}:n\in \mathbb{N}\right\}$. Veamos que el único punto de acumulación es 0. En primer lugar 0 es punto de acumulación porque para cualquier $\varepsilon>0$ tomando $n>\frac{1}{\varepsilon}$ se tiene que $\frac{1}{n}<\varepsilon$, por lo que podemos encontrar puntos del conjunto más cercanos a 0 que $\varepsilon$. En segundo lugar, si consideramos cualquier otro punto $x<0$, el intervalo $(x,0)$ no contiene puntos de $A$ por lo que $x$ no puede ser punto de acumulación. Si consideramos $x>1$, el intervalo $(1,x)$ no contiene puntos de $A$, por lo que $x$ tampoco puede ser punto de acumulación. Finalmente, si consideramos cualquier $x\in (0,1]$ y tomamos el número $\frac{1}{n}$ con $n\in\mathbb{N}$ más próximo a $x$ que no coincida con $x$, el intervalo reducido $\left(x-\frac{1}{n},x+\frac{1}{n}\right)\setminus \{x\}$ no contiene ningún punto de $A$, por lo que $x$ tampoco puede ser punto de acumulación.
+
+    Por otro lado, $A$ es cerrado ya que contiene al 0, y por tanto, contiene a todos sus puntos de acumulación.
+
+    Su supremo es 1, que al pertenecer al conjunto es también máximo, y su ínfimo es 0, que al pertenecer al conjunto es también el mínimo.
+
+a.  Como conjunto acotado, ni abierto ni cerrado, con infinitos puntos de acumulación, que no sea un intervalo podemos considerar $B=(0,1)\cap \mathbb{Q}$. En primer lugar, está acotado ya que 0 es una cota inferior y 1 una superior. En segundo lugar, todos sus puntos son puntos frontera, por lo que no es ni abierto ni cerrado, y en tercer lugar, todos los números reales del intervalo $[0,1]$ son puntos de acumulación por la densidad de los racionales en los reales. 
+
+    Su supremo es 1, que es la menor de las cotas superiores, pero como no pertenece al conjunto no tiene máximo, y su ínfimo es 0, que es la mayor de las cotas inferiores, pero como no pertenece al conjunto tampoco tiene mínimo.
+:::
+
+
+:::{#exr-3}
+Calcular los siguientes límites indeterminados sin usar la regla de L'Hôpital.
+
+a.  $\displaystyle \lim_{x\to 0^+} x^{\operatorname{sen}(x)}$
+a.  $\displaystyle \lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2}$
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  $\lim_{x\to 0^+} x^{\operatorname{sen}(x)} = 0^0$, que es una indeterminación. Para resolverla, primero la convertimos en una de tipo cociente aplicando el logaritmo y su inversa, 
+
+    $$
+    \lim_{x\to 0^+} x^{\operatorname{sen}(x)}
+    = \lim_{x\to 0^+} e^{\ln(x^\operatorname{sen}(x))}
+    = e^{\lim_{x\to 0^+} \operatorname{sen}(x)\ln(x)}
+    $$
+
+    Este último límite es también una indeterminación de tipo producto. Para resolverla, utilizando infinitésimos equivalentes $\operatorname{sen}(x)\approx x$ cuando $x\to 0$, tenemos
+
+    \begin{align*}
+    \lim_{x\to 0^+} \operatorname{sen}(x)\ln(x) 
+    &= \lim_{x\to 0^+} x\ln(x) \\
+    &= \lim_{u\to \infty} \frac{1}{u}\ln\left(\frac{1}{u}\right) \tag{Cambio u = 1/x} \\
+    &= \lim_{u\to \infty} -\frac{\ln(u)}{u} = 0,
+    \end{align*}
+
+    ya que el logaritmo crece más lento que cualquier polinomio.
+
+    Por tanto, 
+
+    $$
+    \lim_{x\to 0^+} x^{\operatorname{sen}(x)} = e^0 = 1.
+    $$
+
+a.  $\lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2}=\frac{0}{0}$ que es otra indeterminación. Para resolverla primero multiplicamos y dividimos por el conjugado del numerador.
+
+    \begin{align*}
+    \lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2} 
+    &= \lim_{x\to 0} \frac{\sqrt{\cos(x)}-1}{x^2}\cdot \frac{\sqrt{\cos(x)}+1}{\sqrt{\cos(x)}+1}\\
+    &= \lim_{x\to 0} \frac{\cos(x)-1}{x^2(\sqrt{\cos(x)}+1)}
+    \end{align*}
+
+    Ahora podemos utilizar infinitésimos equivalentes $\cos(x) \approx 1-\frac{x^2}{2}$ cuando $x\to 0$, y tenemos 
+
+    \begin{align*}
+    \lim_{x\to 0} \frac{\cos(x)-1}{x^2(\sqrt{\cos(x)}+1)}
+    &= \lim_{x\to 0} \frac{1-\frac{x^2}{2}-1}{x^2(\sqrt{\cos(x)}+1)} \\
+    &= \lim_{x\to 0} \frac{-1}{2(\sqrt{\cos(x)}+1)}
+    = -\frac{1}{4}.
+    \end{align*}
+:::
+
+
+:::{#exr-4}
+Demostrar usando la definición de límite de una sucesión, que la sucesión $\left(\frac{n^2-1}{n^2+1}\right)_{n=1}^\infty$ converge a 1, mientras que la sucesión $\left(\cos(n\pi)\right)_{n=1}^\infty$ diverge.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Veamos primero que $\lim_{n \to \infty} \frac{n^2-1}{n^2+1} = 1$.
+
+Por definición, debemos probar que para todo $\varepsilon > 0$ existe $k \in \mathbb{N}$ tal que, si $n > k$, entonces
+$$
+\left|\frac{n^2-1}{n^2+1} - 1\right| < \varepsilon.
+$$
+
+Desarrollando el valor absoluto tenemos
+
+$$
+\left| \frac{n^2 - 1}{n^2 + 1} - 1 \right|
+= \left| \frac{n^2 - 1}{n^2 + 1} - \frac{n^2 + 1}{n^2 + 1} \right|
+= \left| \frac{-2}{n^2 + 1} \right|
+= \frac{2}{n^2 + 1}
+\leq \frac{2}{n^2}.
+$$
+
+Por tanto, basta imponer que
+$$
+\frac{2}{n^2} < \varepsilon,
+$$
+
+que es equivalente a
+
+$$
+n^2 > \frac{2}{\varepsilon}
+\Leftrightarrow n > \sqrt{\frac{2}{\varepsilon}}.
+$$
+
+Usando ahora la propiedad arquimediana, podemos encontrar entonces $k$ el primer número natural mayor o igual a $\sqrt{\frac{2}{\varepsilon}}$, con lo que si $n > k > \sqrt{\frac{2}{\varepsilon}}$ se cumple que $\left|\frac{n^2-1}{n^2+1} - 1\right| < \varepsilon$, lo que prueba que la sucesión converge a 1.
+
+Veamos ahora que la sucesión $\left(\cos(n\pi)\right)_{n=1}^\infty$ diverge. Como $n$ es un número natural, se tiene que esta sucesión es la misma que la sucesión $(-1)^n$, que es una sucesión alternada. 
+
+Para demostrar que no tiene límite, supongamos, por reducción al absurdo, que $(-1)^n$ converge a algún límite real $a$.  
+Entonces, por definición de límite, para $\varepsilon = \frac{1}{2}$ existe $k\in\mathbb{N}$ tal que si $n>k$ entonces
+
+$$
+|(-1)^n - a| < \frac{1}{2}.
+$$
+
+Si tomamos $n>k$ par, entonces $(-1)^n = 1$, luego
+$$
+|1 - a| < \frac{1}{2}
+\Leftrightarrow a\in(\frac{1}{2}, \frac{3}{2})$.
+$$
+
+Pero si tomamos $m>k$ impar, entonces $(-1)^m=-1$, luego
+$$
+|-1 - a| < \frac{1}{2}
+\Leftrightarrow a\in(-\frac{3}{2}, -\frac{1}{2}),
+$$
+
+lo cual es imposible porque dichos intervalos son disjuntos.
+
+Por tanto, nuestra suposición de que  la sucesión converge es falsa, y concluimos que la sucesión diverge.
+:::
+
+
+:::{#exr-5}
+Demostrar que la función $f(x)=\ln(x)$ es igual a su derivada en un único punto y calcular su valor aproximado con al menos 2 decimales.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Tenemos que resolver la ecuación $f(x) = f'(x)$, es decir, $\ln(x) = \frac{1}{x}$, que es equivalente a $\ln(x)-\frac{1}{x}= 0$. Si consideramos la función $g(x) = \ln(x)-\frac{1}{x}$, tenemos que $g$ está definida para $x>0$, y es continua y derivable en su dominio, que el logaritmo es una función continua en $x>0$ y $\frac{1}{x}$ también lo es al ser racional y solo anularse su denominador en $x=0$.  
+
+Por otro lado, $g(1) = \ln(1)-\frac{1}{1}=-1<0$ y $g(2) = \ln(2)-\frac{1}{2} \approx 0.693-0.5 = 0.193>0$. Por el [teorema de Bolzano](https://aprendeconalf.es/analisis-manual/06-limites.html#thm-bolzano), existe al menos un punto $c\in (1,2)$ tal que $g(c)=0$, es decir, $\ln(c) = \frac{1}{c}$. Aplicando el algoritmo de la bisección tenemos
+
+$$
+\begin{array}{lllll}
+x_1 = \frac{1+2}{2} = 1.5 & & g(1.5) \approx -0.262 < 0 & & c\in [1.5, 2] \\
+x_2 = \frac{1.5+2}{2} = 1.75 & & g(1.75) \approx -0.012 < 0 & & c\in [1.75, 2] \\
+x_3 = \frac{1.75+2}{2} = 1.875 & & g(1.875) \approx 0.096 > 0 & & c\in [1.75, 1.875] \\
+x_4 = \frac{1.75+1.875}{2} = 1.8125 & & g(1.8125) \approx 0.043 > 0 & & c\in [1.75, 1.8125] \\
+x_5 = \frac{1.75+1.8125}{2} = 1.78125 & & g(1.78125) \approx 0.016 > 0 & & c\in [1.75, 1.78125] \\
+x_6 = \frac{1.75+1.78125}{2} = 1.765625 & & g(1.765625) \approx 0.002 > 0 & & c\in [1.75, 1.765625] \\
+x_7 = \frac{1.75+1.765625}{2} = 1.7578125 & & g(1.7578125) \approx -0.006 < 0 & & c\in [1.7578125, 1.765625] \\
+x_8 = \frac{1.7578125+1.765625}{2} = 1.76171875 & & g(1.76171875) \approx -0.002 < 0 & & c\in [1.76171875, 1.765625] \\
+\end{array}
+$$
+
+Así pues $c\approx 1.76$ y no puede haber más raíces porque $g(x)>0$ $\forall x>0$ y es continua.
+:::
+
+
+:::{#exr-6}
+En un ecosistema en el que hay una especie _presa_, $p$, y otra _depredador_, $d$, la cantidad de individuos, en millones, de una y otra dependen del tiempo, en años, según las siguientes expresiones ($t\geq 0$):
+
+$$
+\begin{cases}
+p(t) = \frac{\ln (t  + 2)}{t + 2}  \\
+d(t) = te^{- 2t}
+\end{cases}
+$$
+
+a.  ¿En qué instante el número de presas será máximo? ¿Y mínimo?
+
+a.  ¿En qué instante el número de depredadores será máximo? ¿Y mínimo?
+
+a.  Calcular la tasa de variación del número de presas con respecto al número de depredadores en el instante $t=2$ e interpretarla.
+
+a.  En ese mismo instante, dar una aproximación lineal de la variación del número de presas si el número de depredadores disminuye en 10 mil individuos.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Para encontrar los extremos de $p(t)$, calculamos sus puntos críticos igualando su derivada a cero.
+
+    $$
+    p'(t) = \frac{\frac{1}{t+2}(t+2)-\ln(t+2)}{(t+2)^2} 
+    = \frac{1-\ln(t+2)}{(t+2)^2} 
+    = 0 
+    \Leftrightarrow \ln(t+2) = 1 
+    \Leftrightarrow t+2 = e 
+    \Leftrightarrow t = e-2.
+    $$
+
+    Para determinar si es un máximo o un mínimo, estudiamos el signo de $p'(t)$ a ambos lados de $t=e-2$. Para $t<e-2$, se tiene que $\ln(t+2)<1$, por lo que $p'(t)>0$, y para $t>e-2$, se tiene que $\ln(t+2)>1$, por lo que $p'(t)<0$. Por tanto, $p(t)$ es creciente antes de $t=e-2$ y decreciente después, lo que implica que el número de presas es máximo en $t=e-2$. Para ver si se trata de un máximo absoluto y para determinar el mínimo evaluamos la función en los extremos de su dominio, que es $[0,\infty)$. Se tiene que $p(0) = \frac{\ln(2)}{2} \approx 0.3466$, $p(e-2) = \frac{1}{e} \approx 0.3679$ y $\lim_{t\to\infty} p(t) = 0$, por lo que el número de presas es máximo en $t=e-2$ y mínimo en el límite cuando $t\to\infty$.
+
+a.  Igualmente, para encontrar los extremos de $d(t)$, calculamos sus puntos críticos igualando su derivada a cero.
+
+    $$
+    d'(t) = e^{-2t} + t(-2)e^{-2t} = e^{-2t}(1-2t) = 0 \Leftrightarrow 1-2t = 0 
+    \Leftrightarrow t = \frac{1}{2}.
+    $$
+
+    De nuevo, para determinar si es un máximo o un mínimo, estudiamos el signo de $d'(t)$ a ambos lados de $t=\frac{1}{2}$. Para $t<\frac{1}{2}$, se tiene que $1-2t>0$, por lo que $d'(t)>0$, y para $t>\frac{1}{2}$, se tiene que $1-2t<0$, por lo que $d'(t)<0$. Por tanto, $d(t)$ es creciente antes de $t=\frac{1}{2}$ y decreciente después, lo que implica que el número de depredadores es máximo en $t=\frac{1}{2}$. Para ver si se trata de un máximo absoluto y para determinar el mínimo evaluamos la función en los extremos de su dominio, que es $[0,\infty)$. Se tiene que $d(0) = 0$, $d(\frac{1}{2}) = \frac{1}{2}e^{-1} \approx 0.1839$ y $\lim_{t\to\infty} d(t) = 0$, por lo que el número de depredadores es máximo en $t=\frac{1}{2}$ y mínimo en $t=0$.
+
+a.  Para calcular la tasa de variación del número de presas con respecto al número de depredadores en el instante $t=2$, calculamos el cociente entre las derivadas de ambas funciones en dicho instante.
+
+    \begin{align*}
+    \frac{dp}{dd}(2) 
+    &= \frac{p'(2)}{d'(2)} 
+    = \frac{\frac{1-\ln(4)}{16}}{e^{-4}(1-4)} 
+    = \frac{e^4(1-\ln(4))}{-48} 
+    \approx 0.4394.
+    \end{align*}
+
+    Esto significa que en el instante $t=2$, por cada millón de depredadores más, el número de presas aumenta en aproximadamente 0.4394 millones.
+
+a.  Para dar una aproximación lineal de la variación del número de presas si el número de depredadores disminuye en 10 mil individuos, podemos utilizar el diferencial en el instante $t=2$.
+
+    $$ 
+    \frac{dp}{dd}(2) \approx 0.4394 
+    \Leftrightarrow dp \approx 0.4394 \cdot dd 
+    \Leftrightarrow dp \approx 0.4394 \cdot (-0.01)
+    = -0.0044,
+    $$
+
+    es decir, el número de presas disminuiría en aproximadamente 0.0044 millones, o lo que es lo mismo, en 4400 individuos.
+:::
+
+
+:::{#exr-7}
+Demostrar que para errores pequeños, el error relativo en la medición de una magnitud $M$ es aproximadamente el error absoluto en la medición de su logaritmo, es decir 
+
+$$
+\frac{\Delta M}{M} \approx \Delta \ln(M)
+$$
+
+Usando el resultado anterior, calcular el error relativo en la medición de la masa de una célula esférica si el error relativo en la medición del radio es del 1% y en la medición de la densidad es del 2%. ¿Qué variable contribuye más al error?
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+Si pensamos en el error absoluto como una variación de la magnitud $M$, es decir, $\Delta M = dM$, y en el error relativo como el cociente entre el error absoluto y la magnitud, es decir, $\frac{\Delta M}{M}, entonces, aplicando la regla de la cadena, tenemos
+
+$$
+\Delta \ln(M) = d\ln(M) = \frac{dM}{M} = \frac{\Delta M}{M}.
+$$
+
+Para calcular el error relativo en la medición de la masa de una célula esférica, primero tenemos que expresar la masa en función del radio y la densidad. La masa de una esfera se calcula como $M = \frac{4}{3}\pi r^3 \rho$, donde $r$ es el radio y $\rho$ es la densidad. Aplicando el resultado anterior, tenemos
+
+\begin{align*}
+\frac{\Delta M}{M} \approx \Delta \ln(M) 
+&= \Delta \ln\left(\frac{4}{3}\pi r^3 \rho\right)
+= \Delta \left(\ln\left(\frac{4}{3}\pi\right) + 3\ln(r) + \ln(\rho)\right) \\
+&= d \left(\ln\left(\frac{4}{3}\pi\right) + 3\ln(r) + \ln(\rho)\right)
+= d \ln\left(\frac{4}{3}\pi\right) + 3d\ln(r) + d\ln(\rho) \\
+&= 3\frac{dr}{r} + \frac{d\rho}{\rho} 
+= 3\cdot 0.01 + 0.02
+= 0.05,
+\end{align*}
+
+es decir, el error relativo en la medición de la masa es del 5%. En este caso, el error en la medición del radio contribuye más al error total que el error en la medición de la densidad, ya que el primero se multiplica por 3.
+:::
+
+
+:::{#exr-8}
+La tangente hiperbólica 
+
+$$
+\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$ 
+
+se utiliza a menudo como función de activación en las redes neuronales artificiales.
+
+a.  Calcular sus asíntotas.
+
+a.  Calcular su derivada y expresarla en función de ella misma.
+
+a.  Haciendo el cambio de variable $u=\tanh(x)$ en la expresión anterior, ¿cuál es la recurrencia que permite calcular la derivada $n+1$ en función de la derivada $n$.
+
+a.  Calcular el polinomio de Maclaurin de tercer grado y usarlo para dar el valor aproximado de $\tanh(0.1)$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  La tangente hiperbólica está definida en todo $\mathbb{R}$ ya que las funciones exponenciales están definidas en todo $\mathbb{R}$ y su denominador no se anula en ningún punto al ser las exponenciales positivas, por lo que no puede tener asíntotas verticales. Para calcular las asíntotas horizontales, calculamos los límites cuando $x\to\infty$ y $x\to -\infty$.
+
+    \begin{align*}
+    \lim_{x\to-\infty} \tanh(x)
+    &= \lim_{x\to-\infty} \frac{e^x - e^{-x}}{e^x + e^{-x}}
+    = \lim_{x\to-\infty} \frac{\frac{e^x - e^{-x}}{e^{-x}}}{\frac{e^x + e^{-x}}{e^{-x}}} 
+    = \lim_{x\to\infty} \frac{e^{2x}-1}{e^{2x}+1} 
+    = -1. \\
+    \lim_{x\to\infty} \tanh(x)
+    &= \lim_{x\to\infty} \frac{e^x - e^{-x}}{e^x + e^{-x}}
+    = \lim_{x\to\infty} \frac{\frac{e^x - e^{-x}}{e^x}}{\frac{e^x + e^{-x}}{e^x}} 
+    = \lim_{x\to\infty} \frac{1 - e^{-2x}}{1 + e^{-2x}} 
+    = 1.
+    \end{align*}
+
+    Por tanto existe una asíntota horizontal en $y=-1$ cuando $x\to-\infty$, y otra asíntota horizontal en $y=1$ cuando $x\to\infty$. 
+
+    Como hay asíntotas horizontales cuanto $x\to\pm\infty$, no hay asíntotas oblicuas.
+
+a.  Para calcular la derivada de $\tanh(x)$, aplicamos la regla del cociente.
+
+    \begin{align*}
+    \tanh'(x) 
+    &= \frac{(e^x + e^{-x})(e^x + e^{-x}) - (e^x - e^{-x})(e^x - e^{-x})}{(e^x + e^{-x})^2} \\
+    &= \frac{(e^x + e^{-x})^2 - (e^x - e^{-x})^2}{(e^x + e^{-x})^2} \\
+    &= 1- \left(\frac{e^x - e^{-x}}{e^x + e^{-x}}\right)^2 = 1 - \tanh^2(x)
+    \end{align*}
+
+a.  Haciendo el cambio de variable $u=\tanh(x)$, tenemos que $\tanh'(x) = 1-u^2$. Si calculamos las derivadas sucesivas tenemos
+
+    \begin{align*}
+    u' &= 1-u^2 \\
+    u'' &= -2uu' = -2u(1-u^2) \\
+    u''' &= -2u'u' - 2uu'' = -2(1-u^2)^2 + 4u^2(1-u^2) \\
+    &= -2(1-u^2)^2 + 4u^2(1-u^2) = -2(1-u^2)(1-3u^2) \\
+    u^{iv} &= -2(-2uu'(1-3u^2) + (1-u^2)(-6uu')) \\
+    &= 4u(1-u^2)(1-3u^2) + 12u(1-u^2)^2 
+    = 4u(1-u^2)(4-6u^2)\\
+    &\vdots\\
+    u^{(n+1} &= \frac{du^{(n}}{dx} = \frac{du^{(n}}{du}\cdot \frac{du}{dx} = \frac{du^{(n)}}{du}\cdot (1-u^2).    
+    \end{align*}
+
+a.  Para calcular el polinomio de Maclaurin de tercer grado, calculamos las primeras derivadas de $\tanh(x)$ en $x=0$.
+
+    \begin{align*}
+    \tanh(0) &= 0 \\
+    \tanh'(0) &= 1 - \tanh^2(0) = 1 \\
+    \tanh''(0) &= -2\tanh(0)(1-\tanh^2(0)) = 0 \\
+    \tanh'''(0) &= -2(1-\tanh^2(0))(1-3\tanh^2(0)) = -2
+    \end{align*}
+
+    Por tanto, el polinomio de Maclaurin de tercer grado es
+
+    $$
+    P^3(x) = 0 + 1\cdot x + \frac{0}{2!}x^2 + \frac{-2}{3!}x^3 = x - \frac{x^3}{3}.
+    $$
+
+    Finalmente, para dar el valor aproximado de $\tanh(0.1)$, evaluamos el polinomio en $x=0.1$.
+
+    $$
+    \tanh(0.1) \approx P^3(0.1) = 0.1 - \frac{(0.1)^3}{3} \approx 0.0997.
+    $$
+:::
