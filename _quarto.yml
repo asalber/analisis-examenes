@@ -2,6 +2,8 @@ project:
   type: book
   output-dir: "docs"
 
+engines: ['julia']
+
 website:
   favicon: "img/logos/favicon.ico"
   reader-mode: true
@@ -50,6 +52,7 @@ book:
     - examen-2025-11-12.qmd
     - examen-2025-12-18.qmd
     - examen-2026-01-13.qmd
+    - examen-2026-04-16.qmd
 
 format:
   html:

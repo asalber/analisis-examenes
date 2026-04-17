@@ -1,0 +1,64 @@
+\begin{tikzpicture}[scale=1.1]
+
+  % --- Curve definition (via \pgfplotsinvokeforeach or manual path) ---
+  % f(x) = x^(1/2) * 3 scaled, from x=1 to x=4
+  % We parametrize: a=1, b=4, f(a)=1.5, f(b)=4.5 (illustrative cubic-root-like curve)
+
+
+  % --- Axes ---
+  \draw[->, thick, -stealth, myblack] (-0.2, 0) -- (5.2, 0) node[right] {$x$};
+  \draw[->, thick, -stealth, myblack] (0, -0.2) -- (0, 5.5) node[above] {$y$};
+
+  % --- Tick marks and axis labels ---
+  \draw[myblack] (1, 2pt) -- (1, -2pt) node[below, myblack] {$a$};
+  \draw[myblack] (4, 2pt) -- (4, -2pt) node[below, myblack] {$b$};
+  \draw[myblack] (2pt, 1.5) -- (-2pt, 1.5) node[left, myblack] {$f(a)$};
+  \draw[myblack] (2pt, 4.5) -- (-2pt, 4.5) node[left, myblack] {$f(b)$};
+
+
+  % --- Filled area: integral of f(x) dx (blue, under the curve) ---
+  \fill[myblue!25]
+    (1, 0) -- (1, 1.5)
+    .. controls (2, 3) and (3.2, 1.8) .. (4, 4.5)
+    -- (4, 0) -- cycle;
+
+  % --- Filled area: integral of f^{-1}(y) dy (amber, left of the curve) ---
+  \fill[myred!25]
+    (0, 1.5) -- (1, 1.5)
+    .. controls (2, 3) and (3.2, 1.8) .. (4, 4.5)
+    -- (0, 4.5) -- cycle;
+
+  % --- Dashed guide lines ---
+  \draw[dashed, mygreen]
+    (0, 0) -- (1, 0) -- (1, 1.5) -- (0, 1.5) -- (0, 0);
+  \draw[dashed, mypurple]
+    (1, 0) -- (4, 0) -- (4, 4.5) -- (0, 4.5) -- (0, 1.5);
+ 
+
+  % --- The curve y = f(x) ---
+  \draw[myblue, thick]
+    (1, 1.5) .. controls (2, 3) and (3.2, 1.8) .. (4, 4.5)
+    node[above right, myblue] {$y = f(x)$};
+
+  % --- Area labels ---
+  \node[myblue] at (2.7, 1.5)
+    {$\displaystyle\int_a^b f(x)\,dx$};
+
+  \node[myred] at (1.35, 3.3)
+    [align=center]
+    {$\displaystyle\int_{f(a)}^{f(b)}$ $f^{-1}(y)\,dy$};
+
+    \node[mygreen] at (0.5, 0.7)
+    [align=center]
+    {$a\cdot f(a)$};
+
+
+  % --- Rectangle brace label ---
+    \node[mypurple] at (1.6, 5)
+    [align=center]
+    {$b\cdot f(b)$};
+    \node[mygreen] at (2.75, 5)
+    [align=center]
+    {$-\, a\cdot f(a)$};
+
+\end{tikzpicture}
