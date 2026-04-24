@@ -22,7 +22,7 @@ A &= \frac{1}{2} \int_0^{2\pi} r(\theta)^2 \, d\theta \\
 &= 32 \int_0^{2\pi} \left(\frac{1 - \cos(\theta)}{2}\right)^2 \, d\theta \\
 &= 8 \int_0^{2\pi} (1 - 2\cos(\theta) + \cos^2(\theta)) \, d\theta \\
 &= 8 \left( \int_0^{2\pi} 1 \, d\theta - 2\int_0^{2\pi} \cos(\theta) \,d\theta + \int_0^{2\pi} \cos^2(\theta) \, d\theta \right) \\
-&= 8 \left(\left[\theta\right]_0^{2\pi} - 2 \left[\sin(\theta)\right]_0^{2\pi} + \left[\frac{\theta}{2} + \frac{\sin(2\theta)}{4}\right]_0^{2\pi} \right) \\
+&= 8 \left(\left[\theta\right]_0^{2\pi} - 2 \left[\operatorname{sen}(\theta)\right]_0^{2\pi} + \left[\frac{\theta}{2} + \frac{\operatorname{sen}(2\theta)}{4}\right]_0^{2\pi} \right) \\
 &= 8 \left[ 2\pi - 0 + \pi \right] \\
 &= 24\pi \text{ m}^2.
 \end{align*}
@@ -47,8 +47,8 @@ A &= 2\pi \int_{-b}^b f(x) \sqrt{1 + (f'(x))^2} \, dx \\
 &= 2\pi a \int_{-b}^b \cosh\left(\frac{x}{a}\right)^2 \, dx \\
 &= 2\pi a \int_{-b}^b \frac{1 + \cosh\left(\frac{2x}{a}\right)}{2} \, dx \\
 &= \pi a \int_{-b}^b 1 \, dx + \pi a \int_{-b}^b \cosh\left(\frac{2x}{a}\right) \, dx \\
-&= \pi a \left[ x \right]_{-b}^b + \pi a \left[\frac{a}{2} \sinh\left(\frac{2x}{a}\right)\right]_{-b}^b \\
-&= 2\pi a b + \pi a^2 \sinh\left(\frac{2b}{a}\right).
+&= \pi a \left[ x \right]_{-b}^b + \pi a \left[\frac{a}{2} \operatorname{senh}\left(\frac{2x}{a}\right)\right]_{-b}^b \\
+&= 2\pi a b + \pi a^2 \operatorname{senh}\left(\frac{2b}{a}\right).
 \end{align*}
 :::
 
@@ -69,7 +69,7 @@ $$
 Sin embargo, la función $\operatorname{arccos}(x)$ no tiene una primitiva fácil, por lo que integraremos su inversa $f^{-1}(y) = \cos(y)$ sobre el intervalo $[f(1), f(0)] = [\operatorname{arccos}(1), \operatorname{arccos}(0)] = [0, \pi/2]$ del eje $y$,
 
 $$
-\int_0^{\pi/2} \cos(y) \, dy = \left[\sin(y)\right]_0^{\pi/2} = 1.
+\int_0^{\pi/2} \cos(y) \, dy = \left[\operatorname{sen}(y)\right]_0^{\pi/2} = 1.
 $$
 
 El momento con respecto al eje $x$ se calcula mediante la integral
@@ -77,7 +77,7 @@ El momento con respecto al eje $x$ se calcula mediante la integral
 \begin{align*}
 M_x &= \int_0^{\pi/2} y\cos(y) \, dy \\
 &= y\operatorname{sen}(y) - \int_0^{\pi/2} \operatorname{sen}(y) \, dy \tag{partes}\\ 
-&= \left(y\sin(y) + \cos(y)\right)_0^{\pi/2} \\
+&= \left(y\operatorname{sen}(y) + \cos(y)\right)_0^{\pi/2} \\
 &= \frac{\pi}{2} - 1
 \approx 0.5708.
 \end{align*}
@@ -87,7 +87,7 @@ Y el momento con respecto al eje $y$ se calcula mediante la integral
 \begin{align*}
 M_y &= \int_0^{\pi/2} \frac{\cos(y)^2}{2} \, dy \\
 &= \int_0^{\pi/2} \frac{1 + \cos(2y)}{4} \, dy \\
-&= \left(\frac{y}{4} + \frac{\sin(2y)}{8}\right)_0^{\pi/2} \\
+&= \left(\frac{y}{4} + \frac{\operatorname{sen}(2y)}{8}\right)_0^{\pi/2} \\
 &= \frac{\pi}{8}
 \approx 0.3927.
 \end{align*}

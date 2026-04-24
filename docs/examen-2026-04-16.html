@@ -547,7 +547,7 @@ A &amp;= \frac{1}{2} \int_0^{2\pi} r(\theta)^2 \, d\theta \\
 &amp;= 32 \int_0^{2\pi} \left(\frac{1 - \cos(\theta)}{2}\right)^2 \, d\theta \\
 &amp;= 8 \int_0^{2\pi} (1 - 2\cos(\theta) + \cos^2(\theta)) \, d\theta \\
 &amp;= 8 \left( \int_0^{2\pi} 1 \, d\theta - 2\int_0^{2\pi} \cos(\theta) \,d\theta + \int_0^{2\pi} \cos^2(\theta) \, d\theta \right) \\
-&amp;= 8 \left(\left[\theta\right]_0^{2\pi} - 2 \left[\sin(\theta)\right]_0^{2\pi} + \left[\frac{\theta}{2} + \frac{\sin(2\theta)}{4}\right]_0^{2\pi} \right) \\
+&amp;= 8 \left(\left[\theta\right]_0^{2\pi} - 2 \left[\operatorname{sen}(\theta)\right]_0^{2\pi} + \left[\frac{\theta}{2} + \frac{\operatorname{sen}(2\theta)}{4}\right]_0^{2\pi} \right) \\
 &amp;= 8 \left[ 2\pi - 0 + \pi \right] \\
 &amp;= 24\pi \text{ m}^2.
 \end{align*}\]</span></p>
@@ -584,8 +584,8 @@ A &amp;= 2\pi \int_{-b}^b f(x) \sqrt{1 + (f'(x))^2} \, dx \\
 &amp;= 2\pi a \int_{-b}^b \cosh\left(\frac{x}{a}\right)^2 \, dx \\
 &amp;= 2\pi a \int_{-b}^b \frac{1 + \cosh\left(\frac{2x}{a}\right)}{2} \, dx \\
 &amp;= \pi a \int_{-b}^b 1 \, dx + \pi a \int_{-b}^b \cosh\left(\frac{2x}{a}\right) \, dx \\
-&amp;= \pi a \left[ x \right]_{-b}^b + \pi a \left[\frac{a}{2} \sinh\left(\frac{2x}{a}\right)\right]_{-b}^b \\
-&amp;= 2\pi a b + \pi a^2 \sinh\left(\frac{2b}{a}\right).
+&amp;= \pi a \left[ x \right]_{-b}^b + \pi a \left[\frac{a}{2} \operatorname{senh}\left(\frac{2x}{a}\right)\right]_{-b}^b \\
+&amp;= 2\pi a b + \pi a^2 \operatorname{senh}\left(\frac{2b}{a}\right).
 \end{align*}\]</span></p>
 </div>
 </div>
@@ -612,13 +612,13 @@ A = \int_0^1 \operatorname{arccos}(x) \, dx.
 \]</span></p>
 <p>Sin embargo, la función <span class="math inline">\(\operatorname{arccos}(x)\)</span> no tiene una primitiva fácil, por lo que integraremos su inversa <span class="math inline">\(f^{-1}(y) = \cos(y)\)</span> sobre el intervalo <span class="math inline">\([f(1), f(0)] = [\operatorname{arccos}(1), \operatorname{arccos}(0)] = [0, \pi/2]\)</span> del eje <span class="math inline">\(y\)</span>,</p>
 <p><span class="math display">\[
-\int_0^{\pi/2} \cos(y) \, dy = \left[\sin(y)\right]_0^{\pi/2} = 1.
+\int_0^{\pi/2} \cos(y) \, dy = \left[\operatorname{sen}(y)\right]_0^{\pi/2} = 1.
 \]</span></p>
 <p>El momento con respecto al eje <span class="math inline">\(x\)</span> se calcula mediante la integral</p>
 <p><span class="math display">\[\begin{align*}
 M_x &amp;= \int_0^{\pi/2} y\cos(y) \, dy \\
 &amp;= y\operatorname{sen}(y) - \int_0^{\pi/2} \operatorname{sen}(y) \, dy \tag{partes}\\
-&amp;= \left(y\sin(y) + \cos(y)\right)_0^{\pi/2} \\
+&amp;= \left(y\operatorname{sen}(y) + \cos(y)\right)_0^{\pi/2} \\
 &amp;= \frac{\pi}{2} - 1
 \approx 0.5708.
 \end{align*}\]</span></p>
@@ -626,7 +626,7 @@ M_x &amp;= \int_0^{\pi/2} y\cos(y) \, dy \\
 <p><span class="math display">\[\begin{align*}
 M_y &amp;= \int_0^{\pi/2} \frac{\cos(y)^2}{2} \, dy \\
 &amp;= \int_0^{\pi/2} \frac{1 + \cos(2y)}{4} \, dy \\
-&amp;= \left(\frac{y}{4} + \frac{\sin(2y)}{8}\right)_0^{\pi/2} \\
+&amp;= \left(\frac{y}{4} + \frac{\operatorname{sen}(2y)}{8}\right)_0^{\pi/2} \\
 &amp;= \frac{\pi}{8}
 \approx 0.3927.
 \end{align*}\]</span></p>
