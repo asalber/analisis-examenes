@@ -1116,8 +1116,8 @@ Estudiar la convergencia de las siguientes series
 
   \begin{align*}
    \lim_{n\to\infty} \frac{\frac{3n^2+2n}{\sqrt{n^5+n}}}{\frac{3n^2}{n^{5/2}}} 
-   &= \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \frac{\sqrt{n^5+n}}{\sqrt{n^5}} 
-   = \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \lim_{n\to\infty}\frac{\sqrt{n^5+n}}{\sqrt{n^5}} = 1
+   &= \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \frac{\sqrt{n^5}}{\sqrt{n^5+n}} 
+   = \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \lim_{n\to\infty}\frac{\sqrt{n^5}}{\sqrt{n^5+n}} = 1
    \end{align*}
 
   Por tanto, la serie \(\sum \frac{3n^2+2n}{\sqrt{n^5+n}}\) tiene el
@@ -1436,7 +1436,9 @@ converge y su suma vale
 
 La distribución de Borel de parámetro \(\mu\geq 0\) es una distribución
 de probabilidad discreta con recorrido \(\mathbb{N}\) y función de
-probabilidad ñ \[
+probabilidad
+
+\[
 f(n) = \frac{(\mu n)^{n-1}}{e^{\mu n}n!}\ \forall n\in\mathbb{N}, 
 \]
 
@@ -1671,7 +1673,7 @@ Si la altura de cada una de estas secciones transversales es
 V_i = A_i\Delta y = \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ m$^3$}.
 \]
 
-A partir del volumen de casa sección transversal podemos calcular su
+A partir del volumen de cada sección transversal podemos calcular su
 masa multiplicando por la densidad de la piedra.
 
 \[
@@ -6101,7 +6103,7 @@ al rotarla alrededor del eje \(y\).
 \begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Solución}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
 
 Para calcular el volumen del sólido de revolución que se obtiene al
-rotar la espiral alrededor del eje \(x\) primero expresamos \(y\) en
+rotar la elipse alrededor del eje \(x\) primero expresamos \(y\) en
 función de \(x\)
 
 \[

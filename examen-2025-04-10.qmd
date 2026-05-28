@@ -81,7 +81,7 @@ alrededor del eje $x$. Calcular también el volumen del sólido generado al rota
 
 :::{.callout-tip collapse="true"}
 ## Solución
-Para calcular el volumen del sólido de revolución que se obtiene al rotar la espiral alrededor del eje $x$ primero expresamos $y$ en función de $x$
+Para calcular el volumen del sólido de revolución que se obtiene al rotar la elipse alrededor del eje $x$ primero expresamos $y$ en función de $x$
 
 $$
 (x-2)^2+\frac{y^2}{4} = 1 

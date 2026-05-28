@@ -76,8 +76,8 @@ $$
 :::
 
 :::{#exr-3}
-La distribución de Borel de parámetro $\mu\geq 0$ es una distribución de probabilidad discreta con recorrido $\mathbb{N}$ y función de probabilidad 
-ñ
+La distribución de Borel de parámetro $\mu\geq 0$ es una distribución de probabilidad discreta con recorrido $\mathbb{N}$ y función de probabilidad
+
 $$
 f(n) = \frac{(\mu n)^{n-1}}{e^{\mu n}n!}\ \forall n\in\mathbb{N}, 
 $$
@@ -247,7 +247,7 @@ $$
 V_i = A_i\Delta y = \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ m$^3$}.
 $$
 
-A partir del volumen de casa sección transversal podemos calcular su masa multiplicando por la densidad de la piedra.
+A partir del volumen de cada sección transversal podemos calcular su masa multiplicando por la densidad de la piedra.
 
 $$
 M_i = V_i\delta = 2500 \left(52900 -\frac{2300}{3}y +\frac{25}{9}y^2\right)\Delta y \mbox{ kg}.

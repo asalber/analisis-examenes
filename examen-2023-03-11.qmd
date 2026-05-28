@@ -18,8 +18,8 @@ a. Se trata de una serie de términos positivos en la que el término dominante 
 
     \begin{align*}
     \lim_{n\to\infty} \frac{\frac{3n^2+2n}{\sqrt{n^5+n}}}{\frac{3n^2}{n^{5/2}}} 
-    &= \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \frac{\sqrt{n^5+n}}{\sqrt{n^5}} 
-    = \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \lim_{n\to\infty}\frac{\sqrt{n^5+n}}{\sqrt{n^5}} = 1
+    &= \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \frac{\sqrt{n^5}}{\sqrt{n^5+n}} 
+    = \lim_{n\to\infty} \frac{3n^2+2n}{3n^2} \lim_{n\to\infty}\frac{\sqrt{n^5}}{\sqrt{n^5+n}} = 1
     \end{align*}
 
     Por tanto, la serie $\sum \frac{3n^2+2n}{\sqrt{n^5+n}}$ tiene el mismo comportamiento que la serie $\sum \frac{3n^2}{n^{5/2}}$, y como $\sum \frac{3n^2}{n^{5/2}} = 3\sum \frac{1}{n^{1/2}}$ es una serie $p$ con $p<1$, diverge, por lo que la serie $\sum \frac{3n^2+2n}{\sqrt{n^5+n}}$ también diverge.
