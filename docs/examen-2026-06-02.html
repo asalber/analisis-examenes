@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>22&nbsp; 2026-06-02  Examen de Análisis II – Exámenes de Análisis Matemático</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./examen-2026-04-16.html" rel="prev">
+<link href="./img/logos/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-cad2a2f8a56dfe71ee895a68e79c9b9a.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-70be5ccd51f03de5ce195d75fadf0882.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-aff03d72cfdd84f161d3ec7ecae87baa.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f0bfd1b8eae1b3a8cd75bd9e133cf217.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="22&nbsp; 2026-06-02 Examen de Análisis II – Exámenes de Análisis Matemático">
+<meta property="og:image" content="img/examen-2026-06-02/muro.png">
+<meta property="og:site_name" content="Exámenes de Análisis Matemático">
+<meta name="twitter:title" content="22&nbsp; 2026-06-02 Examen de Análisis II – Exámenes de Análisis Matemático">
+<meta name="twitter:image" content="img/examen-2026-06-02/muro.png">
+<meta name="twitter:site" content="@aprendeconalf">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./examen-2026-06-02.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">2026-06-02 <br>Examen de Análisis II</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./img/logos/aprendeconalf.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Exámenes de Análisis Matemático</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://aprendeconalf.es" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./examenes-analisis.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-11-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">2022-11-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2022-12-21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">2022-12-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-03-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">2023-03-11 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-06-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">2023-06-01 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-11-15.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">2023-11-15 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-11-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">2023-11-14 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2023-12-22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">2023-12-22 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-01-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">2024-01-11 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-04-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">2024-04-16 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-05-30.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">2024-05-30 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-11-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">2024-11-05 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-11-11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">2024-11-11 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2024-12-20.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">2024-12-20 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2025-01-14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">2025-01-14 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2025-04-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">2025-04-10 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2025-05-28.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">2025-05-28 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2025-11-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">2025-11-05 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2025-11-12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">2025-11-12 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2025-12-18.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">2025-12-18 <br>Examen de Análisis III</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2026-01-13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">2026-01-13 <br>Examen de Análisis I</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2026-04-16.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">2026-04-16 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./examen-2026-06-02.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">2026-06-02 <br>Examen de Análisis II</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">2026-06-02 <br>Examen de Análisis II</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2 de junio de 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="exr-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22.1</strong></span> Usar sumas de Riemann para calcular la integral de Riemann de la función <span class="math inline">\(f(x) = |2x^2-3x|\)</span> en el intervalo <span class="math inline">\([1, 3]\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Veamos primero si la función <span class="math inline">\(f(x) = |2x^2-3x|\)</span> cambia de signo en el intervalo <span class="math inline">\([1, 3]\)</span>. Para ello, encontramos los puntos donde <span class="math inline">\(2x^2 - 3x = 0\)</span>: <span class="math display">\[
+2x^2 - 3x = x(2x - 3) = 0 \Leftrightarrow x = 0 \text{ o } x = \frac{3}{2}.
+\]</span></p>
+<p>Podemos comprobar fácilmente que a la izquierda de <span class="math inline">\(x = \frac{3}{2}\)</span>, la función <span class="math inline">\(2x^2 - 3x\)</span> es negativa, y a la derecha de <span class="math inline">\(x = \frac{3}{2}\)</span> es positiva. Por lo tanto, la función <span class="math inline">\(f(x) = |2x^2-3x|\)</span> se puede escribir como la siguiente función a trozos</p>
+<p><span class="math display">\[
+f(x) = \begin{cases}
+- 2x^2 + 3x &amp; \text{si } 1 \leq x &lt; \frac{3}{2}, \\
+2x^2 - 3x &amp; \text{si } \frac{3}{2} \leq x \leq 3.
+\end{cases}
+\]</span></p>
+<p>Ahora, calculamos la integral de Riemann para cada trozo. En el intervalo <span class="math inline">\([1, \frac{3}{2}]\)</span>, la función es <span class="math inline">\(f(x) = - 2x^2 + 3x\)</span> que es decreciente, y tomando una partición <span class="math inline">\(P_1=\{x_i=1+i\frac{0.5}{n} : i=0,1,\ldots,n\}\)</span>, la suma inferior de Riemann es</p>
+<p><span class="math display">\[\begin{align*}
+s(f,P_1) &amp;= \sum_{i=1}^{n} f(x_i)\frac{0.5}{n}\\
+&amp;= \sum_{i=1}^{n} \left(- 2\left(1+i\frac{0.5}{n}\right)^2 + 3\left(1+i\frac{0.5}{n}\right)\right)\frac{0.5}{n}\\
+&amp;= \frac{0.5}{n} \sum_{i=1}^{n} \left(-2\left(1+\frac{i}{n}+\frac{0.25}{n^2}i^2\right)+3+\frac{1.5}{n}i\right)\\
+&amp;= \frac{0.5}{n} \sum_{i=1}^{n} \left(1 - \frac{0.5}{n}i - \frac{0.5}{n^2}i^2\right)\\
+&amp;= \frac{0.5}{n} \left(\sum_{i=1}^{n} 1 - \frac{0.5}{n}\sum_{i=1}^{n} i - \frac{0.5}{n^2}\sum_{i=1}^{n} i^2\right)\\
+&amp;= \frac{0.5}{n} \left(n - \frac{0.5}{n}\frac{n(n+1)}{2} - \frac{0.5}{n^2}\frac{n(n+1)(2n+1)}{6}\right)\\
+&amp;= \frac{0.5}{n} \left(n - 0.25 (n+1) - \frac{0.5}{6}\frac{(n+1)(2n+1)}{n}\right)\\
+&amp;= \frac{0.5}{n} \left(n - 0.25 n - 0.25 - \frac{0.5}{6}\frac{2n^2+3n+1}{n}\right)\\
+&amp;= \frac{0.5}{n} \frac{7n^2-6n-1}{12n}\\
+&amp;= \frac{7n^2-6n-1}{24n^2}.
+\end{align*}\]</span></p>
+<p>Y la integral inferior de Riemann es</p>
+<p><span class="math display">\[
+\underline{\int_1^{3/2}} f(x)  = \lim_{n \to \infty} s(f,P_1) = \lim_{n \to \infty} \frac{7n^2-6n-1}{24n^2} = \frac{7}{24} \approx
+0.2917.
+\]</span></p>
+<p>Del mismo modo, la suma superior de Riemann en el interval <span class="math inline">\([1, \frac{3}{2}]\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+S_1(f,P_1) &amp;= \sum_{i=0}^{n-1} f(x_i)\frac{0.5}{n}\\
+&amp;= \sum_{i=0}^{n-1} \left(- 2\left(1+i\frac{0.5}{n}\right)^2 + 3\left(1+i\frac{0.5}{n}\right)\right)\frac{0.5}{n}\\
+&amp;= \frac{0.5}{n} \sum_{i=0}^{n-1} \left(-2\left(1+\frac{i}{n}+\frac{0.25}{n^2}i^2\right)+3+\frac{1.5}{n}i\right)\\
+&amp;= \frac{0.5}{n} \sum_{i=0}^{n-1} \left(1 - \frac{0.5}{n}i - \frac{0.5}{n^2}i^2\right)\\
+&amp;= \frac{0.5}{n} \left(\sum_{i=0}^{n-1} 1 - \frac{0.5}{n}\sum_{i=0}^{n-1} i - \frac{0.5}{n^2}\sum_{i=0}^{n-1} i^2\right)\\
+&amp;= \frac{0.5}{n} \left(n - \frac{0.5}{n}\frac{(n-1)n}{2} - \frac{0.5}{n^2}\frac{(n-1)n(2n-1)}{6}\right)\\
+&amp;= \frac{0.5}{n} \left(n - 0.25 (n-1) - \frac{0.5}{6}\frac{(n-1)(2n-1)}{n}\right)\\
+&amp;= \frac{0.5}{n} \left(n - 0.25 n + 0.25 - \frac{0.5}{6}\frac{2n^2-3n+1}{n}\right)\\
+&amp;= \frac{0.5}{n} \frac{7n^2+6n-1}{24n}\\
+&amp;= \frac{7n^2+6n-1}{48n^2}.
+\end{align*}\]</span></p>
+<p>Y la integral superior de Riemann es</p>
+<p><span class="math display">\[
+\overline{\int_1^{3/2}} f(x)  = \lim_{n \to \infty} S_1(f,P_1) = \lim_{n \to \infty} \frac{7n^2+6n-1}{48n^2} = \frac{7}{24} \approx 0.2917.
+\]</span></p>
+<p>Por lo tanto, la integral de Riemann de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([1, \frac{3}{2}]\)</span> es <span class="math display">\[
+\int_1^{3/2} f(x) \approx 0.2917.
+\]</span></p>
+<p>En el intervalo <span class="math inline">\([\frac{3}{2}, 3]\)</span>, la función es <span class="math inline">\(f(x) = 2x^2 - 3x\)</span> que es creciente, y tomando una partición <span class="math inline">\(P_2=\{x_i=\frac{3}{2}+i\frac{1.5}{n} : i=0,1,\ldots,n\}\)</span>, la suma inferior de Riemann es</p>
+<p><span class="math display">\[\begin{align*}
+s(f,P_2) &amp;= \sum_{i=0}^{n-1} f(x_i)\frac{1.5}{n}\\
+&amp;= \sum_{i=0}^{n-1} \left(2\left(\frac{3}{2}+i\frac{1.5}{n}\right)^2 - 3\left(\frac{3}{2}+i\frac{1.5}{n}\right)\right)\frac{1.5}{n}\\
+&amp;= \frac{1.5}{n} \sum_{i=0}^{n-1} \left(2\left(\frac{9}{4}+\frac{4.5}{n}i+\frac{2.25}{n^2}i^2\right)-3\left(\frac{3}{2}+\frac{1.5}{n}i\right)\right)\\
+&amp;= \frac{1.5}{n} \sum_{i=0}^{n-1} \left(\frac{4.5}{n}i+\frac{4.5}{n^2}i^2\right)\\
+&amp;= \frac{1.5}{n} \left(\frac{4.5}{n}\sum_{i=0}^{n-1} i + \frac{4.5}{n^2}\sum_{i=0}^{n-1} i^2\right)\\
+&amp;= \frac{1.5}{n} \left(\frac{4.5}{n}\frac{(n-1)n}{2} + \frac{4.5}{n^2}\frac{(n-1)n(2n-1)}{6}\right)\\
+&amp;= \frac{1.5}{n} \left(2.25(n-1) + \frac{4.5}{6}\frac{(n-1)(2n-1)}{n}\right)\\
+&amp;= \frac{1.5}{n} \left(2.25n-2.25 + \frac{0.75(2n^2-3n+1)}{n}\right)\\
+&amp;= \frac{1.5}{n^2} \left(2.25n^2-2.25n + 1.5n^2-2.25n+0.75\right)\\
+&amp;= \frac{1.5(3.75n^2 - 4.5n + 0.75)}{n^2}\\
+&amp;= \frac{45n^2-54n+9}{8n^2}.
+\end{align*}\]</span></p>
+<p>Y la integral inferior de Riemann es</p>
+<p><span class="math display">\[
+\underline{\int_{3/2}^3} f(x)  = \lim_{n \to \infty} s(f,P_2) = \lim_{n \to \infty} \frac{45n^2-54n+9}{8n^2} = \frac{45}{8} = 5.625.
+\]</span></p>
+<p>Del mismo modo, la suma superior de Riemann en el intervalo <span class="math inline">\([\frac{3}{2}, 3]\)</span> es</p>
+<p><span class="math display">\[\begin{align*}
+S_2(f,P_2) &amp;= \sum_{i=1}^{n} f(x_i)\frac{1.5}{n}\\
+&amp;= \sum_{i=1}^{n} \left(2\left(\frac{3}{2}+i\frac{1.5}{n}\right)^2 - 3\left(\frac{3}{2}+i\frac{1.5}{n}\right)\right)\frac{1.5}{n}\\
+&amp;= \frac{1.5}{n} \sum_{i=1}^{n} \left(2\left(\frac{9}{4}+\frac{4.5}{n}i+\frac{2.25}{n^2}i^2\right)-3\left(\frac{3}{2}+\frac{1.5}{n}i\right)\right)\\
+&amp;= \frac{1.5}{n} \sum_{i=1}^{n} \left(\frac{4.5}{n}i+\frac{4.5}{n^2}i^2\right)\\
+&amp;= \frac{1.5}{n} \left(\frac{4.5}{n}\sum_{i=1}^{n} i + \frac{4.5}{n^2}\sum_{i=1}^{n} i^2\right)\\
+&amp;= \frac{1.5}{n} \left(\frac{4.5}{n}\frac{n(n+1)}{2} + \frac{4.5}{n^2}\frac{n(n+1)(2n+1)}{6}\right)\\
+&amp;= \frac{1.5}{n} \left(2.25(n+1) + \frac{4.5}{6}\frac{(n+1)(2n+1)}{n}\right)\\
+&amp;= \frac{1.5}{n} \left(2.25n+2.25 + \frac{0.75(2n^2+3n+1)}{n}\right)\\
+&amp;= \frac{1.5}{n^2} \left(2.25n^2+2.25n + 1.5n^2+2.25n+0.75\right)\\
+&amp;= \frac{1.5(3.75n^2 + 4.5n + 0.75)}{n^2}\\
+&amp;= \frac{45n^2+54n+9}{8n^2}.
+\end{align*}\]</span></p>
+<p>Y la integral superior de Riemann es</p>
+<p><span class="math display">\[
+\overline{\int_{3/2}^3} f(x)  = \lim_{n \to \infty} S_2(f,P_2) = \lim_{n \to \infty} \frac{45n^2+54n+9}{8n^2} = \frac{45}{8} = 5.625.
+\]</span></p>
+<p>Por lo tanto, la integral de Riemann de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([\frac{3}{2}, 3]\)</span> es <span class="math display">\[
+\int_{3/2}^3 f(x) = \frac{45}{8} = 5.625.
+\]</span></p>
+<p>Finalmente, la integral de Riemann de <span class="math inline">\(f\)</span> en el intervalo <span class="math inline">\([1, 3]\)</span> es la suma de las integrales en los dos intervalos <span class="math display">\[
+\int_1^3 f(x) = \int_1^{3/2} f(x) + \int_{3/2}^3 f(x) \approx 0.2917 + 5.625 = 5.9167.
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="exr-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22.2</strong></span> Un muro de hormigón tiene forma de espiral de Arquímedes definida por la curva polar <span class="math inline">\(r(\theta) = \theta/2\)</span> con unidades en metros.</p>
+<ol type="a">
+<li>¿Qué longitud tiene el muro desde <span class="math inline">\(\theta = \pi\)</span> hasta <span class="math inline">\(\theta = 2\pi\)</span>? Usar la fórmula de longitud de arco en coordenadas polares.</li>
+</ol>
+<p><span class="math display">\[
+L = \int_{\theta_1}^{\theta_2} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2} d\theta
+\]</span></p>
+<ol type="a">
+<li>Si el muro mide 1 metro de altura en <span class="math inline">\(\theta = \pi\)</span>, y su altura aumenta a razón de medio metro por cada metro de longitud, ¿cuál es el trabajo necesario para construir el muro teniendo en cuenta que el peso del hormigón es de 2400 kg/m<span class="math inline">\(^3\)</span> y la gravedad es de 9.81 m/s<span class="math inline">\(^2\)</span>? Asumir que el muro tiene un espesor constante de 0.5 metros.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Con <span class="math inline">\(r(\theta) = \theta/2\)</span> se tiene <span class="math inline">\(\frac{dr}{d\theta} = \frac{1}{2}\)</span>. Sustituyendo en la fórmula de longitud de arco:</p>
+<p><span class="math display">\[
+L = \int_{\pi}^{2\pi} \sqrt{\left(\frac{\theta}{2}\right)^2 + \left(\frac{1}{2}\right)^2}\, d\theta
+= \frac{1}{2}\int_{\pi}^{2\pi} \sqrt{\theta^2 + 1}\, d\theta.
+\]</span></p>
+<p>Para calcular <span class="math inline">\(\int \sqrt{\theta^2+1}\, d\theta\)</span> usamos la sustitución trigonométrica <span class="math inline">\(\theta = \tan(t)\)</span>, con <span class="math inline">\(d\theta = \sec^2(t)\, dt\)</span> y <span class="math inline">\(\sqrt{\theta^2+1} = \sec(t)\)</span>:</p>
+<p><span class="math display">\[
+\int \sqrt{\theta^2+1}\, d\theta = \int \sec(t)\cdot\sec^2(t)\, dt = \int \sec^3(t)\, dt.
+\]</span></p>
+<p>Resolvemos <span class="math inline">\(\int \sec^3(t)\, dt\)</span> por partes con <span class="math inline">\(u = \sec(t)\)</span> y <span class="math inline">\(dv = \sec^2(t)\, dt\)</span> (luego <span class="math inline">\(du = \sec(t)\tan(t)\, dt\)</span>, <span class="math inline">\(v = \tan(t)\)</span>):</p>
+<p><span class="math display">\[\begin{align*}
+\int \sec^3(t)\, dt &amp;= \sec(t)\tan(t) - \int \tan^2(t)\sec(t)\, dt \\
+&amp;= \sec(t)\tan(t) - \int (\sec^2(t)-1)\sec(t)\, dt \\
+&amp;= \sec(t)\tan(t) - \int \sec^3(t)\, dt + \int \sec(t)\, dt.
+\end{align*}\]</span></p>
+<p>Despejando,</p>
+<p><span class="math display">\[
+\begin{gathered}
+2\int \sec^3(t)\, dt  \sec(t)\tan(t) + \ln|\sec(t)+\tan(t)|, \\
+\Leftrightarrow
+\int \sec^3(t)\, dt = \frac{\sec(t)\tan(t)}{2} + \frac{1}{2}\ln|\sec(t)+\tan(t)| + C,
+\end{gathered}
+\]</span></p>
+<p>y deshaciendo la sustitución (<span class="math inline">\(\tan(t) = \theta\)</span>, <span class="math inline">\(\sec(t) = \sqrt{\theta^2+1}\)</span>)</p>
+<p><span class="math display">\[
+\int \sqrt{\theta^2+1}\, d\theta = \frac{\theta\sqrt{\theta^2+1}}{2} + \frac{1}{2}\ln\!\left(\theta+\sqrt{\theta^2+1}\right) + C.
+\]</span></p>
+<p>Por tanto,</p>
+<p><span class="math display">\[\begin{align*}
+L &amp;=
+\frac{1}{2}\left[\frac{\theta\sqrt{\theta^2+1}}{2} + \frac{1}{2}\ln\!\left(\theta + \sqrt{\theta^2+1}\right)\right]_{\pi}^{2\pi}\\
+&amp;= \frac{1}{4}\left[\theta\sqrt{\theta^2+1} + \ln\!\left(\theta + \sqrt{\theta^2+1}\right)\right]_{\pi}^{2\pi}\\
+&amp;= \frac{1}{4}\left[2\pi\sqrt{4\pi^2+1} + \ln\!\left(2\pi + \sqrt{4\pi^2+1}\right) - \pi\sqrt{\pi^2+1} - \ln\!\left(\pi + \sqrt{\pi^2+1}\right)\right]\\
+&amp;\approx 7.5732 \text{ m}.
+\end{align*}\]</span></p></li>
+<li><p>Sea <span class="math inline">\(x\)</span> la longitud de arco medida desde <span class="math inline">\(\theta = \pi\)</span>. Como la altura vale 1 m en <span class="math inline">\(\theta = \pi\)</span> (<span class="math inline">\(x=0\)</span>) y crece a razón de 0.5 m por metro de longitud, la altura en función del arco es</p>
+<p><span class="math display">\[
+h(x) = 1 + \frac{x}{2}.
+\]</span></p>
+<p>En la siguiente figura se muestra el muro con su forma de espiral de Arquímedes y su altura creciente.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/examen-2026-06-02/muro.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Muro de hormigón con forma de espiral de Arquímedes</figcaption>
+</figure>
+</div>
+<p>Si dibujamos el muro en linea recta, tendremos un trapecio de base <span class="math inline">\(L\)</span> y altura dada por <span class="math inline">\(h(x)\)</span> como se muestra en la siguiente figura.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/examen-2026-06-02/perfil-muro.svg" class="img-fluid figure-img" width="600"></p>
+<figcaption>Perfil del muro</figcaption>
+</figure>
+</div>
+<p>Si realizamos una partición del la base con subintervalos de anchura <span class="math inline">\(\Delta x\)</span>, y descomponemos el muro en rectángulos de base <span class="math inline">\(\Delta x\)</span> y altura <span class="math inline">\(h(x)\)</span>, podemos aproximar el trabajo necesario para construir el muro acumulando el trabajo necesario para construir cada uno de los rectángulos.</p>
+<p>A su vez, para calcular el trabajo necesario para construir cada rectángulo, podemos descomponerlo en capas horizontales de espesor <span class="math inline">\(\Delta y\)</span> y calcular el trabajo necesario para construir cada una de estas capas.</p>
+<p>El volumen de cada una de estas capas horizontales, suponiendo un grosor del muro de <span class="math inline">\(0.5\)</span> m es</p>
+<p><span class="math display">\[
+\Delta V =0.5\, \Delta x \, \Delta y, \text{ m}^3,
+\]</span></p>
+<p>por lo que su masa es</p>
+<p><span class="math display">\[
+\Delta m = \rho\, 0.5\, \Delta x\, \Delta y
+= 2400 \cdot 0.5\, \Delta x\, \Delta y
+= 1200\, \Delta x\, \Delta y \text{ kg},
+\]</span></p>
+<p>y el trabajo para elevarlo es</p>
+<p><span class="math display">\[
+\Delta W = 1200 g\cdot y \cdot \Delta x\, \Delta y
+= 11772 y\, \Delta x\, \Delta y.
+= \text{ J}.
+\]</span></p>
+<p>La suma de los trabajos para construir cada una de las capas horizontales es una suma de Riemann que aproxima el trabajo necesario para construir un rectángulo del muro, de manera que, tomando subintervalos de altura <span class="math inline">\(\Delta y\)</span> cada vez menor, en el límite, aparece la integral</p>
+<p><span class="math display">\[\begin{align*}
+W_x
+&amp;= \int_0^{h(x)} 11772\cdot y\cdot \Delta x\, dy
+= 11772 \Delta x \int_0^{h(x)} y\, dy \\
+&amp;= 11772 \Delta x \left[\frac{y^2}{2}\right]_0^{h(x)}
+= 11772 \Delta x \frac{h(x)^2}{2}
+= 5886\, (1+\frac{x}{2})^2 \Delta x \\
+&amp;= 5886\, \left(1 + x + \frac{x^2}{4}\right) \Delta x.
+\end{align*}\]</span></p>
+<p>De nuevo, la sumas de los trabajos para construir cada uno de los rectángulos del muro es una suma de Riemann que aproxima el trabajo necesario para construir el muro, de manera que, tomando subintervalos de longitud <span class="math inline">\(\Delta x\)</span> cada vez menor, en el límite, aparece la integral</p>
+<p><span class="math display">\[\begin{align*}
+W
+&amp;= \int_0^{7.5732} 5886 \left(1 + x + \frac{x^2}{4}\right)\, dx \\
+&amp;= 5886 \left[x + \frac{x^2}{2} + \frac{x^3}{12}\right]_0^{7.5732} \\
+&amp;= 5886 \left(7.5732 + \frac{(7.5732)^2}{2} + \frac{(7.5732)^3}{12}\right) \\
+&amp;\approx 426414.7 \mbox{ J}.
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-3" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22.3</strong></span> Calcular el área de la región limitada por las gráficas de las funciones <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos(x)^2\)</span> en el intervalo definido por los puntos donde se cortan las gráficas en el intervalo <span class="math inline">\([0, \pi]\)</span>. Calcular el volumen del sólido de revolución generado al rotar esta región alrededor de la recta <span class="math inline">\(x=\pi\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En primer lugar, determinamos los puntos de corte de las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en el intervalo <span class="math inline">\([0, \pi]\)</span>. Igualando <span class="math inline">\(\operatorname{sen}(x) = \cos^2(x)\)</span> y usando <span class="math inline">\(\cos^2(x) = 1 - \operatorname{sen}^2(x)\)</span></p>
+<p><span class="math display">\[\operatorname{sen}^2(x) + \operatorname{sen}(x) - 1 = 0 \implies \operatorname{sen}(x) = \frac{-1+\sqrt{5}}{2} \approx 0.618
+\]</span></p>
+<p>Podemos descartar la raíz negativa <span class="math inline">\(\frac{-1-\sqrt{5}}{2}\)</span> ya que no está entre -1 y 1, que es la imagen del seno, así pues tenemos</p>
+<p><span class="math display">\[
+\operatorname{sen}(x) = \frac{\sqrt{5}-1}{2}
+\Leftrightarrow a = \arcsin\!\left(\frac{\sqrt{5}-1}{2}\right) \approx 0.6662,
+\]</span></p>
+<p>pero en el intervalo <span class="math inline">\([0, \pi]\)</span> hay dos soluciones simétricas respecto a <span class="math inline">\(\pi/2\)</span> porque <span class="math inline">\(\operatorname{sen}(\pi-x) = \operatorname{sen} x\)</span> y <span class="math inline">\(\cos^2(\pi-x) = \cos^2 x\)</span>, por lo que la otra solución es <span class="math inline">\(b = \pi - 0.6662 = 2.4754\)</span>. Por tanto, la región limitada por las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en el intervalo <span class="math inline">\([0, \pi]\)</span> es la región limitada por las gráficas de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span> en el intervalo <span class="math inline">\([0.6662, 2.4754]\)</span>, tal y como se puede apreciar en la siguiente figura.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/examen-2026-06-02/region-sen-cos-cuadrado.svg" class="img-fluid figure-img" width="600"></p>
+<figcaption>Región limitada por las gráficas de <span class="math inline">\(f(x)=\operatorname{sen}(x)\)</span> y <span class="math inline">\(g(x)=\cos^2(x)\)</span> en <span class="math inline">\([0, \pi]\)</span>.</figcaption>
+</figure>
+</div>
+<p>Calculamos primero el área de la región.</p>
+<p><span class="math display">\[\begin{align*}
+A
+&amp;= \int_a^b \operatorname{sen}(x) - \cos(x)^2\,dx
+= \int_{0.6662}^{2.4754} \operatorname{sen}(x)- \frac{1+\cos(2x)}{2} \,dx \\
+&amp;= \left[-\cos x - \frac{x}{2} - \frac{\operatorname{sen}(2x)}{4}\right]_{0.6662}^{2.4754} \\
+&amp;= \left[-\cos(2.4754) - \frac{2.4754}{2} - \frac{\operatorname{sen}(2\cdot 2.4754)}{4}\right] - \left[-\cos(0.6662) - \frac{0.6662}{2} - \frac{\operatorname{sen}(2\cdot 0.6662)}{4}\right] \\
+&amp;\approx 1.1536.
+\end{align*}\]</span></p>
+<p>Ahora calcularmos el volumen del sólido de revolución generado al rotar esta región alrededor de la recta <span class="math inline">\(x=\pi\)</span>. Para ello, podemos usar el método de los envolotorios cilíndricos, tomando como radio la distancia desde el eje de revolución <span class="math inline">\(x=\pi\)</span> hasta un punto <span class="math inline">\(x\)</span> de la región, es decir, <span class="math inline">\(r = \pi - x\)</span>, y como altura la diferencia entre las funciones <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>, es decir, <span class="math inline">\(\operatorname{sen}(x) - \cos(x)^2\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+V
+&amp;= 2\pi \int_a^b 2\pi (\pi - x)(\operatorname{sen}(x) - \cos(x)^2\,dx \\
+&amp;= 2\pi\left(\int_{0.6662}^{2.4754} (\pi - x)\operatorname{sen}(x) - \int_{0.6662}^{2.4754} (\pi - x)\cos^2(x)\,dx \right).
+\end{align*}\]</span></p>
+<p>Resolvemos la primera integral por partes.</p>
+<p><span class="math display">\[\begin{align*}
+I_1
+&amp;= \int_{0.6662}^{2.4754} (\pi - x)\operatorname{sen}(x) \,dx  \\
+&amp;= \left[-(\pi - x)\cos(x)\right]_{0.6662}^{2.4754} + \int_{0.6662}^{2.4754} \cos(x)\, dx \\
+&amp;= \left[-(\pi - 2.4754)\cos(2.4754)\right] - \left[-(\pi - 0.6662)\cos(0.6662)\right] + \left[\operatorname{sen}(x)\right]_{0.6662}^{2.4754} \\
+&amp;\approx 2.4698
+\end{align*}\]</span></p>
+<p>Resolvemos la segunda integral también por partes.</p>
+<p><span class="math display">\[\begin{align*}
+I_2
+&amp;= \int_{0.6662}^{2.4754} (\pi - x)\cos^2(x)\,dx \\
+&amp;= \int_{0.6662}^{2.4754} (\pi - x)\frac{1+\cos(2x)}{2}\,dx \\
+&amp;= \frac{1}{2}\int_{0.6662}^{2.4754} (\pi - x)\,dx + \frac{1}{2}\int_{0.6662}^{2.4754} (\pi - x)\cos(2x)\,dx \\
+&amp;= \frac{1}{2}\left[\pi x - \frac{x^2}{2}\right]_{0.6662}^{2.4754} + \frac{1}{2}\left[\frac{\pi x}{2} - \frac{x^2}{4} + \frac{(\pi-x)\sin(2x)}{4} - \frac{\cos(2x)}{8}\right]_{0.6662}^{2.4754} \\
+&amp;\approx 0.6578
+\end{align*}\]</span></p>
+<p>Por tanto, el volumen del sólido de revolución generado al rotar la región alrededor de la recta <span class="math inline">\(x=\pi\)</span> es</p>
+<p><span class="math display">\[
+V = 2\pi (I_1 - I_2) \approx 2\pi (2.4698 - 0.6578) \approx 11.3857
+\]</span></p>
+<p>Podríamos haber calculado el volumen más rápidamente usando el teorema de Pappus, ya que la región es simétrica con respecto a <span class="math inline">\(x=\pi/2\)</span> porque <span class="math inline">\(\operatorname{sen}(\pi-x) = \operatorname{sen} x\)</span> y <span class="math inline">\(\cos^2(\pi-x) = \cos^2 x\)</span>. Por tanto, la componente <span class="math inline">\(x\)</span> del centroide es <span class="math inline">\(\bar{x} = \pi/2\)</span>, y la distancia al eje es <span class="math inline">\(\pi - \pi/2 = \pi/2\)</span>, de manera que el volumen del sólido de revolución es el área de la región multiplicada por la distancia recorrida por el centroide, es decir,</p>
+<p><span class="math display">\[
+V
+= 2\pi \cdot \frac{\pi}{2} \cdot A
+= \pi^2 A
+= \pi^2 \cdot 1.1536
+\approx 11.3856.
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="exr-4" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22.4</strong></span> El copo de nieve invertido de Koch es un fractal que se construye a partir de un triángulo equilátero. En cada iteración, se divide cada lado del triángulo en tres partes iguales y se reemplaza la parte central por dos segmentos orientados hacia el interior del triángulo que forman un ángulo de 60 grados con el segmento original. El proceso se repite infinitamente para cada nuevo segmento generado. En la siguiente figura se muestran las 4 primeras iteraciones del proceso.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/examen-2026-06-02/copo-nieve-inverso.svg" class="img-fluid figure-img" width="600"></p>
+<figcaption>Proceso de construcción del copo de nieve invertido de Koch</figcaption>
+</figure>
+</div>
+<p>Calcular el perímetro y el área de este fractal suponiendo que el lado inicial es <span class="math inline">\(l\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Veamos cómo evoluciona el número de lados y la longitud de los lados</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+\hline
+\mbox{Etapa} &amp; \mbox{Número de lados} &amp; \mbox{Longitud de cada lado} \\
+0 &amp; 3 &amp; l \\
+1 &amp; 3\cdot 4 &amp; \frac{l}{3} \\
+2 &amp; 3\cdot 4^2 &amp; \frac{l}{3^2} \\
+3 &amp; 3\cdot 4^3 &amp; \frac{l}{3^3} \\
+\vdots &amp; \vdots &amp; \vdots \\
+n &amp; 3 \cdot 4^n &amp; \frac{l}{3^n} \\
+\hline
+\end{array}
+\]</span></p>
+<p>Por tanto el perímetro del copo de nieve en la etapa <span class="math inline">\(n\)</span> es</p>
+<p><span class="math display">\[
+3 \cdot 4^n \cdot \frac{l}{3^n}
+=3l \left(\frac{4}{3}\right)^n,
+\]</span></p>
+<p>y tomando el límite cuando <span class="math inline">\(n\)</span> tiende a infinito, el perímetro del copo de nieve es</p>
+<p><span class="math display">\[
+\lim_{n \to \infty} 3l \left(\frac{4}{3}\right)^n = \infty.
+\]</span></p>
+<p>Ahora veamos cómo evoluciona el área del copo de nieve. El área del triángulo inicial es <span class="math inline">\(\frac{\sqrt{3}}{4}l^2\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+\hline
+\mbox{Etapa} &amp; \mbox{Número triángulos} &amp; \mbox{Área triángulo} \\
+1 &amp; 3 &amp; \frac{\sqrt{3}}{4} \left(\frac{l}{3}\right)^2 \\
+2 &amp; 3\cdot 4 &amp; \frac{\sqrt{3}}{4} \left(\frac{l}{3^2}\right)^2 \\
+3 &amp; 3\cdot 4^2 &amp; \frac{\sqrt{3}}{4} \left(\frac{l}{3^3}\right)^2 \\
+\vdots &amp; \vdots &amp; \vdots \\
+n &amp; 3 \cdot 4^{n-1} &amp; \frac{\sqrt{3}}{4} \left(\frac{l}{3^n}\right)^2 \\
+\hline
+\end{array}
+\]</span></p>
+<p>Por tanto, el área que se quita en la etapa <span class="math inline">\(n\)</span> es</p>
+<p><span class="math display">\[
+3 \cdot 4^{n-1} \cdot \frac{\sqrt{3}}{4} \left(\frac{l}{3^n}\right)^2
+= 3 \cdot 4^{n-1} \cdot \frac{\sqrt{3}}{4} \cdot \frac{l^2}{9^n}
+= \frac{3\sqrt{3}}{4}l^2 \frac{4^{n-1}}{9^n}
+= \frac{\sqrt{3}}{12}l^2 \left(\frac{4}{9}\right)^{n-1},
+\]</span></p>
+<p>y el área total quitada viene dada por la serie</p>
+<p><span class="math display">\[
+\sum_{n=1}^\infty \frac{\sqrt{3}}{12}l^2 \left(\frac{4}{9}\right)^{n-1}
+= \frac{\sqrt{3}}{12}l^2 \sum_{n=0}^\infty  \left(\frac{4}{9}\right)^{n}.
+\]</span></p>
+<p>Se trata de una serie geométrica con razón <span class="math inline">\(r = \frac{4}{9}&lt;1\)</span>, por lo que converge y su suma es <span class="math display">\[
+\frac{\sqrt{3}}{12}l^2 \cdot \frac{1}{1-\frac{4}{9}}    
+= \frac{\sqrt{3}}{12}l^2 \cdot \frac{9}{5}
+= \frac{3\sqrt{3}}{20}l^2.
+\]</span></p>
+<p>Así pues, el área del copo de nieve es el área del triángulo inicial menos el área total quitada, es decir,</p>
+<p><span class="math display">\[
+\frac{\sqrt{3}}{4}l^2 - \frac{3\sqrt{3}}{20}l^2
+= \frac{5\sqrt{3}}{20}l^2 - \frac{3\sqrt{3}}{20}l^2
+= \frac{\sqrt{3}}{10}l^2.
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="exr-5" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22.5</strong></span> Estudiar la convergencia de las siguientes series y calcular su suma en caso de que converjan:</p>
+<ol type="a">
+<li><span class="math inline">\(\displaystyle\sum_{n=1}^\infty \frac{n!3^n}{n^n}\)</span>.</li>
+<li><span class="math inline">\(\displaystyle\sum_{n=2}^\infty \ln\left(1-\frac{1}{n^2}\right)\)</span>.</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Estudiamos la convergencia de las serie por el criterio del cociente,</p>
+<p><span class="math display">\[\begin{align*}
+\lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+&amp;=\lim_{n\to\infty} \frac{\frac{(n+1)!\cdot 3^{n+1}}{(n+1)^{n+1}}}{\frac{n!\cdot 3^n}{n^n}}
+= \lim_{n\to\infty} \frac{(n+1)!\cdot 3^{n+1}}{(n+1)^{n+1}}\cdot\frac{n^n}{n!\cdot 3^n} \\
+&amp;= \lim_{n\to\infty} \frac{3(n+1)n^n}{(n+1)^{n+1}}
+= \lim_{n\to\infty} \frac{3n^n}{(n+1)^n} \\
+&amp;= \lim_{n\to\infty} 3\left(\frac{n}{n+1}\right)^n
+= \lim_{n\to\infty} 3\left(\frac{1}{1+\frac{1}{n}}\right)^n
+= \frac{3}{e} &gt; 1,
+\end{align*}\]</span></p>
+<p>por lo que la serie diverge.</p></li>
+<li><p>Podemos reescribir el término general de la serie como</p>
+<p><span class="math display">\[\begin{align*}
+\ln\left(1-\frac{1}{n^2}\right)
+&amp;= \ln\left(\frac{n^2-1}{n^2}\right)
+= \ln\left(\frac{(n-1)(n+1)}{n^2}\right) \\
+&amp;= \ln\left(\frac{n-1}{n}\right) + \ln\left(\frac{n+1}{n}\right) \\
+&amp;= \ln(n-1) - \ln(n) + \ln(n+1) - \ln(n).
+\end{align*}\]</span></p>
+<p>Tomando <span class="math inline">\(b_n = \ln(n) - \ln(n-1)\)</span>, podemos reescribir el término general de la serie como</p>
+<p><span class="math display">\[
+a_n
+= (\ln(n+1) - \ln(n)) - (\ln(n) - \ln(n-1))
+= b_{n+1} - b_n,
+\]</span></p>
+<p>por lo que se trata de una serie telescópica, que converge si el límite de <span class="math inline">\(b_n\)</span> cuando <span class="math inline">\(n\to \infty\)</span> existe, y como</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} b_n = \lim_{n\to\infty} \ln(n) - \ln(n-1) = \lim_{n\to\infty} \ln\left(\frac{n}{n-1}\right) = \ln(1) = 0,
+\]</span></p>
+<p>podemos concluir que la serie converge, y además su suma es</p>
+<p><span class="math display">\[
+b_2 - \lim_{n\to\infty} b_n
+= \ln(2)- \ln(1) - 0
+= \ln(2).
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exr-6" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22.6</strong></span> Calcular el dominio de convergencia puntual de la serie de potencias</p>
+<p><span class="math display">\[
+\sum _{n=1}^{\infty} \frac{(x-1)^n}{n2^n}
+\]</span></p>
+<p>Calcular su derivada y determinar también su dominio de convergencia puntual.</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Calculamos primero su radio de convergencia por el criterio del cociente,</p>
+<p><span class="math display">\[\begin{align*}
+R
+&amp;= \lim_{n\to\infty} \left|\frac{a_n}{a_{n+1}}\right|
+= \lim_{n\to\infty} \frac{\frac{1}{n \cdot 2^n}}{\frac{1}{(n+1) \cdot 2^{n+1}}}
+= \lim_{n\to\infty} \frac{(n+1) \cdot 2^{n+1}}{n \cdot 2^n} \\
+&amp;= \lim_{n\to\infty} \frac{n+1}{n} \cdot 2
+= 2.
+\end{align*}\]</span></p>
+<p>Por tanto, la serie converge absolutamente para <span class="math inline">\(|x-1| &lt; 2\)</span>, es decir, <span class="math inline">\(x \in (-1, 3)\)</span>.</p>
+<p>Estudiamos ahora la convergencia puntual en los extremos del intervalo. Para <span class="math inline">\(x=-1\)</span> tenemos</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty} \frac{(-2)^n}{n \cdot 2^n}
+= \sum_{n=1}^{\infty} \frac{(-1)^n}{n}
+\]</span> que converge al ser la serie armónica alternada.</p>
+<p>Y para <span class="math inline">\(x=3\)</span> tenemos</p>
+<p><span class="math display">\[
+\sum_{n=1}^{\infty} \frac{2^n}{n \cdot 2^n}
+= \sum_{n=1}^{\infty} \frac{1}{n}
+\]</span></p>
+<p>que diverge al ser la serie armónica.</p>
+<p>Por tanto, el dominio de convergencia puntual de la serie es <span class="math inline">\([-1, 3)\)</span>.</p>
+<p>Calculamos ahora su derivada</p>
+<p><span class="math display">\[\begin{align*}
+\frac{d}{dx}\left(\sum _{n=1}^{\infty} \frac{(x-1)^n}{n2^n}\right)
+&amp;= \sum_{n=1}^{\infty} \frac{n(x-1)^{n-1}}{n2^n}
+= \sum_{n=1}^{\infty} \frac{(x-1)^{n-1}}{2^n} \\
+&amp;= \frac{1}{2}\sum_{n=0}^{\infty} \frac{(x-1)^n}{2^n}
+\end{align*}\]</span></p>
+<p>Calculamos ahora su radio de convergencia por el criterio del cociente,</p>
+<p><span class="math display">\[\begin{align*}
+R = \lim_{n\to\infty} \left|\frac{a_n}{a_{n+1}}\right|
+&amp;= \lim_{n\to\infty} \frac{\frac{1}{2^n}}{\frac{1}{2^{n+1}}}
+= \lim_{n\to\infty} 2
+= 2.
+\end{align*}\]</span></p>
+<p>Así que también converge absolutamente para <span class="math inline">\(|x-1| &lt; 2\)</span>, es decir, <span class="math inline">\(x \in (-1, 3)\)</span>.</p>
+<p>Estudiamos ahora la convergencia puntual en los extremos del intervalo. Para <span class="math inline">\(x=-1\)</span> tenemos</p>
+<p><span class="math display">\[
+\frac{1}{2}\sum_{n=0}^{\infty} \frac{(-2)^n}{2^n}
+= \frac{1}{2}\sum_{n=0}^{\infty} (-1)^n
+\]</span></p>
+<p>que diverge.</p>
+<p>Y para <span class="math inline">\(x=3\)</span> tenemos</p>
+<p><span class="math display">\[
+\frac{1}{2}\sum_{n=0}^{\infty} \frac{2^n}{2^n}
+= \frac{1}{2}\sum_{n=0}^{\infty} 1,
+\]</span></p>
+<p>que también diverge.</p>
+<p>Por tanto, el dominio de convergencia puntual de la derivada de la serie es <span class="math inline">\((-1, 3)\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="exr-7" class="theorem exercise">
+<p><span class="theorem-title"><strong>Ejercicio 22.7</strong></span> La distribución Gamma<span class="math inline">\((\alpha, \lambda)\)</span> con parámetros <span class="math inline">\(\alpha&gt;0\)</span> y <span class="math inline">\(\lambda&gt;0\)</span> se utiliza para modelar el tiempo hasta que ocurren <span class="math inline">\(\alpha\)</span> eventos en un proceso de Poisson de media <span class="math inline">\(\lambda\)</span>. Su función de densidad de probabilidad es: <span class="math display">\[
+f(x) = \frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1}e^{-\lambda x}, \quad x &gt; 0,\]</span> siendo <span class="math inline">\(\Gamma(\alpha) = \int_0^{\infty} t^{\alpha - 1} e^{-t} dt\)</span> la función Gamma.</p>
+<ol type="a">
+<li>Demostrar que <span class="math inline">\(\Gamma(\alpha + 1) = \alpha \Gamma(\alpha)\)</span>.</li>
+<li>Utilizando la propiedad del apartado anterior, calcular la media y la varianza de la distribución Gamma<span class="math inline">\((\alpha, \lambda)\)</span>.</li>
+<li>Un máquina de fabricación de componentes electrónicos tiene una tasa de fabricación de componentes defectuosos de <span class="math inline">\(\lambda=1/10\)</span> por hora. La máquina se revisa cada vez que se producen <span class="math inline">\(\alpha=2\)</span> componentes defectuosos. ¿Cuál es la probabilidad de que la máquina se revise antes de 20 horas?</li>
+</ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Solución
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Para demostrar que <span class="math inline">\(\Gamma(\alpha + 1) = \alpha \Gamma(\alpha)\)</span>, realizamos la siguiente integración por partes, tomando <span class="math inline">\(u = t^{\alpha}\)</span> y <span class="math inline">\(dv = e^{-t} dt\)</span> (luego <span class="math inline">\(du = \alpha t^{\alpha - 1} dt\)</span>, <span class="math inline">\(v = -e^{-t}\)</span>):</p>
+<p><span class="math display">\[\begin{align*}
+\Gamma(\alpha + 1)
+&amp;= \int_0^{\infty} t^{\alpha} e^{-t}\, dt
+= \left[ -t^{\alpha}e^{-t}\right]_{0}^{\infty} + \alpha \int_0^{\infty} t^{\alpha - 1} e^{-t} dt \\
+&amp;= \alpha \Gamma(\alpha).
+\end{align*}\]</span></p></li>
+<li><p>Calculamos primero la media.</p>
+<p><span class="math display">\[\begin{align*}
+E(X)
+&amp;= \int_0^{\infty} x f(x)\, dx
+= \int_0^{\infty} x \frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1}e^{-\lambda x}\, dx \\
+&amp;= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_0^{\infty} x^{\alpha} e^{-\lambda x}\, dx
+\tag{Cambio $u = \lambda x$} \\
+&amp;= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_0^{\infty} \left(\frac{u}{\lambda}\right)^{\alpha} e^{-u} \frac{du}{\lambda} \\
+&amp;= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \cdot \frac{1}{\lambda^{\alpha + 1}} \int_0^{\infty} u^{\alpha} e^{-u} du \\
+&amp;= \frac{\Gamma(\alpha + 1)}{\lambda \Gamma(\alpha)}
+= \frac{\alpha \Gamma(\alpha)}{\lambda \Gamma(\alpha)}
+= \frac{\alpha}{\lambda}.
+\end{align*}\]</span></p>
+<p>Calculamos ahora la varianza.</p>
+<p><span class="math display">\[\begin{align*}
+Var(X) &amp;= E(X^2) - E(X)^{2} \\
+&amp;= \int_0^{\infty} x^2 f(x)\, dx
+- \left(\frac{\alpha}{\lambda}\right)^{2} \\
+&amp;= \int_0^{\infty} x^2 \frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha - 1}e^{-\lambda x}\, dx
+\tag{Cambio $u = \lambda x$} \\
+&amp;= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \int_0^{\infty} \left(\frac{u}{\lambda}\right)^{\alpha + 1} e^{-u} \frac{du}{\lambda} \\
+&amp;= \frac{\lambda^{\alpha}}{\Gamma(\alpha)} \cdot \frac{1}{\lambda^{\alpha + 2}} \int_0^{\infty} u^{\alpha + 1} e^{-u} du \\
+&amp;= \frac{\Gamma(\alpha + 2)}{\lambda^2 \Gamma(\alpha)} - \left(\frac{\alpha}{\lambda}\right)^{2} \\
+&amp;= \frac{(\alpha + 1)\alpha \Gamma(\alpha)}{\lambda^2 \Gamma(\alpha)} - \frac{\alpha^2}{\lambda^2}
+= \frac{\alpha}{\lambda^2}.
+\end{align*}\]</span></p></li>
+<li><p>Sea <span class="math inline">\(T\)</span> el tiempo hasta que se producen <span class="math inline">\(\alpha=2\)</span> componentes defectuosos, entonces <span class="math inline">\(T\)</span> sigue una distribución Gamma<span class="math inline">\((2, 1/10)\)</span>, y queremos calcular <span class="math inline">\(P(T &lt; 20)\)</span>, que viene dada por la integral</p>
+<p><span class="math display">\[\begin{align*}
+P(T &lt; 20)
+&amp;= \int_0^{20} \frac{1}{100} t\cdot e^{-t/10}\, dt
+= \frac{1}{100}\left[-e^{-t/10}(t+10)\right]_0^{20} \\
+&amp;= \frac{1}{100}\left(10 - 30e^{-2}\right) \approx 0.5940.
+\end{align*}\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./examen-2026-04-16.html" class="pagination-link" aria-label="2026-04-16 <br>Examen de Análisis II">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">2026-04-16 <br>Examen de Análisis II</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
