@@ -9490,10 +9490,12 @@ caso de que converjan:
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \item
-  Estudiamos la convergencia de las serie por el criterio del cociente,
+  Estudiamos la convergencia de las serie por el
+  \href{https://aprendeconalf.es/analisis-manual/09-series.html\#thm-criterio-razon}{criterio
+  de la razón},
 
   \begin{align*}
-  \lim_{n\to\infty}\dfrac{a_{n+1}}{a_n}
+  \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|
   &=\lim_{n\to\infty} \frac{\frac{(n+1)!\cdot 3^{n+1}}{(n+1)^{n+1}}}{\frac{n!\cdot 3^n}{n^n}} 
   = \lim_{n\to\infty} \frac{(n+1)!\cdot 3^{n+1}}{(n+1)^{n+1}}\cdot\frac{n^n}{n!\cdot 3^n} \\
   &= \lim_{n\to\infty} \frac{3(n+1)n^n}{(n+1)^{n+1}} 
