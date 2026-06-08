@@ -470,9 +470,9 @@ a.  Podemos reescribir el término general de la serie como
     podemos concluir que la serie converge, y además su suma es 
     
     $$
-    b_2 - \lim_{n\to\infty} b_n
-    = \ln(2)- \ln(1) - 0
-    = \ln(2).
+    -b_2 + \lim_{n\to\infty} b_n
+    = \ln(2)+ \ln(1) - 0
+    = -\ln(2).
     $$
 
 :::
