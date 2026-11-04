@@ -1,0 +1,387 @@
+---
+title: 2026-11-11 <br>Examen de Análisis III
+lang: es
+date: 2026-11-11
+---
+
+:::{#exr-1}
+Un dron asciende en espiral siguiendo la trayectoria dada por la función vectorial $\mathbf{f}(t) = \left(e^t\cos(t), e^t\operatorname{sen}(t), e^t\right)$, donde las distancias se miden en metros y el tiempo $t\geq 0$ en segundos.
+
+a.  Comprobar que la trayectoria del dron está contenida en el cono de ecuación $z = \sqrt{x^2+y^2}$.
+
+a.  ¿Qué distancia ha recorrido el dron cuando alcanza una altura de 10 m? Obtener la parametrización longitud de arco de la trayectoria.
+
+a.  Calcular la curvatura de la trayectoria en cada instante $t$. ¿Qué le ocurre a la curvatura a medida que el dron asciende? ¿Cómo se interpreta?
+
+a.  Calcular las componentes tangencial y normal de la aceleración en el instante $t=0$.
+
+a.  Demostrar que el ángulo que forma el vector velocidad del dron con el eje $z$ es constante y calcularlo.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Para cualquier instante $t$ se cumple
+
+    $$
+    \sqrt{x(t)^2+y(t)^2} = \sqrt{e^{2t}\cos(t)^2 + e^{2t}\operatorname{sen}(t)^2} = \sqrt{e^{2t}(\cos(t)^2+\operatorname{sen}(t)^2)} = e^t = z(t),
+    $$
+
+    por lo que todos los puntos de la trayectoria cumplen la ecuación del cono $z = \sqrt{x^2+y^2}$.
+
+a.  El vector velocidad del dron es
+
+    $$
+    \mathbf{f}'(t) = \left(e^t(\cos(t)-\operatorname{sen}(t)), e^t(\operatorname{sen}(t)+\cos(t)), e^t\right),
+    $$
+
+    y su rapidez es
+
+    \begin{align*}
+    |\mathbf{f}'(t)|
+    &= \sqrt{e^{2t}(\cos(t)-\operatorname{sen}(t))^2 + e^{2t}(\operatorname{sen}(t)+\cos(t))^2 + e^{2t}} \\
+    &= e^t\sqrt{(1-2\operatorname{sen}(t)\cos(t)) + (1+2\operatorname{sen}(t)\cos(t)) + 1}
+    = \sqrt{3}e^t.
+    \end{align*}
+
+    El dron alcanza una altura de 10 m cuando $e^t = 10$, es decir, en el instante $t=\ln(10)$. Así pues, la [longitud de la trayectoria](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#def-longitud-trayectoria-funcion-vectorial) recorrida hasta ese instante es
+
+    $$
+    \int_0^{\ln(10)} |\mathbf{f}'(t)|\,dt
+    = \int_0^{\ln(10)} \sqrt{3}e^t\,dt
+    = \sqrt{3}\left[e^t\right]_0^{\ln(10)}
+    = \sqrt{3}(10-1) = 9\sqrt{3} \approx 15.59 \text{ m}.
+    $$
+
+    Del mismo modo, la [función longitud de arco](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#def-funcion-longitud-arco) de la trayectoria es
+
+    $$
+    s(t) = \int_0^t \sqrt{3}e^u\,du = \sqrt{3}(e^t-1),
+    $$
+
+    y despejando $t$ se obtiene
+
+    $$
+    s = \sqrt{3}(e^t-1) \Leftrightarrow e^t = 1 + \frac{s}{\sqrt{3}} \Leftrightarrow t(s) = \ln\left(1+\frac{s}{\sqrt{3}}\right).
+    $$
+
+    Por tanto, la [parametrización longitud de arco](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#def-parametrizacion-longitud-arco-funcion-vectorial) de la trayectoria es
+
+    $$
+    \tilde{\mathbf{f}}(s) = \mathbf{f}(t(s)) = \left(1+\frac{s}{\sqrt{3}}\right)\left(\cos\left(\ln\left(1+\frac{s}{\sqrt{3}}\right)\right), \operatorname{sen}\left(\ln\left(1+\frac{s}{\sqrt{3}}\right)\right), 1\right), \quad s\geq 0.
+    $$
+
+a.  Como la trayectoria está en $\mathbb{R}^3$, podemos usar la [fórmula de la curvatura](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#thm-curvatura-trayectoria-espacio-real)
+
+    $$
+    \kappa(t) = \frac{|\mathbf{f}'(t)\times \mathbf{f}''(t)|}{|\mathbf{f}'(t)|^3}.
+    $$
+
+    Calculamos la derivada segunda
+
+    $$
+    \mathbf{f}''(t) = \left(e^t(\cos(t)-\operatorname{sen}(t) - \operatorname{sen}(t) - \cos(t)), e^t(\operatorname{sen}(t)+\cos(t)+\cos(t)-\operatorname{sen}(t)), e^t\right) = e^t\left(-2\operatorname{sen}(t), 2\cos(t), 1\right),
+    $$
+
+    y el producto vectorial
+
+    \begin{align*}
+    \mathbf{f}'(t)\times \mathbf{f}''(t)
+    &= e^{2t}\begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    \cos(t)-\operatorname{sen}(t) & \operatorname{sen}(t)+\cos(t) & 1 \\
+    -2\operatorname{sen}(t) & 2\cos(t) & 1
+    \end{vmatrix} \\
+    &= e^{2t}\left(\operatorname{sen}(t)-\cos(t), -\operatorname{sen}(t)-\cos(t), 2\right),
+    \end{align*}
+
+    cuyo módulo es
+
+    $$
+    |\mathbf{f}'(t)\times \mathbf{f}''(t)| = e^{2t}\sqrt{(\operatorname{sen}(t)-\cos(t))^2 + (\operatorname{sen}(t)+\cos(t))^2 + 4} = e^{2t}\sqrt{1+1+4} = \sqrt{6}e^{2t}.
+    $$
+
+    Por tanto, la curvatura es
+
+    $$
+    \kappa(t) = \frac{\sqrt{6}e^{2t}}{\left(\sqrt{3}e^t\right)^3} = \frac{\sqrt{6}e^{2t}}{3\sqrt{3}e^{3t}} = \frac{\sqrt{2}}{3e^t}.
+    $$
+
+    Como $\lim_{t\to\infty} \kappa(t) = \lim_{t\to\infty}\frac{\sqrt{2}}{3e^t} = 0$, la curvatura disminuye a medida que el dron asciende, es decir, la espiral se va abriendo y la trayectoria se parece cada vez más a una recta. Esto es lógico ya que, al estar sobre el cono, el radio de las vueltas $\sqrt{x^2+y^2} = e^t$ crece con la altura.
+
+a.  La [componente tangencial de la aceleración](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#def-componente-tangencial-normal-aceleracion) es la derivada de la rapidez
+
+    $$
+    a_T(t) = |\mathbf{v}(t)|' = \left(\sqrt{3}e^t\right)' = \sqrt{3}e^t,
+    $$
+
+    y la componente normal es
+
+    $$
+    a_N(t) = \kappa(t)|\mathbf{v}(t)|^2 = \frac{\sqrt{2}}{3e^t}\cdot 3e^{2t} = \sqrt{2}e^t.
+    $$
+
+    Así pues, en el instante $t=0$ se tiene $a_T(0) = \sqrt{3}$ m/s$^2$ y $a_N(0) = \sqrt{2}$ m/s$^2$.
+
+    Podemos comprobar el resultado observando que $\mathbf{f}'(0) = (1,1,1)$ y $\mathbf{f}''(0) = (0,2,1)$, de manera que
+
+    \begin{align*}
+    a_T(0) &= \frac{\mathbf{f}'(0)\cdot \mathbf{f}''(0)}{|\mathbf{f}'(0)|} = \frac{(1,1,1)\cdot(0,2,1)}{\sqrt{3}} = \frac{3}{\sqrt{3}} = \sqrt{3},\\
+    a_N(0) &= \frac{|\mathbf{f}'(0)\times \mathbf{f}''(0)|}{|\mathbf{f}'(0)|} = \frac{|(-1,-1,2)|}{\sqrt{3}} = \frac{\sqrt{6}}{\sqrt{3}} = \sqrt{2},
+    \end{align*}
+
+    y que $a_T(0)^2 + a_N(0)^2 = 3 + 2 = 5 = |\mathbf{f}''(0)|^2$.
+
+a.  El ángulo $\alpha$ que forma el vector velocidad con el eje $z$ es el ángulo que forma con el vector $\mathbf{k}=(0,0,1)$, que cumple
+
+    $$
+    \cos(\alpha) = \frac{\mathbf{f}'(t)\cdot \mathbf{k}}{|\mathbf{f}'(t)||\mathbf{k}|} = \frac{e^t}{\sqrt{3}e^t} = \frac{1}{\sqrt{3}}.
+    $$
+
+    Como no depende de $t$, el ángulo es constante y vale $\alpha = \arccos\left(\frac{1}{\sqrt{3}}\right) \approx 0.9553$ rad $\approx 54.74^\circ$.
+:::
+
+:::{#exr-2}
+Dada la función $f(x,y) = x^3 + y^3 - 3xy$,
+
+a.  Calcular y clasificar sus puntos críticos. ¿Tiene $f$ algún mínimo absoluto?
+
+a.  Calcular el polinomio de Taylor de segundo grado de $f$ en el punto $(1,1)$ y utilizarlo para aproximar $f(1.1, 1.2)$. ¿Qué error se comete? ¿Qué aproximación se obtendría con el polinomio de Taylor de primer grado?
+
+a.  Usar el método de los multiplicadores de Lagrange para calcular los extremos de $f$ sobre la recta $x + y = 4$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  Los puntos críticos son los que anulan el gradiente
+
+    $$
+    \nabla f(x,y) = \left(3x^2 - 3y, 3y^2 - 3x\right) = (0,0).
+    $$
+
+    De la primera ecuación se obtiene $y = x^2$ y, sustituyendo en la segunda, $x^4 - x = x(x^3-1) = 0$, de donde $x=0$ o $x=1$. Por tanto, los puntos críticos son $(0,0)$ y $(1,1)$.
+
+    Para clasificarlos calculamos la [matriz hessiana](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#def-matriz-hessiana)
+
+    $$
+    \nabla^2 f(x,y) =
+    \begin{pmatrix}
+    6x & -3 \\
+    -3 & 6y
+    \end{pmatrix}.
+    $$
+
+    En el punto $(0,0)$ se tiene
+
+    $$
+    |\nabla^2 f(0,0)| =
+    \begin{vmatrix}
+    0 & -3 \\
+    -3 & 0
+    \end{vmatrix}
+    = -9 < 0,
+    $$
+
+    por lo que, según el [criterio del hessiano](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-extremos-funcion-dos-variables), $f$ tiene un punto de silla en $(0,0)$.
+
+    En el punto $(1,1)$ se tiene
+
+    $$
+    |\nabla^2 f(1,1)| =
+    \begin{vmatrix}
+    6 & -3 \\
+    -3 & 6
+    \end{vmatrix}
+    = 36 - 9 = 27 > 0,
+    $$
+
+    y como además $\frac{\partial^2 f}{\partial x^2}(1,1) = 6 > 0$, $f$ tiene un mínimo relativo en $(1,1)$, que vale $f(1,1) = 1 + 1 - 3 = -1$.
+
+    Sin embargo, este mínimo no es absoluto, ya que, por ejemplo, $f(x,0) = x^3$ y $\lim_{x\to -\infty} x^3 = -\infty$, de manera que $f$ toma valores tan pequeños como se quiera y no tiene mínimo absoluto.
+
+a.  En el apartado anterior hemos visto que $f(1,1) = -1$, $\nabla f(1,1) = (0,0)$ y
+
+    $$
+    \nabla^2 f(1,1) =
+    \begin{pmatrix}
+    6 & -3 \\
+    -3 & 6
+    \end{pmatrix}.
+    $$
+
+    Así pues, el [polinomio de Taylor de segundo grado](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#aproximación-cuadrática-de-una-función-de-varias-variables) de $f$ en $(1,1)$ es
+
+    \begin{align*}
+    P^2_{f,(1,1)}(x,y)
+    &= f(1,1) + \nabla f(1,1)\cdot(x-1,y-1) + \frac{1}{2}(x-1,y-1)\nabla^2 f(1,1)(x-1,y-1) \\
+    &= -1 + 0 + \frac{1}{2}\left(6(x-1)^2 - 6(x-1)(y-1) + 6(y-1)^2\right) \\
+    &= -1 + 3(x-1)^2 - 3(x-1)(y-1) + 3(y-1)^2.
+    \end{align*}
+
+    Utilizando este polinomio, se tiene
+
+    $$
+    f(1.1, 1.2) \approx P^2_{f,(1,1)}(1.1,1.2) = -1 + 3\cdot 0.1^2 - 3\cdot 0.1\cdot 0.2 + 3\cdot 0.2^2 = -1 + 0.03 - 0.06 + 0.12 = -0.91.
+    $$
+
+    Como el valor exacto es $f(1.1, 1.2) = 1.331 + 1.728 - 3.96 = -0.901$, el error cometido es $|-0.901 - (-0.91)| = 0.009$.
+
+    Como $\nabla f(1,1) = (0,0)$, el polinomio de Taylor de primer grado en $(1,1)$ es $P^1_{f,(1,1)}(x,y) = -1$, que corresponde al plano tangente horizontal $z=-1$, y daría la aproximación $f(1.1,1.2)\approx -1$, con un error de $0.099$, unas 11 veces mayor. En un punto crítico la aproximación lineal no aporta información sobre la variación de la función, y es necesario recurrir a la aproximación cuadrática.
+
+a.  Tomando la restricción $g(x,y) = x + y - 4 = 0$, aplicamos el [método de los multiplicadores de Lagrange](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-multiplicadores-lagrange), imponiendo que $\nabla f = \lambda \nabla g$:
+
+    $$
+    \left(3x^2 - 3y, 3y^2 - 3x\right) = \lambda(1,1).
+    $$
+
+    Esto nos da el sistema de ecuaciones
+
+    \begin{align*}
+    3x^2 - 3y &= \lambda, \\
+    3y^2 - 3x &= \lambda, \\
+    x + y &= 4.
+    \end{align*}
+
+    Igualando las dos primeras ecuaciones se tiene
+
+    $$
+    x^2 - y = y^2 - x \Leftrightarrow x^2 - y^2 + x - y = 0 \Leftrightarrow (x-y)(x+y+1) = 0,
+    $$
+
+    y como $x + y = 4$, el factor $x+y+1 = 5 \neq 0$, de modo que necesariamente $x = y$ y, por tanto, $x = y = 2$. El único punto candidato es $(2,2)$, donde $f(2,2) = 8 + 8 - 12 = 4$.
+
+    Para ver de qué tipo de extremo se trata, podemos parametrizar la recta como $(t, 4-t)$, de manera que
+
+    $$
+    f(t, 4-t) = t^3 + (4-t)^3 - 3t(4-t) = 15t^2 - 60t + 64,
+    $$
+
+    que es una parábola convexa con vértice en $t=2$. Por tanto, $f$ alcanza en $(2,2)$ un mínimo sobre la recta $x+y=4$, de valor $4$, y no tiene máximo sobre esta recta, ya que $\lim_{t\to\pm\infty} 15t^2 - 60t + 64 = \infty$.
+:::
+
+:::{#exr-3}
+Un excursionista camina por una montaña cuya superficie viene dada por la función $h(x,y) = 4 - x^2 - 2y^2$, donde $x$, $y$ y la altitud $h$ se miden en km. La proyección sobre el plano $XY$ de la trayectoria del excursionista es la circunferencia dada por la función vectorial $\mathbf{g}(t) = (\cos(t), \operatorname{sen}(t))$, donde $t$ es el tiempo en horas.
+
+a.  Obtener la función vectorial que describe la trayectoria del excursionista sobre la superficie de la montaña. ¿En qué puntos de su recorrido alcanza la máxima y la mínima altitud?
+
+a.  Calcular la recta tangente a la trayectoria del excursionista y el plano tangente a la superficie de la montaña en el instante $t = \pi/4$. Comprobar que la recta tangente está contenida en el plano tangente. ¿Por qué ocurre esto?
+
+a.  En ese mismo instante, ¿a qué ritmo está variando la altitud del excursionista? ¿Camina en la dirección de máxima pendiente? ¿Cuál es la máxima pendiente en ese punto?
+
+a.  Si en el instante $t=\pi/4$ el excursionista decide subir a la cima siguiendo siempre la dirección de máxima pendiente, ¿qué trayectoria seguirá? Obtener una función vectorial que la describa y la ecuación de su proyección sobre el plano $XY$.
+
+    _Ayuda_: Las únicas funciones que cumplen $x'(t) = kx(t)$ son las de la forma $x(t) = Ce^{kt}$.
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a.  La altitud del excursionista en el instante $t$ es $h(\mathbf{g}(t)) = 4 - \cos(t)^2 - 2\operatorname{sen}(t)^2 = 3 - \operatorname{sen}(t)^2$, por lo que su trayectoria viene dada por la función vectorial
+
+    $$
+    \mathbf{f}(t) = \left(\cos(t), \operatorname{sen}(t), 3 - \operatorname{sen}(t)^2\right).
+    $$
+
+    La altitud es máxima cuando $\operatorname{sen}(t)^2 = 0$, es decir, para $t = 0$ y $t = \pi$, que corresponden a los puntos $(1,0,3)$ y $(-1,0,3)$, donde la altitud es $3$ km. Y es mínima cuando $\operatorname{sen}(t)^2 = 1$, es decir, para $t = \pi/2$ y $t = 3\pi/2$, que corresponden a los puntos $(0,1,2)$ y $(0,-1,2)$, donde la altitud es $2$ km.
+
+a.  En el instante $t=\pi/4$ el excursionista está en el punto
+
+    $$
+    \mathbf{f}(\pi/4) = \left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}, \frac{5}{2}\right).
+    $$
+
+    La derivada de la función vectorial es
+
+    $$
+    \mathbf{f}'(t) = \left(-\operatorname{sen}(t), \cos(t), -2\operatorname{sen}(t)\cos(t)\right),
+    $$
+
+    que en $t=\pi/4$ vale $\mathbf{f}'(\pi/4) = \left(-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}, -1\right)$. Por tanto, la [recta tangente a la trayectoria](https://aprendeconalf.es/analisis-manual/12-funciones-vectoriales.html#def-tangente-trayectoria-espacio) en ese instante es
+
+    $$
+    \mathbf{r}(\lambda) = \mathbf{f}(\pi/4) + \lambda\mathbf{f}'(\pi/4) = \left(\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}\lambda, \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}\lambda, \frac{5}{2} - \lambda\right), \quad \lambda\in\mathbb{R}.
+    $$
+
+    Por otro lado, el gradiente de $h$ es
+
+    $$
+    \nabla h(x,y) = (-2x, -4y),
+    $$
+
+    que en el punto $\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$ vale $\nabla h\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) = \left(-\sqrt{2}, -2\sqrt{2}\right)$. Así pues, la ecuación del [plano tangente a la superficie](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#def-plano-tangente-superficie) en ese punto es
+
+    $$
+    \begin{gathered}
+    z = \frac{5}{2} - \sqrt{2}\left(x - \frac{\sqrt{2}}{2}\right) - 2\sqrt{2}\left(y - \frac{\sqrt{2}}{2}\right) \\
+    \Leftrightarrow z = \frac{11}{2} - \sqrt{2}x - 2\sqrt{2}y.
+    \end{gathered}
+    $$
+
+    Para comprobar que la recta tangente está contenida en el plano tangente, basta con sustituir un punto cualquiera de la recta en la ecuación del plano:
+
+    $$
+    \frac{11}{2} - \sqrt{2}\left(\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}\lambda\right) - 2\sqrt{2}\left(\frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}\lambda\right)
+    = \frac{11}{2} - 1 + \lambda - 2 - 2\lambda = \frac{5}{2} - \lambda,
+    $$
+
+    que coincide con la tercera coordenada del punto de la recta, de manera que todos los puntos de la recta pertenecen al plano.
+
+    Esto ocurre porque la trayectoria del excursionista es una curva contenida en la superficie de la montaña, y el plano tangente a la superficie en un punto contiene a las rectas tangentes de todas las curvas suaves contenidas en la superficie que pasan por ese punto.
+
+a.  La tasa de variación de la altitud con respecto al tiempo es la derivada de $h\circ\mathbf{g}$, que, aplicando la [regla de la cadena](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-regla-cadena-funciones-varias-variables), vale
+
+    \begin{align*}
+    \frac{dh}{dt}
+    &= \frac{\partial h}{\partial x}\frac{dx}{dt} + \frac{\partial h}{\partial y}\frac{dy}{dt} = \nabla h(\mathbf{g}(t))\cdot\mathbf{g}'(t)\\
+    &= (-2\cos(t), -4\operatorname{sen}(t))\cdot(-\operatorname{sen}(t), \cos(t)) = -2\operatorname{sen}(t)\cos(t),
+    \end{align*}
+
+    que en $t=\pi/4$ vale $-2\frac{\sqrt{2}}{2}\frac{\sqrt{2}}{2} = -1$. Por tanto, el excursionista está descendiendo a razón de 1 km/h, lo que coincide con la tercera componente de $\mathbf{f}'(\pi/4)$.
+
+    La [dirección de máxima pendiente](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-gradiente-direccion-maximo-crecimiento) en el punto $\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$ es la del gradiente $\nabla h\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right) = \left(-\sqrt{2}, -2\sqrt{2}\right)$, que tiene la dirección del vector $(-1,-2)$. Sin embargo, el excursionista se mueve en la dirección de $\mathbf{g}'(\pi/4) = \left(-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$, es decir, del vector $(-1,1)$, que no es proporcional al gradiente, por lo que no camina en la dirección de máxima pendiente. De hecho, el ángulo $\alpha$ entre ambas direcciones cumple
+
+    $$
+    \cos(\alpha) = \frac{(-1,1)\cdot(-1,-2)}{|(-1,1)||(-1,-2)|} = \frac{-1}{\sqrt{2}\sqrt{5}} = -\frac{1}{\sqrt{10}},
+    $$
+
+    de donde $\alpha \approx 1.8925$ rad $\approx 108.43^\circ$. Como el ángulo es mayor de $90^\circ$, el excursionista está descendiendo, como ya habíamos visto.
+
+    La máxima pendiente en ese punto es el módulo del gradiente
+
+    $$
+    \left|\nabla h\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)\right| = \sqrt{2 + 8} = \sqrt{10} \approx 3.16,
+    $$
+
+    es decir, si se moviese en esa dirección, ganaría $3.16$ km de altitud por cada km recorrido en horizontal. En cambio, en la dirección en la que se mueve, la [derivada direccional](https://aprendeconalf.es/analisis-manual/13-derivadas-funciones-varias-variables.html#thm-derivada-direccional) es
+
+    $$
+    \nabla h\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)\cdot\frac{(-1,1)}{\sqrt{2}} = \frac{\sqrt{2} - 2\sqrt{2}}{\sqrt{2}} = -1,
+    $$
+
+    es decir, pierde 1 km de altitud por cada km recorrido en horizontal (como su rapidez horizontal es $|\mathbf{g}'(\pi/4)| = 1$ km/h, esto coincide con la tasa de variación con respecto al tiempo calculada antes).
+
+a.  Para seguir siempre la dirección de máxima pendiente, la proyección de la trayectoria $\mathbf{c}(t) = (x(t), y(t))$ debe tener en cada instante la dirección del gradiente de $h$. Por tanto, podemos tomar una función vectorial cuyo vector velocidad coincida con el gradiente, es decir, $\mathbf{c}'(t) = \nabla h(\mathbf{c}(t))$, lo que nos da las ecuaciones
+
+    \begin{align*}
+    x'(t) &= -2x(t), \\
+    y'(t) &= -4y(t),
+    \end{align*}
+
+    con las condiciones iniciales $x(0) = y(0) = \frac{\sqrt{2}}{2}$, si tomamos como instante inicial el momento en el que empieza a subir. Usando la ayuda, las soluciones son
+
+    $$
+    x(t) = \frac{\sqrt{2}}{2}e^{-2t}, \qquad y(t) = \frac{\sqrt{2}}{2}e^{-4t},
+    $$
+
+    de manera que la trayectoria sobre la superficie de la montaña viene dada por la función vectorial
+
+    $$
+    \mathbf{c}(t) = \left(\frac{\sqrt{2}}{2}e^{-2t}, \frac{\sqrt{2}}{2}e^{-4t}, 4 - \frac{1}{2}e^{-4t} - e^{-8t}\right), \quad t\geq 0.
+    $$
+
+    Para obtener la ecuación de la proyección sobre el plano $XY$, eliminamos el parámetro $t$:
+
+    $$
+    y = \frac{\sqrt{2}}{2}e^{-4t} = \frac{\sqrt{2}}{2}\left(e^{-2t}\right)^2 = \frac{\sqrt{2}}{2}\left(\frac{2x}{\sqrt{2}}\right)^2 = \sqrt{2}x^2,
+    $$
+
+    de manera que el excursionista sigue el arco de la parábola $y = \sqrt{2}x^2$ desde el punto $\left(\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)$ hasta la cima $(0,0)$, donde la altitud es $4$ km. Obsérvese que $\lim_{t\to\infty}\mathbf{c}(t) = (0,0,4)$, ya que a medida que se acerca a la cima la pendiente se hace cada vez menor.
+:::
