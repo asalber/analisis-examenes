@@ -59,6 +59,8 @@ book:
 
 format:
   html:
+    toc: false
+    page-layout: full
     highlight-style: a11y
     theme:
       dark: darkly
