@@ -124,7 +124,7 @@ a.  Para cualquier $n\in\mathbb{N}$,
     \left(\frac{4}{5}\right)^{n-1} < 10^{-3} \Leftrightarrow (n-1)\ln\left(\frac{5}{4}\right) > 3\ln(10) \Leftrightarrow n-1 > \frac{3\ln(10)}{\ln(5/4)} \approx 30.96,
     $$
 
-    es decir, a partir de la semana $n=32$. (En realidad la convergencia es algo más rápida, porque $\frac{x_n+2}{5}$ se acerca a $\frac{4}{5}$ solo al final, y el error ya es menor que $10^{-3}$ en $x_{29}\approx 1.9992$, pero la cota solo lo garantiza a partir de $x_{32}$.)
+    es decir, a partir de la semana $n=32$.
 
 a.  De las relaciones
 
@@ -134,7 +134,7 @@ a.  De las relaciones
 
     se deduce que, como todos los términos son positivos, $x_{n+1}$ queda en el mismo lado de $2$ y de $3$ que $x_n$. Por inducción, si $a$ está en uno de los intervalos $[0,2)$, $(2,3)$ o $(3,\infty)$, todos los términos de la sucesión están en ese mismo intervalo. Distinguimos los siguientes casos:
 
-    - **$0\leq a<2$**. Como en el apartado (b), la sucesión es creciente y acotada superiormente por $2$, luego converge, y su límite, que es $2$ o $3$ y no puede ser mayor que $2$, es $2$.
+    - **$0\leq a<2$**. Como en el apartado (b), la sucesión es creciente y acotada superiormente por $2$, luego converge, y su límite es $2$.
     - **$a=2$** o **$a=3$**. La sucesión es constante, como se vio en el apartado (a).
     - **$2<a<3$**. Entonces $x_n\in(2,3)$ $\forall n\in\mathbb{N}$, y como $x_n-2>0$ y $x_n-3<0$, se tiene $x_{n+1}-x_n<0$, por lo que la sucesión es decreciente y está acotada inferiormente por $2$, luego converge. Su límite es $2$ o $3$, pero como $x_n\leq a<3$, el límite es $2$.
     - **$a>3$**. Entonces $x_n>3$ $\forall n\in\mathbb{N}$, por lo que $x_{n+1}-x_n>0$ y la sucesión es creciente. Si estuviese acotada, convergería a un límite $x\geq a>3$, lo cual es imposible porque el límite solo puede ser $2$ o $3$. Por tanto, la sucesión no está acotada superiormente y, al ser creciente, $\lim_{n\to\infty}x_n = +\infty$ ([sucesión propiamente divergente](https://aprendeconalf.es/analisis-manual/04-sucesiones.html#def-sucesiones-propiamente-divergentes)).
@@ -151,7 +151,7 @@ a.  De las relaciones
 
     Así pues, 3000 insectos es un _umbral crítico_: si la población inicial es menor, la plaga se estabiliza en torno a 2000 insectos, mientras que si es mayor, la población crece sin control. Para evitar que la plaga se descontrole, hay que mantener la población inicial por debajo de 3000 insectos. El equilibrio en 3000 es inestable: cualquier pequeña perturbación hace que la población se aleje de él, bien hacia 2000 o bien hacia $+\infty$, mientras que el equilibrio en 2000 es estable.
 
-    Si un tratamiento reduce una población inicial de 5000 insectos a la mitad, la nueva población inicial es $a=2.5\in(2,3)$, de modo que la plaga se controla: la población decrece semana a semana y tiende a estabilizarse en 2000 insectos. Sin el tratamiento, con $a=5>3$, la plaga se descontrolaría ($x_2 = 6.2$, $x_3\approx 8.9$, $x_4\approx 17.0$, ...).
+    Si un tratamiento reduce una población inicial de 5000 insectos a la mitad, la nueva población inicial es $a=2.5\in(2,3)$, de modo que la plaga se controla: la población decrece semana a semana y tiende a estabilizarse en 2000 insectos. Sin el tratamiento, con $a=5>3$, la plaga se descontrolaría.
 :::
 
 :::{#exr-3}
